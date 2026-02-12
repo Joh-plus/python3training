@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #e0e0e0;
+}
+
+header {
+  background-color: #d0d0d0;
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 2px solid #aaa;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.main-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#code-sample {
+  background-color: #1b1a1a;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 10px;
+}
+
+.options-list {
+  text-align: left;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 12px;
+  background-color: transparent; /* Changed from white box to transparent/line style as per screenshot? Screenshot has lines. Let's make it look like lines. */
+  border-bottom: 1px solid #ccc; /* Separator lines */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.option:hover {
+  background-color: #d8d8d8;
+}
+
+/* Custom Radio Indicator */
+.option::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+.option.selected {
+  background-color: #cfe2f3; /* Light blue highlight */
+}
+
+.option.selected::before {
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: inset 0 0 0 3px #fff; /* White dot inside */
+}
+
+/* Correct/Incorrect styles */
+.option.correct {
+  background-color: #d4edda;
+}
+.option.incorrect {
+  background-color: #f8d7da;
+}
+
+/* Footer Navigation */
+footer {
+  padding: 15px 20px;
+  background-color: #306deb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 8px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-btn:hover {
+  background-color: #d0d0d0;
+}
+
+.action-btn {
+  font-weight: bold;
+  color: #fff;
+  background-color: #4a90e2;
+  border-color: #357bd8;
+}
+
+.action-btn:hover {
+  background-color: #357bd8;
+}
+
+/* Summary List Styles */
+.summary-list {
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item:hover {
+  background-color: #f5f5f5;
+}
+
+.review-highlight {
+  background-color: #fff3cd; /* Light yellow */
+}
+
+.review-highlight:hover {
+  background-color: #ffeeba;
+}
+
+.summary-num {
+  font-weight: bold;
+  color: #007bff;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.summary-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  color: #333;
+}
+
+.summary-status {
+  min-width: 80px;
+  font-weight: bold;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.status-badge {
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+.status-badge.review {
+  color: #f39c12; /* Orange */
+}
+
+.status-badge.unanswered {
+  color: #e74c3c; /* Red */
+}
+
+.status-badge.correct {
+  color: #28a745; /* Green */
+}
+
+.status-badge.incorrect {
+  color: #dc3545; /* Red */
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  text-align: center; /* keep result centered */
+}
+
+#explanation {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* Start Screen */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.start-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.course-select {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.start-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+}
+
+/* 問題文：改行を反映（\n を改行として表示） */
+#question {
+  white-space: pre-wrap;
+}
+
+/* 選択肢：改行を反映（\n を改行として表示） */
+.option {
+  white-space: pre-wrap;
+}
+
+/* Execution Result Styles */
+.execution-label {
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.execution-result-box {
+  background-color: #fff;
+  color: #333;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  text-align: left;
+}

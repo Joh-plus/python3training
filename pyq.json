@@ -1,0 +1,521 @@
+[
+  {
+    "question": "Pythonの特徴として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. 変数や引数の宣言が不要である",
+      "B. 複数の文のまとまりをカッコで表現する",
+      "C. コンパイルが不要なインタープリター言語である",
+      "D. 配列や集合やディクショナリなど汎用的なデータ型を組み込みで使える"
+    ],
+    "correctIndex": 1,
+    "explanation": "1章のPythonの特徴に関する問題です。\nPythonは、変数や引数の宣⾔が不要（A）で、コンパイルも不要なインタープリター⾔語（C）です。 また、\n標準で配列や集合やディクショナリなど汎⽤的なデータ型を使えます（D）。\n複数の⽂のまとまりは、インデントで⽰されるため（B）、読みやすいという特徴があります。",
+    "executionResult": null
+  },
+  {
+    "question": "Pythonのインタープリターの特徴として正しいものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. python -c モジュール名 でモジュールのソースファイル名を完全な形で指定したかのように実行できる",
+      "B. インタープリターの引数は、sysモジュールのargs属性で取得できる",
+      "C. インタープリターを対話モードで起動すると、プロンプトが >> のように表示される",
+      "D. インタープリターを終了するには、ファイル終端キャラクタ（WindowsではCtrl+Z）を入力するか quit() を入力する"
+    ],
+    "correctIndex": 3,
+    "explanation": "2.1節のインタープリターに関する問題です。\nインタープリターを対話モードで起動すると、プロンプトが>>>と表⽰されます（C）。終了するには、ファ\nイル終端キャラクタ（WindowsではCtrl+Z）を⼊⼒するかquit()を⼊⼒します（D）。\nまた、インタープリターは、引数をつけて実⾏できます。この引数は、sysモジュールのargv属性で取得でき\nます（B）。 引数にソースファイル名を指定すると、そのファイルを実⾏します。さらに、python -m モ\nジュール名とすると、モジュールのソースファイル名を完全な形で指定したかのように実⾏できます\n（A）。",
+    "executionResult": null
+  },
+  {
+    "question": "文字列の定義として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. s = \"It's OK.\"",
+      "B. s = '''1. one\\n2. two'''",
+      "C. s = 'one' 'two'",
+      "D. s = \"\"Hi!\"\""
+    ],
+    "correctIndex": 3,
+    "explanation": "3.1.2項の⽂字列に関する問題です。\n⽂字列は、\"...\"や'...'のようにダブルクォーテーションまたはシングルクォーテーションでくくります\n（A）。このとき、最初と最後の⽂字は同じにします。このように、記述したものを⽂字列リテラルといいま\nす。\nまた、\"\"\"...\"\"\"や'''...'''のようにダブルクォーテーションやシングルクォーテーションを3つ使って\n囲めます（B）。これを三重引⽤符といい、⽂字列内で直接改⾏できます。\nさらに、複数の⽂字列リテラルを並べて書くと、結合した1つの⽂字列として扱えます（C）。これは、⻑い\n⽂字列を複数⾏にわけて書くときに使えます。ただし、複数⾏で書く場合は括弧で囲む必要があります。\nなお、\"\"...\"\"のような記述はできません（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "it = \"telescope\"\nprint(it[6:] + it[2:5])",
+    "options": [
+      "A. telescles",
+      "B. copeeles",
+      "C. opeles",
+      "D. scopetel"
+    ],
+    "correctIndex": 2,
+    "explanation": "3.1.2項の⽂字列のスライスに関する問題です。\n⽂字列に[開始位置:終了位置+1]をつけると、開始位置から終了位置までの部分⽂字列を取得できます。\nなお、位置は⽂字に対応し、位置NはN+1⽂字⽬になります。 たとえば、it[2:5]はit[2:4+1]なので、3\n⽂字⽬から5⽂字⽬までの3⽂字です。\n開始位置を省略すると先頭から、終了位置を省略すると終端までになります。\n次を実⾏すると、\"opeles\"になります（C）。これは、it[6:]が\"ope\"で、it[2:5]が\"les\"になるから\nです。\nit = \"telescope\"\nprint(it[6:] + it[2:5])",
+    "executionResult": null
+  },
+  {
+    "question": "name[-3:-1] の実行結果が \"al\" になるとき、nameの作成方法として正しいものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. name = \"small\"",
+      "B. name = \"calorie\"",
+      "C. name = \"aluminum\"",
+      "D. name = \"oriental\""
+    ],
+    "correctIndex": 0,
+    "explanation": "3.1.2項の⽂字列のスライスに関する問題です。\nスライスでは負の値も使えます。負の場合、最後の⽂字から数えます。-1は最後の⽂字を、-2は最後から2\n番⽬の⽂字になります。\nname[-3:-1]が\"al\"ということは、nameはal?で終わる⽂字列です（?は何でもよい）。選択肢の中で対\n応するのは、\"small\"です（A）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "ch1 = \"1\"\nch2 = \"3\"\nprint(ch1 * 2 + ch2)",
+    "options": [
+      "A. 5",
+      "B. 23",
+      "C. 113",
+      "D. 123"
+    ],
+    "correctIndex": 2,
+    "explanation": "3.1.2項の⽂字列の演算に関する問題です。\n⽂字列に整数を掛けると、元の⽂字列をその数だけ繰り返した⽂字列になります。\nまた、⽂字列と別の⽂字列を⾜すと、結合した⽂字列になります。\nこれらのことから、\"1\" * 2 + \"3\"は、\"113\"になります（C）。",
+    "executionResult": null
+  },
+  {
+    "question": "文字列やリストの特徴として正しいものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. 文字列は可変体で、リストも可変体である",
+      "B. 文字列は可変体で、リストは不変体である",
+      "C. 文字列は不変体で、リストは可変体である",
+      "D. 文字列は不変体で、リストも不変体である"
+    ],
+    "correctIndex": 2,
+    "explanation": "3.1.2項の⽂字列と3.1.2項のリストに関する問題です。\n⽂字列は変更できないオブジェクトで、不変体（イミュータブル）といいます。\n逆に、リストは変更できるオブジェクトで、可変体（ミュータブル）といいます（C）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "month, day = 12, 24\na, b = day + 1, (month + 1) % 12\nprint(a, b)",
+    "options": [
+      "A. 13 1",
+      "B. 13 25",
+      "C. 25 1",
+      "D. 25 13"
+    ],
+    "correctIndex": 2,
+    "explanation": "3.2節に関する問題です。\nmonth, day = 12, 24のような代⼊を多重代⼊といいます。これは、次と同じ処理になります。\nmonth = 12\nday = 24\n同様に、a, b = day + 1, (month + 1) % 12は、次と同じ処理です。\na = day + 1\nb = (month + 1) % 12\n計算するとそれぞれ、25と1になります（C）。 なお、x % yは、xをyで割った余り（剰余）です。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "types = [\"float\", \"int\", \"str\"]\nfor t in types:\n    if len(t) == 3:\n        print(t)",
+    "options": [
+      "A. int str",
+      "B. float int str",
+      "C. int str",
+      "D. float int str"
+    ],
+    "correctIndex": 2,
+    "explanation": "4.1節のif⽂と4.2節のfor⽂に関する問題です。\n設問のように3つの⽂字列からなるリストをforで指定すると、3回繰り返されます。\nまた、各繰り返しでは、ifで⽂字数が3⽂字のときに、その⽂字を改⾏込みで出⼒しています。\n3⽂字の⽂字列は\"int\"と\"str\"なので、次のように出⼒されます（C）。\nint\nstr",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行して期待する結果が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "numbers_list = [,]\nfor numbers in numbers_list:\n    print(numbers, end=\" \")\n    ①",
+    "options": [
+      "A. for number in numbers:\n        if number % 2 == 0:\n            print(\"Even numbers found\")\n        else:\n            print(\"All numbers are odd\")",
+      "B. for number in numbers:\n        if number % 2 == 0:\n            print(\"Even numbers found\")\n            break\n        else:\n            print(\"All numbers are odd\")",
+      "C. for number in numbers:\n        if number % 2 == 0:\n            print(\"Even numbers found\")\n    else:\n        print(\"All numbers are odd\")",
+      "D. for number in numbers:\n        if number % 2 == 0:\n            print(\"Even numbers found\")\n            break\n    else:\n        print(\"All numbers are odd\")"
+    ],
+    "correctIndex": 3,
+    "explanation": "4.4節の「break⽂とcontinue⽂、ループにおけるelse節」に関する問題です。\nfor節とともに、次のようにelse節を書くことができます。for節をbreakで抜けるとelse節は実⾏されませ\nん。また、for節をbreakせずに終了するとelse節が実⾏されます。\nfor ... in ...:\n# for節の処理\nelse:\n# else節の処理\n設問のコードでは、次のように処理を記述すると期待する結果になります。\nnumbersに偶数が存在するとき：Even numbers foundと出⼒\nnumbersに偶数が存在しないとき：All numbers are oddと出⼒\nしたがって、次のようにします。\nfor節の処理：偶数を⾒つけたらEven numbers foundと出⼒し、breakで抜ける\nelse節の処理：All numbers are oddと出⼒する\nコードで書くと次のようになります（D）。\nfor number in numbers:\nif number % 2 == 0:\nprint(\"Even numbers found\")\nbreak\nelse:\nprint(\"All numbers are odd\")",
+    "executionResult": "[1, 3, 5] All numbers are odd\n[1, 2, 3] Even numbers found"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "def calc(value, x=2):\n    return value ** x\nprint(calc(2, 3) * calc(3))",
+    "options": [
+      "A. 9",
+      "B. 18",
+      "C. 36",
+      "D. 72"
+    ],
+    "correctIndex": 3,
+    "explanation": "4.7.1項の引数のデフォルト値に関する問題です。\n設問のcalc()は、べき乗を計算する関数です。\nこの関数calc()の第2引数のデフォルト値は2なので、calc(3)は、calc(3, 2)と処理されます。\nこれらのことから、calc(2, 3) * calc(3)は、calc(2, 3) * calc(3, 2)に相当し、2**3 * 3**2\nとなり8 * 9 = 72です（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行して Hello! Good bye! が表示されるとき、空欄①、②に入る記述の組み合わせとして正しいものを選択してください（1つ選択）",
+    "codeSample": "def greeting(①, ②):\n    for message in messages:\n        print(message, **options)\ngreeting(\"Hello\", \"Good bye\", end=\"! \")",
+    "options": [
+      "A. ① *messages ② *options",
+      "B. ① *messages ② **options",
+      "C. ① **messages ② *options",
+      "D. ① **messages ② **options"
+    ],
+    "correctIndex": 1,
+    "explanation": "4.7.2項の任意個数の仮引数に関する問題です。\n仮引数とは、関数定義で宣⾔された引数を指します。また、次のように関数呼び出し時に書く引数を実引数\nといいます。\ngreeting(\"Hello\", \"Good bye\", end=\"! \")\n上記の引数のうち、値だけ書かれた引数を位置引数といいます（\"Hello\"と\"Good bye\"）。\nまた、「キーワード=値」のように書かれた引数をキーワード引数といいます（end=\"! \"）。\n関数定義で、任意個数の位置引数を受け取るには、仮引数に*をつけます。\nまた、任意個数のキーワード引数を受け取るには、仮引数に**をつけます。\nさらに、任意個数の位置引数は、任意個数のキーワード引数の前に書く必要があります。\nこれらを満たす選択肢は、*messagesと**optionsです（B）。\n※ 「任意個数」とは、「いくつでも書ける」「何個でもよい」という意味です。",
+    "executionResult": "Hello! Good bye!"
+  },
+  {
+    "question": "次のコードの空欄①、②、③に入る引数の説明の組み合わせとして正しいものを選択してください（1つ選択）",
+    "codeSample": "def greeting(①, /, ②, *, ③):\n    pass",
+    "options": [
+      "A. ① 位置のみ ② 位置またはキーワード ③ キーワードのみ",
+      "B. ① 位置のみ ② キーワードのみ ③ 位置またはキーワード",
+      "C. ① キーワードのみ ② 位置のみ ③ 位置またはキーワード",
+      "D. ① 位置またはキーワード ② 位置のみ ③ キーワードのみ"
+    ],
+    "correctIndex": 0,
+    "explanation": "4.7.3項の特殊引数に関する問題です。\n本問は、特殊な仮引数として次の3つを答えさせる問題です。\nア：位置のみ\nイ：位置またはキーワード\nウ：キーワードのみ\nこの3種類の仮引数は、記述する位置によって決まります。\n具体的には、次のような関数定義では、①にアを、②にイを、③にウを書きます（A）。\ndef greeting(①, /, ②, *, ③):\npass\n位置引数はキーワード引数の前に書く必要があります。これを踏まえて、最初に位置のみが来て、最後にキ\nーワードのみが来て、中間には「位置またはキーワード」が来ると覚えるとよいでしょう。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードの関数の使い方として誤っているものを選択してください（1つ選択）",
+    "codeSample": "def greeting(*messages, to=None):\n    pass",
+    "options": [
+      "A. greeting(\"Hello\")",
+      "B. greeting(\"Hello\", to=\"Taro\")",
+      "C. greeting(to=\"Taro\", \"Hello\")",
+      "D. greeting(\"Hello\", \"Good bye\")"
+    ],
+    "correctIndex": 2,
+    "explanation": "4.7.4項の任意引数のリストに関する問題です。\n次のような関数定義があったとき、「任意個数の位置引数」と「キーワードのみの引数」の2種類の引数を\n使えます。\ndef greeting(*messages, to=None):\npass\nここで、⽂法として次の規則を守る必要があります（A、B）。\nキーワードのみの引数は省略してもよいが、書くときは必ずキーワードをつけて位置引数の後に書く\nたとえば、greeting(\"Hello\", \"Good bye\")は、キーワードのみの引数を省略した書き⽅なので、⽂法\n的にOKです（D）。\nこれを踏まえると、選択肢のgreeting(to=\"Taro\", \"Hello\")は、規則にしたがっていないので\nSyntaxErrorになります（C）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行して carrot,tomato が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "vegetables = [\"carrot\", \"tomato\"]\noptions = {\"sep\": \",\"}\nprint(①)",
+    "options": [
+      "A. vegetables, options",
+      "B. vegetables, *options",
+      "C. *vegetables, *options",
+      "D. *vegetables, **options"
+    ],
+    "correctIndex": 3,
+    "explanation": "4.7.5項の引数リストのアンパックに関する問題です。\n関数呼び出しで実引数を次のように書けます。このようなしくみをアンパックといいます。\nリストやタプルに*をつけると、要素が位置引数として渡される\nディクショナリに**をつけると、要素がキーワード引数として渡される\nこれらを踏まえると、次の記述はprint(\"carrot\", \"tomato\", sep=\",\")と同じになり、\ncarrot,tomatoと出⼒されます（D）。\nvegetables = [\"carrot\", \"tomato\"]\noptions = {\"sep\": \",\"}\nprint(*vegetables, **options)\nなお、*がないvegetablesを引数にすると、そのままリストとして渡されます（A、B）。\nまた、次のように*optionsを引数にすると、optionsのキーが位置引数として渡され、\nprint(\"carrot\", \"tomato\", \"sep\")と同じになります（C）。\nprint(*vegetables, *options)",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "address = [\"hokkaido\", \"mie\", \"akita\"]\naddress.sort(key=lambda s: len(s))\nprint(address)",
+    "options": [
+      "A. ['akita', 'hokkaido', 'mie']",
+      "B. ['hokkaido', 'akita', 'mie']",
+      "C. ['mie', 'akita', 'hokkaido']",
+      "D. ['mie', 'hokkaido', 'akita']"
+    ],
+    "correctIndex": 2,
+    "explanation": "4.7.6項のlambda（ラムダ）式に関する問題です。\nlambda 仮引数: 式のような式をラムダ式といいます。\nラムダ式は無名の関数ですが、defを使わずに関数を作成でき、記述を短くできるという特徴があります。\n次のように、ちょっとした関数が必要なときに使います。\naddress = [\"hokkaido\", \"mie\", \"akita\"]\naddress.sort(key=lambda s: len(s))\n上記のリストのメソッドsort()の引数keyは、ソートの基準を計算する関数を指定します。\nここでは、lambda s: len(s)を指定しています。この結果、⽂字列の⻑さの短い順にソートし、\naddressは['mie', 'akita', 'hokkaido']になります（C）。",
+    "executionResult": "['mie', 'akita', 'hokkaido']"
+  },
+  {
+    "question": "ドキュメンテーション文字列の慣習として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. 1⾏⽬に簡潔な説明などを書く",
+      "B. 1⾏⽬は⼤⽂字ではじめて、ピリオドで終わらせる",
+      "C. 続きを書く場合、2⾏⽬に詳細な説明を書く",
+      "D. 詳細な説明として、呼び出し⽅法や副作⽤などを書く"
+    ],
+    "correctIndex": 2,
+    "explanation": "4.7.7項のドキュメンテーション⽂字列（docstring）に関する問題です。\n次のような関数定義の最初に書く⽂字列をドキュメンテーション⽂字列といいます。\ndef calc(value, n=2):\n\"\"\"Return the nth power of the value.\nExamples\n--------\n>>> calc(2, 3)\n8\n\"\"\"\nreturn value ** n\nドキュメンテーション⽂字列は、以下のような慣習があります（A、B、C、D）。\n1⾏⽬に簡潔な説明などを書く\n1⾏⽬は⼤⽂字ではじめて、ピリオドで終わらせる\n続きを書く場合、2⾏⽬を空けて、3⾏⽬から詳細な説明を書く\n詳細な説明として、呼び出し⽅法や副作⽤などを書く",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "vegetables = [\"tomato\"]\nvegetables.append(\"carrot\")\nvegetables.append(\"potato\")\nvegetables.reverse()\nvegetables.pop()\nvegetables.pop()\nprint(vegetables)",
+    "options": [
+      "A. []",
+      "B. ['carrot']",
+      "C. ['potato']",
+      "D. ['tomato']"
+    ],
+    "correctIndex": 2,
+    "explanation": "5.1節のリストの処理に関する問題です。\n設問では、次のリストのメソッドを使っています。\nappend(要素)：リストの最後に要素を追加する\npop()：リストの最後の要素を削除して返す\nreverse()：リストの並びを逆にする\nこれらを使って、次のようにするとコメントのように変化します（C）。\nvegetables = [\"tomato\"]\nvegetables.append(\"carrot\") # [\"tomato\", \"carrot\"]\nvegetables.append(\"potato\") # [\"tomato\", \"carrot\", \"potato\"]\nvegetables.reverse() # [\"potato\", \"carrot\", \"tomato\", ]\nvegetables.pop() # [\"potato\", \"carrot\"]\nvegetables.pop() # [\"potato\"]",
+    "executionResult": "['potato']"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "print([[3 * i + j + 1 for j in range(3)] for i in range(2)])",
+    "options": [
+      "A. []",
+      "B. [,]",
+      "C. [,,]",
+      "D. [,,,,,]"
+    ],
+    "correctIndex": 1,
+    "explanation": "5.1.4項の⼊れ⼦のリスト内包に関する問題です。\nリスト内包は⼊れ⼦にできます。\nたとえば、次のように2重のループで「⼊れ⼦のリスト」を作成するコードを考えます。\nlst = []\nfor i in range(2):\nsub = []\nfor j in range(3):\nsub.append(3 * i + j + 1)\nlst.append(sub)\n上記は⼊れ⼦のリスト内包で次のように書けます。iのループで「jのループのリスト内包」を作成するの\nで、先にjのループを書きます。\nlst = [[3 * i + j + 1 for j in range(3)] for i in range(2)]\n上記のlstの内容は[[1, 2, 3], [4, 5, 6]]になります（B）。\nもし、⼊れ⼦にしないのであれば、次のようにiのループ、jのループの順に書きます。\nprint([3 * i + j + 1 for i in range(2) for j in range(3)])\n[1, 2, 3, 4, 5, 6]\n⼊れ⼦にするときは、ループの順番を逆に書くことに注意しましょう。",
+    "executionResult": "[[1, 2, 3], [4, 5, 6]]"
+  },
+  {
+    "question": "次のコードを実行して {2} {2, 3, 5, 7, 9, 11} が表示されるとき、空欄①、②に入る記述の組み合わせとして正しいものを選択してください（1つ選択）",
+    "codeSample": "odds = {3, 5, 7, 9, 11}\nprimes = {2, 3, 5, 7, 11}\nprint(①, ②)",
+    "options": [
+      "A. ① primes ^ odds ② odds & primes",
+      "B. ① primes ^ odds ② odds | primes",
+      "C. ① primes - odds ② odds & primes",
+      "D. ① primes - odds ② odds | primes"
+    ],
+    "correctIndex": 3,
+    "explanation": "5.4節の集合（set）に関する問題です。\nsとtを集合としたとき、次のような集合演算が可能です。\ns | t：和集合（sとtのどちらかに含まれる要素の集合）\ns & t：積集合（sとtに共通する要素の集合）\ns - t：差集合（sに含まれて、tに含まれない要素の集合）\ns ^ t：対象差（sとtのどちらかだけに含まれる要素の集合）\ns - tとt - sは、異なる可能性があることに注意してください。\n具体的には、下記を実⾏すると、コメントのように出⼒されます。\nodds = {3, 5, 7, 9, 11}\nprimes = {2, 3, 5, 7, 11}\nprint(odds | primes) # {2, 3, 5, 7, 9, 11}\nprint(odds & primes) # {11, 3, 5, 7}\nprint(odds - primes) # {9}\nprint(primes - odds) # {2}\nprint(odds ^ primes) # {2, 9}\nしたがって、次を実⾏すると、{2} {2, 3, 5, 7, 9, 11}になります（D）。\nprint(primes - odds, odds | primes)",
+    "executionResult": "{2} {2, 3, 5, 7, 9, 11}"
+  },
+  {
+    "question": "ディクショナリの作成方法として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. {\"carrot\": 80, \"tomato\": 100}",
+      "B. dict(\"carrot\"=80, \"tomato\"=100)",
+      "C. dict([(\"carrot\", 80), (\"tomato\", 100)])",
+      "D. {k: v for k, v in [(\"carrot\", 80), (\"tomato\", 100)]}"
+    ],
+    "correctIndex": 1,
+    "explanation": "5.4節のディクショナリに関する問題です。\nディクショナリは、下記のように作成できます（A、C、D）。すべて同じディクショナリになります。\n{\"carrot\": 80, \"tomato\": 100}\ndict(carrot=80, tomato=100)\ndict([(\"carrot\", 80), (\"tomato\", 100)])\n{k: v for k, v in [(\"carrot\", 80), (\"tomato\", 100)]}\ndict(\"carrot\"=80, \"tomato\"=100)と書くことはできません（B）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行して期待する結果が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "vegetables = {0: \"carrot\", 1: \"potato\", 2: \"tomato\"}\nfor kv in ①:\n    print(kv)",
+    "options": [
+      "A. vegetables",
+      "B. zip(vegetables)",
+      "C. vegetables.items()",
+      "D. enumerate(vegetables)"
+    ],
+    "correctIndex": 2,
+    "explanation": "5.6節のループのテクニックに関する問題です。\nvegetablesを次のディクショナリとします。\nvegetables = {0: \"carrot\", 1: \"potato\", 2: \"tomato\"}\n次の式をループで使うと、ループの要素は説明のようになります（A、B、C、D）。\nvegetablesのとき、ループの要素は「キー」（例：0）\nzip(vegetables)のとき、ループの要素は「キーのタプル」（例：(0,)）\nvegetables.items()のとき、ループの要素は「キーと値」（例：(0, 'carrot')）\nenumerate(vegetables)のとき、ループの要素は「通し番号とキー」（例：(0, 0)）",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行してTrueが表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "temp = 22\nprint(①)",
+    "options": [
+      "A. 10 <= temp < 20",
+      "B. temp >= 10 or temp < 20",
+      "C. temp >= 10 and temp < 20",
+      "D. temp >= 10 and not temp >= 20 or temp < 20"
+    ],
+    "correctIndex": 1,
+    "explanation": "5.7節の条件についての補⾜に関する問題です。\na <= b < cは、a <= b and b < cと同じです。\ntempを22として、いろいろな条件を考えると、次のようになります（A、B、C、D）。\n10 <= temp < 20は、10 <= temp and temp < 20なので、True and FalseとなりFalse\ntemp >= 10 or temp < 20は、True or FalseとなりTrue\ntemp >= 10 and temp < 20は、10 <= temp < 20と同じなのでFalse\ntemp >= 10 and not temp >= 20 or temp < 20は、True and False or Falseなので、\nFalse or FalseとなりFalse",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "compare1 = \"carrot\" < \"tomato\" < \"potato\"\ncompare2 = <\ncompare3 = (3, 1) < (3, 1, -1)\nprint(compare1, compare2, compare3)",
+    "options": [
+      "A. False False False",
+      "B. False False True",
+      "C. False True False",
+      "D. True False False"
+    ],
+    "correctIndex": 1,
+    "explanation": "5.8節の「シーケンスの⽐較、その他の型の⽐較」に関する問題です。\n⽂字列同⼠は、アルファベット順で⽐較できます。たとえば、次のようになります。\n\"carrot\" < \"tomato\" < \"potato\"は、\"tomato\" < \"potato\"がFalseなのでFalse\nまた、シーケンス（タプルやリストなど）同⼠は、以下のような辞書的順序で⽐較できます。\n先頭の要素から順番に探索し、いずれかの要素で異なれば、その⼤⼩がそのシーケンス同⼠の⽐較の\n結果となる\n探索中に、どちらかの要素がなくなれば、そのシーケンスの⽅が⼩さい\n具体的に確認すると、次のようになります（B）。\n[3, 2] < [3, 1, 4]は、1つ⽬が同じで2つ⽬が異なる。2 < 1がFalseなのでFalse\n(3, 1) < (3, 1, -1)は、1つ⽬と2つ⽬が同じで、3つ⽬は左側の要素がない。要素がない⽅が⼩\nさいのでTrue\nちなみに、⽂字列もシーケンスであり、アルファベット順は辞書的順序になっています。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを正常に実行できるとき、空欄①に入る記述として誤っているものを選択してください（1つ選択）",
+    "codeSample": "import math\nfrom math import pi\nfrom math import pi as pai\nprint(①)",
+    "options": [
+      "A. pi",
+      "B. pai",
+      "C. math.pi",
+      "D. math.pai"
+    ],
+    "correctIndex": 3,
+    "explanation": "6.1節のモジュールに関する問題です。\nmathモジュールには、円周率としてpiが定義されています。\nこのモジュールのインポート⽅法を具体的に⾒てみましょう（A、B、C）。\nimport math：円周率としてmath.piが使える\nfrom math import pi：円周率としてpiが使える\nfrom math import pi as pai：円周率としてpaiが使える\nmathモジュールにpaiはないので、math.paiは使えません（D）。しかし、最後の例ではpaiをpiの別名\nとしているので、piの代わりにpaiが使えます。",
+    "executionResult": null
+  },
+  {
+    "question": "下記のディレクトリ構成のtodo_appパッケージを使います。baseサブモジュールをインポートする方法として正しいものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. import base",
+      "B. import model.base",
+      "C. import todo_app.base",
+      "D. import todo_app.model.base"
+    ],
+    "correctIndex": 3,
+    "explanation": "6.4節のパッケージに関する問題です。\nA.Bのようにインポートできる構成をパッケージといいます。また、A.BのBをパッケージAのサブモジュー\nルといいます。\nたとえば、次のようなディレクトリ構成があるとき、todo_appがパッケージで、modelやbaseがそのサブモ\nジュールです。\ntodo_app/\n__init__.py\nmodel/\n__init__.py\nbase.py\nこのtodo_appからbaseサブモジュールをインポートするには、todo_appから順番に辿る必要があります\n（A、B）。\n具体的にはimport todo_app.model.baseのようにします（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "open関数のモード引数（第2引数）の特徴として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. モード引数は省略できない",
+      "B. \"rb\"は、バイナリモードの読み込みの指定である",
+      "C. \"r+\"は、テキストモードの読み書きの指定である",
+      "D. \"a\"は、テキストモードの追加書き込みの指定である"
+    ],
+    "correctIndex": 0,
+    "explanation": "7.2節のファイルの読み書きに関する問題です。\n次のようにファイルオブジェクトを作成すると、それを使ってファイルを読み書きできます。\nopen(ファイルのパス, モード)\nモードは、下記の⽂字を組み合わせて使えます。また、モードは省略できます（A）。省略すると\"r\"とみな\nされます。\n\"r\"：読み込み（モードのデフォルト）\n\"w\"：書き込み（既存ファイルが存在すれば上書き）\n\"x\"：書き込み（既存ファイルが存在すればエラー）\n\"a\"：追加書き込み（既存ファイルがなければ新規）\n\"b\"：バイナリーモードの指定\n\"t\"：テキストモードの指定（省略可）\n\"+\"：読み書き\n\"t\"は省略できるので、\"b\"を書かないとテキストモードです。たとえば、\"a\"はテキストモードの追加書き\n込みになります（D）。\n次は組み合わせ例とその説明です（B、C）。\n\"rb\"は、バイナリモードで読み込み\n\"r+\"は、テキストモードで読み書き",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるエラーを選択してください（1つ選択）",
+    "codeSample": "print(python_version)",
+    "options": [
+      "A. NameError",
+      "B. TypeError",
+      "C. ValueError",
+      "D. SyntaxError"
+    ],
+    "correctIndex": 0,
+    "explanation": "8.2節の例外に関する問題です。\n存在しない名前（未定義の変数など）を使おうとするとNameErrorという例外になります（A）。\nその他の主な例外として以下があります（B、C）。\nTypeError：期待する型と異なるとき\nValueError：期待する値と異なるとき\nまた、⽂法間違いは、SyntaxError（構⽂エラー）になります（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "numerator = 1\ndenominator = 0\ntry:\n    result = numerator / denominator\nexcept ZeroDivisionError:\n    print(\"division by zero\")\nelse:\n    print(\"executed else\")\nfinally:\n    print(\"executed finally\")",
+    "options": [
+      "A. executed else executed finally",
+      "B. division by zero executed else",
+      "C. division by zero executed finally",
+      "D. division by zero"
+    ],
+    "correctIndex": 2,
+    "explanation": "8.3節の例外の処理に関する問題です。\n次は、例外処理の例です。\nnumerator = 1\ndenominator = 0\ntry:\nresult = numerator / denominator\nexcept ZeroDivisionError:\nprint(\"division by zero\")\nelse:\nprint(\"executed else\")\nfinally:\nprint(\"executed finally\")\nこのコードを実⾏すると、以下のように処理します。\ntry節でZeroDivisionErrorが発⽣\nZeroDivisionErrorの指定があるexcept節を処理\nelse節は例外が発⽣しなかったときの処理なので、今回はスキップ\nfinally節は、例外の有無に関わらず処理\n最終的に以下のように出⼒されます（C）。\ndivision by zero\nexecuted finally",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを正常に実行できるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "def divide(numerator, denominator):\n    try:\n        result = numerator / denominator\n    except ZeroDivisionError as e:\n        raise ValueError(\"Illegal argument\") ① e\n    else:\n        return result\ntry:\n    result = divide(1, 0)\nexcept ValueError as e:\n    print(e)",
+    "options": [
+      "A. as",
+      "B. from",
+      "C. in",
+      "D. with"
+    ],
+    "correctIndex": 1,
+    "explanation": "8.5節の例外の連鎖に関する問題です。\nraiseで例外を発⽣できます。そのときに、次のようにfromをつけると例外の連鎖になります（B）。\nraise 新しい例外 from 古い例外\nまた、古い例外の代わりにNoneを指定すると、例外の連鎖を停⽌できます。\n具体的に⾒てみましょう。最初は、例外の連鎖の例です。\ntry:\na = 1 / 0\nexcept ZeroDivisionError as e:\nraise ValueError(e) from e\n上記を実⾏すると下記のようになります。ZeroDivisionErrorの出⼒の後にValueErrorの出⼒が続きます。\nTraceback (most recent call last):\nFile \"sample.py\", line 2, in <module>\na = 1 / 0\n~~^~~\nZeroDivisionError: division by zero\nThe above exception was the direct cause of the following exception:\nTraceback (most recent call last):\nFile \"sample.py\", line 4, in <module>\nraise ValueError(e) from e\nValueError: division by zero\n次は、例外の連鎖を⽌めた例です。\ntry:\na = 1 / 0\nexcept ZeroDivisionError as e:\nraise ValueError(e) from None\n上記を実⾏するとValueErrorだけ出⼒されすっきりします。\nTraceback (most recent call last):\nFile \"sample.py\", line 4, in <module>\nraise ValueError(e) from None\nValueError: division by zero",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードで例外時でもデータベースの終了処理を実行したいとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "# データベースの接続処理 ...  # 略\nprint(\"Open DB\")\ntry:\n①:\n    # データベースの終了処理\n    ...  # 略\n    print(\"Close DB\")",
+    "options": [
+      "A. close",
+      "B. ending",
+      "C. finally",
+      "D. terminal"
+    ],
+    "correctIndex": 2,
+    "explanation": "8.7節のクリーンアップ動作の定義に関する問題です。\n例外の有無に関わらず実⾏したい処理は、次のようにfinally節に記述します（C）。\ntry:\n例外が起きるかもしれない処理\nfinally:\n例外の有無に関わらず実行したい処理",
+    "executionResult": "Open DB\nClose DB"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "class Path1:\n    def __init__(self, dirs):\n        self.dirs = dirs\n        self.sep = \"/\"\n    def join(self):\n        return self.sep.join(self.dirs)\nclass Path2(Path1):\n    def __init__(self, dirs):\n        super().__init__(dirs)\n        self.sep = \"\\\\\"\npth1 = Path1([\"home\", \"taro\"])\npth2 = Path2([\"users\", \"taro\"])\nprint(pth1.join(), pth2.join())",
+    "options": [
+      "A. home/taro users/taro",
+      "B. home/taro users\\taro",
+      "C. home\\taro users/taro",
+      "D. home\\taro users\\taro"
+    ],
+    "correctIndex": 1,
+    "explanation": "9.5節の継承に関する問題です。\n次のクラスPath2はクラスPath1を継承しています。このとき、Path1を基底クラス、Path2を派⽣クラスとい\nいます。\nclass Path1:\ndef __init__(self, dirs):\nself.dirs = dirs\nself.sep = \"/\"\ndef join(self):\nreturn self.sep.join(self.dirs)\nclass Path2(Path1):\ndef __init__(self, dirs):\nsuper().__init__(dirs)\nself.sep = \"\\\\\"\npth1 = Path1([\"home\", \"taro\"])\npth2 = Path2([\"users\", \"taro\"])\nprint(pth1.join(), pth2.join())\npth1.join()を出⼒するとhome/taroになります。\npth2.join()に出⼒について説明します。\n派⽣クラスのオブジェクトは、基底クラスのメソッドが使えます。 メソッドjoin()は、派⽣クラスのPath2\nに定義されていませんが、基底クラスのPath1に定義されています。\nそのため、pth2.join()を実⾏できます。メソッド__init__で、pth2.sepを\"\\\\\"に設定されているの\nで、pth2.join()を出⼒するとusers\\taroになります（B）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行して 0 1 1 2 3 5 8 が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "def fibonacci(limit):\n    i, j = 0, 1\n    while i <= limit:\n        ① i\nfor i in fibonacci(10):\n    print(i, end=\" \")",
+    "options": [
+      "A. push",
+      "B. return",
+      "C. send",
+      "D. yield"
+    ],
+    "correctIndex": 3,
+    "explanation": "9.9節のジェネレーターに関する問題です。\n関数定義でyieldを使うと、簡単に反復⼦⽤の処理を記述できます。この関数をジェネレーターといいま\nす。\n次の関数fibonacciは、ジェネレーターの例です。returnに代わりにyieldを使うのが特徴です（D）。\ndef fibonacci(limit):\ni, j = 0, 1\nwhile i <= limit:\nyield i\ni, j = j, i + j\nfor i in fibonacci(10):\nprint(i, end=\" \")\nfibonacci(10)は、10以下のフィボナッチ数です。上記を実⾏すると0 1 1 2 3 5 8と出⼒されます。",
+    "executionResult": "0 1 1 2 3 5 8"
+  },
+  {
+    "question": "osモジュールの特徴として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. os.chdir(移動先) でカレントディレクトリを変更できる",
+      "B. os.pwd() でカレントディレクトリを取得できる",
+      "C. dir(os) でosモジュールの全属性名を取得できる",
+      "D. help(os) でosモジュールのヘルプを確認できる"
+    ],
+    "correctIndex": 1,
+    "explanation": "10.1節のOSインターフェイスに関する問題です。\nosモジュールには、オペレーションシステムとやり取りするいろいろな関数があります。\nたとえば、os.chdir(移動先)でカレントディレクトリを変更できます（A）。\nosモジュールの全属性名は、dir(os)で取得できます（C）。また、help(os)でosモジュールのヘルプを\n確認できます（D）。\nなお、Linuxではpwdというコマンドでカレントディレクトリを取得できますが、osモジュールでは\nos.getcwd()で取得できます（B）。",
+    "executionResult": "（実行結果なし）"
+  },
+  {
+    "question": "次のファイルfile.pyを実行して ['buy', 'milk'] 2/3 が表示されるとき、実行方法の記述として正しいものを選択してください（1つ選択）",
+    "codeSample": "import argparse\nparser = argparse.ArgumentParser()\nparser.add_argument(\"task\", nargs=\"+\")\nparser.add_argument(\"--date\")\nargs = parser.parse_args()\nprint(args.task, args.date)",
+    "options": [
+      "A. python file.py buy milk 2/3",
+      "B. python file.py 2/3 buy milk",
+      "C. python file.py --date 2/3 buy milk",
+      "D. python file.py --date 2/3 \"['buy', 'milk']\""
+    ],
+    "correctIndex": 2,
+    "explanation": "10.3節のコマンドライン引数に関する問題です。\nコマンドライン引数はsys.argvに⼊っていますが、argparseモジュールを使うと洗練された⽅法で扱えま\nす。\n次は具体例です。\nimport argparse\nparser = argparse.ArgumentParser()\nparser.add_argument(\"task\", nargs=\"+\")\nparser.add_argument(\"--date\")\nargs = parser.parse_args()\nprint(args.task, args.date)\nここでは2種類の引数を設定しています。\n1つはtaskで、nargs=\"+\"という指定により複数個の引数を受け取れます。\nもう1つはdateで、--dateに続けて値を指定します。\n次は、コマンドラインの実⾏例です（C）。\npython file.py --date 2/3 buy milk\nargs.taskに['buy', 'milk']が、args.dateに2/3が⼊ります。",
+    "executionResult": null
+  },
+  {
+    "question": "次のファイルを実行したとき処理される内容として正しいものを選択してください（1つ選択）",
+    "codeSample": "from datetime import date\ndef date_str(year, month, day):\n    \"\"\"\n    >>> print(date_str(2024, 2, 3))\n    2024-02-03\n    \"\"\"\n    dt = date(year, month, day)\n    return dt.strftime(\"%Y-%m-%d\")\nimport doctest\ndoctest.testmod()",
+    "options": [
+      "A. print(date_str(2024, 2, 3)) を実行せず、何もチェックしない",
+      "B. print(date_str(2024, 2, 3)) を実行せず、docstringがあるかをチェックする",
+      "C. print(date_str(2024, 2, 3)) を実行し、エラーが発生するかどうかだけをチェックする",
+      "D. print(date_str(2024, 2, 3)) を実行し、出力が 2024-02-03 と同じかどうかをチェックする"
+    ],
+    "correctIndex": 3,
+    "explanation": "10.11節の品質管理に関する問題です。\ndoctestモジュールを使うと、関数のドキュメンテーション⽂字列（docstring）に埋め込まれたテストを検\n証できます。\n次の具体例を⾒てみましょう。\nfrom datetime import date\ndef date_str(year, month, day):\n\"\"\"To string from year, month, date.\n>>> print(date_str(2024, 2, 3))\n2024-02-03\n\"\"\"\ndt = date(year, month, day)\nreturn dt.strftime(\"%Y-%m-%d\")\nimport doctest\ndoctest.testmod()\n上記を実⾏すると、doctest.testmod()が、モジュール内の関数のドキュメンテーション⽂字列を調べま\nす。\n具体的には、print(date_str(2024, 2, 3))を実⾏し、その出⼒が2024-02-03と同じかどうかをチェ\nックします（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "標準ライブラリの説明として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. csvモジュールは、スプレッドシートなどで使用されているCSV形式のファイルを読み書きできる",
+      "B. emailパッケージは、電子メールのデコードやヘッダプロトコルの処理などメッセージの構築ができる",
+      "C. jsonパッケージは、JSON形式のデータを安定的にパースできる",
+      "D. sqlite1モジュールは、SQLを用いてSQLiteデータベースを更新できる"
+    ],
+    "correctIndex": 3,
+    "explanation": "10.12節の電池付きであることに関する問題です。\nPythonは、付属する標準ライブラリだけでも、次のようなさまざまな処理を⾏うことができます（A、B、\nC）。\ncsvモジュールは、スプレッドシートなどで使⽤されているCSV形式のファイルを読み書きできる\nemailパッケージは、電⼦メールのデコードやヘッダプロトコルの処理などメッセージの構築ができる\njsonパッケージは、JSON形式のデータを安定的にパースできる\nsqlite3モジュールは、SQLを⽤いてSQLiteデータベースを更新できる\nなお、SQLiteは、パブリックドメインの軽量なデータベース管理システムです。標準ライブラリとしては、\nsqlite3という名前になっています（D）。",
+    "executionResult": null
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）",
+    "codeSample": "import logging\nlogging.warning(\"Key not found\")\nlogging.critical(\"Key not found\")\nlogging.debug(\"Key not found\")\nlogging.error(\"Key not found\")\nlogging.info(\"Key not found\")",
+    "options": [
+      "A. CRITICAL:root:Key not found ERROR:root:Key not found",
+      "B. CRITICAL:root:Key not found DEBUG:root:Key not found ERROR:root:Key not found WARNING:root:Key not found\n(Cはソース内に記載なし)",
+      "D. WARNING:root:Key not found CRITICAL:root:Key not found DEBUG:root:Key not found ERROR:root:Key not found"
+    ],
+    "correctIndex": 2,
+    "explanation": "11.5節のログ取りに関する問題です。\nloggingモジュールは、柔軟なログ記録システムです。\nログ出⼒が存在するモジュールごとに優先度（レベル）を指定できて、優先度に応じて出⼒が制御されま\nす。\n以下は、優先度とログ出⼒の関数です（優先度の低い順）。\nDEBUG：logging.debug()\nINFO：logging.info()\nWARNING：logging.warning()\nERROR：logging.error()\nCRITICAL：logging.critical()\nデフォルトでは、WARNINGとERRORとCRITICALの関数で出⼒され、INFOとDEBUGの関数では出⼒されま\nせん（C）。",
+    "executionResult": null
+  },
+  {
+    "question": "コマンドとその説明として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. pip install --file requirements.txt は、requirements.txtに記述されたパッケージをインストールする",
+      "B. python -m pip install --upgrade pip は、pipの最新版をインストールする",
+      "C. pip uninstall pyyaml は、pyyamlをアンインストール（削除）する",
+      "D. pip freeze > requirements.txt は、インストールされたパッケージ一覧を作成し、requirements.txtに保存する"
+    ],
+    "correctIndex": 0,
+    "explanation": "12.3節のpipによるパッケージ管理に関する問題です。\npipというプログラムで、パッケージの管理ができます。\n主に、次のような機能があります（C）。\npip install パッケージ名\nパッケージをインストールする（インストール済みの場合は何もしない）\npip install --upgrade パッケージ名\nパッケージの最新版をインストールする（古い場合があっても最新版をインストールする）\npip install -r ファイル名\nファイルに記述されたパッケージをインストールする\npip uninstall パッケージ名\nパッケージをアンインストール（削除）する\npip freeze\nインストールされたパッケージ⼀覧を出⼒する\nたとえば、インストールされたパッケージ⼀覧を作成し、requirements.txtに保存するには、pip freeze\n> requirements.txtとします（D）。\nまた、そのrequirements.txtに記述されたパッケージをインストールするには、pip install -r\nrequirements.txtとします（A）。\nWindowsで、pip⾃体の最新版をインストールするときに、pipコマンドだと失敗することがあります。その\nときは、python -m pip install --upgrade pipのようにpythonコマンドを使います（B）。",
+    "executionResult": null
+  },
+  {
+    "question": "対話型インタープリターの説明として誤っているものを選択してください（1つ選択）",
+    "codeSample": null,
+    "options": [
+      "A. ユーザディレクトリの .python_history に入力のヒストリが保存される",
+      "B. 拡張されたインタープリターとして、bpythonやIPythonがある",
+      "C. if文などのブロック内で改行すると、インデントが自動的に挿入される",
+      "D. ローカル変数などを途中まで入力してTabキーを押すと、候補が表示されたり補完されたりする"
+    ],
+    "correctIndex": 2,
+    "explanation": "14.1節のタブ補完とヒストリ編集に関する問題です。\nPythonのインタープリターでは、ローカル変数などを途中まで⼊⼒してTabキーを押すと、候補が表⽰され\nたり補完されたりします（D）。\nしかし、if⽂などのブロック内で改⾏しても、インデントが⾃動的に挿⼊されたりはしません（C）。\nまた、インタープリターの⼊⼒は、ユーザディレクトリの.python_historyに履歴が保存されます（A）。\nただし、Windowsでは履歴が保存されないことがあります。その場合、下記で治ることがあります。\npip install pyreadline3\nなお、拡張されたインタープリターとして、bpythonやIPythonがあります（B）。\n参考\nPythonチュートリアル第4版の各章の出題数（全40問）\n章 出題数\n1章 ⾷欲をそそってみようか 1\n2章 Pythonインタープリタの使い⽅ 1\n3章 気楽な⼊⾨編 6\n4章 制御構造ツール 9\n5章 データ構造 7\n6章 モジュール 2\n7章 ⼊出⼒ 1\n8章 エラーと例外 4\n9章 クラス 2\n10章 標準ライブラリめぐり 4\n11章 標準ライブラリめぐり─PartII 1\n12章 仮想環境とパッケージ 1\n13章 次はなに？ 0\n14章 対話環境での⼊⼒⾏編集とヒストリ置換 1",
+    "executionResult": null
+  }
+]

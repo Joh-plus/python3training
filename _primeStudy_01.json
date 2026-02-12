@@ -1,0 +1,561 @@
+[
+  {
+    "question": "Pythonの特徴に関する次の記述のうち、誤っているものはどれか。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "A. Pythonはインタープリタ言語であり、コンパイル等が必要でないため、プログラム開発における時間を節約してくれる。インタープリタは対話的に使うことも可能である。",
+      "B. PythonはWindows、MacOS、Linuxなど多くの環境で動作する。",
+      "C. Pythonでは、文のグルーピングはカッコで囲うことでなくインデントで行われるなど、プログラムを小さく読みやすく書けるという特徴がある。ただ変数や引数の宣言は必要である。",
+      "D. Pythonはフリーのオープンソースソフトウェアである。",
+      "E. Pythonは機械学習やディープラーニング、データ解析、Webアプリケーションなど多くの分野を得意としている。"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pythonでは文のまとまりをインデントで表現しますが、変数や引数の型を事前に宣言する必要はありません。値を代入した時点で型が自動的に決まります。そのため「変数や引数の宣言は必要である」としている選択肢Cが誤りです。"
+  },
+  {
+    "question": "Pythonインタープリタに関する次の記述のうち、誤っているものはどれか。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "A. スクリプトファイルを走らせた後に対話モードに入るには、スクリプトファイル名の前に「-i」を入れるとよい。",
+      "B. プライマリプロンプトの記号は「>>>」である。",
+      "C. セカンダリプロンプトの記号はデフォルトでは「<<<」である。",
+      "D. インタープリタを対話モードで起動すると、はじめにバージョンと著作権からはじまるメッセージが、その後にプライマリプロンプトが表示される。",
+      "E. プログラムの冒頭で「# coding:（エンコーディング方式）」のようにすると、デフォルト以外のエンコーディングを使うことも可能である。"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pythonの対話型インタープリタでは、プライマリプロンプトは「>>>」、セカンダリプロンプトは「...」（ドット3つ）です。「<<<」が使われることはないため、選択肢Cが誤りです。"
+  },
+  {
+    "question": "【A】～【E】の行にある # から始まる文字列のうち、Pythonではコメントとして解釈されないものはどれか。",
+    "codeSample": "# あいさつ文を表示します。　…【A】\nx = 'Hello' # Helloを変数に代入します。　…【B】\n# Worldを変数に　…【C】\n               # 代入します。　…【D】\ny = 'World !'\nprint ('{}!{}!! #あいさつ文はここまでです。'.format(x, y)) 　…【E】",
+    "executionResult": null,
+    "options": [
+      "A. 【A】",
+      "B. 【B】",
+      "C. 【C】",
+      "D. 【D】",
+      "E. 【E】"
+    ],
+    "correctIndex": 4,
+    "explanation": "Pythonでは文字列リテラルの外側にある # から行末までがコメントになります。文字列リテラル内の # は単なる文字として扱われるため、選択肢Eがコメントとして解釈されません。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものはどれか。",
+    "codeSample": "a = 10\nb = a ** 2\nc = b % 20 + 5\nd = 8\ne = d / b\nf = d // c\nprint('{0}, {1}'.format(e, f))",
+    "executionResult": null,
+    "options": [
+      "A. 0.8, 0",
+      "B. 0.08, 1",
+      "C. 0.08, 0",
+      "D. 0, 1.6",
+      "E. 0, 0.8"
+    ],
+    "correctIndex": 1,
+    "explanation": "/ は常に浮動小数点除算、// は切り捨て除算です。計算すると e は 0.08、f は 1 になるため、正しい出力は「0.08, 1」です。"
+  },
+  {
+    "question": "次のコードの実行結果はどれか。なおコードの \\ はバックスラッシュに読み替えること。",
+    "codeSample": "a = \"She said,\\\"He\" + 3 * \"y\" + \"!\"\nb = \"How are you?\\\" \"\nprint(a, b)",
+    "executionResult": null,
+    "options": [
+      "A. She said,\"Heee! How are you???\"",
+      "B. She said,\"HeHeHe! How are you?\"",
+      "C. She said,\"HeyHeyHey! How are you?\"",
+      "D. She said,\"Hey!y!y! How are you?\"",
+      "E. She said,\"Heyyy! How are you?\""
+    ],
+    "correctIndex": 4,
+    "explanation": "\\\" はダブルクォート1文字を表し、\"y\" * 3 は \"yyy\" になります。print(a, b) は空白区切りで表示するため、結果は「She said,\"Heyyy! How are you?\"」です。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものはどれか。",
+    "codeSample": "Zen = 'NowIsBetterThanNever'\nprint('{}{}{}{}'.format(Zen[5], Zen[10], Zen[-7], Zen[-3:-1]))",
+    "executionResult": null,
+    "options": [
+      "A. Brave",
+      "B. BeNow",
+      "C. woNTed",
+      "D. sNake",
+      "E. sNow"
+    ],
+    "correctIndex": 0,
+    "explanation": "文字列のインデックスは0始まりで、負のインデックスは末尾から数えます。Zen[5]はB、Zen[10]はr、Zen[-7]はa、Zen[-3:-1]はveとなり、結果は「Brave」です。"
+  },
+  {
+    "question": "次の変数Zenに関して指定した場合、実行時にエラーとなるものはどれか。",
+    "codeSample": "Zen = 'SimpleIsBetterThanComplex'",
+    "executionResult": null,
+    "options": [
+      "A. Zen[:]",
+      "B. Zen[1000:]",
+      "C. Zen[5:1000]",
+      "D. Zen[0] = 'J'",
+      "E. Zen[:1000] + 'J'"
+    ],
+    "correctIndex": 3,
+    "explanation": "Pythonの文字列は不変（イミュータブル）なオブジェクトです。そのため、インデックスを指定して直接値を代入することはできず、Zen[0] = 'J' はエラーになります。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものはどれか。",
+    "codeSample": "a, b = 0, 1\nwhile b < 10:\n    print(b, end=',')\n    a, b = b, a+b",
+    "executionResult": null,
+    "options": [
+      "A. 1,1,2,3,5,8,",
+      "B. 1,2,3,5,8,13,",
+      "C. 0,0,1,2,3,5,",
+      "D. 0,1,2,3,4,5,",
+      "E. 0,1,2,2,3,5,"
+    ],
+    "correctIndex": 0,
+    "explanation": "print(b, end=',') により改行せず出力され、a, b = b, a+b によりフィボナッチ数列のように値が更新されます。b が 10 未満の間ループが続くため、結果は「1,1,2,3,5,8,」です。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものはどれか。",
+    "codeSample": "colors = ['red', 'green', 'blue']\ncolors.append('yellow')\ncolors.insert(0,'purple')\nfor color in colors[2:]:\n    print(color, len(color), end=', ')",
+    "executionResult": null,
+    "options": [
+      "A. red, green, blue, 3,",
+      "B. red 3, green 3, blue 3,",
+      "C. red 3, green 5, blue 4,",
+      "D. green 5, blue 4, yellow 6,",
+      "E. green 5, blue 4, purple 6,"
+    ],
+    "correctIndex": 3,
+    "explanation": "appendで末尾に、insertで先頭に要素を追加した後、colors[2:] により ['green', 'blue', 'yellow'] が処理対象になります。それぞれの文字数を出力するため、結果は「green 5, blue 4, yellow 6,」です。"
+  },
+  {
+    "question": "次のような結果を得たい場合、コードの【A】の行に入る適切なものはどれか。なお【A】に入るものは、★aの行と同じ数の空白でインデントされている。",
+    "codeSample": "for n in range(2, 10):\n    for x in range(2 ,n):\n        if n % x == 0:\n            print(n, 'equals', x, '*', n//x)\n            break\n    【A】\n        print(n,'is a prime number')\n\n        continue\n    break",
+    "executionResult": "2 is a prime number\n3 is a prime number\n4 equals 2 * 2",
+    "options": [
+      "A. then:",
+      "B. elseif:",
+      "C. else:",
+      "D. elif:",
+      "E. continue:"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pythonのfor文には、breakでループを抜けなかった場合に実行されるelse節があります。このコードでは割り切れる数が見つからなかった場合に素数と判定したいので、【A】には else: を記述します。"
+  },
+  {
+  "question": "次のコードの実行結果として正しいものはどれか。",
+  "codeSample": "for i in range(-10, -30, -5):\n    print(i, end=\", \")",
+  "executionResult": null,
+  "options": [
+    "-10, -5, 0, 5,",
+    "-5, 0, 5, 10,",
+    "-10, -15, -20, -25, -30,",
+    "-15, -20, -25, -30,",
+    "-10, -15, -20, -25,"
+  ],
+  "correctIndex": 4,
+  "explanation": "この問題では、range関数の3つ目の引数（増減値）の動きと、終了値が含まれないという仕様を正しく理解しているかが問われています。\n\nrange(-10, -30, -5) は、-10 からスタートし、数値を -5 ずつ減らしながら処理を進めます。ただし、rangeの終了値である -30 は「含まれない」点に注意が必要です。\n\nそのため、実際に出力されるのは、-10、-15、-20、-25 の4つになります。-30 は終了条件に達した時点で処理が止まるため、表示されません。\n\nまた、print文では end=\", \" が指定されているため、各数値の後ろには改行ではなくカンマとスペースが付いた形で出力されます。\n\n以上の理由から、正しい実行結果は「-10, -15, -20, -25,」となります。\n\n【要点まとめ】\n・rangeは「開始値から終了値の直前まで」処理される\n・増減値がマイナスの場合、数値は小さくなっていく\n・終了値そのものは出力されない"
+},{
+  "question": "次の結果を得たい場合、コードの2行目以降を代替するものとして正しいものはどれか。なお、各選択肢の次の行には「print(i, v)」が記述されるものとする。",
+  "codeSample": "Zen = ['Now','is','better','than','never']\nfor i in range(len(Zen)):\n    print(i, Zen[i])",
+  "executionResult": "0 Now\n1 is\n2 better\n3 than\n4 never",
+  "options": [
+    "for i ,v in count(Zen):",
+    "for i ,v in enumerate(Zen):",
+    "in i ,v for calculate(Zen):",
+    "in i ,v for number(Zen):",
+    "for i ,v in list(Zen):"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、リストの要素とインデックス番号を同時に取り出す方法を理解しているかが問われています。\n\n元のコードでは、range(len(Zen)) を使ってインデックス番号を取り出し、Zen[i] によって対応する要素を取得しています。この書き方でも正しく動作しますが、少し回りくどい書き方です。\n\nenumerate関数を使うと、リストから「インデックス番号」と「要素」を同時に取り出すことができます。そのため、for i, v in enumerate(Zen): と書くだけで、i には番号、v には文字列が順番に代入されます。\n\nその直後に print(i, v) を実行すると、指定された実行結果と同じ形式で出力されます。\n\n他の選択肢にある count や calculate、number といった関数は Python には存在しないため使用できません。また、list(Zen) は要素だけを取り出すため、インデックス番号と2つ同時に受け取ることはできません。\n\n以上の理由から、正しい答えは enumerate(Zen) を使った書き方になります。\n\n【要点まとめ】\n・enumerateを使うと、番号と要素を同時に取り出せる\n・range(len(リスト)) の代替としてよく使われる\n・print(i, v) の形と非常に相性が良い"
+},
+{
+  "question": "次のコードの実行結果として正しいものはどれか。",
+  "codeSample": "i = 5\ni = 6\n\ndef f(arg = i):\n    i = 7\n    print(arg)\n\ni = 8\ni = 9\n\nf()",
+  "executionResult": null,
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、関数の引数に指定された「デフォルト値」が、いつ決まるのかを正しく理解しているかが問われています。\n\nPythonでは、関数の引数に指定されたデフォルト値は、関数が「定義された瞬間」に評価されます。つまり、def f(arg = i): の行が実行された時点の i の値が、arg の初期値として保存されます。\n\nこのコードでは、関数 f が定義される直前の i の値は 6 です。そのため、arg のデフォルト値は 6 に確定します。\n\nその後で i = 8 や i = 9 と書き換えられていますが、これはすでに決まっている arg の値には影響しません。また、関数の中で i = 7 と代入していますが、これは関数内のローカル変数であり、arg とは別物です。\n\nその結果、f() を呼び出したときに print(arg) によって表示されるのは、関数定義時に決まっていた 6 になります。\n\n以上の理由から、正しい実行結果は「6」です。\n\n【要点まとめ】\n・デフォルト引数の値は「関数定義時」に決まる\n・関数外で変数を書き換えても、デフォルト値は変わらない\n・関数内の変数と引数は別物として扱われる"
+},
+{
+  "question": "次のコードに関し、【A】の行の出力として正しいものはどれか。",
+  "codeSample": "def culc(a, b=1, squares=[], cubes=[]):\n    squares.append(a ** 2)\n    cubes.append(b ** 3)\n    return squares, cubes\n\nprint(culc(1))\nprint(culc(2, 3))\nprint(culc(3, 4))  # 【A】\nprint(culc(4, 5))",
+  "executionResult": null,
+  "options": [
+    "([6], [12])",
+    "([2, 4, 6], [2, 9, 12])",
+    "([1, 1], [4, 9], [9, 16])",
+    "([1, 4, 9], [1, 27, 64])",
+    "([1, 4, 16], [1, 27, 125])"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、関数のデフォルト引数に指定された「リスト」がどのように扱われるかを理解しているかが問われています。\n\nPythonでは、デフォルト引数は関数定義時に一度だけ作成されます。特に、リストのような可変オブジェクトをデフォルト値にすると、その同じリストがすべての関数呼び出しで共有されます。\n\n最初の culc(1) の呼び出しで、squares には [1]、cubes には [1] が格納されます。\n次に culc(2, 3) を実行すると、同じリストに 2 ** 2 と 3 ** 3 が追加され、squares は [1, 4]、cubes は [1, 27] になります。\n\nさらに culc(3, 4) が実行されると、squares には 9 が、cubes には 64 が追加されます。その結果、【A】の行で出力されるのは ([1, 4, 9], [1, 27, 64]) となります。\n\nこの挙動は、毎回新しいリストが作られていると誤解していると間違えやすいポイントです。\n\n【要点まとめ】\n・デフォルト引数のリストは関数定義時に1回だけ作られる\n・可変オブジェクトは関数呼び出し間で共有される\n・そのため、値が呼び出しごとに蓄積されていく"
+},
+{
+  "question": "次の関数を呼び出す際に、引数の指定として正しいものはどれか。",
+  "codeSample": "def location(city, state, country='Japan'):\n    print(\"I live in\", country, \".\")\n    print(\"My company is located in\", city, \",\", state, \".\")",
+  "executionResult": null,
+  "options": [
+    "location(state='Tokyo', city='chiyoda')",
+    "location(state='California', country='USA', 'San Francisco')",
+    "location(city='Haryono', state='Jakarta', zipcode='12830')",
+    "location('Geelong', city='Melbourne')",
+    "location()"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、関数を呼び出す際の引数の指定方法について正しく理解しているかが問われています。\n\nlocation 関数は、city と state を必須の引数として受け取り、country は省略可能な引数として定義されています。そのため、city と state の2つは必ず何らかの形で指定する必要があります。\n\n1つ目の呼び出しでは、キーワード引数を使って city と state を明示的に指定しています。キーワード引数の場合、順番は関係なく指定できるため、この書き方は正しく動作します。\n\n2つ目は、キーワード引数の後に位置引数を指定しているため、構文エラーになります。Pythonでは、位置引数は必ず先に書く必要があります。\n\n3つ目は、関数定義に存在しない zipcode という引数を指定しているため、エラーになります。\n\n4つ目は、位置引数の後にキーワード引数を指定していますが、city に2回値を渡す形になるため不正です。\n\n5つ目は、必須引数である city と state が指定されていないため、エラーになります。\n\n以上の理由から、正しい引数の指定は「location(state='Tokyo', city='chiyoda')」です。\n\n【要点まとめ】\n・必須引数は省略できない\n・キーワード引数は順番を入れ替えて指定できる\n・位置引数はキーワード引数より前に書く必要がある\n・定義されていない引数名は指定できない"
+},
+{
+  "question": "次のコード1行目の【A】に入るものとして正しいものはどれか。",
+  "codeSample": "def shop(name, 【A】):\n    print(\"flowershop:\", name)\n    for arg in arguments:\n        print(arg)\n    print(\"**Recommended**\")\n    keys = sorted(keywords.keys())\n    for kw in keys:\n        print(kw, \":\", keywords[kw])\n\nshop(\"Iris\",\"Open: 9:30 am\",\"Close: 10:30 pm\",\"Monday and holidays are closed.\",bouquet=\"Sunflower\",plants=\"Pachira\",dried=\"Rose\")",
+  "executionResult": "flowershop: Iris\nOpen: 9:30 am\nClose: 10:30 pm\nMonday and holidays are closed.\n**Recommended**\nbouquet : Sunflower\ndried : Rose\nplants : Pachira",
+  "options": [
+    "arguments, keywords",
+    "*keywords, **arguments",
+    "*arguments, **keywords",
+    "**arguments, *keywords",
+    "**keywords, *arguments"
+  ],
+  "correctIndex": 2,
+  "explanation": "この問題では、関数で可変長の引数を受け取る方法について正しく理解しているかが問われています。\n\nこの関数は、name の後に「個数が決まっていない引数」と「名前付きの引数」を受け取っています。位置引数として渡されている文字列は、for arg in arguments: の部分で1つずつ表示されています。一方、bouquet や plants などの引数は、辞書としてまとめられ、keywords という名前で扱われています。\n\nPythonでは、位置引数をまとめて受け取る場合は *引数名 を使い、キーワード引数をまとめて受け取る場合は **引数名 を使います。そのため、【A】には *arguments, **keywords と書く必要があります。\n\n順序にも注意が必要で、*arguments は **keywords より前に書かなければなりません。この順序を逆にすると構文エラーになります。\n\n以上の理由から、正しい答えは「*arguments, **keywords」です。\n\n【要点まとめ】\n・*引数 は位置引数をタプルとして受け取る\n・**引数 はキーワード引数を辞書として受け取る\n・*引数 は **引数 より前に書く必要がある"
+},
+{
+  "question": "次の記述のうち、正しいものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "docstringの1行目では、オブジェクトの目的を丁寧に記述し、母国語の異なるエンジニアが読んだ場合にも誤解が生じないようあえて冗長に説明するべきである。",
+    "docstringはコンパクトにまとめ、空行は避けるべきである。",
+    "コメント行は独立させず、該当コードについての説明であることが明示されるよう、同じ行に記述すべきである。",
+    "演算子の周囲やカンマの後ろにスペースを入れ、読みやすさに配慮すべきである。",
+    "国際的な環境で使用する予定のコードでは、PythonのデフォルトであるUTF-8か、さらにプレーンなASCIIが常に最良である。"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、Pythonにおけるコーディング規約として正しい考え方を理解しているかが問われています。\n\nPythonでは、読みやすさを非常に重視しており、PEP 8 という公式のスタイルガイドが用意されています。その中では、演算子の前後やカンマの後ろにスペースを入れることで、コードを読みやすくすることが推奨されています。\n\n一方で、docstringの1行目は冗長に書くのではなく、内容を簡潔に要約するのが原則です。また、docstringでは1行目と詳細説明の間に空行を入れる書き方も一般的であり、空行を避ける必要はありません。\n\nコメントについても、同じ行に無理に書くより、独立した行として書いた方が読みやすい場合が多く、常に同一行に書くべきという決まりはありません。\n\nさらに、文字コードについては UTF-8 が推奨されていますが、ASCII が常に最良であるとは限らず、用途に応じて選択されます。\n\n以上を踏まえると、コーディング規約として正しい内容を述べているのは「演算子の周囲やカンマの後ろにスペースを入れ、読みやすさに配慮すべきである」です。\n\n【要点まとめ】\n・Pythonは可読性を重視する言語である\n・演算子の前後やカンマの後ろにはスペースを入れる\n・docstringは簡潔さが基本\n・コメントや文字コードは状況に応じて使い分ける"
+},
+{
+  "question": "次の結果を得たい場合に、コードの1行目～3行目を代替し、同じ結果を出力するものとして正しいものはどれか。",
+  "codeSample": "cubes = []\nfor x in range(5):\n    cubes.append(x ** 3)\n\nprint(cubes)",
+  "executionResult": "[0, 1, 8, 27, 64]",
+  "options": [
+    "cubes = [x ** 3 for range(5) in x]",
+    "cubes = [x ** 3 for x in range(5)]",
+    "cubes = [x in range(5) for x ** 3]",
+    "cubes = [x in x ** 3 for range(5)]",
+    "cubes = [x for x ** 3 in range(5)]"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、for文と append を使った処理を、リスト内包表記で正しく書き換えられるかが問われています。\n\n元のコードでは、range(5) によって 0 から 4 までの値を順に取り出し、それぞれを 3 乗した結果をリスト cubes に追加しています。その結果として、[0, 1, 8, 27, 64] が得られます。\n\nリスト内包表記では、この処理を「式 for 変数 in イテラブル」という形で1行にまとめて書くことができます。ここでは、x ** 3 がリストに追加する値、x が取り出した要素、range(5) が繰り返し対象になります。\n\nそのため、正しい書き方は [x ** 3 for x in range(5)] となります。\n\n他の選択肢は、for の構文が誤っていたり、in の使い方や順序が間違っていたりするため、Pythonの文法として成立しません。\n\n以上の理由から、正しい答えは「cubes = [x ** 3 for x in range(5)]」です。\n\n【要点まとめ】\n・リスト内包表記は for文と append の省略形\n・基本構文は「式 for 変数 in イテラブル」\n・処理内容と変数の役割を元のfor文と対応させて考える"
+},
+{
+  "question": "次の実行結果を得たい場合に、コードの【A】に入るものとして正しいものはどれか。",
+  "codeSample": "matrix = 【A】\npower = [row[2] for row in matrix]\nprint(power)",
+  "executionResult": "[5, 25, 125]",
+  "options": [
+    "[[2, 3, 5], [4, 9, 25], [8, 27, 125]]",
+    "[[2, 4, 8], [3, 9, 27], [5, 25, 125]]",
+    "[[2, 4, 8], [5, 25, 125], [3, 9, 27]]",
+    "[[5, 3, 2], [25, 9, 4], [125, 27, 8]]",
+    "[[0, 5], [1, 25], [2, 125]]"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、2次元リストから特定の列の値を取り出す処理を正しく理解しているかが問われています。\n\npower = [row[2] for row in matrix] というコードは、matrix の各行（row）について、インデックス番号 2 の要素、つまり「3番目の要素」を順に取り出して、新しいリストを作成する処理です。\n\n実行結果として [5, 25, 125] を得るためには、matrix の各行の3番目の要素が、それぞれ 5、25、125 になっている必要があります。\n\n選択肢の中で、すべての行が3つ以上の要素を持ち、かつ row[2] の値が順に 5、25、125 となるのは、[[2, 3, 5], [4, 9, 25], [8, 27, 125]] だけです。\n\n他の選択肢は、3番目の要素が一致しなかったり、要素数が不足していて row[2] にアクセスできなかったりするため、条件を満たしません。\n\n以上の理由から、【A】に入る正しいコードは [[2, 3, 5], [4, 9, 25], [8, 27, 125]] です。\n\n【要点まとめ】\n・2次元リストでは row[番号] で列を指定できる\n・row[2] は各行の3番目の要素を意味する\n・内包表記は「行ごとに同じ処理」をする場合に便利"
+},
+{
+  "question": "次の実行結果を得たい場合に、コードの【A】と【B】に入るものの組み合わせとして正しいものはどれか。",
+  "codeSample": "from 【A】 import deque\nqueue = deque([\"bear\", \"cow\", \"dog\", \"elephant\",\"fox\"])\nqueue.append(\"goat\")\n【B】\nqueue.pop()\nprint(queue)",
+  "executionResult": "deque(['cow', 'dog', 'elephant', 'fox'])",
+  "options": [
+    "【A】collections　【B】queue.popleft()",
+    "【A】collections　【B】queue.pop(1)",
+    "【A】collection　【B】queue.removeleft(\"bear\")",
+    "【A】collection　【B】queue.delete()",
+    "【A】collectitems　【B】queue.pop(\"bear\")"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、deque（両端キュー）の基本操作と、要素の追加・削除の順序を正しく理解しているかが問われています。\n\nまず deque は collections モジュールに定義されているため、from collections import deque と書く必要があります。\n\n次に、初期状態の queue は ['bear', 'cow', 'dog', 'elephant', 'fox'] です。ここに queue.append(\"goat\") を実行すると、要素は右端に追加され、['bear', 'cow', 'dog', 'elephant', 'fox', 'goat'] になります。\n\n最終的な実行結果では、先頭の 'bear' と末尾の 'goat' が取り除かれています。コードの後半にはすでに queue.pop() が書かれており、これは右端の要素を削除する処理です。そのため、残りの 'bear' を削除するには、左端の要素を削除する queue.popleft() を実行する必要があります。\n\n以上を踏まえると、【A】には collections、【B】には queue.popleft() を入れるのが正しい組み合わせになります。\n\n【要点まとめ】\n・deque は collections モジュールから import する\n・append() は右端に要素を追加する\n・pop() は右端の要素を削除する\n・popleft() は左端の要素を削除する"
+},
+{
+  "question": "次のコードの実行結果として正しいものはどれか。",
+  "codeSample": "list = [-10, 1, 15, 20, 30]\nlist.insert(2, 5)\nlist.append(50)\nlist.sort(reverse=True)\nlist.pop(-1)\nprint(list)",
+  "executionResult": null,
+  "options": [
+    "[-10, 1, 5, 20, 30]",
+    "[30, 20, 5, 1, -10]",
+    "[50, 2, 30, 20, 15, 1]",
+    "[50, 30, 20, 15, 5, 1]",
+    "[50, 30, 20, 5, 1]"
+  ],
+  "correctIndex": 4,
+  "explanation": "この問題では、リストに対する複数の操作を順番に正しく追えているかが問われています。\n\n最初に list は [-10, 1, 15, 20, 30] です。次に list.insert(2, 5) を実行すると、インデックス2の位置に 5 が挿入され、[-10, 1, 5, 15, 20, 30] になります。\n\nその後 list.append(50) によって末尾に 50 が追加され、[-10, 1, 5, 15, 20, 30, 50] となります。\n\n続いて list.sort(reverse=True) を実行すると、要素は大きい順に並び替えられ、[50, 30, 20, 15, 5, 1, -10] になります。\n\nlist.pop(-1) は、リストの最後の要素を削除する処理です。この時点で最後にあるのは -10 なので、それが取り除かれます。\n\n最終的に残るリストは [50, 30, 20, 15, 5, 1] となります。\n\n以上の理由から、正しい実行結果は「[50, 30, 20, 15, 5, 1]」です。\n\n【要点まとめ】\n・insert は指定位置に要素を挿入する\n・append は末尾に要素を追加する\n・sort(reverse=True) は降順に並び替える\n・pop(-1) は末尾の要素を削除する"
+},
+{
+  "question": "次のコードの実行結果として正しいものはどれか。",
+  "codeSample": "Zen = 'ExplicitIsBetterThanImplicit'\nprint(Zen[1:20:3])",
+  "executionResult": null,
+  "options": [
+    "Elistra",
+    "EpiiIB",
+    "EiItT",
+    "xitBtTn",
+    "xcsthm"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、文字列のスライス操作において「開始位置」「終了位置」「ステップ」の3つを正しく理解しているかが問われています。\n\nZen[1:20:3] は、「インデックス1からスタートし、インデックス20の直前までを、3文字おきに取り出す」という意味になります。終了位置の 20 は含まれない点に注意が必要です。\n\n文字列 Zen のインデックスを確認すると、インデックス1は 'x'、そこから3つずつ進むと、4は 'i'、7は 't'、10は 'B'、13は 't'、16は 'T'、19は 'n' になります。\n\nこれらを順に並べると、出力される文字列は xitBtTn となります。\n\nスライスでは、終了位置が含まれないことや、ステップによって飛ばしながら要素を取得できることを意識して読むのがポイントです。\n\n以上の理由から、正しい実行結果は「xitBtTn」です。\n\n【要点まとめ】\n・スライスは [開始:終了:ステップ] の形で指定する\n・終了位置のインデックスは含まれない\n・ステップを指定すると、一定間隔で要素を取得できる"
+},
+{
+  "question": "データ構造に関する次の記述のうち誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "タプルは変更不能（immutable）、リストと集合は変更可能（mutable）である。",
+    "ディクショナリは変更不能（immutable）であるがキーの型は変更可能（mutable）であり、その値は一意でなければならない。",
+    "ディクショナリは、全要素が「キー」と「値」のペアであるという点で、リストやタプルと大きく異なる。",
+    "集合には、「順序を持たない」「同一の値の要素を重複して持つことができない」などの特徴がある。",
+    "リスト、タプル、集合、ディクショナリには、反復可能（iterable）であるという共通点がある。"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、Pythonの代表的なデータ構造について、性質を正しく理解しているかが問われています。\n\n2つ目の記述では、ディクショナリが変更不能（immutable）であると述べられていますが、これは誤りです。ディクショナリは要素の追加・削除・更新が可能な「変更可能（mutable）」なデータ構造です。\n\nまた、ディクショナリのキーについては「変更可能」ではなく、「変更不能（immutable）」な型でなければなりません。例えば、文字列や数値、タプルはキーとして使えますが、リストや集合はキーにできません。\n\nさらに、ディクショナリで一意でなければならないのは「値」ではなく「キー」です。値は同じものを複数持つことができます。\n\n他の選択肢については、いずれもPythonのデータ構造の性質を正しく説明しています。\n\n以上の理由から、誤っている記述は「ディクショナリは変更不能（immutable）であるがキーの型は変更可能（mutable）であり、その値は一意でなければならない。」です。\n\n【要点まとめ】\n・ディクショナリは変更可能（mutable）なデータ構造\n・ディクショナリのキーは変更不能（immutable）である必要がある\n・一意でなければならないのはキーであり、値ではない\n・主要なデータ構造はいずれも iterable である"
+},
+{
+  "question": "次のうち対話モードで入力したときに「True」が返されるのはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "(1, 2, 3, 4) > (1, 2, 5)",
+    "'PHP' < 'Perl' < 'Python'",
+    "(1, 2) > (1, 2, -1)",
+    "(10, 20) != (10.0, 20.0)",
+    "(1, 2, ('bb', 'a')) > (1, 2, ('bcd', 'b'))"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、Pythonにおける比較演算の評価ルールを正しく理解しているかが問われています。\n\nPythonでは、タプルや文字列の比較は「左から順に要素を比較する」というルールで行われます。また、比較演算子を連続して書いた場合は、それぞれが論理積（and）として評価されます。\n\n2番目の式では、まず 'PHP' と 'Perl' が文字コード順に比較されます。先頭の 'P' は同じですが、次の文字で 'H' は 'e' より小さいため 'PHP' < 'Perl' は True になります。次に 'Perl' < 'Python' も、'e' が 'y' より小さいため True となります。その結果、全体として True が返されます。\n\n他の選択肢では、途中の要素比較で大小関係が成立しなかったり、値としては等しいため不等号が成り立たなかったりします。\n\n以上の理由から、True が返されるのは「'PHP' < 'Perl' < 'Python'」です。\n\n【要点まとめ】\n・タプルや文字列は左から順に要素を比較する\n・途中で大小が決まった時点で結果が確定する\n・比較演算子を連続して書くと、すべてが True のときに True になる"
+},
+{
+  "question": "モジュールに関する次の記述のうち、誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "モジュールとは、Pythonの定義や文が入ったファイルである。そのファイル名は、モジュール名に接尾辞「.py」を付けたものである。",
+    "あるモジュールがインポートされるときにインタープリタが検索する順序は、まずビルトインモジュール、次にsys.path変数で得られるディレクトリ、最後にシンボリックリンクを置いてあるディレクトリである。",
+    "sys.pathが初期化されている場所は、入力スクリプトのあるディレクトリ、PYTHONPATH、インストールごとのデフォルトである。",
+    "モジュール読み込みの高速化のため、Pythonはコンパイル済みのモジュールを「__pycache__」ディレクトリに、例えば「module.バージョン名.pyc」のような名前でキャッシュする。",
+    "Pythonには標準モジュールのライブラリが付属する。"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、Pythonがモジュールを import するときの基本的な仕組みを理解しているかが問われています。\n\n誤っているのは2つ目の記述です。Pythonの import では、検索のしかたに「シンボリックリンクを置いてあるディレクトリが最後に特別扱いで検索される」といった決まりはありません。\n\nimport の流れは大まかに言うと、まず既に読み込まれているか（キャッシュ）を確認し、その後、組み込み（built-in）などとして提供されるもの、そして sys.path に並んだディレクトリ群（通常はスクリプトのある場所や環境変数、インストール標準の場所など）を順に見に行きます。シンボリックリンクは「置き場所」や「参照のしかた」の一種であり、検索順序に追加の段階として登場するものではありません。\n\n他の選択肢は概ね正しい説明です。モジュールは通常 .py ファイルであり、sys.path はスクリプト位置や PYTHONPATH、インストール既定などから初期化されます。また、読み込みを速くするために __pycache__ に .pyc が作られること、Pythonに標準ライブラリが付属することも正しい内容です。\n\n【要点まとめ】\n・import の検索は基本的に sys.path に従う\n・シンボリックリンク用の「特別な検索段階」はない\n・__pycache__ に .pyc が作られて高速化される"
+},
+{
+  "question": "モジュールが定義している名前を対話モードで確認したい。次のスクリプトの2行目【A】に入るものとして正しいものはどれか。",
+  "codeSample": "import sys\n【A】",
+  "executionResult": null,
+  "options": [
+    "mod(systems)",
+    "mod(sys)",
+    "mod()",
+    "dir(mod)",
+    "dir(sys)"
+  ],
+  "correctIndex": 4,
+  "explanation": "この問題では、Pythonの対話モードで「モジュールがどのような名前（属性）を持っているか」を確認する方法を理解しているかが問われています。\n\nPythonには、オブジェクトが持っている属性や名前の一覧を調べるための組み込み関数として dir() が用意されています。dir() にモジュールを渡すことで、そのモジュール内で定義されている関数や変数、クラス名などを一覧として確認できます。\n\nこのコードでは import sys によって sys モジュールを読み込んでいるため、その内容を調べるには dir(sys) と書くのが正しい方法です。\n\n他の選択肢にある mod() や mod(sys) といった関数は Python に存在しません。また、dir(mod) は mod という名前のオブジェクトが定義されていないためエラーになります。\n\n以上の理由から、【A】に入る正しいコードは「dir(sys)」です。\n\n【要点まとめ】\n・dir() はオブジェクトの属性一覧を調べる組み込み関数\n・モジュールもオブジェクトの一種である\n・対話モードでは dir(モジュール名) が確認の基本"
+},
+{
+  "question": "次のコードの実行結果として正しいものはどれか。",
+  "codeSample": "import math\nprint('{1:.3f}, {0:.5f}'.format(math.pi, math.e))",
+  "executionResult": null,
+  "options": [
+    "1:3.141f, 0:2.71828f",
+    "0:2.71828f, 1:3.141f",
+    "3.141, 2.71828",
+    "2.718, 3.14159",
+    "2.71828 3.141"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、formatメソッドにおける「引数番号」と「小数点以下の桁数指定」を正しく理解しているかが問われています。\n\n'{1:.3f}, {0:.5f}' という書式では、波かっこの中の数字が format() に渡された引数の番号を表しています。番号は 0 から始まるため、0 は math.pi、1 は math.e を指します。\n\nまず {1:.3f} は、math.e を小数点以下3桁で表示する指定です。math.e の値は約 2.71828… なので、表示結果は 2.718 になります。\n\n次に {0:.5f} は、math.pi を小数点以下5桁で表示する指定です。math.pi の値は約 3.141592… なので、表示結果は 3.14159 になります。\n\nこれらを指定された順番で出力すると、「2.718, 3.14159」と表示されます。\n\n以上の理由から、正しい実行結果は「2.718, 3.14159」です。\n\n【要点まとめ】\n・format の {番号} は引数の位置を指定する\n・:.3f や :.5f は小数点以下の桁数指定\n・表示順は format に渡した順ではなく、波かっこ内の番号で決まる"
+},
+{
+  "question": "次のコードを実行して「整数a:」に「5」、「整数b:」に「0」を入力した場合の正しい結果はどれか。なお選択肢中の「, 」は改行に読み替えること。",
+  "codeSample": "try:\n    int_a = int(input('整数a:'))\n    int_b = int(input('整数b:'))\n    print(int_a ** 2)\n    print((int_a ** 2) / int_b)\nexcept(ValueError) as v:\n    print(type(v))\n    print('C')\nexcept(ZeroDivisionError) :\n    print('D')\nexcept:\n    print('E')\nelse:\n    print('F')\nfinally:\n    print('G')",
+  "executionResult": null,
+  "options": [
+    "25, C, F, G",
+    "25, 0, C, G",
+    "25, D, G",
+    "25, D, F, G",
+    "25, 0, D, F, G"
+  ],
+  "correctIndex": 2,
+  "explanation": "この問題では、try / except / else / finally の実行順序を正しく理解しているかが問われています。\n\nまず入力された値は、整数a が 5、整数b が 0 です。int() による変換はどちらも成功するため、ValueError は発生しません。\n\n次に print(int_a ** 2) が実行され、5 の2乗である 25 が出力されます。\n\nその直後の (int_a ** 2) / int_b は、25 / 0 となり、ここで ZeroDivisionError が発生します。この時点で try ブロックの残りの処理は中断されます。\n\n発生した例外は ZeroDivisionError なので、対応する except(ZeroDivisionError) が実行され、「D」が出力されます。他の except や else は実行されません。\n\n最後に finally ブロックは、例外の有無に関わらず必ず実行されるため、「G」が出力されます。\n\n以上の流れから、出力される順番は 25、D、G となります。\n\n【要点まとめ】\n・例外が発生すると、try の残りの処理は実行されない\n・該当する except ブロックだけが実行される\n・else は例外が発生しなかった場合のみ実行される\n・finally は必ず最後に実行される"
+},
+{
+  "question": "エラーと例外に関する次の記述のうち誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "Pythonのエラーには２つの種類がある。構文エラーと例外である。構文エラーはパース上のエラーとも呼ばれる。",
+    "文や式が構文的に正しくても、実行しようとするときにエラーが生じることがある。実行中に検知されるエラーは例外と呼ばれ、これは必ずしも致命的なものではない。",
+    "例外のほとんどはプログラムでは処理されず、その結果はエラーメッセージに現れる。エラーメッセージの最終行には、NameError、TypeErrorなど例外の型が記されている。",
+    "[Ctrl]+[C]キーなどでユーザーがプログラムに割り込みをかけると、KeyboardInterrupt例外が送出される。",
+    "パーサ（構文解釈器）は違反のある行を表示し、最後にエラーが検知された点を小さな矢印で示す。エラーは矢印より後のトークンが原因である。"
+  ],
+  "correctIndex": 4,
+  "explanation": "この問題では、構文エラー（SyntaxError）と例外（Exception）の違い、およびエラーメッセージの読み方を正しく理解しているかが問われています。\n\n誤っているのは5つ目の記述です。構文エラーが起きたときに表示される矢印（^）は、「ここで解釈できなくなった」という位置を示す目印であり、原因が必ず矢印より後ろのトークンにあるとは限りません。\n\nたとえば、カッコの閉じ忘れやクォートの閉じ忘れのように、本当の原因がもっと前にあるのに、パーサが後の位置で初めて不整合に気づくことがあります。そのため、矢印の位置は“原因そのもの”ではなく、“エラーが検知された地点”として読むのが安全です。\n\n他の選択肢は概ね正しい説明です。Pythonでは構文エラー（パース段階のエラー）と、実行中に起きる例外が区別されます。例外は処理されない場合、トレースバックが表示され、最後に例外の型（NameErrorなど）が出ます。また、Ctrl+C による割り込みでは KeyboardInterrupt が送出されます。\n\n【要点まとめ】\n・矢印（^）は「原因の場所」ではなく「検知された場所」を示すことがある\n・本当の原因が矢印より前にあるケースも多い\n・構文エラーと例外は発生タイミングが違う（解析時／実行時）"
+},
+{
+  "question": "次のスクリプトを実行した場合には適切な方法であるクリーンアップがなされる。具体的にはどのような処理がなされているか。",
+  "codeSample": "with open(\"file.txt\") as f:\n    for line in f:\n        print(line, end=\"\")",
+  "executionResult": null,
+  "options": [
+    "f.clean()",
+    "f.close()",
+    "file.clean()",
+    "close(\"file.txt\")",
+    "file.close()"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、with 文を使ってファイルを開いた場合に、処理終了時にどのようなクリーンアップが自動で行われるかを理解しているかが問われています。\n\nwith open(\"file.txt\") as f: の形でファイルを開くと、with ブロックを抜けるタイミングで、Pythonは自動的にファイルを閉じる処理を実行します。このとき内部的に呼び出されるのが、ファイルオブジェクトの close() メソッドです。\n\nつまり、例外が発生した場合であっても、with ブロックを抜ける際には f.close() が必ず実行され、ファイルは安全にクローズされます。\n\n他の選択肢にある clean() というメソッドはファイルオブジェクトには存在しません。また、file.close() や close(\"file.txt\") のような書き方も Python には用意されていません。\n\n以上の理由から、with 文によるクリーンアップとして実際に行われている処理は「f.close()」です。\n\n【要点まとめ】\n・with 文はリソース管理を自動化する構文である\n・ファイルを with で開くと、ブロック終了時に close() が必ず呼ばれる\n・例外が起きてもファイルは安全にクローズされる"
+},
+{
+  "question": "次の実行結果を得たい場合、コードの【A】【B】に入る組み合わせとして適切なものはどれか。",
+  "codeSample": "class OurException(Exception):\n    pass\n\ndef raise_her_exception(a):\n    print(a, 'is a')\n    raise 【A】\n    print('easygoing person.')\n\ndef func(key: int):\n    try:\n        if key == 0:\n            raise_her_exception('Saya')\n    except OurException as e:\n        print('intelligent')\n        raise 【B】\n\nkey = 0\ntry:\n    func(key)\nexcept Exception as f:\n    print('speedster.')",
+  "executionResult": "Saya is a\nintelligent\nspeedster.",
+  "options": [
+    "【A】OurException　【B】Exception",
+    "【A】Exception　【B】OurException",
+    "【A】Exception　【B】raise_her_exception",
+    "【A】何も入らない　【B】Exception",
+    "【A】何も入らない　【B】何も入らない"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、「raiseで例外を発生させる」「exceptで特定の例外を捕まえる」「捕まえたあとに別の例外として投げ直す（再送出する）」という流れを理解しているかが問われています。\n\nまず、実行結果の1行目は raise_her_exception('Saya') の中の print によって出力されるため、ここは必ず表示されます。一方で、その直後に raise が実行されると、raise 以降の行（print('easygoing person.')）は実行されません。\n\n次に func() 側では except OurException as e: で例外を捕まえて 'intelligent' を表示しています。つまり、raise_her_exception() が投げる例外は OurException である必要があります。よって【A】は OurException が適切です。\n\nそのあと except 節の中で raise 【B】 を実行すると、func() の外へ例外が伝わります。外側では except Exception as f: で受け取って 'speedster.' を表示するため、【B】は Exception を投げれば確実にこの except に入ります。\n\n以上より、実行結果を指定どおりにする組み合わせは【A】OurException、【B】Exception です。\n\n【要点まとめ】\n・raise の後ろの処理は実行されない\n・except OurException が動くには、OurException が投げられる必要がある\n・外側の except Exception は、Exception（およびその派生）を捕まえられる"
+},
+{
+  "question": "クラスに関する次の記述のうち、誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "名前空間とは、名前とオブジェクトの対応付け（マッピング）のことである。名前空間で重要なのは、異なる名前空間同志の名前には一切の関わりがないということである。",
+    "関数のローカル名前空間は関数がコールされたときに作られ、関数から戻ったり関数内で処理されない例外を送出したりしたとき削除される。",
+    "スコープとは、ある名前空間から直接アクセスできる、プログラムテキスト上の範囲のことである。",
+    "クラスに__init__()メソッドが定義してあると、新規生成されたインスタンスに対して自動的に__init__()メソッドがコールされる。ただし__init__()メソッドに引数を与えることはできない。",
+    "クラスオブジェクトは２種類の操作をサポートする。属性参照とインスタンス化である。クラスのインスタンス化には関数の表記法が使われる。"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、クラスと名前空間、スコープに関する基本的な概念を正しく理解しているかが問われています。\n\n誤っているのは4つ目の記述です。__init__() メソッドは、インスタンス生成時に自動的に呼び出される初期化用のメソッドですが、引数を与えることができます。実際には self のほかに、初期値として必要な値を引数として受け取るのが一般的です。\n\nたとえば、__init__(self, x, y) のように定義し、クラス名(x, y) という形でインスタンスを生成します。このように、__init__() に引数を与えられないという説明は誤りです。\n\n他の選択肢については、いずれもPythonの公式ドキュメントに基づいた正しい説明です。名前空間は名前とオブジェクトの対応関係であり、ローカル名前空間は関数呼び出し時に生成・破棄されます。また、スコープは名前を参照できる範囲を指し、クラスは属性参照とインスタンス化をサポートします。\n\n以上の理由から、誤っている記述は「__init__()メソッドに引数を与えることはできない」としている4つ目の選択肢です。\n\n【要点まとめ】\n・__init__() はインスタンス生成時に自動で呼ばれる\n・__init__() には任意の引数を指定できる\n・名前空間とスコープは異なる概念である\n・クラスは属性参照とインスタンス化をサポートする"
+},
+{
+  "question": "次の実行結果を得たい場合、コードの【A】【B】の行に入る組み合わせとして適切なものはどれか。なお【A】は★aの行と、【B】は★bの行と同じ数の空白でインデントされている。",
+  "codeSample": "class kusanagi():\n    def s(self):\n        print(\"I'm Saya.\")  # ★a\n        【A】\n    def m(self):  # ★b\n        print(\"I'm Magatama.\")\n\nclass onimaru(kusanagi):\n    【B】\n        print(\"I'm David.\")\n\nk = kusanagi()\no = onimaru()\nk.s()\no.d()",
+  "executionResult": "I'm Saya.\nI'm Magatama.\nI'm David.",
+  "options": [
+    "【A】self(m):　【B】self(d)",
+    "【A】self(m):　【B】def d(self):",
+    "【A】self(m)　【B】self.d()",
+    "【A】self.m()　【B】def d(self):",
+    "【A】self.m()　【B】self.d()"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、クラスの継承関係と、メソッドの正しい呼び出し方・定義の仕方を理解しているかが問われています。\n\nまず kusanagi クラスの s メソッドでは、\"I'm Saya.\" を表示したあとに、同じインスタンスが持つ m メソッドを呼び出す必要があります。クラス内で自分自身のメソッドを呼び出す場合は、self.メソッド名() の形で記述します。そのため【A】には self.m() を書くのが正解です。\n\n次に onimaru クラスでは、o.d() という呼び出しが行われているため、d という名前のメソッドをクラス内で定義しておく必要があります。メソッドを定義する場合は def d(self): という形で書く必要があるため、【B】には def d(self): が入ります。\n\nこのようにすると、k.s() によって Saya → Magatama が表示され、o.d() によって David が表示され、実行結果の順序と一致します。\n\n以上の理由から、正しい組み合わせは【A】self.m()、【B】def d(self): です。\n\n【要点まとめ】\n・クラス内で別のメソッドを呼ぶときは self.メソッド名() を使う\n・メソッドを使うには、クラス内で def による定義が必要\n・継承していても、新しいメソッドは子クラス側で定義する"
+},
+{
+  "question": "コマンドライン上で「python3 script.py one two three four five」を実行したときに、以下の結果を得たい。コード2行目の【A】に入るものとして正しいものはどれか。",
+  "codeSample": "import sys\nprint(【A】)",
+  "executionResult": "['one', 'two', 'three']",
+  "options": [
+    "sys.args[1:4]",
+    "sys.args[1:3]",
+    "sys.argv[1:4]",
+    "sys.argv[1:3]",
+    "sys.argv[0:2]"
+  ],
+  "correctIndex": 2,
+  "explanation": "この問題では、コマンドライン引数が sys.argv にどのように格納され、スライスによってどの要素が取り出されるかを正しく理解しているかが問われています。\n\nPythonでは、コマンドライン引数は sys.argv というリストに格納されます。sys.argv[0] には実行されたスクリプト名が入り、それ以降の要素にコマンドラインで指定した引数が順番に格納されます。\n\n今回の実行例では、sys.argv の中身は次のようになります。\n['script.py', 'one', 'two', 'three', 'four', 'five']\n\nここから ['one', 'two', 'three'] を取り出すには、インデックス1から始めて、インデックス4の直前までをスライスする必要があります。そのため、sys.argv[1:4] が正しい指定になります。\n\n他の選択肢にある sys.args は存在しない属性です。また、スライスの終了位置を誤ると、要素数が合わなくなります。\n\n以上の理由から、【A】に入る正しいコードは「sys.argv[1:4]」です。\n\n【要点まとめ】\n・コマンドライン引数は sys.argv にリストとして格納される\n・sys.argv[0] はスクリプト名\n・スライスは「開始:終了（直前まで）」で指定する"
+},
+{
+  "question": "次の正規表現を用いたコードの【A】の部分に入れたときエラーとなるものはどれか。",
+  "codeSample": "import re\nprog = re.compile('(K|S)us(a|u)n(a|o)(o|m)?g?i?(saya)?', re.IGNORECASE)\n【A】\nprint(ret[0])",
+  "executionResult": null,
+  "options": [
+    "ret = prog.search('KUSANAGI')",
+    "ret = prog.search('kusunomi')",
+    "ret = prog.search('SUSANOO')",
+    "ret = prog.search('kusanomi')",
+    "ret = prog.search('Kusaneiro')"
+  ],
+  "correctIndex": 4,
+  "explanation": "この問題では、正規表現による検索結果が「見つかった場合」と「見つからなかった場合」でどのように振る舞うかを理解しているかが問われています。\n\nre.search() は、文字列の中にパターンが見つかった場合は Match オブジェクトを返しますが、見つからなかった場合は None を返します。\n\nこのコードでは、search の結果を ret に代入したあと、print(ret[0]) を実行しています。Match オブジェクトであれば ret[0] によってマッチした文字列全体を取得できますが、ret が None の場合は None に対してインデックスアクセスを行うことになり、エラーが発生します。\n\n正規表現 '(K|S)us(a|u)n(a|o)(o|m)?g?i?(saya)?' は、「Kus」または「Sus」で始まり、その後に a または u、n、a または o が続く形を想定しています。\n\n「Kusaneiro」は 'Kusaneiro' という文字列であり、'Kusa' の次に 'neiro' が続いています。この 'e' の部分は (a|o) に一致しないため、正規表現全体にマッチせず、ret は None になります。\n\nその結果、print(ret[0]) の行でエラーが発生します。\n\n他の選択肢はいずれも正規表現にマッチするため、ret には Match オブジェクトが入り、エラーにはなりません。\n\n以上の理由から、エラーとなるのは「ret = prog.search('Kusaneiro')」です。\n\n【要点まとめ】\n・re.search() は見つからない場合に None を返す\n・None に対してインデックスアクセスはできない\n・正規表現は1文字の違いでもマッチしなくなることがある"
+},
+{
+  "question": "statisticsモジュールを使って、データの平均、中央値、分散を求めたい。次のコードの【A】【B】【C】に入りうる組み合わせとして正しいものはどれか。",
+  "codeSample": "import statistics\ndata = [1,10,15,20,25,30,35]\nrslt1 = statistics.【A】(data)\nrslt2 = statistics.【B】(data)\nrslt3 = statistics.【C】(data)\nprint(rslt1, rslt2, rslt3)",
+  "executionResult": null,
+  "options": [
+    "mean median variance",
+    "mean center scatter",
+    "average middle variance",
+    "balance median scatter",
+    "average median variance"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、statisticsモジュールに用意されている基本的な統計量を求める関数名を正しく理解しているかが問われています。\n\nstatistics.mean() は、与えられたデータの平均値（算術平均）を求める関数です。statistics.median() は、データを並び替えたときの中央の値、つまり中央値を求めます。statistics.variance() は、データのばらつきを表す分散を計算する関数です。\n\nこれらは statistics モジュールで正式に定義されている関数名であり、平均・中央値・分散を求めるという目的にそのまま対応しています。\n\n一方、average や middle、center、scatter、balance といった名前の関数は statistics モジュールには存在しません。そのため、それらを指定すると AttributeError になります。\n\n以上の理由から、正しい組み合わせは「mean median variance」です。\n\n【要点まとめ】\n・statistics.mean() は平均を求める\n・statistics.median() は中央値を求める\n・statistics.variance() は分散を求める\n・関数名は英語の意味ではなく、実際に定義されている名前を使う必要がある"
+},
+{
+  "question": "今日の日付を得たい場合、次のコード1行目の【A】に入る適切なものはどれか。",
+  "codeSample": "【A】\nnow = date.today()\nprint(now)",
+  "executionResult": null,
+  "options": [
+    "import date",
+    "from datetime import date",
+    "import date from datetime",
+    "from date",
+    "import datetime from date"
+  ],
+  "correctIndex": 1,
+  "explanation": "この問題では、datetime モジュールから date クラスを正しく読み込む方法を理解しているかが問われています。\n\ndate.today() を使うためには、date クラスが名前空間に存在している必要があります。Pythonでは、date クラスは datetime モジュールの中に定義されているため、「from datetime import date」という形でインポートするのが正しい書き方です。\n\nこの書き方をすると、date という名前をそのまま使って date.today() を呼び出すことができます。\n\n他の選択肢は、いずれも Python の import 文として正しくなかったり、date クラスを正しく参照できなかったりします。例えば、import date というモジュールは標準ライブラリには存在しませんし、「import date from datetime」や「import datetime from date」といった構文も Python では使えません。\n\n以上の理由から、【A】に入る適切なコードは「from datetime import date」です。\n\n【要点まとめ】\n・date クラスは datetime モジュールに定義されている\n・from モジュール import クラス の形で個別に読み込める\n・date.today() を使うには date が直接参照できる必要がある"
+},
+{
+  "question": "loggingモジュールのメッセージの優先度として正しいものはどれか。左から順に優先度が高いものとする。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "ERROR、CRITICAL、WARNING、INFO、DEBUG",
+    "ERROR、CRITICAL、WARNING、DEBUG、INFO",
+    "CRITICAL、ERROR、WARNING、DEBUG、INFO",
+    "CRITICAL、ERROR、WARNING、INFO、DEBUG",
+    "CRITICAL、WARNING、ERROR、INFO、DEBUG"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、Pythonのloggingモジュールで定義されているログレベルの優先度順を正しく理解しているかが問われています。\n\nloggingモジュールでは、ログメッセージに重要度（レベル）が設定されており、重大なものほど優先度が高く扱われます。標準で用意されている主なレベルは、CRITICAL、ERROR、WARNING、INFO、DEBUG の5つです。\n\nこの中で最も優先度が高いのは CRITICAL で、プログラムの継続が困難な重大な問題を表します。次に ERROR はエラーが発生した状態、WARNING は注意喚起、INFO は通常の動作情報、DEBUG は開発時の詳細な情報を表します。\n\nしたがって、優先度が高い順に並べると、CRITICAL → ERROR → WARNING → INFO → DEBUG となります。\n\n以上の理由から、正しい並びは「CRITICAL、ERROR、WARNING、INFO、DEBUG」です。\n\n【要点まとめ】\n・logging にはログレベル（優先度）が定義されている\n・CRITICAL が最も優先度が高い\n・DEBUG は最も詳細だが優先度は低い\n・ログ出力の制御はレベルによって行われる"
+},
+{
+  "question": "仮想環境とパッケージに関する次の記述のうち誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "Pythonの仮想環境とは、特定バージョンのPythonのインストール実体を含む、独立に機能するディレクトリツリーおよびパッケージなどから成り立つものである。",
+    "仮想環境をアクティベートしたら、pipを使ってパッケージのインストール、アップグレード、リムーブができる。pipはデフォルトではPython Package Indexからパッケージをインストールする。",
+    "pip install --upgrade とすることで当該パッケージを最新バージョンにアップグレードすることができる。",
+    "pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。",
+    "pip listはその仮想環境にインストールされたすべてのパッケージを表示する。pip freezeも同様の働きをするが、出力形式が異なる。"
+  ],
+  "correctIndex": 3,
+  "explanation": "この問題では、Pythonの仮想環境と pip コマンドの基本仕様を正しく理解しているかが問われています。\n\n誤っているのは4つ目の記述です。pip uninstall は、1つのコマンドで複数のパッケージ名を指定して削除することが可能です。たとえば、pip uninstall packageA packageB のように書くことで、複数のパッケージをまとめてアンインストールできます。\n\nそのため、「削除対象となるパッケージの複数指定はできない」という説明は誤りです。\n\n他の選択肢は、仮想環境や pip の基本的な動作を正しく説明しています。仮想環境は独立した Python 実行環境を提供し、pip はデフォルトで PyPI からパッケージを取得します。また、pip install --upgrade による更新や、pip list と pip freeze の役割の違いについても正しい内容です。\n\n以上の理由から、誤っている記述は「pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。」です。\n\n【要点まとめ】\n・pip uninstall は複数パッケージを同時に指定できる\n・仮想環境はパッケージ管理を環境ごとに分離できる\n・pip list と pip freeze は目的と出力形式が異なる"
+},
+{
+  "question": "次の記述に関して誤っているものはどれか。",
+  "codeSample": "",
+  "executionResult": null,
+  "options": [
+    "変数とモジュールの補完はインタープリタの起動時に自動で有効になっている。",
+    "[Tab]キーを押すと補完機能が呼び出せる。この機能はPythonの文（命令）の名前、現在のローカル変数、使用できるモジュール名を検索するものである。",
+    "デフォルト設定ではユーザーディレクトリの「.pyhistory」ファイルにヒストリが保存される。ヒストリは対話型インタープリタセッションで利用できる。",
+    "拡張された対話型インタープリタとしてbpythonがある。これはタブ補完、オブジェクト探索、高度なヒストリ管理などの機能を持つ。",
+    "bpythonに類似した拡張対話環境にIPythonがある。IPythonは「pip install ipython」でインストールでき、IPythonの対話モードはipythonコマンドで起動できる。"
+  ],
+  "correctIndex": 0,
+  "explanation": "この問題では、Pythonの対話型インタープリタにおける補完機能やヒストリ管理の仕組みを正しく理解しているかが問われています。\n\n誤っているのは1つ目の記述です。Pythonの標準対話型インタープリタでは、変数やモジュール名の補完機能は、インタープリタ起動時に常に自動で有効になっているわけではありません。補完機能は、readline モジュールの設定や、使用している環境（OSや設定ファイル）によって有効・無効が左右されます。\n\n一方、[Tab]キーによる補完は、適切に設定されていれば利用でき、Pythonのキーワードやローカル変数、モジュール名などを候補として表示します。また、ヒストリは通常 .pyhistory ファイルに保存され、次回の対話セッションでも参照できます。\n\nさらに、bpython や IPython は、標準インタープリタを拡張した対話環境として広く利用されており、強力な補完機能やオブジェクト探索、履歴管理機能を備えています。IPython は pip を使ってインストールし、ipython コマンドで起動できます。\n\n以上の理由から、誤っている記述は「変数とモジュールの補完はインタープリタの起動時に自動で有効になっている。」です。\n\n【要点まとめ】\n・補完機能は環境や設定によって有効化される\n・Tab 補完はキーワードや変数、モジュール名を支援する\n・ヒストリは .pyhistory に保存される\n・bpython や IPython は高機能な対話型インタープリタである"
+}
+]
