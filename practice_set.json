@@ -1,0 +1,54 @@
+[
+    {
+        "question": "setの性質として誤っているものを選択してください。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "重複する要素を持たない",
+            "2つのsetの和集合や差集合を演算できる",
+            "要素の追加について、リストではappend()メソッドを使い、setではadd()メソッドを使う",
+            "要素の順序は追加された順で保持される"
+        ],
+        "correctIndex": 3,
+        "explanation": "setは重複を持たず、和集合や差集合などの演算が可能で、要素の追加にはadd()を使用します。しかし、要素の順序は保持されません。そのため「要素の順序は追加された順で保持される」が誤りです。"
+    },
+    {
+        "question": "以下のコードを実行して {'r', 'b', 'd'} が表示されるとき、空欄①に当てはまる記述として正しいものを選択してください。",
+        "codeSample": "s1 = set(\"abracadabra\")\ns2 = set(\"alacazam\")\n\nprint(①)",
+        "executionResult": "{'r', 'b', 'd'}",
+        "options": [
+            "s1 - s2",
+            "s1 ^ s1",
+            "s1 | s2",
+            "s1 & s2"
+        ],
+        "correctIndex": 0,
+        "explanation": "{'r', 'b', 'd'} は s1 に含まれていて s2 には含まれていない要素です。これは差集合を表します。差集合は '-' 演算子で求めることができるため、s1 - s2 が正解です。"
+    },
+    {
+        "question": "以下のコードを実行した結果「True」と表示されるとき、空欄①に入る記述として正しいものを選択してください。",
+        "codeSample": "stock_1 = {\"apple\", \"banana\", \"watermelon\", \"peach\", \"strawberry\"}\nstock_2 = {\"strawberry\", \"orange\", \"melon\", \"apple\", \"banana\"}\n\ns = ①\nprint(\"orange\" in s)",
+        "executionResult": "True",
+        "options": [
+            "stock_1 - stock_2",
+            "stock_2 - stock_1",
+            "stock_1 & stock_2",
+            "stock_2 & stock_1"
+        ],
+        "correctIndex": 1,
+        "explanation": "\"orange\" が含まれている集合を選ぶ問題です。stock_2 - stock_1 の結果は {'orange', 'melon'} となり、orange が含まれます。他の選択肢では orange は含まれません。"
+    },
+    {
+        "question": "setの性質として正しいものを選択してください。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "追加した要素の順序は保持されない",
+            "2つのsetの差集合を求められない",
+            "append()メソッドで要素を追加できる",
+            "重複する要素を持てる"
+        ],
+        "correctIndex": 0,
+        "explanation": "setでは追加した要素の順序は保持されません。差集合は '-' で求められますし、要素の追加は add() を使用します。また、重複する要素は保持されません。そのため正しいのは「追加した要素の順序は保持されない」です。"
+    }
+]
