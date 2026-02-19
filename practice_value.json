@@ -26,6 +26,32 @@
         "explanation": "関数の外側で定義された変数（グローバル変数）に関数内から直接代入することはできません。代入を行う場合はglobal文が必要です。globalを使用しない場合、その変数は新しいローカル変数として扱われます。"
     },
     {
+        "question": "次のコードを実行した結果として正しいものを選択してください。",
+        "codeSample": "x = 10\n\ndef show():\n    print(x)\n\nshow()",
+        "executionResult": "10",
+        "options": [
+            "10",
+            "0",
+            "エラーになる",
+            "None"
+        ],
+        "correctIndex": 0,
+        "explanation": "関数内では、関数の外側で定義されたグローバル変数を参照（読むだけ）することができます。このコードではxは関数外で10と定義されており、show()内でその値を表示しているため、結果は10になります。"
+    },
+    {
+        "question": "次のコードを実行した結果として正しいものを選択してください。",
+        "codeSample": "x = 10\n\ndef change():\n    x = 20\n\nchange()\nprint(x)",
+        "executionResult": "10",
+        "options": [
+            "20",
+            "10",
+            "エラーになる",
+            "None"
+        ],
+        "correctIndex": 1,
+        "explanation": "関数内でx = 20と代入すると、そのxは関数内のローカル変数として扱われます。グローバル変数x（10）は書き換えられません。そのため、最終的にprint(x)で表示されるのは10です。"
+    },
+    {
         "question": "次のスクリプトの実行結果として正しいものはどれか。なお各選択肢内は実際は改行されているものとして読み替えること。",
         "codeSample": "loc = \"1\"\ndef scope():\n    loc = \"2\"\n    def do_local():\n        loc = \"3\"\n    def do_nonlocal():\n        nonlocal loc\n        loc = \"4\"\n    def do_global():\n        global loc\n        loc = \"5\"\n\n    do_local()\n    print(\"[A]\", loc)\n    do_nonlocal()\n    print(\"[B]\", loc)\n    do_global()\n    print(\"[C]\", loc)\n\nprint(\"[D]\", loc)\nscope()\nprint(\"[E]\", loc)",
         "executionResult": "[D] 1\n[A] 2\n[B] 4\n[C] 4\n[E] 5",
