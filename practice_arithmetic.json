@@ -2,7 +2,7 @@
     {
         "question": "次のコードを実行した結果として正しいものを選択してください。（1つ選択）",
         "codeSample": "x = 100 - 5**2 + 5 / 5\nprint(x)",
-        "executionResult": "76.0",
+        "executionResult": null,
         "options": [
             "16.0",
             "-25",
@@ -15,7 +15,7 @@
     {
         "question": "次のコードの実行結果として正しいものはどれか。",
         "codeSample": "v = 1\nw = 2\nv, w = w + 1, v + 3\nx = w ** 2 + 1\ny = x - 8 / 2\nz = y % 5\nprint(w, y, z)",
-        "executionResult": "4 13.0 3.0",
+        "executionResult": null,
         "options": [
             "6 2.5 0.5",
             "6 9 4.0",
@@ -29,7 +29,7 @@
     {
         "question": "次のコードの実行結果として正しいものはどれか。",
         "codeSample": "a = 10\nb = a ** 2\nc = b % 20 + 5\nd = 8\ne = d / b\nf = d // c\nprint('{0}, {1}'.format(e, f))",
-        "executionResult": "0.08, 1",
+        "executionResult": null,
         "options": [
             "0.8, 0",
             "0.08, 1",

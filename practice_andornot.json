@@ -15,7 +15,7 @@
     {
         "question": "次のコードを実行した結果として正しいものを選択してください。",
         "codeSample": "def num(value):\n    return value\n\nvalue1 = num(0) and num(1) and num(2)\nvalue2 = num(0) or num(1) or num(2)\nprint(value1, value2)",
-        "executionResult": "0 1",
+        "executionResult": null,
         "options": [
             "0 1",
             "0 2",
@@ -41,7 +41,7 @@
     {
         "question": "次のコードを実行した結果として正しいものを選択してください。",
         "codeSample": "def value(arg):\n    return arg\n\nresult1 = value(0) and value(1) and value(2)\nresult2 = value(0) or value(1) or value(2)\nprint(result1, result2)",
-        "executionResult": "0 1",
+        "executionResult": null,
         "options": [
             "True False",
             "0 1",

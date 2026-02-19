@@ -2,7 +2,7 @@
     {
         "question": "次のコードの実行結果として正しいものはどれか。",
         "codeSample": "for i in range(-10, -30, -5):\n    print(i, end=\", \")",
-        "executionResult": "-10, -15, -20, -25, ",
+        "executionResult": null,
         "options": [
             "-10, -5, 0, 5, ",
             "-5, 0, 5, 10, ",
@@ -16,7 +16,7 @@
     {
         "question": "次のコードの実行結果として正しいものはどれか。",
         "codeSample": "for i in range(-3, -18, -3):\n    print(i, end=\", \")",
-        "executionResult": "-3, -6, -9, -12, -15, ",
+        "executionResult": null,
         "options": [
             "-3, 0, 3, 6, 9, 12, 15, ",
             "-3, -6, -9, -12, -15, -18, ",
@@ -43,7 +43,7 @@
     {
         "question": "次のコードを実行した結果として表示されるものを選択してください。（1つ選択）",
         "codeSample": "print([[3 * i + j + 1 for j in range(3)] for i in range(2)])",
-        "executionResult": "[[1, 2, 3], [4, 5, 6]]",
+        "executionResult": null,
         "options": [
             "[]",
             "[[1, 2, 3], [4, 5, 6]]",
