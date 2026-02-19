@@ -1,0 +1,54 @@
+[
+    {
+        "question": "次のコードを実行して期待する結果が表示されるとき、空欄①～③に入る記述の組み合わせとして正しいものを選択してください。",
+        "codeSample": "for i in range(1, 7):\n    if i % 2 == 0 ① i % 3 == 0:\n        print(f\"{i}は6の倍数です\")\n    elif i % 2 == 0 ② i % 3 == 0:\n        print(f\"{i}は2か3の倍数です\")\n    ③ :\n        print(f\"{i}は2の倍数でも3の倍数でもありません\")",
+        "executionResult": "1は2の倍数でも3の倍数でもありません\n2は2か3の倍数です\n3は2か3の倍数です\n4は2か3の倍数です\n5は2の倍数でも3の倍数でもありません\n6は6の倍数です",
+        "options": [
+            "① and　② or　③ not",
+            "① and　② or　③ else",
+            "① or　② and　③ not",
+            "① or　② and　③ else"
+        ],
+        "correctIndex": 1,
+        "explanation": "6の倍数は「2の倍数かつ3の倍数」なので①はandです。2か3の倍数は「2の倍数または3の倍数」なので②はorです。それ以外の場合をまとめるため③はelseになります。notは単独でブロックを作ることはできません。"
+    },
+    {
+        "question": "次のコードを実行した結果として正しいものを選択してください。",
+        "codeSample": "def num(value):\n    return value\n\nvalue1 = num(0) and num(1) and num(2)\nvalue2 = num(0) or num(1) or num(2)\nprint(value1, value2)",
+        "executionResult": "0 1",
+        "options": [
+            "0 1",
+            "0 2",
+            "True False",
+            "False True"
+        ],
+        "correctIndex": 0,
+        "explanation": "andは左から評価し、最初に偽となる値を返します。num(0)は0で偽とみなされるため、そこで評価が止まりvalue1は0になります。orは左から評価し、最初に真となる値を返します。num(1)が1（真）なのでvalue2は1になります。"
+    },
+    {
+        "question": "次のコードを実行して期待する結果が表示されるとき、空欄①～③に入る記述の組み合わせとして正しいものを選択してください。",
+        "codeSample": "for i in range(3, 16):\n    if i % 3 == 0 ① i % 5 == 0:\n        print(f\"{i}は15の倍数\")\n    elif i % 3 == 0 ② i % 5 == 0:\n        print(f\"{i}は、3か5の倍数\")\n    ③ :\n        print(f\"{i}は、3の倍数でも5の倍数でもない\")",
+        "executionResult": "3は、3か5の倍数\n4は、3の倍数でも5の倍数でもない\n5は、3か5の倍数\n15は、15の倍数",
+        "options": [
+            "① or　② and　③ else",
+            "① or　② and　③ not",
+            "① and　② or　③ else",
+            "① and　② or　③ not"
+        ],
+        "correctIndex": 2,
+        "explanation": "15の倍数は「3の倍数かつ5の倍数」なので①はandです。3か5の倍数は「3の倍数または5の倍数」なので②はorです。それ以外をまとめるため③はelseになります。"
+    },
+    {
+        "question": "次のコードを実行した結果として正しいものを選択してください。",
+        "codeSample": "def value(arg):\n    return arg\n\nresult1 = value(0) and value(1) and value(2)\nresult2 = value(0) or value(1) or value(2)\nprint(result1, result2)",
+        "executionResult": "0 1",
+        "options": [
+            "True False",
+            "0 1",
+            "False True",
+            "0 2"
+        ],
+        "correctIndex": 1,
+        "explanation": "andは左から評価して最初に偽となる値を返します。value(0)は0で偽とみなされるためresult1は0になります。orは左から評価して最初に真となる値を返します。value(1)が1（真）なのでresult2は1になります。"
+    }
+]
