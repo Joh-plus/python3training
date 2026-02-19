@@ -28,7 +28,7 @@
     {
         "question": "次のコードを実行した結果として正しいものを選択してください。",
         "codeSample": "x = 10\n\ndef show():\n    print(x)\n\nshow()",
-        "executionResult": "10",
+        "executionResult": null,
         "options": [
             "10",
             "0",
@@ -41,7 +41,7 @@
     {
         "question": "次のコードを実行した結果として正しいものを選択してください。",
         "codeSample": "x = 10\n\ndef change():\n    x = 20\n\nchange()\nprint(x)",
-        "executionResult": "10",
+        "executionResult": null,
         "options": [
             "20",
             "10",
@@ -54,7 +54,7 @@
     {
         "question": "次のスクリプトの実行結果として正しいものはどれか。なお各選択肢内は実際は改行されているものとして読み替えること。",
         "codeSample": "loc = \"1\"\ndef scope():\n    loc = \"2\"\n    def do_local():\n        loc = \"3\"\n    def do_nonlocal():\n        nonlocal loc\n        loc = \"4\"\n    def do_global():\n        global loc\n        loc = \"5\"\n\n    do_local()\n    print(\"[A]\", loc)\n    do_nonlocal()\n    print(\"[B]\", loc)\n    do_global()\n    print(\"[C]\", loc)\n\nprint(\"[D]\", loc)\nscope()\nprint(\"[E]\", loc)",
-        "executionResult": "[D] 1\n[A] 2\n[B] 4\n[C] 4\n[E] 5",
+        "executionResult": null,
         "options": [
             "[A] 3 [B] 3 [C] 5 [D] 2 [E] 5",
             "[A] 3 [B] 2 [C] 5 [D] 2 [E] 1",
