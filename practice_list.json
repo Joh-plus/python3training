@@ -1,0 +1,41 @@
+[
+    {
+        "question": "リストとタプルの性質について誤っているものを選択してください。（1つ選択）",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "リスト、タプルには異なるデータ型の要素を格納できる",
+            "要素を追加する方法として、リストではappend()メソッドを使用し、タプルではadd()メソッドを使用する",
+            "リストでは格納した要素を変更できるが、タプルでは変更できない",
+            "リスト、タプルの要素数は、len()関数で取得できる"
+        ],
+        "correctIndex": 1,
+        "explanation": "タプルはイミュータブル（変更不能）なデータ型であり、作成後に要素を追加・削除することはできません。したがってadd()やappend()といったメソッドは存在しません。append()はリスト専用のメソッドです。他の選択肢は正しい記述です。"
+    },
+    {
+        "question": "ディクショナリの作成方法として誤っているものを選択してください。（1つ選択）",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "{\"carrot\": 80, \"tomato\": 100}",
+            "dict(\"carrot\"=80, \"tomato\"=100)",
+            "dict([(\"carrot\", 80), (\"tomato\", 100)])",
+            "{k: v for k, v in [(\"carrot\", 80), (\"tomato\", 100)]}"
+        ],
+        "correctIndex": 1,
+        "explanation": "dict()をキーワード引数で使用する場合、キーはクォートで囲んだ文字列ではなく識別子として記述する必要があります。正しくはdict(carrot=80, tomato=100)です。選択肢Aは辞書リテラル、Cはタプルのリストからの生成、Dは辞書内包表記で、いずれも正しい記述です。"
+    },
+    {
+        "question": "次のコードと同じ表示結果を出力する記述として正しいものを選択してください。（1つ選択）",
+        "codeSample": "data = []\nfor i in range(3):\n    for j in range(3):\n        if i != j:\n            data.append((i, j))\nprint(data)",
+        "executionResult": "[(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]",
+        "options": [
+            "print([(i, j) for i in range(3) for j in range(3) if i != j])",
+            "print([(j, i) for i in range(3) for j in range(3) if i != j])",
+            "print([(i, j) for j in range(3) for i in range(3) if i != j])",
+            "print([(j, i) for j in range(3) for i in range(3) if i != j])"
+        ],
+        "correctIndex": 0,
+        "explanation": "リスト内包表記では、外側のforから順番に記述します。元のコードではfor iが外側、for jが内側なので、[(i, j) for i in range(3) for j in range(3) if i != j]が正しい書き方です。他の選択肢は順序や要素の並びが異なります。"
+    }
+]
