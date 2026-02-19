@@ -1,0 +1,54 @@
+[
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください。（1つ選択）",
+    "codeSample": "it = \"telescope\"\nprint(it[6:] + it[2:5])",
+    "executionResult": null,
+    "options": [
+      "telescles",
+      "copeeles",
+      "opeles"
+    ],
+    "correctIndex": 2,
+    "explanation": "it[6:]はインデックス6から末尾までを取り出します。\"telescope\"ではインデックス6は'o'なので\"ope\"になります。it[2:5]はインデックス2から5の手前までなので\"les\"になります。2つを結合すると\"opeles\"です。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。（1つ選択）",
+    "codeSample": "word = \"abcdefg\"\nsliced_word = word[2:5]\nprint(sliced_word)",
+    "executionResult": null,
+    "options": [
+      "cde",
+      "bcd",
+      "bcde",
+      "cdef",
+      "cdefg"
+    ],
+    "correctIndex": 0,
+    "explanation": "スライス[2:5]はインデックス2（3文字目）からインデックス5の手前までを取得します。\"abcdefg\"のインデックス2はc、インデックス3はd、インデックス4はeなので結果は\"cde\"です。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。（1つ選択）",
+    "codeSample": "word = \"abcdefg\"\nsliced_word = word[-5:]\nprint(sliced_word)",
+    "executionResult": null,
+    "options": [
+      "abc",
+      "cdefg",
+      "bcdef",
+      "defg"
+    ],
+    "correctIndex": 1,
+    "explanation": "負のインデックスは末尾から数えます。-1がg、-5はcに当たります。[-5:]はcから末尾までを取り出すため\"cdefg\"になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください。（1つ選択）",
+    "codeSample": "ch1 = \"1\"\nch2 = \"3\"\nprint(ch1 * 2 + ch2)",
+    "executionResult": null,
+    "options": [
+      "5",
+      "23",
+      "113",
+      "123"
+    ],
+    "correctIndex": 2,
+    "explanation": "文字列に対する*は繰り返し、+は結合です。\"1\"*2で\"11\"になり、そこへ\"3\"を結合するので\"113\"が出力されます。"
+  }
+]
