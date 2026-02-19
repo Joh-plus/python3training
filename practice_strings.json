@@ -1,54 +1,87 @@
 [
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください。（1つ選択）",
-    "codeSample": "it = \"telescope\"\nprint(it[6:] + it[2:5])",
-    "executionResult": null,
-    "options": [
-      "telescles",
-      "copeeles",
-      "opeles"
-    ],
-    "correctIndex": 2,
-    "explanation": "it[6:]はインデックス6から末尾までを取り出します。\"telescope\"ではインデックス6は'o'なので\"ope\"になります。it[2:5]はインデックス2から5の手前までなので\"les\"になります。2つを結合すると\"opeles\"です。"
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"Python\"\nprint(len(s))",
+    "executionResult": "6",
+    "options": ["5", "6", "7", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "len()は文字列の長さを返します。\"Python\"は6文字なので6が出力されます。"
   },
   {
-    "question": "次のコードを実行した結果として正しいものを選択してください。（1つ選択）",
-    "codeSample": "word = \"abcdefg\"\nsliced_word = word[2:5]\nprint(sliced_word)",
-    "executionResult": null,
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"Py\" + \"thon\"\nprint(s)",
+    "executionResult": "Python",
+    "options": ["Py thon", "Python", "Pyth on", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "文字列同士は+で結合できます。\"Py\"と\"thon\"が連結され\"Python\"になります。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"banana\"\nprint(s.find(\"na\"))",
+    "executionResult": "2",
+    "options": ["-1", "2", "4", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "find()は最初に見つかった位置を返します。\"na\"はインデックス2から始まります。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"banana\"\nprint(s.index(\"xy\"))",
+    "executionResult": "ValueError",
+    "options": ["-1", "0", "None", "ValueErrorが発生する"],
+    "correctIndex": 3,
+    "explanation": "index()は見つからない場合エラーになります。\"xy\"は存在しないためValueErrorが発生します。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"abcdef\"\nprint(s[2:5])",
+    "executionResult": "cde",
+    "options": ["cde", "def", "bcde", "cdef"],
+    "correctIndex": 0,
+    "explanation": "スライス[2:5]はインデックス2から5の手前までを取得します。結果は\"cde\"です。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"abcdef\"\nprint(s[::-1])",
+    "executionResult": "fedcba",
+    "options": ["abcdef", "fedcba", "efabcd", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "[::-1]は文字列を逆順にします。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"  Python  \"\nprint(s.strip())",
+    "executionResult": "Python",
+    "options": ["  Python  ", "Python", " Python", "Python  "],
+    "correctIndex": 1,
+    "explanation": "strip()は文字列の前後の空白を削除します。"
+  },
+  {
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"apple,banana,orange\"\nprint(s.split(\",\"))",
+    "executionResult": "[\"apple\", \"banana\", \"orange\"]",
     "options": [
-      "cde",
-      "bcd",
-      "bcde",
-      "cdef",
-      "cdefg"
+      "[\"apple\", \"banana\", \"orange\"]",
+      "\"apple banana orange\"",
+      "apple banana orange",
+      "エラーになる"
     ],
     "correctIndex": 0,
-    "explanation": "スライス[2:5]はインデックス2（3文字目）からインデックス5の手前までを取得します。\"abcdefg\"のインデックス2はc、インデックス3はd、インデックス4はeなので結果は\"cde\"です。"
+    "explanation": "split(\",\")はカンマで区切り、リストに変換します。"
   },
   {
-    "question": "次のコードを実行した結果として正しいものを選択してください。（1つ選択）",
-    "codeSample": "word = \"abcdefg\"\nsliced_word = word[-5:]\nprint(sliced_word)",
-    "executionResult": null,
-    "options": [
-      "abc",
-      "cdefg",
-      "bcdef",
-      "defg"
-    ],
-    "correctIndex": 1,
-    "explanation": "負のインデックスは末尾から数えます。-1がg、-5はcに当たります。[-5:]はcから末尾までを取り出すため\"cdefg\"になります。"
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "s = \"banana\"\nprint(s.replace(\"a\", \"A\", 1))",
+    "executionResult": "bAnana",
+    "options": ["bAnana", "bANANA", "banana", "BAnaan"],
+    "correctIndex": 0,
+    "explanation": "replace(\"a\",\"A\",1)は最初の1回だけ置換します。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください。（1つ選択）",
-    "codeSample": "ch1 = \"1\"\nch2 = \"3\"\nprint(ch1 * 2 + ch2)",
-    "executionResult": null,
-    "options": [
-      "5",
-      "23",
-      "113",
-      "123"
-    ],
-    "correctIndex": 2,
-    "explanation": "文字列に対する*は繰り返し、+は結合です。\"1\"*2で\"11\"になり、そこへ\"3\"を結合するので\"113\"が出力されます。"
+    "question": "次のコードの実行結果として正しいものを選択してください。",
+    "codeSample": "import re\ns = \"aaaab\"\nprint(re.sub(\"a+\", \"_\", s))",
+    "executionResult": "_b",
+    "options": ["_b", "____b", "ab", "aaaa_b"],
+    "correctIndex": 0,
+    "explanation": "re.sub(\"a+\",\"_\",s)はaが1回以上連続する部分をまとめて_に置換します。"
   }
 ]
