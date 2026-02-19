@@ -1,0 +1,132 @@
+[
+  {
+    "question": "次のコードを実行して期待する結果が表示されるとき、空欄①～③に入る記述の組み合わせとして正しいものを選択してください。",
+    "codeSample": "for i in range(1, 7):\n    if i % 2 == 0 ① i % 3 == 0:\n        print(f\"{i}は6の倍数です\")\n    elif i % 2 == 0 ② i % 3 == 0:\n        print(f\"{i}は2か3の倍数です\")\n    ③ :\n        print(f\"{i}は2の倍数でも3の倍数でもありません\")",
+    "executionResult": "1は2の倍数でも3の倍数でもありません\n2は2か3の倍数です\n3は2か3の倍数です\n4は2か3の倍数です\n5は2の倍数でも3の倍数でもありません\n6は6の倍数です",
+    "options": [
+      "① and　② or　③ not",
+      "① and　② or　③ else",
+      "① or　② and　③ not",
+      "① or　② and　③ else"
+    ],
+    "correctIndex": 1,
+    "explanation": "6の倍数は「2の倍数かつ3の倍数」なので①はandです。2か3の倍数は「2の倍数または3の倍数」なので②はorです。それ以外の場合をまとめるため③はelseになります。notは単独でブロックを作ることはできません。\n【要点】andは「最初の偽」/orは「最初の真」/notは真偽を反転。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "def num(value):\n    return value\n\nvalue1 = num(0) and num(1) and num(2)\nvalue2 = num(0) or num(1) or num(2)\nprint(value1, value2)",
+    "executionResult": null,
+    "options": [
+      "0 1",
+      "0 2",
+      "True False",
+      "False True"
+    ],
+    "correctIndex": 0,
+    "explanation": "andは左から評価し、最初に偽となる値を返します。num(0)は0で偽とみなされるため、そこで評価が止まりvalue1は0になります。orは左から評価し、最初に真となる値を返します。num(1)が1（真）なのでvalue2は1になります。\n【要点】andは「最初の偽」/orは「最初の真」/notは真偽を反転。"
+  },
+  {
+    "question": "次のコードを実行して期待する結果が表示されるとき、空欄①～③に入る記述の組み合わせとして正しいものを選択してください。",
+    "codeSample": "for i in range(3, 16):\n    if i % 3 == 0 ① i % 5 == 0:\n        print(f\"{i}は15の倍数\")\n    elif i % 3 == 0 ② i % 5 == 0:\n        print(f\"{i}は、3か5の倍数\")\n    ③ :\n        print(f\"{i}は、3の倍数でも5の倍数でもない\")",
+    "executionResult": "3は、3か5の倍数\n4は、3の倍数でも5の倍数でもない\n5は、3か5の倍数\n15は、15の倍数",
+    "options": [
+      "① or　② and　③ else",
+      "① or　② and　③ not",
+      "① and　② or　③ else",
+      "① and　② or　③ not"
+    ],
+    "correctIndex": 2,
+    "explanation": "15の倍数は「3の倍数かつ5の倍数」なので①はandです。3か5の倍数は「3の倍数または5の倍数」なので②はorです。それ以外をまとめるため③はelseになります。\n【要点】andは「最初の偽」/orは「最初の真」/notは真偽を反転。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "def value(arg):\n    return arg\n\nresult1 = value(0) and value(1) and value(2)\nresult2 = value(0) or value(1) or value(2)\nprint(result1, result2)",
+    "executionResult": null,
+    "options": [
+      "True False",
+      "0 1",
+      "False True",
+      "0 2"
+    ],
+    "correctIndex": 1,
+    "explanation": "andは左から評価して最初に偽となる値を返します。value(0)は0で偽とみなされるためresult1は0になります。orは左から評価して最初に真となる値を返します。value(1)が1（真）なのでresult2は1になります。\n【要点】andは「最初の偽」/orは「最初の真」/notは真偽を反転。"
+  },
+  {
+    "question": "次の式の評価結果として正しいものを選択してください。",
+    "codeSample": "print(True and False)",
+    "executionResult": null,
+    "options": [
+      "True",
+      "False",
+      "1",
+      "0"
+    ],
+    "correctIndex": 1,
+    "explanation": "and は「両方が True のときだけ True」になります。True and False は False です。\n【要点】and は両方TrueでTrue。"
+  },
+  {
+    "question": "次の式の評価結果として正しいものを選択してください。",
+    "codeSample": "print(True or False)",
+    "executionResult": null,
+    "options": [
+      "True",
+      "False",
+      "1",
+      "0"
+    ],
+    "correctIndex": 0,
+    "explanation": "or は「どちらか一方でも True なら True」です。True or False は True です。\n【要点】or はどちらかTrueでTrue。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = 0\nif not x:\n    print('A')\nelse:\n    print('B')",
+    "executionResult": null,
+    "options": [
+      "A",
+      "B",
+      "True",
+      "False"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pythonでは 0 は「偽(False扱い)」です。not x は True になるため if の中が実行され、A が表示されます。\n【要点】0, \"\", [], {}, None はFalse扱い。not は反転。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = ''\nprint(bool(x), bool(not x))",
+    "executionResult": null,
+    "options": [
+      "True True",
+      "True False",
+      "False True",
+      "False False"
+    ],
+    "correctIndex": 2,
+    "explanation": "空文字 '' は False 扱いです。bool(x) は False、not x は True なので bool(not x) は True です。\n【要点】空文字はFalse扱い。notで反転。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "a = 5\nb = 0\nprint(a and b)",
+    "executionResult": null,
+    "options": [
+      "True",
+      "False",
+      "5",
+      "0"
+    ],
+    "correctIndex": 3,
+    "explanation": "and は左から評価し、最初に False 扱いになった「値」そのものを返します。a=5 は True 扱いなので次へ進み、b=0 は False 扱いなので 0 を返します。\n【要点】and は最初のFalse値を返す（全部Trueなら最後の値）。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "a = 0\nb = 'OK'\nprint(a or b)",
+    "executionResult": null,
+    "options": [
+      "True",
+      "False",
+      "0",
+      "OK"
+    ],
+    "correctIndex": 3,
+    "explanation": "or は左から評価し、最初に True 扱いになった「値」そのものを返します。a=0 は False 扱いなので次へ進み、b='OK' は True 扱いなので 'OK' を返します。\n【要点】or は最初のTrue値を返す（全部Falseなら最後の値）。"
+  }
+]
