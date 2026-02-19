@@ -1,41 +1,87 @@
 [
-    {
-        "question": "リストとタプルの性質について誤っているものを選択してください。（1つ選択）",
-        "codeSample": null,
-        "executionResult": null,
-        "options": [
-            "リスト、タプルには異なるデータ型の要素を格納できる",
-            "要素を追加する方法として、リストではappend()メソッドを使用し、タプルではadd()メソッドを使用する",
-            "リストでは格納した要素を変更できるが、タプルでは変更できない",
-            "リスト、タプルの要素数は、len()関数で取得できる"
-        ],
-        "correctIndex": 1,
-        "explanation": "タプルはイミュータブル（変更不能）なデータ型であり、作成後に要素を追加・削除することはできません。したがってadd()やappend()といったメソッドは存在しません。append()はリスト専用のメソッドです。他の選択肢は正しい記述です。"
-    },
-    {
-        "question": "ディクショナリの作成方法として誤っているものを選択してください。（1つ選択）",
-        "codeSample": null,
-        "executionResult": null,
-        "options": [
-            "{\"carrot\": 80, \"tomato\": 100}",
-            "dict(\"carrot\"=80, \"tomato\"=100)",
-            "dict([(\"carrot\", 80), (\"tomato\", 100)])",
-            "{k: v for k, v in [(\"carrot\", 80), (\"tomato\", 100)]}"
-        ],
-        "correctIndex": 1,
-        "explanation": "dict()をキーワード引数で使用する場合、キーはクォートで囲んだ文字列ではなく識別子として記述する必要があります。正しくはdict(carrot=80, tomato=100)です。選択肢Aは辞書リテラル、Cはタプルのリストからの生成、Dは辞書内包表記で、いずれも正しい記述です。"
-    },
-    {
-        "question": "次のコードと同じ表示結果を出力する記述として正しいものを選択してください。（1つ選択）",
-        "codeSample": "data = []\nfor i in range(3):\n    for j in range(3):\n        if i != j:\n            data.append((i, j))\nprint(data)",
-        "executionResult": "[(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]",
-        "options": [
-            "print([(i, j) for i in range(3) for j in range(3) if i != j])",
-            "print([(j, i) for i in range(3) for j in range(3) if i != j])",
-            "print([(i, j) for j in range(3) for i in range(3) if i != j])",
-            "print([(j, i) for j in range(3) for i in range(3) if i != j])"
-        ],
-        "correctIndex": 0,
-        "explanation": "リスト内包表記では、外側のforから順番に記述します。元のコードではfor iが外側、for jが内側なので、[(i, j) for i in range(3) for j in range(3) if i != j]が正しい書き方です。他の選択肢は順序や要素の並びが異なります。"
-    }
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\nprint(len(x))",
+    "executionResult": null,
+    "options": ["2", "3", "4", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "len()はリストの要素数を返します。[1, 2, 3]は3要素なので3が出力されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [10, 20, 30]\nprint(x[-1])",
+    "executionResult": null,
+    "options": ["10", "20", "30", "エラーになる"],
+    "correctIndex": 2,
+    "explanation": "負のインデックス-1は末尾要素を表します。そのためx[-1]は30です。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\nx.append(9)\nprint(x)",
+    "executionResult": null,
+    "options": ["[9, 1, 2, 3]", "[1, 2, 3, 9]", "[1, 2, 9, 3]", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "append()は末尾に要素を1つ追加します。元の順序のまま最後に9が追加されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\nx.insert(1, 9)\nprint(x)",
+    "executionResult": null,
+    "options": ["[9, 1, 2, 3]", "[1, 9, 2, 3]", "[1, 2, 3, 9]", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "insert(位置, 値)は指定位置に挿入します。位置1はインデックス1なので2の手前に9が入ります。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\ny = [4, 5]\nx.extend(y)\nprint(x)",
+    "executionResult": null,
+    "options": ["[1, 2, 3, [4, 5]]", "[1, 2, 3, 4, 5]", "[4, 5, 1, 2, 3]", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "extend()はリストの要素を1つずつ追加します。リスト全体が1要素として追加されるわけではありません。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\nv = x.pop()\nprint(v, x)",
+    "executionResult": null,
+    "options": ["1 [2, 3]", "3 [1, 2]", "3 [1, 2, 3]", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "pop()は末尾の要素を取り出して削除します。取り出した値は3、残りは[1, 2]です。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3, 2]\nx.remove(2)\nprint(x)",
+    "executionResult": null,
+    "options": ["[1, 3]", "[1, 3, 2]", "[1, 2, 3]", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "remove(値)は最初に見つかった一致を1つだけ削除します。最初の2が削除されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [3, 1, 2]\ny = sorted(x)\nprint(x, y)",
+    "executionResult": null,
+    "options": [
+      "[1, 2, 3] [1, 2, 3]",
+      "[3, 1, 2] [1, 2, 3]",
+      "[3, 1, 2] [3, 1, 2]",
+      "エラーになる"
+    ],
+    "correctIndex": 1,
+    "explanation": "sorted()は新しいリストを返し、元のリストは変更しません。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [3, 1, 2]\nx.sort()\nprint(x)",
+    "executionResult": null,
+    "options": ["[3, 1, 2]", "[1, 2, 3]", "None", "エラーになる"],
+    "correctIndex": 1,
+    "explanation": "sort()は元のリストを並び替えます。戻り値はNoneですが、print(x)で確認すると[1, 2, 3]になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものを選択してください。",
+    "codeSample": "x = [1, 2, 3]\nprint(all([v >= 2 for v in x]), any([v >= 2 for v in x]))",
+    "executionResult": null,
+    "options": ["True True", "False True", "True False", "False False"],
+    "correctIndex": 1,
+    "explanation": "all()は全てが条件を満たすかを判定します。1が含まれるためFalseになります。any()は1つでも満たせばTrueなのでTrueになります。"
+  }
 ]
