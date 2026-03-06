@@ -160,8 +160,8 @@
     "options": [
       "for i ,v in count(Zen):",
       "for i ,v in enumerate(Zen):",
-      "n i ,v for calculate(Zen):",
-      "n i ,v for number(Zen):",
+      "in i ,v for calculate(Zen):",
+      "in i ,v for number(Zen):",
       "for i ,v in list(Zen):"
     ],
     "correctIndex": 1,
