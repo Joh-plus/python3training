@@ -158,11 +158,11 @@
     "codeSample": "Zen = ['Now','is','better','than','never']\nfor i in range(len(Zen)):\n    print(i, Zen[i])",
     "executionResult": "0 Now\n1 is\n2 better\n3 than\n4 never",
     "options": [
-      "or i ,v in count(Zen):",
-      "or i ,v in enumerate(Zen):",
+      "for i ,v in count(Zen):",
+      "for i ,v in enumerate(Zen):",
       "n i ,v for calculate(Zen):",
       "n i ,v for number(Zen):",
-      "or i ,v in list(Zen):"
+      "for i ,v in list(Zen):"
     ],
     "correctIndex": 1,
     "explanation": "この問題では、リストの要素とインデックス番号を同時に取り出す方法を理解しているかが問われています。\n\n元のコードでは、range(len(Zen)) を使ってインデックス番号を取り出し、Zen[i] によって対応する要素を取得しています。この書き方でも正しく動作しますが、少し回りくどい書き方です。\n\nenumerate関数を使うと、リストから「インデックス番号」と「要素」を同時に取り出すことができます。そのため、for i, v in enumerate(Zen): と書くだけで、i には番号、v には文字列が順番に代入されます。\n\nその直後に print(i, v) を実行すると、指定された実行結果と同じ形式で出力されます。\n\n他の選択肢にある count や calculate、number といった関数は Python には存在しないため使用できません。また、list(Zen) は要素だけを取り出すため、インデックス番号と2つ同時に受け取ることはできません。\n\n以上の理由から、正しい答えは enumerate(Zen) を使った書き方になります。\n\n【要点まとめ】\n・enumerateを使うと、番号と要素を同時に取り出せる\n・range(len(リスト)) の代替としてよく使われる\n・print(i, v) の形と非常に相性が良い"
@@ -214,7 +214,7 @@
     "codeSample": "def shop(name, 【A】):\n    print(\"flowershop:\", name)\n    for arg in arguments:\n        print(arg)\n    print(\"**Recommended**\")\n    keys = sorted(keywords.keys())\n    for kw in keys:\n        print(kw, \":\", keywords[kw])\n\nshop(\"Iris\",\"Open: 9:30 am\",\"Close: 10:30 pm\",\"Monday and holidays are closed.\",bouquet=\"Sunflower\",plants=\"Pachira\",dried=\"Rose\")",
     "executionResult": "flowershop: Iris\nOpen: 9:30 am\nClose: 10:30 pm\nMonday and holidays are closed.\n**Recommended**\nbouquet : Sunflower\ndried : Rose\nplants : Pachira",
     "options": [
-      "rguments, keywords",
+      "arguments, keywords",
       "*keywords, **arguments",
       "*arguments, **keywords",
       "**arguments, *keywords",
@@ -396,7 +396,7 @@
     "codeSample": "",
     "executionResult": null,
     "options": [
-      "ythonのエラーには２つの種類がある。構文エラーと例外である。構文エラーはパース上のエラーとも呼ばれる。",
+      "Pythonのエラーには２つの種類がある。構文エラーと例外である。構文エラーはパース上のエラーとも呼ばれる。",
       "文や式が構文的に正しくても、実行しようとするときにエラーが生じることがある。実行中に検知されるエラーは例外と呼ばれ、これは必ずしも致命的なものではない。",
       "例外のほとんどはプログラムでは処理されず、その結果はエラーメッセージに現れる。エラーメッセージの最終行には、NameError、TypeErrorなど例外の型が記されている。",
       "[Ctrl]+[C]キーなどでユーザーがプログラムに割り込みをかけると、KeyboardInterrupt例外が送出される。",
@@ -508,11 +508,11 @@
     "codeSample": "【A】\nnow = date.today()\nprint(now)",
     "executionResult": null,
     "options": [
-      "mport date",
-      "rom datetime import date",
-      "mport date from datetime",
-      "rom date",
-      "mport datetime from date"
+      "import date",
+      "from datetime import date",
+      "import date from datetime",
+      "from date",
+      "import datetime from date"
     ],
     "correctIndex": 1,
     "explanation": "この問題では、datetime モジュールから date クラスを正しく読み込む方法を理解しているかが問われています。\n\ndate.today() を使うためには、date クラスが名前空間に存在している必要があります。Pythonでは、date クラスは datetime モジュールの中に定義されているため、「from datetime import date」という形でインポートするのが正しい書き方です。\n\nこの書き方をすると、date という名前をそのまま使って date.today() を呼び出すことができます。\n\n他の選択肢は、いずれも Python の import 文として正しくなかったり、date クラスを正しく参照できなかったりします。例えば、import date というモジュールは標準ライブラリには存在しませんし、「import date from datetime」や「import datetime from date」といった構文も Python では使えません。\n\n以上の理由から、【A】に入る適切なコードは「from datetime import date」です。\n\n【要点まとめ】\n・date クラスは datetime モジュールに定義されている\n・from モジュール import クラス の形で個別に読み込める\n・date.today() を使うには date が直接参照できる必要がある"
@@ -536,11 +536,11 @@
     "codeSample": "",
     "executionResult": null,
     "options": [
-      "ythonの仮想環境とは、特定バージョンのPythonのインストール実体を含む、独立に機能するディレクトリツリーおよびパッケージなどから成り立つものである。",
+      "Pythonの仮想環境とは、特定バージョンのPythonのインストール実体を含む、独立に機能するディレクトリツリーおよびパッケージなどから成り立つものである。",
       "仮想環境をアクティベートしたら、pipを使ってパッケージのインストール、アップグレード、リムーブができる。pipはデフォルトではPython Package Indexからパッケージをインストールする。",
-      "ip install --upgrade とすることで当該パッケージを最新バージョンにアップグレードすることができる。",
-      "ip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。",
-      "ip listはその仮想環境にインストールされたすべてのパッケージを表示する。pip freezeも同様の働きをするが、出力形式が異なる。"
+      "pip install --upgrade とすることで当該パッケージを最新バージョンにアップグレードすることができる。",
+      "pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。",
+      "pip listはその仮想環境にインストールされたすべてのパッケージを表示する。pip freezeも同様の働きをするが、出力形式が異なる。"
     ],
     "correctIndex": 3,
     "explanation": "この問題では、Pythonの仮想環境と pip コマンドの基本仕様を正しく理解しているかが問われています。\n\n誤っているのは4つ目の記述です。pip uninstall は、1つのコマンドで複数のパッケージ名を指定して削除することが可能です。たとえば、pip uninstall packageA packageB のように書くことで、複数のパッケージをまとめてアンインストールできます。\n\nそのため、「削除対象となるパッケージの複数指定はできない」という説明は誤りです。\n\n他の選択肢は、仮想環境や pip の基本的な動作を正しく説明しています。仮想環境は独立した Python 実行環境を提供し、pip はデフォルトで PyPI からパッケージを取得します。また、pip install --upgrade による更新や、pip list と pip freeze の役割の違いについても正しい内容です。\n\n以上の理由から、誤っている記述は「pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。」です。\n\n【要点まとめ】\n・pip uninstall は複数パッケージを同時に指定できる\n・仮想環境はパッケージ管理を環境ごとに分離できる\n・pip list と pip freeze は目的と出力形式が異なる"
