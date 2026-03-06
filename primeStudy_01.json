@@ -126,7 +126,7 @@
     "explanation": "appendで末尾に、insertで先頭に要素を追加した後、colors[2:] により ['green', 'blue', 'yellow'] が処理対象になります。それぞれの文字数を出力するため、結果は「green 5, blue 4, yellow 6,」です。"
   },
   {
-    "question": "次のような結果を得たい場合、コードの【A】の行に入る適切なものはどれか。なお【A】に入るものは、★aの行と同じ数の空白でインデントされている。",
+    "question": "次のような結果を得たい場合、コードの【A】の行に入る適切なものはどれか。なお【A】に入るものは、forの行と同じ数の空白でインデントされている。",
     "codeSample": "for n in range(2, 10):\n    for x in range(2 ,n):\n        if n % x == 0:\n            print(n, 'equals', x, '*', n//x)\n            break\n    【A】\n        print(n,'is a prime number')\n\n        continue\n    break",
     "executionResult": "2 is a prime number\n3 is a prime number\n4 equals 2 * 2",
     "options": [
@@ -466,11 +466,11 @@
     "codeSample": "import sys\nprint(【A】)",
     "executionResult": "['one', 'two', 'three']",
     "options": [
-      "ys.args[1:4]",
-      "ys.args[1:3]",
-      "ys.argv[1:4]",
-      "ys.argv[1:3]",
-      "ys.argv[0:2]"
+      "sys.args[1:4]",
+      "sys.args[1:3]",
+      "sys.argv[1:4]",
+      "sys.argv[1:3]",
+      "sys.argv[0:2]"
     ],
     "correctIndex": 2,
     "explanation": "この問題では、コマンドライン引数が sys.argv にどのように格納され、スライスによってどの要素が取り出されるかを正しく理解しているかが問われています。\n\nPythonでは、コマンドライン引数は sys.argv というリストに格納されます。sys.argv[0] には実行されたスクリプト名が入り、それ以降の要素にコマンドラインで指定した引数が順番に格納されます。\n\n今回の実行例では、sys.argv の中身は次のようになります。\n['script.py', 'one', 'two', 'three', 'four', 'five']\n\nここから ['one', 'two', 'three'] を取り出すには、インデックス1から始めて、インデックス4の直前までをスライスする必要があります。そのため、sys.argv[1:4] が正しい指定になります。\n\n他の選択肢にある sys.args は存在しない属性です。また、スライスの終了位置を誤ると、要素数が合わなくなります。\n\n以上の理由から、【A】に入る正しいコードは「sys.argv[1:4]」です。\n\n【要点まとめ】\n・コマンドライン引数は sys.argv にリストとして格納される\n・sys.argv[0] はスクリプト名\n・スライスは「開始:終了（直前まで）」で指定する"
@@ -480,11 +480,11 @@
     "codeSample": "import re\nprog = re.compile('(K|S)us(a|u)n(a|o)(o|m)?g?i?(saya)?', re.IGNORECASE)\n【A】\nprint(ret[0])",
     "executionResult": null,
     "options": [
-      "et = prog.search('KUSANAGI')",
-      "et = prog.search('kusunomi')",
-      "et = prog.search('SUSANOO')",
-      "et = prog.search('kusanomi')",
-      "et = prog.search('Kusaneiro')"
+      "ret = prog.search('KUSANAGI')",
+      "ret = prog.search('kusunomi')",
+      "ret = prog.search('SUSANOO')",
+      "ret = prog.search('kusanomi')",
+      "ret = prog.search('Kusaneiro')"
     ],
     "correctIndex": 4,
     "explanation": "この問題では、正規表現による検索結果が「見つかった場合」と「見つからなかった場合」でどのように振る舞うかを理解しているかが問われています。\n\nre.search() は、文字列の中にパターンが見つかった場合は Match オブジェクトを返しますが、見つからなかった場合は None を返します。\n\nこのコードでは、search の結果を ret に代入したあと、print(ret[0]) を実行しています。Match オブジェクトであれば ret[0] によってマッチした文字列全体を取得できますが、ret が None の場合は None に対してインデックスアクセスを行うことになり、エラーが発生します。\n\n正規表現 '(K|S)us(a|u)n(a|o)(o|m)?g?i?(saya)?' は、「Kus」または「Sus」で始まり、その後に a または u、n、a または o が続く形を想定しています。\n\n「Kusaneiro」は 'Kusaneiro' という文字列であり、'Kusa' の次に 'neiro' が続いています。この 'e' の部分は (a|o) に一致しないため、正規表現全体にマッチせず、ret は None になります。\n\nその結果、print(ret[0]) の行でエラーが発生します。\n\n他の選択肢はいずれも正規表現にマッチするため、ret には Match オブジェクトが入り、エラーにはなりません。\n\n以上の理由から、エラーとなるのは「ret = prog.search('Kusaneiro')」です。\n\n【要点まとめ】\n・re.search() は見つからない場合に None を返す\n・None に対してインデックスアクセスはできない\n・正規表現は1文字の違いでもマッチしなくなることがある"
@@ -494,11 +494,11 @@
     "codeSample": "import statistics\ndata = [1,10,15,20,25,30,35]\nrslt1 = statistics.【A】(data)\nrslt2 = statistics.【B】(data)\nrslt3 = statistics.【C】(data)\nprint(rslt1, rslt2, rslt3)",
     "executionResult": null,
     "options": [
-      "ean median variance",
-      "ean center scatter",
-      "verage middle variance",
-      "alance median scatter",
-      "verage median variance"
+      "mean median variance",
+      "mean center scatter",
+      "average middle variance",
+      "balance median scatter",
+      "average median variance"
     ],
     "correctIndex": 0,
     "explanation": "この問題では、statisticsモジュールに用意されている基本的な統計量を求める関数名を正しく理解しているかが問われています。\n\nstatistics.mean() は、与えられたデータの平均値（算術平均）を求める関数です。statistics.median() は、データを並び替えたときの中央の値、つまり中央値を求めます。statistics.variance() は、データのばらつきを表す分散を計算する関数です。\n\nこれらは statistics モジュールで正式に定義されている関数名であり、平均・中央値・分散を求めるという目的にそのまま対応しています。\n\n一方、average や middle、center、scatter、balance といった名前の関数は statistics モジュールには存在しません。そのため、それらを指定すると AttributeError になります。\n\n以上の理由から、正しい組み合わせは「mean median variance」です。\n\n【要点まとめ】\n・statistics.mean() は平均を求める\n・statistics.median() は中央値を求める\n・statistics.variance() は分散を求める\n・関数名は英語の意味ではなく、実際に定義されている名前を使う必要がある"
@@ -508,11 +508,11 @@
     "codeSample": "【A】\nnow = date.today()\nprint(now)",
     "executionResult": null,
     "options": [
-      "mport date",
-      "rom datetime import date",
-      "mport date from datetime",
-      "rom date",
-      "mport datetime from date"
+      "import date",
+      "from datetime import date",
+      "import date from datetime",
+      "from date",
+      "import datetime from date"
     ],
     "correctIndex": 1,
     "explanation": "この問題では、datetime モジュールから date クラスを正しく読み込む方法を理解しているかが問われています。\n\ndate.today() を使うためには、date クラスが名前空間に存在している必要があります。Pythonでは、date クラスは datetime モジュールの中に定義されているため、「from datetime import date」という形でインポートするのが正しい書き方です。\n\nこの書き方をすると、date という名前をそのまま使って date.today() を呼び出すことができます。\n\n他の選択肢は、いずれも Python の import 文として正しくなかったり、date クラスを正しく参照できなかったりします。例えば、import date というモジュールは標準ライブラリには存在しませんし、「import date from datetime」や「import datetime from date」といった構文も Python では使えません。\n\n以上の理由から、【A】に入る適切なコードは「from datetime import date」です。\n\n【要点まとめ】\n・date クラスは datetime モジュールに定義されている\n・from モジュール import クラス の形で個別に読み込める\n・date.today() を使うには date が直接参照できる必要がある"
@@ -522,11 +522,11 @@
     "codeSample": "",
     "executionResult": null,
     "options": [
-      "RROR、CRITICAL、WARNING、INFO、DEBUG",
-      "RROR、CRITICAL、WARNING、DEBUG、INFO",
-      "RITICAL、ERROR、WARNING、DEBUG、INFO",
-      "RITICAL、ERROR、WARNING、INFO、DEBUG",
-      "RITICAL、WARNING、ERROR、INFO、DEBUG"
+      "ERROR、CRITICAL、WARNING、INFO、DEBUG",
+      "ERROR、CRITICAL、WARNING、DEBUG、INFO",
+      "CRITICAL、ERROR、WARNING、DEBUG、INFO",
+      "CRITICAL、ERROR、WARNING、INFO、DEBUG",
+      "CRITICAL、WARNING、ERROR、INFO、DEBUG"
     ],
     "correctIndex": 3,
     "explanation": "この問題では、Pythonのloggingモジュールで定義されているログレベルの優先度順を正しく理解しているかが問われています。\n\nloggingモジュールでは、ログメッセージに重要度（レベル）が設定されており、重大なものほど優先度が高く扱われます。標準で用意されている主なレベルは、CRITICAL、ERROR、WARNING、INFO、DEBUG の5つです。\n\nこの中で最も優先度が高いのは CRITICAL で、プログラムの継続が困難な重大な問題を表します。次に ERROR はエラーが発生した状態、WARNING は注意喚起、INFO は通常の動作情報、DEBUG は開発時の詳細な情報を表します。\n\nしたがって、優先度が高い順に並べると、CRITICAL → ERROR → WARNING → INFO → DEBUG となります。\n\n以上の理由から、正しい並びは「CRITICAL、ERROR、WARNING、INFO、DEBUG」です。\n\n【要点まとめ】\n・logging にはログレベル（優先度）が定義されている\n・CRITICAL が最も優先度が高い\n・DEBUG は最も詳細だが優先度は低い\n・ログ出力の制御はレベルによって行われる"
@@ -536,11 +536,11 @@
     "codeSample": "",
     "executionResult": null,
     "options": [
-      "ythonの仮想環境とは、特定バージョンのPythonのインストール実体を含む、独立に機能するディレクトリツリーおよびパッケージなどから成り立つものである。",
+      "Pythonの仮想環境とは、特定バージョンのPythonのインストール実体を含む、独立に機能するディレクトリツリーおよびパッケージなどから成り立つものである。",
       "仮想環境をアクティベートしたら、pipを使ってパッケージのインストール、アップグレード、リムーブができる。pipはデフォルトではPython Package Indexからパッケージをインストールする。",
-      "ip install --upgrade とすることで当該パッケージを最新バージョンにアップグレードすることができる。",
-      "ip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。",
-      "ip listはその仮想環境にインストールされたすべてのパッケージを表示する。pip freezeも同様の働きをするが、出力形式が異なる。"
+      "pip install --upgrade とすることで当該パッケージを最新バージョンにアップグレードすることができる。",
+      "pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。",
+      "pip listはその仮想環境にインストールされたすべてのパッケージを表示する。pip freezeも同様の働きをするが、出力形式が異なる。"
     ],
     "correctIndex": 3,
     "explanation": "この問題では、Pythonの仮想環境と pip コマンドの基本仕様を正しく理解しているかが問われています。\n\n誤っているのは4つ目の記述です。pip uninstall は、1つのコマンドで複数のパッケージ名を指定して削除することが可能です。たとえば、pip uninstall packageA packageB のように書くことで、複数のパッケージをまとめてアンインストールできます。\n\nそのため、「削除対象となるパッケージの複数指定はできない」という説明は誤りです。\n\n他の選択肢は、仮想環境や pip の基本的な動作を正しく説明しています。仮想環境は独立した Python 実行環境を提供し、pip はデフォルトで PyPI からパッケージを取得します。また、pip install --upgrade による更新や、pip list と pip freeze の役割の違いについても正しい内容です。\n\n以上の理由から、誤っている記述は「pip uninstall にパッケージ名を指定すると、その仮想環境からパッケージを削除できる。削除対象となるパッケージの複数指定はできない。」です。\n\n【要点まとめ】\n・pip uninstall は複数パッケージを同時に指定できる\n・仮想環境はパッケージ管理を環境ごとに分離できる\n・pip list と pip freeze は目的と出力形式が異なる"
