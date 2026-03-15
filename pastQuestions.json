@@ -1,0 +1,262 @@
+[
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "text='Python'\nfor string in text:\n print(string)",
+    "executionResult": null,
+    "options": [
+      "Python",
+      "['P', 'y', 't', 'h', 'o', 'n']",
+      "P y t h o n",
+      "P\ny\nt\nh\no\nn"
+    ],
+    "correctIndex": 3,
+    "explanation": "文字列をfor文で順に取り出すと、1文字ずつ処理されます。print(string) は1回ごとに改行して表示するため、P、y、t、h、o、n が1行ずつ出力されます。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "import random\nprint(random.random())",
+    "executionResult": null,
+    "options": [
+      "0.8502808318219005",
+      "7",
+      "1.234567890123456",
+      "-0.4521983312028"
+    ],
+    "correctIndex": 0,
+    "explanation": "random.random() は 0.0以上1.0未満の浮動小数点数を返します。したがって、選択肢の中で条件を満たすのは 0.8502808318219005 です。"
+  },
+  {
+    "question": "実行結果が[1,2,3,4,5,6,7,8,9]になった。★に該当する正しいコードを1つ選びなさい。",
+    "codeSample": "ven = ([1,2,3], [4,5,6], [7,8,9])\nresult = [ ★ ]\nprint(result)",
+    "executionResult": "[1,2,3,4,5,6,7,8,9]",
+    "options": [
+      "[num for num in ven]",
+      "[ven for num in ven]",
+      "[num for even in ven for num in even]",
+      "[num for num in even for even in ven]"
+    ],
+    "correctIndex": 2,
+    "explanation": "二重のリスト内包表記では、外側で各リストを取り出し、内側でその要素を1つずつ取り出します。for even in ven で各小リストを取り出し、for num in even で中身を展開するので、結果は1次元の [1,2,3,4,5,6,7,8,9] になります。"
+  },
+  {
+    "question": "Pythonの整数型を選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "int",
+      "complex",
+      "integer",
+      "float"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pythonで整数を表す組み込み型は int です。complex は複素数型、float は浮動小数点数型で、integer という組み込み型名はありません。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "try:\n 0/10\nexcept ZeroDivisionError:\n print('ZeroDivisionError!!')\nelse:\n print('else!!')\nfinally:\n print('finally!!')",
+    "executionResult": null,
+    "options": [
+      "ZeroDivisionError!!\nfinally!!",
+      "else!!\nfinally!!",
+      "finally!!",
+      "ZeroDivisionError!!\nelse!!\nfinally!!"
+    ],
+    "correctIndex": 1,
+    "explanation": "0/10 はゼロ除算ではなく、結果は 0.0 です。そのため例外は発生せず、else ブロックが実行されます。finally は例外の有無に関係なく必ず実行されるので、出力は else!! と finally!! になります。"
+  },
+  {
+    "question": "以下のコードの出力がtest_list = [1,3,36,46,50]になった。★に該当する正しいコードを1つ選びなさい。",
+    "codeSample": "test_list = [1,3,36,45,50]\n★\nprint(test_list)",
+    "executionResult": "test_list = [1,3,36,46,50]",
+    "options": [
+      "test_list[3] = 46",
+      "test_list[2] = 46",
+      "test_list[4] = 46",
+      "test_list.append(46)"
+    ],
+    "correctIndex": 0,
+    "explanation": "変更したいのは4番目の要素 45 なので、インデックスは 3 です。test_list[3] = 46 とすれば、[1,3,36,46,50] に書き換わります。"
+  },
+  {
+    "question": "list1 = [1, 2, 3]があり、list1[:]を実行したときと同じになるものは？",
+    "codeSample": "list1 = [1, 2, 3]",
+    "executionResult": null,
+    "options": [
+      "append()",
+      "extend()",
+      "list()",
+      "copy()"
+    ],
+    "correctIndex": 3,
+    "explanation": "list1[:] はリスト全体の浅いコピーを作ります。同じ目的で使えるメソッドは copy() です。append() や extend() は要素を追加するメソッドで、list() はこの設問ではメソッドではなく、list1[:] と同じ操作として問われている答えにはなっていません。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "sample = [0, 5, 20, 30, 40, 50]\ndel sample[5]\nprint(sample)",
+    "executionResult": null,
+    "options": [
+      "[0, 5, 20, 30, 40]",
+      "[0, 5, 20, 30, 50]",
+      "[0, 20, 30, 40, 50]",
+      "[0, 5, 20, 30, 40, 50, 50]"
+    ],
+    "correctIndex": 0,
+    "explanation": "sample[5] は6番目の要素 50 を指します。del sample[5] でその要素が削除されるため、残るのは [0, 5, 20, 30, 40] です。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "def func(x, y):\n print(x * y)\nfunc(\"a\", 3)",
+    "executionResult": null,
+    "options": [
+      "3a",
+      "a3",
+      "aaa",
+      "TypeError"
+    ],
+    "correctIndex": 2,
+    "explanation": "文字列に整数を掛けると、その文字列が指定回数だけ繰り返されます。\"a\" * 3 は \"aaa\" になるため、出力は aaa です。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "s = {\"a\",\"b\",\"a\",\"c\"}\nprint(s)",
+    "executionResult": null,
+    "options": [
+      "\"a b a c\"",
+      "{'c', 'a', 'b'}",
+      "['a', 'b', 'a', 'c']",
+      "{'a', 'b', 'a', 'c'}"
+    ],
+    "correctIndex": 1,
+    "explanation": "set は重複する要素を自動でまとめるため、\"a\" は1つだけ残ります。また、set は順序を保証しません。したがって、重複がなく集合として表された選択肢が正解です。"
+  },
+  {
+    "question": "インタープリターについて正しいものを1つ選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "補完機能はユーザーが手動で毎回設定しないと使えない。",
+      "インタープリターでは補完機能は使えず、外部ツールが必須。",
+      "変数とモジュール名の補完はインタプリタの起動時に自動的に有効化される。",
+      "変数とモジュール名の補完はプログラム実行時に有効化される。"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題の想定解では、インタープリタ起動時に補完が有効化される選択肢が正解です。標準対話環境では Tab 補完や履歴機能が使える場合があり、学習用の設問としてはこの理解を押さえておけば十分です。"
+  },
+  {
+    "question": "次のコードのfor以降の部分と同じ動作をする関数を正しいものを1つ選びなさい。",
+    "codeSample": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfor i in range(len(fruits)):\n v = fruits[i]\n print(i, v)",
+    "executionResult": null,
+    "options": [
+      "enumerate",
+      "range",
+      "zip",
+      "map"
+    ],
+    "correctIndex": 0,
+    "explanation": "enumerate は (インデックス, 値) の組を順に返します。そのため、for i, v in enumerate(fruits): と書けば、元の for 文とほぼ同じ動作になります。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "from statistics import mean\ntest_list = [1, 3, 2, 8]\nprint(mean(test_list ))",
+    "executionResult": null,
+    "options": [
+      "14",
+      "3",
+      "3.5",
+      "4.25"
+    ],
+    "correctIndex": 2,
+    "explanation": "mean は平均を求める関数です。1 + 3 + 2 + 8 = 14 で、要素数は 4 なので、14 ÷ 4 = 3.5 です。"
+  },
+  {
+    "question": "次のコードを実行したとき、出力として正しい組み合わせを1つ選びなさい。",
+    "codeSample": "text = \"Python\"\nsample = [\"test1\",\"test2\",\"test3\"]\nprint(len(text))\nprint(len(sample))",
+    "executionResult": null,
+    "options": [
+      "5, 3",
+      "6, 3",
+      "6, 15",
+      "7, 3"
+    ],
+    "correctIndex": 1,
+    "explanation": "文字列 \"Python\" の長さは 6、リスト sample の要素数は 3 です。したがって出力の組み合わせは 6, 3 です。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "pairs=[(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]\npairs.sort(key=lambda pair: pair[1])\nprint(pairs)",
+    "executionResult": null,
+    "options": [
+      "[(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]",
+      "[(1, 'one'), (3, 'three'), (2, 'two'), (4, 'four')]",
+      "[(2, 'two'), (3, 'three'), (1, 'one'), (4, 'four')]",
+      "[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]"
+    ],
+    "correctIndex": 3,
+    "explanation": "key=lambda pair: pair[1] は、各タプルの2番目の要素、つまり文字列で並べ替える指定です。文字列の辞書順では four, one, three, two の順になるため、その並びの選択肢が正解です。"
+  },
+  {
+    "question": "pipはPythonのパッケージ管理システム。Pythonのパッケージ（ライブラリ）をアップデートするときのコマンドで正しいものを1つ選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pip install --update パッケージ名",
+      "pip install --upgrade パッケージ名",
+      "pip install --renew パッケージ名",
+      "pip venv パッケージ名"
+    ],
+    "correctIndex": 1,
+    "explanation": "パッケージを更新するときは pip install --upgrade パッケージ名 を使います。短縮形として -U も使えます。"
+  },
+  {
+    "question": "辞書型のデータをJSON形式に文字列としてシリアライズする際の正しいメソッドを1つ選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "dumps()",
+      "dump()",
+      "loads()",
+      "load()"
+    ],
+    "correctIndex": 0,
+    "explanation": "json.dumps() は Python オブジェクトを JSON 文字列に変換します。json.dump() はファイルに書き込むときに使うので、文字列としてシリアライズするという条件には dumps() が合っています。"
+  },
+  {
+    "question": "PEP 8について正しいものを1つ選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "インデントはタブで統一する",
+      "1行の文字数は無制限で問題ない",
+      "インデントはスペースで統一し、タブは使わない",
+      "インデントの深さは自由に設定してよい"
+    ],
+    "correctIndex": 2,
+    "explanation": "PEP 8 では、インデントはスペースを使うことが推奨されています。また、1行は79文字程度までが推奨です。"
+  },
+  {
+    "question": "次のコードを実行したときの出力として正しいものを1つ選びなさい。",
+    "codeSample": "try:\n raise TypeError(\"例外発生\")\nexcept TypeError as e:\n print(e)",
+    "executionResult": null,
+    "options": [
+      "TypeError",
+      "例外発生",
+      "None",
+      "出力はなくエラーで停止する"
+    ],
+    "correctIndex": 1,
+    "explanation": "except TypeError as e で例外オブジェクトを受け取り、print(e) でそのメッセージ部分を表示しています。したがって、出力されるのは 例外発生 です。"
+  },
+  {
+    "question": "from os import * を使うことが推奨されない理由として正しいものを1つ選びなさい。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "os モジュールが自動的に削除されてしまうから",
+      "* を使うと処理速度が極端に遅くなるから",
+      "os モジュール内の関数がすべてエラーになるから",
+      "関数を呼び出すときに組み込み関数とモジュール関数が混ざらないようにするため"
+    ],
+    "correctIndex": 3,
+    "explanation": "from os import * とすると、os.open() のような名前が現在の名前空間に直接入ってきます。その結果、組み込み関数 open() などと名前がぶつかり、どの関数を呼んでいるのか分かりにくくなります。"
+  }
+]
