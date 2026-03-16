@@ -351,17 +351,17 @@
     "explanation": "スタックは LIFO（Last In First Out）構造です。最後に追加された要素が最初に取り出されます。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "result = [x for x in range(10) if x % 3 == 0]\nprint(result)",
-    "executionResult": null,
-    "options": [
-      "[0, 3, 6, 9]",
-      "[1, 4, 7]",
-      "[3, 6, 9]",
-      "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
-    ],
-    "correctIndex": 0,
-    "explanation": "range(10) の中から 3 の倍数を取り出すリスト内包表記です。0,3,6,9 が抽出されます。"
+  "question": "次のコードを実行した結果として表示されるものと同じ結果になるコードを選択してください（1つ選択）。",
+  "codeSample": "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.append(x)\nprint(result)",
+  "executionResult": "[0, 3, 6, 9]",
+  "options": [
+    "print([x for x in range(10) if x % 3 == 0])",
+    "result = []\nfor x in range(10):\n    result.append(x)\nprint(result)",
+    "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.insert(0, x)\nprint(result)",
+    "result = []\nfor x in range(10):\n    result.insert(0, x)\nprint(result)"
+  ],
+  "answer": 0,
+  "explanation": "この問題はリスト内包表記と通常の for 文によるリスト作成の動作を理解しているかを確認する問題です。元のコードでは range(10) の値を順に調べ、3で割り切れる値だけを result に append() しています。そのため結果は [0, 3, 6, 9] になります。選択肢Aのリスト内包表記 [x for x in range(10) if x % 3 == 0] は同じ処理を1行で書いたもので、同じ結果になります。選択肢Bは条件が無いため 0〜9 がすべて入ります。選択肢Cは insert(0, x) を使っているため先頭に追加され順序が逆になります。選択肢Dも同様に先頭追加なので結果が異なります。したがって正解は A です。"
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -442,17 +442,17 @@
     "explanation": "zip(numbers, sorted(students)) により numbers と students を対応付けることができます。students は sorted() によりアルファベット順に並び替えられます。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "fridge = ['egg', 'pork', 'milk', 'cheese', 'cabbage', 'milk']\nfor item in sorted(set(fridge)):\n    print(item)",
-    "executionResult": null,
-    "options": [
-      "egg\npork\nmilk\ncheese\ncabbage\nmilk",
-      "egg\npork\nmilk\ncheese\ncabbage",
-      "cabbage\ncheese\negg\nmilk\npork",
-      "cabbage\ncheese\negg\nmilk\nmilk\npork"
-    ],
-    "correctIndex": 2,
-    "explanation": "set() によって重複が削除され、その後 sorted() によってアルファベット順に並び替えられます。結果は cabbage, cheese, egg, milk, pork となります。"
+  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "fridge = ['egg', 'egg', 'pork', 'milk', 'cheese', 'cabbage', 'milk']\nfor item in sorted(set(fridge)):\n    print(item)",
+  "executionResult": null,
+  "options": [
+    "egg\negg\npork\nmilk\ncheese\ncabbage\nmilk",
+    "egg\npork\nmilk\ncheese\ncabbage",
+    "cabbage\ncheese\negg\nmilk\npork",
+    "cabbage\ncheese\negg\negg\nmilk\nmilk\npork"
+  ],
+  "answer": 2,
+  "explanation": "この問題は set() と sorted() の動作を理解しているかを確認する問題です。まず set(fridge) によってリストの重複要素が削除されます。その結果 {'egg', 'milk', 'pork', 'cabbage', 'cheese'} になります。次に sorted() が適用されると文字列のアルファベット順に並び替えられます。結果は ['cabbage', 'cheese', 'egg', 'milk', 'pork'] となります。for ループではこの順番で1行ずつ出力されるため、表示結果は cabbage → cheese → egg → milk → pork になります。したがって正解は C です。"
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -507,17 +507,17 @@
     "explanation": "書式指定 {temperature:10.1f} は幅10、少数1桁で表示します。右寄せで空白埋めされるため '____25.7' のような表示になります。"
   },
   {
-    "question": "ファイルの読み込みに関して、誤っているものを選択してください（1つ選択）。",
-    "codeSample": null,
-    "executionResult": null,
-    "options": [
-      "open() はファイルオブジェクトを返す関数で、open(\"ファイル名\", \"モード\") の形式で指定できる",
-      "open() でテキストファイルをバイナリモードで開くには、モード引数に \"b\" を付ける",
-      "ファイルオブジェクトから1行読み込むには f.readline() を使う",
-      "JSON形式のファイルを読み書きするには json モジュールが使える"
-    ],
-    "correctIndex": 1,
-    "explanation": "バイナリモードで開くには 'rb' や 'wb' のように b を指定します。テキストファイルをバイナリとして扱う場合は明示的にモードを指定する必要があります。"
+  "question": "ファイルの読み書きについて、誤っているものを選択してください（1つ選択）。",
+  "codeSample": null,
+  "executionResult": null,
+  "options": [
+    "open() はファイルオブジェクトを返す関数で、open(<ファイル名>, <モード>) のように引数を指定できる",
+    "open() を使ってファイルをバイナリモードで開くには、モード引数に rv を追加する",
+    "ファイルオブジェクト f から1行読み込むには、f.readline() を使う",
+    "JSON形式のファイルを読み書きに使える、json モジュールがある"
+  ],
+  "answer": 1,
+  "explanation": "この問題は Python のファイル入出力の基本を理解しているかを確認する問題です。open() 関数では第2引数のモードで読み書き方法を指定します。バイナリモードで開く場合は 'rb'（読み込み）や 'wb'（書き込み）などのように b を指定します。選択肢Bでは rv と書かれており誤りです。Aは open() の基本的な使い方として正しく、Cの f.readline() は1行読み込みのメソッドです。Dも正しく、JSON形式のデータを扱うための json モジュールが標準ライブラリに用意されています。したがって誤っているのは B です。"
   },
   {
     "question": "次のコードのうち構文エラー（SyntaxError）が発生するコードを選択してください（1つ選択）。",
@@ -546,17 +546,17 @@
     "explanation": "文字列 \"10\" と整数 10 を + で結合することはできません。型の不一致によって TypeError が発生します。"
   },
   {
-    "question": "例外処理の説明として誤っているものを選択してください（1つ選択）。",
-    "codeSample": "try:\n    処理\nexcept 例外:\n    処理",
-    "executionResult": null,
-    "options": [
-      "例外が発生しなければ except 節はスキップされる",
-      "try の途中で例外が発生すると try 節の残りの処理はスキップされる",
-      "例外が発生した場合、except キーワードの後ろで指定した例外と一致すればその処理が実行される",
-      "例外が発生した場合、except キーワードの後ろで指定した例外と一致しない場合は try 文に戻って処理が再実行される"
-    ],
-    "correctIndex": 3,
-    "explanation": "except に一致しない例外が発生した場合、try に戻ることはありません。その例外は上位に伝播します。"
+  "question": "例外の処理の説明として誤っているものを選択してください（1つ選択）。",
+  "codeSample": "try:\n    処理①\nexcept 例外:\n    処理②\n\n処理③",
+  "executionResult": null,
+  "options": [
+    "処理①で例外が発生しなければ、except 節はスキップされる",
+    "try 節の実行中に例外が発生すると、try 節中の残りの処理はスキップされる",
+    "発生した例外が、except キーワードの後ろで指定した例外と一致すれば、処理②が実行される",
+    "発生した例外が、except キーワードの後ろで指定した例外と一致しない場合は、try 文に続く処理③が実行される"
+  ],
+  "answer": 3,
+  "explanation": "この問題は Python の例外処理の基本動作を理解しているかを確認する問題です。try ブロック内で例外が発生すると、その時点で try 内の残りの処理は実行されず、対応する except ブロックが探されます。発生した例外の型が except に指定された例外と一致した場合のみ except 内の処理が実行されます。もし一致する except が存在しない場合、その例外は未処理例外となりプログラムはエラーを表示して終了します。したがって try の後に書かれている通常処理（ここでは処理③）は実行されません。よって誤っている説明は D です。"
   },
   {
   "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -574,7 +574,7 @@
   {
   "question": "次のコードを実行した結果として、最終行に表示されるものを選択してください（1つ選択）。",
   "codeSample": "def func():\n    raise FileNotFoundError\n\ntry:\n    func()\nexcept FileNotFoundError as ex:\n    raise RuntimeError from ex",
-  "executionResult": "Traceback (most recent call last):\n  File \"/home/appuser/work/py3.py\", line 5, in <module>\n    func()\n  File \"/home/appuser/work/py3.py\", line 2, in func\n    raise FileNotFoundError\nFileNotFoundError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/appuser/work/py3.py\", line 7, in <module>\n    raise RuntimeError from ex\nRuntimeError",
+  "executionResult": null,
   "options": [
     "RuntimeError",
     "FileNotFoundError",
