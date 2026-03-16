@@ -483,7 +483,7 @@
   {
     "question": "sample.py を実行して Hello, World が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）。",
     "codeSample": "【ディレクトリ構成】\n\nwork/\n ├ sample.py\n └ input/\n     ├ __init__.py\n     ├ hello.py\n     └ child/\n         ├ __init__.py\n         └ world.py\n\n",
-    "executionResult": "【sample.py】\n①\nprint_hello()\nprint_world()\n\n【hello.py】\ndef print_hello():\n    print(\"Hello,\", end=\" \")\n\n【world.py】\ndef print_world():\n    print(\"World\")hello.py】\n\ndef print_hello():\n    print(\"Hello,\", end=\" \")\n\n【world.py】\n\ndef print_world():\n    print(\"World\")",
+    "executionResult": "【sample.py】\n①\nprint_hello()\nprint_world()\n\n【hello.py】\ndef print_hello():\n    print(\"Hello,\", end=\" \")\n\n【world.py】\ndef print_world():\n    print(\"World\")",
     "options": [
       "from input import print_hello\nfrom input.child import print_world",
       "from hello import print_hello\nfrom world import print_world",
