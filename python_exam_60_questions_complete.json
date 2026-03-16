@@ -572,69 +572,69 @@
   "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
   },
   {
-    "question": "次のコードを実行したときに発生するエラーを選択してください（1つ選択）。",
-    "codeSample": "def func():\n    raise RuntimeError\n\ntry:\n    func()\nexcept:\n    raise",
-    "executionResult": null,
-    "options": [
-      "RuntimeError",
-      "FileNotFoundError",
-      "The above exception was the direct cause of the following exception",
-      "raise RuntimeError"
-    ],
-    "correctIndex": 0,
-    "explanation": "func() の中で RuntimeError が raise されます。except 節で捕捉されますが、raise を再度実行しているため同じ RuntimeError が再送出されます。"
+  "question": "次のコードを実行した結果として、最終行に表示されるものを選択してください（1つ選択）。",
+  "codeSample": "def func():\n    raise FileNotFoundError\n\ntry:\n    func()\nexcept FileNotFoundError as ex:\n    raise RuntimeError from ex",
+  "executionResult": "Traceback (most recent call last):\n  File \"/home/appuser/work/py3.py\", line 5, in <module>\n    func()\n  File \"/home/appuser/work/py3.py\", line 2, in func\n    raise FileNotFoundError\nFileNotFoundError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/appuser/work/py3.py\", line 7, in <module>\n    raise RuntimeError from ex\nRuntimeError",
+  "options": [
+    "RuntimeError",
+    "FileNotFoundError",
+    "The above exception was the direct cause of the following exception:",
+    "raise RuntimeError from ex"
+  ],
+  "answer": 0,
+  "explanation": "except節の処理中に別の例外が発生すると、例外が発生した順番でTracebackが表示されます。このコードでは、まずfunc()内でFileNotFoundErrorが発生し、その例外をexcept FileNotFoundErrorで受け取った後、raise RuntimeError from ex によって新しい例外が発生します。'from ex' を使うと例外の因果関係（例外チェーン）が作られ、Tracebackには元の例外と新しい例外の両方が表示されます。最終的に発生する例外はRuntimeErrorなので、最後の行に表示されるのはRuntimeErrorになります。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "var = 'True'\n\ndef varfunc():\n    var = 'False'\n    def func():\n        nonlocal var\n        var = 'True'\n    func()\n    print(var)\n\nvarfunc()\nprint(var)",
-    "executionResult": null,
-    "options": [
-      "True\nTrue",
-      "True\nFalse",
-      "False\nTrue",
-      "True\nTrue\nFalse"
-    ],
-    "correctIndex": 0,
-    "explanation": "nonlocal により内側の関数は外側のローカル変数 var を変更します。したがって varfunc 内では True が表示されます。グローバル変数 var は変更されないため最後も True が表示されます。"
+  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "name = \"Taro\"\n\ndef show_name():\n    name = \"Jiro\"\n\n    def sub1():\n        name = \"Saburo\"\n\n    def sub2():\n        nonlocal name\n        name = \"Shiro\"\n\n    sub1()\n    print(name)\n\n    sub2()\n    print(name)\n\nshow_name()\nprint(name)",
+  "executionResult": null,
+  "options": [
+    "Jiro\nJiro\nTaro",
+    "Jiro\nShiro\nTaro",
+    "Saburo\nSaburo\nTaro",
+    "Saburo\nShiro\nShiro"
+  ],
+  "answer": 1,
+  "explanation": "この問題はスコープとnonlocalの動作を理解しているかを確認する問題です。まずグローバル変数 name = \"Taro\" が定義されています。show_name() 内では name = \"Jiro\" が定義され、これは show_name のローカル変数になります。sub1() 内の name = \"Saburo\" は sub1 のローカル変数であり、show_name の name には影響しません。そのため sub1() の後の print(name) は \"Jiro\" が出力されます。次に sub2() では nonlocal name が指定されているため、1つ外側のスコープ（show_name の name）を参照します。そこで name = \"Shiro\" に変更されるため、その後の print(name) は \"Shiro\" になります。show_name() の処理が終わると、グローバル変数 name は変更されていないため、最後の print(name) では \"Taro\" が表示されます。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "class Card:\n\n    def __init__(self, suit, rank):\n        self.suit = suit\n        self.rank = rank\n\nc = Card('spade', 12)\nprint(c.rank)",
-    "executionResult": null,
-    "options": [
-      "NameError",
-      "c = 12",
-      "12",
-      "None"
-    ],
-    "correctIndex": 2,
-    "explanation": "__init__ メソッドで rank をインスタンス変数 self.rank に代入しています。したがって print(c.rank) は 12 を表示します。"
+  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "class Card:\n    all_suit = \"♥♦♣♠\"\n\n    def __init__(self, suit, rank):\n        self.suit = suit\n        self.rank = rank\n\nhq = Card(\"♥\", 12)\nprint(hq.all_suit, hq.suit, hq.rank)",
+  "executionResult": null,
+  "options": [
+    "AttributeErrorになる",
+    "NameErrorになる",
+    "♥ ♥ 12",
+    "♥♦♣♠ ♥ 12"
+  ],
+  "answer": 3,
+  "explanation": "この問題はクラス変数とインスタンス変数の違いを理解しているかを確認する問題です。all_suit はクラス直下に定義されているためクラス変数です。クラス変数はクラスの属性であり、オブジェクトからもアクセスできます。そのため hq.all_suit と書くと \"♥♦♣♠\" を取得できます。一方、__init__ メソッド内で self.suit と self.rank に代入されている値はインスタンス変数で、それぞれ \"♥\" と 12 が設定されています。したがって print(hq.all_suit, hq.suit, hq.rank) の出力は \"♥♦♣♠ ♥ 12\" になります。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "from datetime import datetime\n\nclass Logger:\n    pass\n\nl = Logger()\nprint(type(l))",
-    "executionResult": null,
-    "options": [
-      "Logger",
-      "<class '__main__.Logger'>",
-      "<class 'Logger'>",
-      "Logger object"
-    ],
-    "correctIndex": 1,
-    "explanation": "Pythonでは type() を使うとオブジェクトのクラスが表示されます。スクリプト内で定義されたクラスは __main__ モジュールに属するため <class '__main__.Logger'> と表示されます。"
+  "question": "次のコードを正常に実行できるとき、①に当てはまるものを選択してください（1つ選択）。",
+  "codeSample": "from datetime import datetime\n\nclass Base:\n    def log(self, message):\n        print(message)\n\nclass ①:\n    pass\n\nlog = Logger()\nlog.log(\"done\")",
+  "executionResult": "done",
+  "options": [
+    "Logger",
+    "Logger(Base)",
+    "Logger(Base=Base)",
+    "Logger(Meta=Base)"
+  ],
+  "answer": 1,
+  "explanation": "この問題はクラスの継承について理解しているかを確認する問題です。Base クラスには log() メソッドが定義されています。問題のコードでは Logger() のインスタンスを作成し、そのオブジェクトから log(\"done\") を呼び出しています。Logger クラスが log() メソッドを持つためには、Base クラスを継承する必要があります。Pythonではクラスを継承する場合、class クラス名(基底クラス): の形で定義します。そのため正しい書き方は class Logger(Base): になります。これにより Logger クラスは Base クラスのメソッド log() を引き継ぐことができ、log.log(\"done\") を実行すると \"done\" が表示されます。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "def sample():\n    yield 1\n    yield 2\n\nfor i in sample():\n    print(i)",
-    "executionResult": null,
-    "options": [
-      "1\n2\n3",
-      "1\n2\n1\n2",
-      "1\n2",
-      "sample"
-    ],
-    "correctIndex": 2,
-    "explanation": "yield はジェネレータを作ります。sample() を for 文で回すと yield された値が順に取り出されるため 1 と 2 が表示されます。"
+  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "def sample():\n    print(\"yield 1\")\n    yield 1\n    print(\"yield 2\")\n    yield 2\n\nfor i in sample():\n    print(f\"for {i}\")",
+  "executionResult": null,
+  "options": [
+    "for 1\nfor 2\nyield 1\nyield 2",
+    "for 1\nyield 1\nfor 2\nyield 2",
+    "yield 1\nfor 1\nyield 2\nfor 2",
+    "yield 1\nyield 2\nfor 1\nfor 2"
+  ],
+  "answer": 2,
+  "explanation": "この問題はジェネレーターの動作を理解しているかを確認する問題です。yield を含む関数はジェネレーター関数となり、呼び出すとジェネレーターオブジェクトを返します。for 文でこのジェネレーターを反復すると、yield に到達するたびに値が返され、関数の実行はその位置で一時停止します。最初に print(\"yield 1\") が実行され \"yield 1\" が表示され、その後 yield 1 により値 1 が返されます。for ループ側で print(f\"for {i}\") が実行され \"for 1\" が表示されます。次に関数の続きが実行され print(\"yield 2\") が表示され、yield 2 によって 2 が返されます。その後 for ループで \"for 2\" が表示されます。したがって出力順は yield 1 → for 1 → yield 2 → for 2 となります。"
   },
   {
     "question": "osモジュールの説明として誤っているものを選択してください（1つ選択）。",
@@ -650,17 +650,17 @@
     "explanation": "カレントディレクトリを変更する関数は os.cd() ではなく os.chdir() です。"
   },
   {
-    "question": "次のディレクトリ構成のとき、次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "from glob import glob\nprint(glob('input/*'))",
-    "executionResult": null,
-    "options": [
-      "['hello.py', 'child', '__init__.py']",
-      "['input/hello.py', 'input/child', 'input/__init__.py']",
-      "['input/hello.py', 'input/child/world.py', 'input/child/tests.py']",
-      "['hello.py', 'tests.py', 'world.py', '__init__.py']"
-    ],
-    "correctIndex": 1,
-    "explanation": "glob('input/*') は input ディレクトリ直下のファイルとディレクトリを取得します。パス付きで返されるため ['input/hello.py','input/child','input/__init__.py'] になります。"
+  "question": "カレントディレクトリ以下が下記の構成の場合、次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "py2.py\ninput/\n    __init__.py\n    hello.py\n    child/\n        __init__.py\n        world.py\n        gchild/\n            __init__.py\n            tests.py",
+  "executionResult": "【py2.py】\nfrom glob import glob\nprint(glob('input/*'))",
+  "options": [
+    "['hello.py', 'child', '__init__.py']",
+    "['input/hello.py', 'input/child', 'input/__init__.py']",
+    "['input/hello.py', 'input/child/world.py', 'input/child/gchild/tests.py']",
+    "['hello.py', 'tests.py', 'world.py', '__init__.py']"
+  ],
+  "answer": 1,
+  "explanation": "この問題は glob() がどの範囲までファイルやディレクトリを取得するかを理解しているかを確認する問題です。glob('input/*') は input ディレクトリ直下にあるファイルとディレクトリだけを取得します。そのため取得対象は hello.py、child ディレクトリ、__init__.py です。また、戻り値にはカレントディレクトリからの相対パスが含まれるため、それぞれ 'input/hello.py'、'input/child'、'input/__init__.py' となります。child の中にある world.py や gchild/tests.py は再帰的には取得されないので含まれません。したがって正解は B です。"
   },
   {
     "question": "次のファイルをコマンドラインで実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -702,43 +702,43 @@
     "explanation": "中央値を求める関数は statistics.half() ではなく statistics.median() です。"
   },
   {
-    "question": "datetimeモジュールのtoday()の戻り値を文字列として表示する strftime() に関する説明として正しいものを選択してください。",
-    "codeSample": "datetime.strftime(\"%Y-%m-%d\")",
-    "executionResult": null,
-    "options": [
-      "%Y は分を表す",
-      "%m は秒を表す",
-      "%d は日の値を表す",
-      "%S はローカル時刻を表す"
-    ],
-    "correctIndex": 2,
-    "explanation": "%d は日(day)を表す書式指定子です。"
+  "question": "datetimeモジュールのいくつかのオブジェクトのメソッドである strftime() と strptime() で使用する書式コードについて誤っているものを選択してください（1つ選択）。",
+  "codeSample": null,
+  "executionResult": null,
+  "options": [
+    "%y は、0埋めした10進数で表記した世紀なしの年である",
+    "%d は、0埋めした10進数で表記した月中の日である",
+    "%A は、ロケールの曜日名を表示する",
+    "%M は、ロケールの月名を表示する"
+  ],
+  "answer": 3,
+  "explanation": "この問題は datetime モジュールの strftime() / strptime() で使用する書式コードを理解しているかを確認する問題です。%y は2桁の年（世紀なしの年）を表します。%d は月の中の日（01〜31）を表します。%A はロケールに基づいた曜日名（Monday など）を表示します。一方 %M は「分」を表す書式コードであり、月名ではありません。ロケールの月名を表示する書式コードは %B です。そのため誤っているのは D になります。"
   },
   {
-    "question": "docstringに関する説明として正しいものを選択してください。",
-    "codeSample": "def max_value(values):\n    \"\"\"リストの最大値を取得\"\"\"\n    return max(values)",
-    "executionResult": null,
-    "options": [
-      "__doc__",
-      "doc",
-      "test",
-      "values"
-    ],
-    "correctIndex": 0,
-    "explanation": "docstringは __doc__ 属性で取得できます。"
+  "question": "以下の実装は、docstring中にある対話実行例が、書かれている通りに動作するか検証するものである。空欄①に入る記述として正しいものを選択してください（1つ選択）。",
+  "codeSample": "def max_value(values):\n    \"\"\"数値のリストから最大値を取得する\n\n    >>> print(max_value([10, 20, 30]))\n    30\n    \"\"\"\n    return max(values)\n\nimport doctest\ndoctest.①()",
+  "executionResult": null,
+  "options": [
+    "assert",
+    "assertTrue",
+    "test",
+    "testmod"
+  ],
+  "answer": 3,
+  "explanation": "この問題は doctest モジュールの使い方を理解しているかを確認する問題です。doctest は docstring 内に書かれた対話形式の実行例（>>> で始まる部分）を実際に実行し、結果が一致するかをテストする仕組みです。doctest.testmod() を実行すると、そのモジュール内にある docstring を解析し、書かれている実行例をテストとして実行します。今回のコードでは docstring に >>> print(max_value([10, 20, 30])) と書かれており、結果として 30 が表示されるかが検証されます。そのため空欄①に入るのは doctest.testmod() です。"
   },
   {
-    "question": "loggingモジュールのログレベルを重大度順に並べたものを選択してください。",
-    "codeSample": null,
-    "executionResult": null,
-    "options": [
-      "INFO, DEBUG, WARNING, ERROR, CRITICAL",
-      "INFO, WARNING, DEBUG, ERROR, CRITICAL",
-      "DEBUG, INFO, WARNING, ERROR, CRITICAL",
-      "DEBUG, WARNING, ERROR, CRITICAL, INFO"
-    ],
-    "correctIndex": 2,
-    "explanation": "loggingのレベルは DEBUG → INFO → WARNING → ERROR → CRITICAL の順です。"
+  "question": "loggingモジュールのメッセージの優先度を低い順に並べたものを選択してください（1つ選択）。",
+  "codeSample": null,
+  "executionResult": null,
+  "options": [
+    "INFO, DEBUG, WARNING, ERROR, CRITICAL",
+    "INFO, WARNING, DEBUG, ERROR, CRITICAL",
+    "DEBUG, INFO, WARNING, ERROR, CRITICAL",
+    "DEBUG, WARNING, ERROR, CRITICAL, INFO"
+  ],
+  "answer": 2,
+  "explanation": "この問題は Python の logging モジュールにおけるログレベルの優先順位を理解しているかを確認する問題です。ログレベルは重要度の低い順に DEBUG、INFO、WARNING、ERROR、CRITICAL となっています。DEBUG は開発時の詳細な情報、INFO は通常の動作に関する情報、WARNING は注意が必要な状態、ERROR は処理の失敗、CRITICAL は重大なエラーを表します。したがって低い順に並べると DEBUG → INFO → WARNING → ERROR → CRITICAL となるため、正解は C です。"
   },
   {
     "question": "sample-env という仮想環境を作成するコマンドとして正しいものを選択してください。",
@@ -754,29 +754,42 @@
     "explanation": "Python標準の仮想環境は venv モジュールで作成します。"
   },
   {
-    "question": "pipコマンドに関する説明として正しいものを選択してください。",
-    "codeSample": null,
-    "executionResult": null,
-    "options": [
-      "pip は標準ライブラリの管理ツール",
-      "pip はPythonパッケージ管理ツール",
-      "pip はPythonコード実行ツール",
-      "pip はPythonのデバッガ"
-    ],
-    "correctIndex": 1,
-    "explanation": "pipはPythonパッケージのインストールや管理を行うツールです。"
+  "question": "pip の説明として正しいものを選択してください（1つ選択）。",
+  "codeSample": null,
+  "executionResult": null,
+  "options": [
+    "pip には、サブコマンド merge で複数のパッケージを同時にインストールできる",
+    "pip で、パッケージ名の後ろに = とバージョン名をつけると、そのバージョンのパッケージをインストールできる",
+    "python -m pip show <パッケージ名> で、そのパッケージの情報を表示する",
+    "python -m pip upgrade <パッケージ名> で、該当パッケージを最新バージョンにアップグレードできる"
+  ],
+  "answer": 2,
+  "explanation": "この問題は pip コマンドの基本的な使い方を理解しているかを確認する問題です。パッケージの情報を表示するには pip show コマンドを使用します。python -m pip show <パッケージ名> と実行すると、そのパッケージの名前、バージョン、インストール場所などの情報を確認できます。なお pip には merge というサブコマンドは存在しません。また特定バージョンを指定してインストールする場合は package==1.0 のように == を使います。さらにパッケージをアップグレードする場合は python -m pip install --upgrade <パッケージ名> または pip install -U <パッケージ名> を使用します。そのため正しい説明は C です。"
   },
   {
-    "question": "対話型環境として正しいものを選択してください。",
-    "codeSample": null,
-    "executionResult": null,
-    "options": [
-      "CPython",
-      "IPython",
-      "Jupyter Notebook",
-      "Python Shell"
-    ],
-    "correctIndex": 1,
-    "explanation": "IPythonは拡張されたPython対話型環境です。"
-  }
+  "question": "以下を対話型環境で実行した結果として表示されるものを選択してください（1つ選択）。なお3行目で print まで入力した状態で [Tab] キーを押しています。",
+  "codeSample": ">>> print_number1 = 10\n>>> print_number2 = 20\n>>> print<Tab>",
+  "executionResult": null,
+  "options": [
+    "print( まで補完される",
+    "print(print_number まで補完される",
+    "以下の候補が表示される: print(  print_number1  print_number2",
+    "以下の候補が表示される: print_number1  print_number2"
+  ],
+  "answer": 2,
+  "explanation": "この問題は対話型環境におけるTab補完の動作を理解しているかを確認する問題です。対話型環境で print と入力して Tab キーを押すと、その文字列で始まる名前の候補が表示されます。今回の環境では標準関数の print() と、すでに定義されている変数 print_number1 と print_number2 が存在します。そのため Tab 補完の候補として print(、print_number1、print_number2 が表示されます。したがって正解は C です。"
+  },
+  {
+  "question": "以下の説明で誤っているものを選択してください（1つ選択）。",
+  "codeSample": null,
+  "executionResult": null,
+  "options": [
+    "変数とモジュール名の補完はインタープリタの起動時に自動で有効になっている",
+    "bpython は、コンパイラである",
+    "bpython は、タブ補完、オブジェクト検索、高度なヒストリ管理などの機能を持つ",
+    "IPython は、bpython と類似の拡張対話環境である"
+  ],
+  "answer": 1,
+  "explanation": "この問題は Python の対話環境に関する知識を確認する問題です。bpython は Python の拡張された対話型インタープリタであり、コンパイラではありません。bpython にはタブ補完、オブジェクトの探索、履歴管理などの便利な機能が備わっています。また IPython も同様に Python の拡張対話環境として広く利用されています。したがって「bpython はコンパイラである」という説明は誤りであり、正解は B です。"
+}
 ]
