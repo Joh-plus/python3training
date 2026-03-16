@@ -352,16 +352,16 @@
   },
   {
   "question": "次のコードを実行した結果として表示されるものと同じ結果になるコードを選択してください（1つ選択）。",
-  "codeSample": "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.append(x)\nprint(result)",
+  "codeSample": "result = [x for x in range(10) if x % 3 == 0]\nprint(result)",
   "executionResult": "[0, 3, 6, 9]",
   "options": [
-    "print([x for x in range(10) if x % 3 == 0])",
+    "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.append(x)\nprint(result)",
     "result = []\nfor x in range(10):\n    result.append(x)\nprint(result)",
     "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.insert(0, x)\nprint(result)",
     "result = []\nfor x in range(10):\n    result.insert(0, x)\nprint(result)"
   ],
   "answer": 0,
-  "explanation": "この問題はリスト内包表記と通常の for 文によるリスト作成の動作を理解しているかを確認する問題です。元のコードでは range(10) の値を順に調べ、3で割り切れる値だけを result に append() しています。そのため結果は [0, 3, 6, 9] になります。選択肢Aのリスト内包表記 [x for x in range(10) if x % 3 == 0] は同じ処理を1行で書いたもので、同じ結果になります。選択肢Bは条件が無いため 0〜9 がすべて入ります。選択肢Cは insert(0, x) を使っているため先頭に追加され順序が逆になります。選択肢Dも同様に先頭追加なので結果が異なります。したがって正解は A です。"
+  "explanation": "このコードはリスト内包表記を使って、0〜9の数値のうち3で割り切れる値だけを新しいリストに入れています。つまり [0, 3, 6, 9] が生成されます。リスト内包表記は通常の for 文と if 文で書き換えることができ、その場合は条件を満たしたときに append() でリストに追加します。Aのコードは exactly 同じ処理を行っています。Bは条件が無いため0〜9すべてが追加されます。Cは insert(0, x) を使うため先頭に追加され順序が逆になります。Dも同様に insert を使うため順序が逆になります。したがって正解はAです。"
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
