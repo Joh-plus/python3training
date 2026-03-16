@@ -559,17 +559,16 @@
     "explanation": "except に一致しない例外が発生した場合、try に戻ることはありません。その例外は上位に伝播します。"
   },
   {
-    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "try:\n    x = 10/0\nexcept ZeroDivisionError:\n    print(\"It's ZeroDivisionError!\")\nexcept:\n    print(\"except run\")\nelse:\n    print(\"Else run\")\nfinally:\n    print(\"Final run\")",
-    "executionResult": null,
-    "options": [
-      "It's ZeroDivisionError! → Final run",
-      "It's ZeroDivisionError! → except run → Final run",
-      "It's ZeroDivisionError! → Else run → Final run",
-      "Else run → Final run"
-    ],
-    "correctIndex": 0,
-    "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
+  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+  "codeSample": "try:\n    x = 10/0\nexcept ZeroDivisionError:\n    print(\"It's ZeroDivisionError!\")\n    raise\nexcept:\n    print(\"except run\")\nelse:\n    print(\"Else run\")\nfinally:\n    print(\"Final run\")",
+  "executionResult": null,
+  "options": [
+    "It's ZeroDivisionError!\nFinal run",
+    "It's ZeroDivisionError!\nexcept run\nFinal run",
+    "It's ZeroDivisionError!\nFinal run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero",
+    "It's ZeroDivisionError!\nElse run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero"
+  ],
+  "answer": 2
   },
   {
     "question": "次のコードを実行したときに発生するエラーを選択してください（1つ選択）。",
