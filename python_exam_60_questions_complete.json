@@ -1,0 +1,782 @@
+[
+  {
+    "question": "Pythonの特徴として正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "Pythonで書いたプログラムは、モジュールに分割して再利用が可能",
+      "Pythonは実行前に必ずコンパイルされる",
+      "PythonプログラムはC言語、C++、Javaプログラムよりも長くなることが多い",
+      "PythonはWindows OSでのみ動く"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pythonの特徴として、プログラムをモジュール単位に分割して再利用できる点があります。Pythonはインタープリタ型言語であり、通常はコンパイルやリンクを必要としません。また、Pythonは可読性が高く、C言語やJavaより短いコードで書ける傾向があります。さらに、PythonはWindows、macOS、Linuxなど複数のOSで動作します。"
+  },
+  {
+    "question": "Pythonのインタープリターの特徴として正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "対話モードの大なり記号3つ（>>>）のコマンド入力を促すプロンプトを「インプットプロンプト」という",
+      "デフォルトでは、PythonのソースファイルはShift-JISでエンコードしてあるものとして扱われる",
+      "対話モードでend()と入力すれば終了できる",
+      "インタープリターでコマンドを実行するには、python -c <コマンド> とする"
+    ],
+    "correctIndex": 3,
+    "explanation": "Pythonのインタープリターでコマンドを直接実行する場合は、-c オプションを使います。例えば python -c \"print('Hello')\" のように記述すると、コマンドラインからPythonコードを実行できます。対話モードの >>> はプライマリプロンプトと呼ばれます。また、PythonのソースファイルはデフォルトでUTF-8として扱われます。対話モードを終了するには quit()、またはCtrl+D（UNIX/macOS）、Ctrl+Z（Windows）を使用します。"
+  },
+  {
+    "question": "Pythonでデフォルト（UTF-8）以外のエンコーディングを使う場合、ファイルの先頭行に特殊コメント行を追加します。正しい記法を選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "# <encoding name>",
+      "# code=<encoding name>",
+      "# -*- coding: <encoding name> -*-",
+      "# -*- <encoding name> -*-"
+    ],
+    "correctIndex": 2,
+    "explanation": "PythonでUTF-8以外のエンコーディングを指定する場合、ファイルの先頭にエンコーディング宣言を記述します。正しい書式は「# -*- coding: <encoding name> -*-」です。例えばShift-JISの場合は「# -*- coding: shift_jis -*-」のように記述します。この形式はPEP 263で定義されています。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "print(17 // 3)",
+    "executionResult": null,
+    "options": [
+      "5.666666666666667",
+      "5",
+      "5.0",
+      "2"
+    ],
+    "correctIndex": 1,
+    "explanation": "演算子 // は切り捨て除算（floor division）を行う演算子です。17 ÷ 3 は 5.666... ですが、小数点以下は切り捨てられるため結果は 5 になります。したがって print(17 // 3) の出力は 5 です。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "print(5**2)",
+    "executionResult": null,
+    "options": [
+      "7",
+      "10",
+      "25",
+      "100"
+    ],
+    "correctIndex": 2,
+    "explanation": "演算子 ** は累乗（べき乗）を求める演算子です。5**2 は「5の2乗」を意味するため、計算結果は 25 になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "x = 10\nprint(x + y + 30)",
+    "executionResult": null,
+    "options": [
+      "60",
+      "IndexError: list index out of range",
+      "NameError: name 'x' is not defined",
+      "NameError: name 'y' is not defined"
+    ],
+    "correctIndex": 3,
+    "explanation": "変数 x は定義されていますが、変数 y は定義されていません。そのため式 x + y + 30 を評価しようとすると、未定義の変数 y を参照した時点で NameError が発生します。"
+  },
+  {
+    "question": "次のコードを対話モードで実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": ">>> x = 10\n>>> y = 20\n>>> x + 20\n>>> y + _",
+    "executionResult": null,
+    "options": [
+      "20",
+      "30",
+      "40",
+      "50"
+    ],
+    "correctIndex": 3,
+    "explanation": "Pythonの対話モードでは、最後に評価された式の結果が変数 _（アンダースコア）に保存されます。x + 20 の結果は 30 なので、_ には 30 が入ります。したがって y + _ は 20 + 30 となり、結果は 50 になります。"
+  },
+  {
+    "question": "次のコードを対話モードで実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": ">>> \"Hello, \\nPython\"",
+    "executionResult": null,
+    "options": [
+      "\"Hello,\nPython\"",
+      "'Hello, Python'",
+      "\"Hello, Python\"",
+      "'Hello, \\nPython'"
+    ],
+    "correctIndex": 3,
+    "explanation": "Pythonの対話モードでは、式を評価した結果の「文字列表現（repr）」が表示されます。そのため改行文字 \\n は実際の改行としてではなく、エスケープシーケンスの形（\\n）で表示されます。よって表示結果は 'Hello, \\nPython' になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "word = \"Hello,Python\"\nprint(word[6:])",
+    "executionResult": null,
+    "options": [
+      "Hello,",
+      ",Python",
+      "Python",
+      "ython"
+    ],
+    "correctIndex": 2,
+    "explanation": "スライスは [開始:終了] で指定します。開始を6にすると6番目の文字から最後まで取得されます。\"Hello,Python\" の6番目は P なので結果は Python になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "prime_numbers = [2, 3, 5, 7, 11]\nprime_numbers += [13, 17, 19]\nprime_numbers[5:] = []\nprint(prime_numbers)",
+    "executionResult": null,
+    "options": [
+      "[2, 3, 5, 7, 11]",
+      "[2, 3, 5, 7, 11, 13]",
+      "[2, 3, 5, 7, 11, 13, 17]",
+      "[2, 3, 5, 7, 11, 13, 17, 19]"
+    ],
+    "correctIndex": 0,
+    "explanation": "prime_numbers += [13,17,19] によりリストは [2,3,5,7,11,13,17,19] になります。その後 prime_numbers[5:] = [] により5番目以降の要素が削除されるため結果は [2,3,5,7,11] になります。"
+  },
+  {
+    "question": "以下の関数は最大公約数を求める関数です。次のコードの空欄に入る記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": "def gcd(a, b):\n    while b:\n        a, b = b, ()\n    return a\n\nprint(gcd(256, 192))",
+    "executionResult": null,
+    "options": [
+      "a * b",
+      "a / b",
+      "a // b",
+      "a % b"
+    ],
+    "correctIndex": 3,
+    "explanation": "最大公約数を求めるユークリッドの互除法では a,b = b,a%b を繰り返します。したがって空欄には a % b が入ります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "x = 10\n\nif x < 10:\n    print(\"1ブロック目\")\nelif x == 10:\n    print(\"2ブロック目\")\nelse:\n    print(\"3ブロック目\")",
+    "executionResult": null,
+    "options": [
+      "1ブロック目",
+      "2ブロック目",
+      "2ブロック目\n3ブロック目",
+      "3ブロック目"
+    ],
+    "correctIndex": 1,
+    "explanation": "x は 10 なので x < 10 は False、x == 10 は True になります。したがって elif ブロックが実行され「2ブロック目」が表示されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "vegetables = [\"cabbage\", \"onion\", \"carrot\"]\n\nfor v in vegetables:\n    print(v, len(v))",
+    "executionResult": null,
+    "options": [
+      "cabbage 1\nonion 2\ncarrot 3",
+      "1 cabbage\n2 onion\n3 carrot",
+      "cabbage 7\nonion 5\ncarrot 6",
+      "7 cabbage\n5 onion\n6 carrot"
+    ],
+    "correctIndex": 2,
+    "explanation": "for文でリストの要素を1つずつ取り出し、print(v, len(v)) によって文字列と文字数を表示します。cabbageは7文字、onionは5文字、carrotは6文字です。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "sample_dict = {'a': 'ok', 'b': 'ng', 'c': 'ok'}\n\nfor k, v in sample_dict.copy().items():\n    if v == 'ng':\n        del sample_dict[k]\n    print(k, v)\n\nprint(sample_dict)",
+    "executionResult": null,
+    "options": [
+      "a ok\nb ng\nc ok\n{'a': 'ok', 'c': 'ok'}",
+      "s ok\nc ok\n{'a': 'ok', 'c': 'ok'}",
+      "a ok\nb ng\nc ok\n{'a': 'ok', 'b': 'ng', 'c': 'ok'}",
+      "a ok\n{'a': 'ok', 'b': 'ng', 'c': 'ok'}"
+    ],
+    "correctIndex": 0,
+    "explanation": "辞書のコピーを作成してループしているため、元の辞書を安全に変更できます。b の値は ng なので削除され、最終的な辞書は {'a':'ok','c':'ok'} になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "for num in range(2, 10):\n    print(num, end=\" \")",
+    "executionResult": null,
+    "options": [
+      "2 3 4 5 6 7 8 9",
+      "2 3 4 5 6 7 8 9 10",
+      "3 4 5 6 7 8 9",
+      "3 4 5 6 7 8 9 10"
+    ],
+    "correctIndex": 0,
+    "explanation": "range(2,10) は 2 から 9 までを生成します。end=\" \" によってスペース区切りで出力されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "print(range(1,5))",
+    "executionResult": null,
+    "options": [
+      "[0,1,2,3,4,5]",
+      "[1,2,3,4,5]",
+      "[1,2,3,4]",
+      "range(1,5)"
+    ],
+    "correctIndex": 3,
+    "explanation": "range オブジェクトはそのまま print すると range(1,5) と表示されます。リスト表示にするには list(range(1,5)) が必要です。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "numbers = [1,2,3,4,5,6,7,8,9,10]\n\nfor num in numbers:\n    if num % 3 == 0:\n        continue\n    if num % 7 == 0:\n        break\n    print(num, end=\",\")",
+    "executionResult": null,
+    "options": [
+      "1,2,3,4,5,6,",
+      "1,2,4,5,6,",
+      "1,2,4,5,7,",
+      "1,2,4,5,"
+    ],
+    "correctIndex": 1,
+    "explanation": "3 の倍数は continue によりスキップされます。7 の倍数になると break で終了します。したがって出力は 1,2,4,5,6, になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "numbers = [1,2,3,4,5,6,7,8,9,10]\n\nfor num in numbers:\n    if num % 3 == 0:\n        pass\n    if num % 7 == 0:\n        break\n    print(num, end=\",\")\nelse:\n    print(\"finished\")",
+    "executionResult": null,
+    "options": [
+      "1,2,3,4,5,6,",
+      "1,2,3,4,5,6,finished",
+      "1,2,4,5,",
+      "1,2,4,5,finished"
+    ],
+    "correctIndex": 0,
+    "explanation": "pass は何もしません。3 の倍数でも処理は続きます。7 に到達した時点で break が実行されループ終了します。break が実行された場合、for の else は実行されません。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def print_fibonacci(number):\n    f1, f2 = 0, 1\n    while f2 < number:\n        print(f2, end=', ')\n        f1, f2 = f2, f1 + f2\n\nfunc = print_fibonacci\nprint(func(100))",
+    "executionResult": null,
+    "options": [
+      "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,",
+      "<function print_fibonacci>",
+      "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, None",
+      "NameError"
+    ],
+    "correctIndex": 2,
+    "explanation": "関数 print_fibonacci は return 文を持たないため戻り値は None です。関数内でフィボナッチ数列が出力されたあと、print(func(100)) によって None が表示されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "num = 10\n\ndef func(arg=num):\n    print(arg)\n\nnum = 20\n\nfunc()\nfunc(30)",
+    "executionResult": null,
+    "options": [
+      "20\n20",
+      "10\n10",
+      "10\n30",
+      "20\n30"
+    ],
+    "correctIndex": 2,
+    "explanation": "デフォルト引数は関数定義時に評価されます。したがって arg のデフォルト値は 10 のままです。func() は 10、func(30) は 30 を表示します。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def func(x, y=None, *z):\n    print(x, y, z)\n\nfunc(10, 20, 30, 40, 50)",
+    "executionResult": null,
+    "options": [
+      "10 20 30",
+      "10 None 20 30 40 50",
+      "10 20 (30, 40, 50)",
+      "10 20 30 40 50"
+    ],
+    "correctIndex": 2,
+    "explanation": "*z は可変長引数で、余った引数はタプルとして格納されます。したがって z は (30, 40, 50) になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として、func を呼び出した場合にエラーにならない呼び出しを選択してください（1つ選択）。",
+    "codeSample": "def func(*, x, y):\n    print(x, y)",
+    "executionResult": null,
+    "options": [
+      "func(x=10, y=20)",
+      "func()",
+      "func(10, 20)",
+      "func(10, y=20)"
+    ],
+    "correctIndex": 0,
+    "explanation": "* の後の引数はキーワード専用引数になります。そのため x と y はキーワード指定で呼び出す必要があります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "vegetables = ['cabbage', 'leek', 'tomato', 'asparagus']\nvegetables.sort(key=lambda s: len(s))\nprint(vegetables)",
+    "executionResult": null,
+    "options": [
+      "['asparagus', 'cabbage', 'leek', 'tomato']",
+      "['asparagus', 'tomato', 'leek']",
+      "['leek', 'tomato', 'cabbage', 'asparagus']",
+      "['leek', 'tomato', 'asparagus', 'cabbage']"
+    ],
+    "correctIndex": 2,
+    "explanation": "key=lambda s: len(s) によって文字列の長さで並び替えが行われます。長さ順に並ぶため leek(4) → tomato(6) → cabbage(7) → asparagus(9) となります。"
+  },
+  {
+    "question": "次のコードの docstring に書かれた内容を参照する記述を選択してください（1つ選択）。",
+    "codeSample": "def function():\n    \"\"\"何もせずに解説だけ\n    本当に何もしません\n    \"\"\"\n    pass",
+    "executionResult": null,
+    "options": [
+      "function.__get__",
+      "function.__str__",
+      "function.__dir__",
+      "function.__doc__"
+    ],
+    "correctIndex": 3,
+    "explanation": "docstring は __doc__ 属性に格納されています。関数名.__doc__ で取得できます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def func(x:str, y:str) -> str:\n    print(func.__annotations__)\n    return x + \",\" + y\n\nprint(func(\"Hello\", \"World\"))",
+    "executionResult": null,
+    "options": [
+      "Hello,World",
+      "{'x': <class 'str'>, 'y': <class 'str'>}\nHello,World",
+      "{'x': <class 'str'>, 'y': <class 'str'>, 'return': <class 'str'>}\nHello,World",
+      "[<class 'str'>, <class 'str'>, <class 'str'>]\nHello,World"
+    ],
+    "correctIndex": 2,
+    "explanation": "__annotations__ には型アノテーションが辞書形式で格納されます。x, y, return が表示された後、Hello,World が出力されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "sports = ['baseball', 'football', 'volleyball', 'tennis', 'rugby']\n\nsports.append('golf')\nsports.remove('football')\nsports.insert(2, 'swim')\nsports.reverse()\nsports.pop()\n\nprint(sports)",
+    "executionResult": null,
+    "options": [
+      "['golf', 'rugby', 'tennis', 'swim', 'volleyball']",
+      "['golf', 'rugby', 'tennis', 'volleyball', 'swim']",
+      "['volleyball', 'swim', 'tennis', 'rugby', 'golf']",
+      "['swim', 'volleyball', 'tennis', 'rugby', 'golf']"
+    ],
+    "correctIndex": 0,
+    "explanation": "append → remove → insert → reverse → pop の順で処理されます。最終的なリストは ['golf','rugby','tennis','swim','volleyball'] になります。"
+  },
+  {
+    "question": "スタックの説明として正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "スタックは要素を入れた順に取得する（先入れ先出し）",
+      "スタックの一番上からアイテムを取得するには list.pop(0) を使う",
+      "スタックは最後に追加された要素が最初に取得される（後入れ先出し）",
+      "スタックは任意の位置のアイテムを取得できる"
+    ],
+    "correctIndex": 2,
+    "explanation": "スタックは LIFO（Last In First Out）構造です。最後に追加された要素が最初に取り出されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "result = [x for x in range(10) if x % 3 == 0]\nprint(result)",
+    "executionResult": null,
+    "options": [
+      "[0, 3, 6, 9]",
+      "[1, 4, 7]",
+      "[3, 6, 9]",
+      "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    ],
+    "correctIndex": 0,
+    "explanation": "range(10) の中から 3 の倍数を取り出すリスト内包表記です。0,3,6,9 が抽出されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "matrix = [\n [1,2,3],\n [4,5,6],\n [7,8,9]\n]\n\nresult = [[row[i] for row in matrix] for i in range(len(matrix))]\nprint(result)",
+    "executionResult": null,
+    "options": [
+      "[[1, 1, 1], [4, 4, 4], [7, 7, 7]]",
+      "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+      "[[1, 4, 7], [2, 5, 8], [3, 6, 9]]",
+      "[[1, 1, 1], [2, 2, 2], [3, 3, 3]]"
+    ],
+    "correctIndex": 2,
+    "explanation": "内包表記により行列の転置が行われます。各列を取り出して新しいリストを作るため結果は [[1,4,7],[2,5,8],[3,6,9]] になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "numbers = [1,2,3,4,5,6,7,8,9,10]\n\ndel numbers[0]\ndel numbers[-2:]\n\nprint(numbers)",
+    "executionResult": null,
+    "options": [
+      "[2, 3, 4, 5, 6, 7, 8, 9, 10]",
+      "[2, 3, 4, 5, 6, 7, 8, 9]",
+      "[2, 3, 4, 5, 6, 7, 8]",
+      "[2, 3, 4, 5, 6, 7]"
+    ],
+    "correctIndex": 2,
+    "explanation": "最初に1が削除され [2..10] になります。その後 numbers[-2:] により末尾2要素 (9,10) が削除されるため結果は [2,3,4,5,6,7,8] になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "pairs = ([1,2], [3,4])\n\npairs[0][1] = 5\n\nprint(pairs)",
+    "executionResult": null,
+    "options": [
+      "pairs[0][1] = 5 の実行時に TypeError が発生する",
+      "(5, 5) が表示される",
+      "([1,2], [3,4]) が表示される",
+      "([1,5], [3,4]) が表示される"
+    ],
+    "correctIndex": 3,
+    "explanation": "タプル自体は変更できませんが、中に格納されたリストは変更可能です。そのため最初のリストの2が5に変更され ([1,5],[3,4]) になります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "vehicle = (\"car\",\"plane\",\"bike\",\"ship\",\"helicopter\")\nflying = {\"plane\",\"bird\",\"drone\",\"helicopter\"}\n\nprint(set(vehicle) & flying)",
+    "executionResult": null,
+    "options": [
+      "{'bike', 'car', 'plane', 'bird', 'helicopter', 'drone', 'ship'}",
+      "{'plane', 'helicopter'}",
+      "{'bike', 'car', 'ship'}",
+      "{'drone', 'bird'}"
+    ],
+    "correctIndex": 1,
+    "explanation": "& は集合の積集合を表します。vehicle と flying の両方に存在する要素は plane と helicopter です。"
+  },
+  {
+    "question": "次のコードを実行して [1, 2, 3] が表示されるとき、空欄に入る記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": "team = {\"Mary\":3, \"Jack\":1, \"Sum\":2}\n\n( )",
+    "executionResult": "[1, 2, 3]",
+    "options": [
+      "print(list(team.keys()))",
+      "print(sorted(team.keys()))",
+      "print(list(team.values()))",
+      "print(sorted(team.values()))"
+    ],
+    "correctIndex": 3,
+    "explanation": "values() で値を取得し、sorted() で並び替えることで [1,2,3] になります。"
+  },
+  {
+    "question": "次のコードを実行して以下の実行結果が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": "numbers = [1,2,3,4,5]\nstudents = [\"Olivia\",\"Noah\",\"Emma\",\"Liam\",\"Ava\"]\n\nfor i, v in ①:\n    print(i, v)",
+    "executionResult": "0 Ava\n1 Emma\n2 Liam\n3 Noah\n4 Olivia",
+    "options": [
+      "enumerate(sorted(students))",
+      "enumerate(students)",
+      "zip(numbers, students)",
+      "zip(numbers, sorted(students))"
+    ],
+    "correctIndex": 3,
+    "explanation": "zip(numbers, sorted(students)) により numbers と students を対応付けることができます。students は sorted() によりアルファベット順に並び替えられます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "fridge = ['egg', 'pork', 'milk', 'cheese', 'cabbage', 'milk']\nfor item in sorted(set(fridge)):\n    print(item)",
+    "executionResult": null,
+    "options": [
+      "egg\npork\nmilk\ncheese\ncabbage\nmilk",
+      "egg\npork\nmilk\ncheese\ncabbage",
+      "cabbage\ncheese\negg\nmilk\npork",
+      "cabbage\ncheese\negg\nmilk\nmilk\npork"
+    ],
+    "correctIndex": 2,
+    "explanation": "set() によって重複が削除され、その後 sorted() によってアルファベット順に並び替えられます。結果は cabbage, cheese, egg, milk, pork となります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "first, second, third = '', 'Tanaka', 'Yamada'\nprint(first and second or third)",
+    "executionResult": null,
+    "options": [
+      "(空文字)",
+      "Tanaka",
+      "Yamada",
+      "False"
+    ],
+    "correctIndex": 2,
+    "explanation": "first は空文字なので False と評価されます。False and second は False になります。その後 False or third となり third の値である 'Yamada' が返ります。"
+  },
+  {
+    "question": "モジュールの説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "モジュールとは、Pythonの定義や文が入ったファイルである",
+      "モジュール内ではグローバル変数 __name__ の値としてモジュール名がセットされる",
+      "モジュール名に拡張子 .mo をつけたものがモジュールのファイル名である",
+      "モジュール内の関数を使う場合は from モジュール名 import 関数名 と記述する"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pythonのモジュールファイルの拡張子は .py です。.mo ではありません。"
+  },
+  {
+    "question": "sample.py を実行して Hello, World が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": "sample.py\n\n①\n\nprint_hello()\nprint_world()",
+    "executionResult": "Hello, World",
+    "options": [
+      "from input import print_hello\nfrom input.child import print_world",
+      "from hello import print_hello\nfrom world import print_world",
+      "from input.hello import print_hello\nfrom input.child.world import print_world",
+      "import input.hello.print_hello\nimport input.child.world.print_world"
+    ],
+    "correctIndex": 2,
+    "explanation": "ディレクトリ構造に従ってモジュールを指定する必要があります。hello.py は input ディレクトリ内、world.py は input/child 内にあるため、それぞれ from input.hello import print_hello と from input.child.world import print_world と記述します。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "temperature = 25.6789\nprint(f\"The temperature today is {temperature:10.1f} degrees.\")",
+    "executionResult": null,
+    "options": [
+      "The temperature today is 25.7 degrees.",
+      "The temperature today is ____25.69 degrees.",
+      "The temperature today is ____25.7 degrees.",
+      "The temperature today is 000025.7 degrees."
+    ],
+    "correctIndex": 2,
+    "explanation": "書式指定 {temperature:10.1f} は幅10、少数1桁で表示します。右寄せで空白埋めされるため '____25.7' のような表示になります。"
+  },
+  {
+    "question": "ファイルの読み込みに関して、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "open() はファイルオブジェクトを返す関数で、open(\"ファイル名\", \"モード\") の形式で指定できる",
+      "open() でテキストファイルをバイナリモードで開くには、モード引数に \"b\" を付ける",
+      "ファイルオブジェクトから1行読み込むには f.readline() を使う",
+      "JSON形式のファイルを読み書きするには json モジュールが使える"
+    ],
+    "correctIndex": 1,
+    "explanation": "バイナリモードで開くには 'rb' や 'wb' のように b を指定します。テキストファイルをバイナリとして扱う場合は明示的にモードを指定する必要があります。"
+  },
+  {
+    "question": "次のコードのうち構文エラー（SyntaxError）が発生するコードを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "x = 5\nif x < 10:\n    print(True)",
+      "while True:\n    print(\"Hello\")",
+      "for x, y in 10, 20:\n    print(x, y)",
+      "with open(\"sample.txt\") as f:\n    print(f.read())"
+    ],
+    "correctIndex": 2,
+    "explanation": "for 文では in の後にイテラブル（リストやタプルなど）が必要です。10,20 はタプルとして扱われますが unpack の対象が合わないため SyntaxError になります。"
+  },
+  {
+    "question": "次のコードを実行したときに発生するエラーを選択してください（1つ選択）。",
+    "codeSample": "\"10\" + 10",
+    "executionResult": null,
+    "options": [
+      "SyntaxError",
+      "ZeroDivisionError",
+      "NameError",
+      "TypeError"
+    ],
+    "correctIndex": 3,
+    "explanation": "文字列 \"10\" と整数 10 を + で結合することはできません。型の不一致によって TypeError が発生します。"
+  },
+  {
+    "question": "例外処理の説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": "try:\n    処理\nexcept 例外:\n    処理",
+    "executionResult": null,
+    "options": [
+      "例外が発生しなければ except 節はスキップされる",
+      "try の途中で例外が発生すると try 節の残りの処理はスキップされる",
+      "例外が発生した場合、except キーワードの後ろで指定した例外と一致すればその処理が実行される",
+      "例外が発生した場合、except キーワードの後ろで指定した例外と一致しない場合は try 文に戻って処理が再実行される"
+    ],
+    "correctIndex": 3,
+    "explanation": "except に一致しない例外が発生した場合、try に戻ることはありません。その例外は上位に伝播します。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "try:\n    x = 10/0\nexcept ZeroDivisionError:\n    print(\"It's ZeroDivisionError!\")\nexcept:\n    print(\"except run\")\nelse:\n    print(\"Else run\")\nfinally:\n    print(\"Final run\")",
+    "executionResult": null,
+    "options": [
+      "It's ZeroDivisionError! → Final run",
+      "It's ZeroDivisionError! → except run → Final run",
+      "It's ZeroDivisionError! → Else run → Final run",
+      "Else run → Final run"
+    ],
+    "correctIndex": 0,
+    "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
+  },
+  {
+    "question": "次のコードを実行したときに発生するエラーを選択してください（1つ選択）。",
+    "codeSample": "def func():\n    raise RuntimeError\n\ntry:\n    func()\nexcept:\n    raise",
+    "executionResult": null,
+    "options": [
+      "RuntimeError",
+      "FileNotFoundError",
+      "The above exception was the direct cause of the following exception",
+      "raise RuntimeError"
+    ],
+    "correctIndex": 0,
+    "explanation": "func() の中で RuntimeError が raise されます。except 節で捕捉されますが、raise を再度実行しているため同じ RuntimeError が再送出されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "var = 'True'\n\ndef varfunc():\n    var = 'False'\n    def func():\n        nonlocal var\n        var = 'True'\n    func()\n    print(var)\n\nvarfunc()\nprint(var)",
+    "executionResult": null,
+    "options": [
+      "True\nTrue",
+      "True\nFalse",
+      "False\nTrue",
+      "True\nTrue\nFalse"
+    ],
+    "correctIndex": 0,
+    "explanation": "nonlocal により内側の関数は外側のローカル変数 var を変更します。したがって varfunc 内では True が表示されます。グローバル変数 var は変更されないため最後も True が表示されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "class Card:\n\n    def __init__(self, suit, rank):\n        self.suit = suit\n        self.rank = rank\n\nc = Card('spade', 12)\nprint(c.rank)",
+    "executionResult": null,
+    "options": [
+      "NameError",
+      "c = 12",
+      "12",
+      "None"
+    ],
+    "correctIndex": 2,
+    "explanation": "__init__ メソッドで rank をインスタンス変数 self.rank に代入しています。したがって print(c.rank) は 12 を表示します。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "from datetime import datetime\n\nclass Logger:\n    pass\n\nl = Logger()\nprint(type(l))",
+    "executionResult": null,
+    "options": [
+      "Logger",
+      "<class '__main__.Logger'>",
+      "<class 'Logger'>",
+      "Logger object"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pythonでは type() を使うとオブジェクトのクラスが表示されます。スクリプト内で定義されたクラスは __main__ モジュールに属するため <class '__main__.Logger'> と表示されます。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def sample():\n    yield 1\n    yield 2\n\nfor i in sample():\n    print(i)",
+    "executionResult": null,
+    "options": [
+      "1\n2\n3",
+      "1\n2\n1\n2",
+      "1\n2",
+      "sample"
+    ],
+    "correctIndex": 2,
+    "explanation": "yield はジェネレータを作ります。sample() を for 文で回すと yield された値が順に取り出されるため 1 と 2 が表示されます。"
+  },
+  {
+    "question": "osモジュールの説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "osモジュールはオペレーティングシステムとやり取りする関数を提供する",
+      "osモジュールを利用するときは import os と記述する",
+      "os.getcwd() はカレントディレクトリを返す",
+      "os.cd(<パス>) はカレントディレクトリを変更する"
+    ],
+    "correctIndex": 3,
+    "explanation": "カレントディレクトリを変更する関数は os.cd() ではなく os.chdir() です。"
+  },
+  {
+    "question": "次のディレクトリ構成のとき、次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "from glob import glob\nprint(glob('input/*'))",
+    "executionResult": null,
+    "options": [
+      "['hello.py', 'child', '__init__.py']",
+      "['input/hello.py', 'input/child', 'input/__init__.py']",
+      "['input/hello.py', 'input/child/world.py', 'input/child/tests.py']",
+      "['hello.py', 'tests.py', 'world.py', '__init__.py']"
+    ],
+    "correctIndex": 1,
+    "explanation": "glob('input/*') は input ディレクトリ直下のファイルとディレクトリを取得します。パス付きで返されるため ['input/hello.py','input/child','input/__init__.py'] になります。"
+  },
+  {
+    "question": "次のファイルをコマンドラインで実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "import sys\nprint(sys.argv)\n\n# 実行\npython py3.py arg1 arg2 arg3",
+    "executionResult": null,
+    "options": [
+      "['arg1','arg2','arg3']",
+      "['py3.py','arg1','arg2','arg3']",
+      "'arg1','arg2','arg3'",
+      "'py3.py','arg1','arg2','arg3'"
+    ],
+    "correctIndex": 1,
+    "explanation": "sys.argv はコマンドライン引数のリストで、最初の要素には実行したスクリプト名が入ります。"
+  },
+  {
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "import re\nresult = re.findall(r'\\bb[a-z]*', 'Beautiful is better than ugly.')\nprint(result)",
+    "executionResult": null,
+    "options": [
+      "['is','better','than','ugly']",
+      "['Beautiful','better']",
+      "['better']",
+      "['than','ugly']"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\b は単語境界を表します。パターンは b で始まる小文字単語です。文字列内で該当するのは better だけです。"
+  },
+  {
+    "question": "statistics モジュールの説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "statistics モジュールは数値データの基本統計量を求めるもの",
+      "statistics モジュールを使うときは import statistics と記述する",
+      "statistics.mean(data) は data の平均値を返す",
+      "statistics.half(data) は data の中央値を返す"
+    ],
+    "correctIndex": 3,
+    "explanation": "中央値を求める関数は statistics.half() ではなく statistics.median() です。"
+  },
+  {
+    "question": "datetimeモジュールのtoday()の戻り値を文字列として表示する strftime() に関する説明として正しいものを選択してください。",
+    "codeSample": "datetime.strftime(\"%Y-%m-%d\")",
+    "executionResult": null,
+    "options": [
+      "%Y は分を表す",
+      "%m は秒を表す",
+      "%d は日の値を表す",
+      "%S はローカル時刻を表す"
+    ],
+    "correctIndex": 2,
+    "explanation": "%d は日(day)を表す書式指定子です。"
+  },
+  {
+    "question": "docstringに関する説明として正しいものを選択してください。",
+    "codeSample": "def max_value(values):\n    \"\"\"リストの最大値を取得\"\"\"\n    return max(values)",
+    "executionResult": null,
+    "options": [
+      "__doc__",
+      "doc",
+      "test",
+      "values"
+    ],
+    "correctIndex": 0,
+    "explanation": "docstringは __doc__ 属性で取得できます。"
+  },
+  {
+    "question": "loggingモジュールのログレベルを重大度順に並べたものを選択してください。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "INFO, DEBUG, WARNING, ERROR, CRITICAL",
+      "INFO, WARNING, DEBUG, ERROR, CRITICAL",
+      "DEBUG, INFO, WARNING, ERROR, CRITICAL",
+      "DEBUG, WARNING, ERROR, CRITICAL, INFO"
+    ],
+    "correctIndex": 2,
+    "explanation": "loggingのレベルは DEBUG → INFO → WARNING → ERROR → CRITICAL の順です。"
+  },
+  {
+    "question": "sample-env という仮想環境を作成するコマンドとして正しいものを選択してください。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "python -m env sample-env",
+      "python -m venv sample-env",
+      "python venv sample env",
+      "python -v venv sample env"
+    ],
+    "correctIndex": 1,
+    "explanation": "Python標準の仮想環境は venv モジュールで作成します。"
+  },
+  {
+    "question": "pipコマンドに関する説明として正しいものを選択してください。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pip は標準ライブラリの管理ツール",
+      "pip はPythonパッケージ管理ツール",
+      "pip はPythonコード実行ツール",
+      "pip はPythonのデバッガ"
+    ],
+    "correctIndex": 1,
+    "explanation": "pipはPythonパッケージのインストールや管理を行うツールです。"
+  },
+  {
+    "question": "対話型環境として正しいものを選択してください。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "CPython",
+      "IPython",
+      "Jupyter Notebook",
+      "Python Shell"
+    ],
+    "correctIndex": 1,
+    "explanation": "IPythonは拡張されたPython対話型環境です。"
+  }
+]
