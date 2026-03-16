@@ -261,7 +261,7 @@
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-    "codeSample": "def func(x, y=None, *z):\n    print(x, y, z)\n\nfunc(10, 20, 30, 40, 50)",
+    "codeSample": "def func(x, y=None, *z):\n    print(x, y, *z)\n\nfunc(10, 20, 30, 40, 50)",
     "executionResult": null,
     "options": [
       "10 20 30",
