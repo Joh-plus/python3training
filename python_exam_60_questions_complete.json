@@ -568,7 +568,8 @@
     "It's ZeroDivisionError!\nFinal run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero",
     "It's ZeroDivisionError!\nElse run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero"
   ],
-  "answer": 2
+  "correctIndex": 2,
+  "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
   },
   {
     "question": "次のコードを実行したときに発生するエラーを選択してください（1つ選択）。",
