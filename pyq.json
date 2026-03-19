@@ -205,7 +205,7 @@
     ],
     "correctIndex": 2,
     "explanation": "4.7.6項のlambda（ラムダ）式に関する問題です。\nlambda 仮引数: 式のような式をラムダ式といいます。\nラムダ式は無名の関数ですが、defを使わずに関数を作成でき、記述を短くできるという特徴があります。\n次のように、ちょっとした関数が必要なときに使います。\naddress = [\"hokkaido\", \"mie\", \"akita\"]\naddress.sort(key=lambda s: len(s))\n上記のリストのメソッドsort()の引数keyは、ソートの基準を計算する関数を指定します。\nここでは、lambda s: len(s)を指定しています。この結果、⽂字列の⻑さの短い順にソートし、\naddressは['mie', 'akita', 'hokkaido']になります（C）。",
-    "executionResult": "['mie', 'akita', 'hokkaido']"
+    "executionResult": null
   },
   {
     "question": "ドキュメンテーション文字列の慣習として誤っているものを選択してください（1つ選択）",
@@ -301,7 +301,7 @@
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください。",
     "codeSample": "compare1 = \"carrot\" < \"tomato\" < \"potato\"\ncompare2 = [3, 2] < [3, 1, 4]\ncompare3 = (3, 1) < (3, 1, -1)\n\nprint(compare1, compare2, compare3)",
-    "executionResult": "False False True",
+    "executionResult": null,
     "options": [
       "False False False",
       "False False True",
