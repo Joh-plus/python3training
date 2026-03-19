@@ -282,7 +282,7 @@
   {
     "question": "次のコードの実行結果として正しいものはどれか。",
     "codeSample": "list = [-10, 1, 15, 20, 30]\n\nlist.insert(2,5)\nlist.append(50)\nlist.sort(reverse = True)\nlist.pop(-1)\nprint(list)",
-    "executionResult": "[50, 30, 20, 15, 5, 1]",
+    "executionResult": null,
     "options": [
       "[-10, 1, 5, 20, 30]",
       "[30, 20, 5, 1, -10]",
@@ -410,11 +410,11 @@
     "codeSample": "with open(\"file.txt\") as f:\n    for line in f:\n        print(line, end=\"\")",
     "executionResult": null,
     "options": [
-      "clean()",
-      "close()",
-      "ile.clean()",
-      "lose(\"file.txt\")",
-      "ile.close()"
+      "f.clean()",
+      "f.close()",
+      "file.clean()",
+      "close(\"file.txt\")",
+      "file.close()"
     ],
     "correctIndex": 1,
     "explanation": "この問題では、with 文を使ってファイルを開いた場合に、処理終了時にどのようなクリーンアップが自動で行われるかを理解しているかが問われています。\n\nwith open(\"file.txt\") as f: の形でファイルを開くと、with ブロックを抜けるタイミングで、Pythonは自動的にファイルを閉じる処理を実行します。このとき内部的に呼び出されるのが、ファイルオブジェクトの close() メソッドです。\n\nつまり、例外が発生した場合であっても、with ブロックを抜ける際には f.close() が必ず実行され、ファイルは安全にクローズされます。\n\n他の選択肢にある clean() というメソッドはファイルオブジェクトには存在しません。また、file.close() や close(\"file.txt\") のような書き方も Python には用意されていません。\n\n以上の理由から、with 文によるクリーンアップとして実際に行われている処理は「f.close()」です。\n\n【要点まとめ】\n・with 文はリソース管理を自動化する構文である\n・ファイルを with で開くと、ブロック終了時に close() が必ず呼ばれる\n・例外が起きてもファイルは安全にクローズされる"
