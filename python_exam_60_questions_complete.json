@@ -351,17 +351,17 @@
     "explanation": "スタックは LIFO（Last In First Out）構造です。最後に追加された要素が最初に取り出されます。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものと同じ結果になるコードを選択してください（1つ選択）。",
-  "codeSample": "result = [x for x in range(10) if x % 3 == 0]\nprint(result)",
-  "executionResult": "[0, 3, 6, 9]",
-  "options": [
-    "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.append(x)\nprint(result)",
-    "result = []\nfor x in range(10):\n    result.append(x)\nprint(result)",
-    "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.insert(0, x)\nprint(result)",
-    "result = []\nfor x in range(10):\n    result.insert(0, x)\nprint(result)"
-  ],
-  "correctIndex": 0,
-  "explanation": "このコードはリスト内包表記を使って、0〜9の数値のうち3で割り切れる値だけを新しいリストに入れています。つまり [0, 3, 6, 9] が生成されます。リスト内包表記は通常の for 文と if 文で書き換えることができ、その場合は条件を満たしたときに append() でリストに追加します。Aのコードは exactly 同じ処理を行っています。Bは条件が無いため0〜9すべてが追加されます。Cは insert(0, x) を使うため先頭に追加され順序が逆になります。Dも同様に insert を使うため順序が逆になります。したがって正解はAです。"
+    "question": "次のコードを実行した結果として表示されるものと同じ結果になるコードを選択してください（1つ選択）。",
+    "codeSample": "result = [x for x in range(10) if x % 3 == 0]\nprint(result)",
+    "executionResult": "[0, 3, 6, 9]",
+    "options": [
+      "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.append(x)\nprint(result)",
+      "result = []\nfor x in range(10):\n    result.append(x)\nprint(result)",
+      "result = []\nfor x in range(10):\n    if x % 3 == 0:\n        result.insert(0, x)\nprint(result)",
+      "result = []\nfor x in range(10):\n    result.insert(0, x)\nprint(result)"
+    ],
+    "correctIndex": 0,
+    "explanation": "このコードはリスト内包表記を使って、0〜9の数値のうち3で割り切れる値だけを新しいリストに入れています。つまり [0, 3, 6, 9] が生成されます。リスト内包表記は通常の for 文と if 文で書き換えることができ、その場合は条件を満たしたときに append() でリストに追加します。Aのコードは exactly 同じ処理を行っています。Bは条件が無いため0〜9すべてが追加されます。Cは insert(0, x) を使うため先頭に追加され順序が逆になります。Dも同様に insert を使うため順序が逆になります。したがって正解はAです。"
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -431,7 +431,7 @@
   {
     "question": "次のコードを実行して以下の実行結果が表示されるとき、空欄①に入る記述として正しいものを選択してください（1つ選択）。",
     "codeSample": "numbers = [1,2,3,4,5]\nstudents = [\"Olivia\",\"Noah\",\"Emma\",\"Liam\",\"Ava\"]\n\nfor i, v in ①:\n    print(i, v)",
-    "executionResult": "0 Ava\n1 Emma\n2 Liam\n3 Noah\n4 Olivia",
+    "executionResult": "1 Ava\n2 Emma\n3 Liam\n4 Noah\n5 Olivia",
     "options": [
       "enumerate(sorted(students))",
       "enumerate(students)",
@@ -442,17 +442,17 @@
     "explanation": "zip(numbers, sorted(students)) により numbers と students を対応付けることができます。students は sorted() によりアルファベット順に並び替えられます。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "fridge = ['egg', 'egg', 'pork', 'milk', 'cheese', 'cabbage', 'milk']\nfor item in sorted(set(fridge)):\n    print(item)",
-  "executionResult": null,
-  "options": [
-    "egg\negg\npork\nmilk\ncheese\ncabbage\nmilk",
-    "egg\npork\nmilk\ncheese\ncabbage",
-    "cabbage\ncheese\negg\nmilk\npork",
-    "cabbage\ncheese\negg\negg\nmilk\nmilk\npork"
-  ],
-  "correctIndex": 2,
-  "explanation": "この問題は set() と sorted() の動作を理解しているかを確認する問題です。まず set(fridge) によってリストの重複要素が削除されます。その結果 {'egg', 'milk', 'pork', 'cabbage', 'cheese'} になります。次に sorted() が適用されると文字列のアルファベット順に並び替えられます。結果は ['cabbage', 'cheese', 'egg', 'milk', 'pork'] となります。for ループではこの順番で1行ずつ出力されるため、表示結果は cabbage → cheese → egg → milk → pork になります。したがって正解は C です。"
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "fridge = ['egg', 'egg', 'pork', 'milk', 'cheese', 'cabbage', 'milk']\nfor item in sorted(set(fridge)):\n    print(item)",
+    "executionResult": null,
+    "options": [
+      "egg\negg\npork\nmilk\ncheese\ncabbage\nmilk",
+      "egg\npork\nmilk\ncheese\ncabbage",
+      "cabbage\ncheese\negg\nmilk\npork",
+      "cabbage\ncheese\negg\negg\nmilk\nmilk\npork"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題は set() と sorted() の動作を理解しているかを確認する問題です。まず set(fridge) によってリストの重複要素が削除されます。その結果 {'egg', 'milk', 'pork', 'cabbage', 'cheese'} になります。次に sorted() が適用されると文字列のアルファベット順に並び替えられます。結果は ['cabbage', 'cheese', 'egg', 'milk', 'pork'] となります。for ループではこの順番で1行ずつ出力されるため、表示結果は cabbage → cheese → egg → milk → pork になります。したがって正解は C です。"
   },
   {
     "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -507,17 +507,17 @@
     "explanation": "書式指定 {temperature:10.1f} は幅10、少数1桁で表示します。右寄せで空白埋めされるため '____25.7' のような表示になります。"
   },
   {
-  "question": "ファイルの読み書きについて、誤っているものを選択してください（1つ選択）。",
-  "codeSample": null,
-  "executionResult": null,
-  "options": [
-    "open() はファイルオブジェクトを返す関数で、open(<ファイル名>, <モード>) のように引数を指定できる",
-    "open() を使ってファイルをバイナリモードで開くには、モード引数に rv を追加する",
-    "ファイルオブジェクト f から1行読み込むには、f.readline() を使う",
-    "JSON形式のファイルを読み書きに使える、json モジュールがある"
-  ],
-  "correctIndex": 1,
-  "explanation": "この問題は Python のファイル入出力の基本を理解しているかを確認する問題です。open() 関数では第2引数のモードで読み書き方法を指定します。バイナリモードで開く場合は 'rb'（読み込み）や 'wb'（書き込み）などのように b を指定します。選択肢Bでは rv と書かれており誤りです。Aは open() の基本的な使い方として正しく、Cの f.readline() は1行読み込みのメソッドです。Dも正しく、JSON形式のデータを扱うための json モジュールが標準ライブラリに用意されています。したがって誤っているのは B です。"
+    "question": "ファイルの読み書きについて、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "open() はファイルオブジェクトを返す関数で、open(<ファイル名>, <モード>) のように引数を指定できる",
+      "open() を使ってファイルをバイナリモードで開くには、モード引数に rv を追加する",
+      "ファイルオブジェクト f から1行読み込むには、f.readline() を使う",
+      "JSON形式のファイルを読み書きに使える、json モジュールがある"
+    ],
+    "correctIndex": 1,
+    "explanation": "この問題は Python のファイル入出力の基本を理解しているかを確認する問題です。open() 関数では第2引数のモードで読み書き方法を指定します。バイナリモードで開く場合は 'rb'（読み込み）や 'wb'（書き込み）などのように b を指定します。選択肢Bでは rv と書かれており誤りです。Aは open() の基本的な使い方として正しく、Cの f.readline() は1行読み込みのメソッドです。Dも正しく、JSON形式のデータを扱うための json モジュールが標準ライブラリに用意されています。したがって誤っているのは B です。"
   },
   {
     "question": "次のコードのうち構文エラー（SyntaxError）が発生するコードを選択してください（1つ選択）。",
@@ -546,95 +546,95 @@
     "explanation": "文字列 \"10\" と整数 10 を + で結合することはできません。型の不一致によって TypeError が発生します。"
   },
   {
-  "question": "例外の処理の説明として誤っているものを選択してください（1つ選択）。",
-  "codeSample": "try:\n    処理①\nexcept 例外:\n    処理②\n\n処理③",
-  "executionResult": null,
-  "options": [
-    "処理①で例外が発生しなければ、except 節はスキップされる",
-    "try 節の実行中に例外が発生すると、try 節中の残りの処理はスキップされる",
-    "発生した例外が、except キーワードの後ろで指定した例外と一致すれば、処理②が実行される",
-    "発生した例外が、except キーワードの後ろで指定した例外と一致しない場合は、try 文に続く処理③が実行される"
-  ],
-  "correctIndex": 3,
-  "explanation": "この問題は Python の例外処理の基本動作を理解しているかを確認する問題です。try ブロック内で例外が発生すると、その時点で try 内の残りの処理は実行されず、対応する except ブロックが探されます。発生した例外の型が except に指定された例外と一致した場合のみ except 内の処理が実行されます。もし一致する except が存在しない場合、その例外は未処理例外となりプログラムはエラーを表示して終了します。したがって try の後に書かれている通常処理（ここでは処理③）は実行されません。よって誤っている説明は D です。"
+    "question": "例外の処理の説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": "try:\n    処理①\nexcept 例外:\n    処理②\n\n処理③",
+    "executionResult": null,
+    "options": [
+      "処理①で例外が発生しなければ、except 節はスキップされる",
+      "try 節の実行中に例外が発生すると、try 節中の残りの処理はスキップされる",
+      "発生した例外が、except キーワードの後ろで指定した例外と一致すれば、処理②が実行される",
+      "発生した例外が、except キーワードの後ろで指定した例外と一致しない場合は、try 文に続く処理③が実行される"
+    ],
+    "correctIndex": 3,
+    "explanation": "この問題は Python の例外処理の基本動作を理解しているかを確認する問題です。try ブロック内で例外が発生すると、その時点で try 内の残りの処理は実行されず、対応する except ブロックが探されます。発生した例外の型が except に指定された例外と一致した場合のみ except 内の処理が実行されます。もし一致する except が存在しない場合、その例外は未処理例外となりプログラムはエラーを表示して終了します。したがって try の後に書かれている通常処理（ここでは処理③）は実行されません。よって誤っている説明は D です。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "try:\n    x = 10/0\nexcept ZeroDivisionError:\n    print(\"It's ZeroDivisionError!\")\n    raise\nexcept:\n    print(\"except run\")\nelse:\n    print(\"Else run\")\nfinally:\n    print(\"Final run\")",
-  "executionResult": null,
-  "options": [
-    "It's ZeroDivisionError!\nFinal run",
-    "It's ZeroDivisionError!\nexcept run\nFinal run",
-    "It's ZeroDivisionError!\nFinal run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero",
-    "It's ZeroDivisionError!\nElse run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero"
-  ],
-  "correctIndex": 2,
-  "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "try:\n    x = 10/0\nexcept ZeroDivisionError:\n    print(\"It's ZeroDivisionError!\")\n    raise\nexcept:\n    print(\"except run\")\nelse:\n    print(\"Else run\")\nfinally:\n    print(\"Final run\")",
+    "executionResult": null,
+    "options": [
+      "It's ZeroDivisionError!\nFinal run",
+      "It's ZeroDivisionError!\nexcept run\nFinal run",
+      "It's ZeroDivisionError!\nFinal run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero",
+      "It's ZeroDivisionError!\nElse run\nTraceback (most recent call last):\n  File \"/home/appuser/work/py2.py\", line 2, in <module>\n    x = 10/0\nZeroDivisionError: division by zero"
+    ],
+    "correctIndex": 2,
+    "explanation": "10/0 で ZeroDivisionError が発生するため最初の except が実行されます。例外が発生したので else は実行されません。finally は必ず実行されます。"
   },
   {
-  "question": "次のコードを実行した結果として、最終行に表示されるものを選択してください（1つ選択）。",
-  "codeSample": "def func():\n    raise FileNotFoundError\n\ntry:\n    func()\nexcept FileNotFoundError as ex:\n    raise RuntimeError from ex",
-  "executionResult": null,
-  "options": [
-    "RuntimeError",
-    "FileNotFoundError",
-    "The above exception was the direct cause of the following exception:",
-    "raise RuntimeError from ex"
-  ],
-  "correctIndex": 0,
-  "explanation": "except節の処理中に別の例外が発生すると、例外が発生した順番でTracebackが表示されます。このコードでは、まずfunc()内でFileNotFoundErrorが発生し、その例外をexcept FileNotFoundErrorで受け取った後、raise RuntimeError from ex によって新しい例外が発生します。'from ex' を使うと例外の因果関係（例外チェーン）が作られ、Tracebackには元の例外と新しい例外の両方が表示されます。最終的に発生する例外はRuntimeErrorなので、最後の行に表示されるのはRuntimeErrorになります。"
+    "question": "次のコードを実行した結果として、最終行に表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def func():\n    raise FileNotFoundError\n\ntry:\n    func()\nexcept FileNotFoundError as ex:\n    raise RuntimeError from ex",
+    "executionResult": null,
+    "options": [
+      "RuntimeError",
+      "FileNotFoundError",
+      "The above exception was the direct cause of the following exception:",
+      "raise RuntimeError from ex"
+    ],
+    "correctIndex": 0,
+    "explanation": "except節の処理中に別の例外が発生すると、例外が発生した順番でTracebackが表示されます。このコードでは、まずfunc()内でFileNotFoundErrorが発生し、その例外をexcept FileNotFoundErrorで受け取った後、raise RuntimeError from ex によって新しい例外が発生します。'from ex' を使うと例外の因果関係（例外チェーン）が作られ、Tracebackには元の例外と新しい例外の両方が表示されます。最終的に発生する例外はRuntimeErrorなので、最後の行に表示されるのはRuntimeErrorになります。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "name = \"Taro\"\n\ndef show_name():\n    name = \"Jiro\"\n\n    def sub1():\n        name = \"Saburo\"\n\n    def sub2():\n        nonlocal name\n        name = \"Shiro\"\n\n    sub1()\n    print(name)\n\n    sub2()\n    print(name)\n\nshow_name()\nprint(name)",
-  "executionResult": null,
-  "options": [
-    "Jiro\nJiro\nTaro",
-    "Jiro\nShiro\nTaro",
-    "Saburo\nSaburo\nTaro",
-    "Saburo\nShiro\nShiro"
-  ],
-  "correctIndex": 1,
-  "explanation": "この問題はスコープとnonlocalの動作を理解しているかを確認する問題です。まずグローバル変数 name = \"Taro\" が定義されています。show_name() 内では name = \"Jiro\" が定義され、これは show_name のローカル変数になります。sub1() 内の name = \"Saburo\" は sub1 のローカル変数であり、show_name の name には影響しません。そのため sub1() の後の print(name) は \"Jiro\" が出力されます。次に sub2() では nonlocal name が指定されているため、1つ外側のスコープ（show_name の name）を参照します。そこで name = \"Shiro\" に変更されるため、その後の print(name) は \"Shiro\" になります。show_name() の処理が終わると、グローバル変数 name は変更されていないため、最後の print(name) では \"Taro\" が表示されます。"
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "name = \"Taro\"\n\ndef show_name():\n    name = \"Jiro\"\n\n    def sub1():\n        name = \"Saburo\"\n\n    def sub2():\n        nonlocal name\n        name = \"Shiro\"\n\n    sub1()\n    print(name)\n\n    sub2()\n    print(name)\n\nshow_name()\nprint(name)",
+    "executionResult": null,
+    "options": [
+      "Jiro\nJiro\nTaro",
+      "Jiro\nShiro\nTaro",
+      "Saburo\nSaburo\nTaro",
+      "Saburo\nShiro\nShiro"
+    ],
+    "correctIndex": 1,
+    "explanation": "この問題はスコープとnonlocalの動作を理解しているかを確認する問題です。まずグローバル変数 name = \"Taro\" が定義されています。show_name() 内では name = \"Jiro\" が定義され、これは show_name のローカル変数になります。sub1() 内の name = \"Saburo\" は sub1 のローカル変数であり、show_name の name には影響しません。そのため sub1() の後の print(name) は \"Jiro\" が出力されます。次に sub2() では nonlocal name が指定されているため、1つ外側のスコープ（show_name の name）を参照します。そこで name = \"Shiro\" に変更されるため、その後の print(name) は \"Shiro\" になります。show_name() の処理が終わると、グローバル変数 name は変更されていないため、最後の print(name) では \"Taro\" が表示されます。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "class Card:\n    all_suit = \"♥♦♣♠\"\n\n    def __init__(self, suit, rank):\n        self.suit = suit\n        self.rank = rank\n\nhq = Card(\"♥\", 12)\nprint(hq.all_suit, hq.suit, hq.rank)",
-  "executionResult": null,
-  "options": [
-    "AttributeErrorになる",
-    "NameErrorになる",
-    "♥ ♥ 12",
-    "♥♦♣♠ ♥ 12"
-  ],
-  "correctIndex": 3,
-  "explanation": "この問題はクラス変数とインスタンス変数の違いを理解しているかを確認する問題です。all_suit はクラス直下に定義されているためクラス変数です。クラス変数はクラスの属性であり、オブジェクトからもアクセスできます。そのため hq.all_suit と書くと \"♥♦♣♠\" を取得できます。一方、__init__ メソッド内で self.suit と self.rank に代入されている値はインスタンス変数で、それぞれ \"♥\" と 12 が設定されています。したがって print(hq.all_suit, hq.suit, hq.rank) の出力は \"♥♦♣♠ ♥ 12\" になります。"
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "class Card:\n    all_suit = \"♥♦♣♠\"\n\n    def __init__(self, suit, rank):\n        self.suit = suit\n        self.rank = rank\n\nhq = Card(\"♥\", 12)\nprint(hq.all_suit, hq.suit, hq.rank)",
+    "executionResult": null,
+    "options": [
+      "AttributeErrorになる",
+      "NameErrorになる",
+      "♥ ♥ 12",
+      "♥♦♣♠ ♥ 12"
+    ],
+    "correctIndex": 3,
+    "explanation": "この問題はクラス変数とインスタンス変数の違いを理解しているかを確認する問題です。all_suit はクラス直下に定義されているためクラス変数です。クラス変数はクラスの属性であり、オブジェクトからもアクセスできます。そのため hq.all_suit と書くと \"♥♦♣♠\" を取得できます。一方、__init__ メソッド内で self.suit と self.rank に代入されている値はインスタンス変数で、それぞれ \"♥\" と 12 が設定されています。したがって print(hq.all_suit, hq.suit, hq.rank) の出力は \"♥♦♣♠ ♥ 12\" になります。"
   },
   {
-  "question": "次のコードを正常に実行できるとき、①に当てはまるものを選択してください（1つ選択）。",
-  "codeSample": "from datetime import datetime\n\nclass Base:\n    def log(self, message):\n        print(message)\n\nclass ①:\n    pass\n\nlog = Logger()\nlog.log(\"done\")",
-  "executionResult": "done",
-  "options": [
-    "Logger",
-    "Logger(Base)",
-    "Logger(Base=Base)",
-    "Logger(Meta=Base)"
-  ],
-  "correctIndex": 1,
-  "explanation": "この問題はクラスの継承について理解しているかを確認する問題です。Base クラスには log() メソッドが定義されています。問題のコードでは Logger() のインスタンスを作成し、そのオブジェクトから log(\"done\") を呼び出しています。Logger クラスが log() メソッドを持つためには、Base クラスを継承する必要があります。Pythonではクラスを継承する場合、class クラス名(基底クラス): の形で定義します。そのため正しい書き方は class Logger(Base): になります。これにより Logger クラスは Base クラスのメソッド log() を引き継ぐことができ、log.log(\"done\") を実行すると \"done\" が表示されます。"
+    "question": "次のコードを正常に実行できるとき、①に当てはまるものを選択してください（1つ選択）。",
+    "codeSample": "from datetime import datetime\n\nclass Base:\n    def log(self, message):\n        print(message)\n\nclass ①:\n    pass\n\nlog = Logger()\nlog.log(\"done\")",
+    "executionResult": "done",
+    "options": [
+      "Logger",
+      "Logger(Base)",
+      "Logger(Base=Base)",
+      "Logger(Meta=Base)"
+    ],
+    "correctIndex": 1,
+    "explanation": "この問題はクラスの継承について理解しているかを確認する問題です。Base クラスには log() メソッドが定義されています。問題のコードでは Logger() のインスタンスを作成し、そのオブジェクトから log(\"done\") を呼び出しています。Logger クラスが log() メソッドを持つためには、Base クラスを継承する必要があります。Pythonではクラスを継承する場合、class クラス名(基底クラス): の形で定義します。そのため正しい書き方は class Logger(Base): になります。これにより Logger クラスは Base クラスのメソッド log() を引き継ぐことができ、log.log(\"done\") を実行すると \"done\" が表示されます。"
   },
   {
-  "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "def sample():\n    print(\"yield 1\")\n    yield 1\n    print(\"yield 2\")\n    yield 2\n\nfor i in sample():\n    print(f\"for {i}\")",
-  "executionResult": null,
-  "options": [
-    "for 1\nfor 2\nyield 1\nyield 2",
-    "for 1\nyield 1\nfor 2\nyield 2",
-    "yield 1\nfor 1\nyield 2\nfor 2",
-    "yield 1\nyield 2\nfor 1\nfor 2"
-  ],
-  "correctIndex": 2,
-  "explanation": "この問題はジェネレーターの動作を理解しているかを確認する問題です。yield を含む関数はジェネレーター関数となり、呼び出すとジェネレーターオブジェクトを返します。for 文でこのジェネレーターを反復すると、yield に到達するたびに値が返され、関数の実行はその位置で一時停止します。最初に print(\"yield 1\") が実行され \"yield 1\" が表示され、その後 yield 1 により値 1 が返されます。for ループ側で print(f\"for {i}\") が実行され \"for 1\" が表示されます。次に関数の続きが実行され print(\"yield 2\") が表示され、yield 2 によって 2 が返されます。その後 for ループで \"for 2\" が表示されます。したがって出力順は yield 1 → for 1 → yield 2 → for 2 となります。"
+    "question": "次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "def sample():\n    print(\"yield 1\")\n    yield 1\n    print(\"yield 2\")\n    yield 2\n\nfor i in sample():\n    print(f\"for {i}\")",
+    "executionResult": null,
+    "options": [
+      "for 1\nfor 2\nyield 1\nyield 2",
+      "for 1\nyield 1\nfor 2\nyield 2",
+      "yield 1\nfor 1\nyield 2\nfor 2",
+      "yield 1\nyield 2\nfor 1\nfor 2"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題はジェネレーターの動作を理解しているかを確認する問題です。yield を含む関数はジェネレーター関数となり、呼び出すとジェネレーターオブジェクトを返します。for 文でこのジェネレーターを反復すると、yield に到達するたびに値が返され、関数の実行はその位置で一時停止します。最初に print(\"yield 1\") が実行され \"yield 1\" が表示され、その後 yield 1 により値 1 が返されます。for ループ側で print(f\"for {i}\") が実行され \"for 1\" が表示されます。次に関数の続きが実行され print(\"yield 2\") が表示され、yield 2 によって 2 が返されます。その後 for ループで \"for 2\" が表示されます。したがって出力順は yield 1 → for 1 → yield 2 → for 2 となります。"
   },
   {
     "question": "osモジュールの説明として誤っているものを選択してください（1つ選択）。",
@@ -650,17 +650,17 @@
     "explanation": "カレントディレクトリを変更する関数は os.cd() ではなく os.chdir() です。"
   },
   {
-  "question": "カレントディレクトリ以下が下記の構成の場合、次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
-  "codeSample": "py2.py\ninput/\n    __init__.py\n    hello.py\n    child/\n        __init__.py\n        world.py\n        gchild/\n            __init__.py\n            tests.py",
-  "executionResult": "【py2.py】\nfrom glob import glob\nprint(glob('input/*'))",
-  "options": [
-    "['hello.py', 'child', '__init__.py']",
-    "['input/hello.py', 'input/child', 'input/__init__.py']",
-    "['input/hello.py', 'input/child/world.py', 'input/child/gchild/tests.py']",
-    "['hello.py', 'tests.py', 'world.py', '__init__.py']"
-  ],
-  "correctIndex": 1,
-  "explanation": "この問題は glob() がどの範囲までファイルやディレクトリを取得するかを理解しているかを確認する問題です。glob('input/*') は input ディレクトリ直下にあるファイルとディレクトリだけを取得します。そのため取得対象は hello.py、child ディレクトリ、__init__.py です。また、戻り値にはカレントディレクトリからの相対パスが含まれるため、それぞれ 'input/hello.py'、'input/child'、'input/__init__.py' となります。child の中にある world.py や gchild/tests.py は再帰的には取得されないので含まれません。したがって正解は B です。"
+    "question": "カレントディレクトリ以下が下記の構成の場合、次のコードを実行した結果として表示されるものを選択してください（1つ選択）。",
+    "codeSample": "py2.py\ninput/\n    __init__.py\n    hello.py\n    child/\n        __init__.py\n        world.py\n        gchild/\n            __init__.py\n            tests.py",
+    "executionResult": "【py2.py】\nfrom glob import glob\nprint(glob('input/*'))",
+    "options": [
+      "['hello.py', 'child', '__init__.py']",
+      "['input/hello.py', 'input/child', 'input/__init__.py']",
+      "['input/hello.py', 'input/child/world.py', 'input/child/gchild/tests.py']",
+      "['hello.py', 'tests.py', 'world.py', '__init__.py']"
+    ],
+    "correctIndex": 1,
+    "explanation": "この問題は glob() がどの範囲までファイルやディレクトリを取得するかを理解しているかを確認する問題です。glob('input/*') は input ディレクトリ直下にあるファイルとディレクトリだけを取得します。そのため取得対象は hello.py、child ディレクトリ、__init__.py です。また、戻り値にはカレントディレクトリからの相対パスが含まれるため、それぞれ 'input/hello.py'、'input/child'、'input/__init__.py' となります。child の中にある world.py や gchild/tests.py は再帰的には取得されないので含まれません。したがって正解は B です。"
   },
   {
     "question": "次のファイルをコマンドラインで実行した結果として表示されるものを選択してください（1つ選択）。",
@@ -702,43 +702,43 @@
     "explanation": "中央値を求める関数は statistics.half() ではなく statistics.median() です。"
   },
   {
-  "question": "datetimeモジュールのいくつかのオブジェクトのメソッドである strftime() と strptime() で使用する書式コードについて誤っているものを選択してください（1つ選択）。",
-  "codeSample": null,
-  "executionResult": null,
-  "options": [
-    "%y は、0埋めした10進数で表記した世紀なしの年である",
-    "%d は、0埋めした10進数で表記した月中の日である",
-    "%A は、ロケールの曜日名を表示する",
-    "%M は、ロケールの月名を表示する"
-  ],
-  "correctIndex": 3,
-  "explanation": "この問題は datetime モジュールの strftime() / strptime() で使用する書式コードを理解しているかを確認する問題です。%y は2桁の年（世紀なしの年）を表します。%d は月の中の日（01〜31）を表します。%A はロケールに基づいた曜日名（Monday など）を表示します。一方 %M は「分」を表す書式コードであり、月名ではありません。ロケールの月名を表示する書式コードは %B です。そのため誤っているのは D になります。"
+    "question": "datetimeモジュールのいくつかのオブジェクトのメソッドである strftime() と strptime() で使用する書式コードについて誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "%y は、0埋めした10進数で表記した世紀なしの年である",
+      "%d は、0埋めした10進数で表記した月中の日である",
+      "%A は、ロケールの曜日名を表示する",
+      "%M は、ロケールの月名を表示する"
+    ],
+    "correctIndex": 3,
+    "explanation": "この問題は datetime モジュールの strftime() / strptime() で使用する書式コードを理解しているかを確認する問題です。%y は2桁の年（世紀なしの年）を表します。%d は月の中の日（01〜31）を表します。%A はロケールに基づいた曜日名（Monday など）を表示します。一方 %M は「分」を表す書式コードであり、月名ではありません。ロケールの月名を表示する書式コードは %B です。そのため誤っているのは D になります。"
   },
   {
-  "question": "以下の実装は、docstring中にある対話実行例が、書かれている通りに動作するか検証するものである。空欄①に入る記述として正しいものを選択してください（1つ選択）。",
-  "codeSample": "def max_value(values):\n    \"\"\"数値のリストから最大値を取得する\n\n    >>> print(max_value([10, 20, 30]))\n    30\n    \"\"\"\n    return max(values)\n\nimport doctest\ndoctest.①()",
-  "executionResult": null,
-  "options": [
-    "assert",
-    "assertTrue",
-    "test",
-    "testmod"
-  ],
-  "correctIndex": 3,
-  "explanation": "この問題は doctest モジュールの使い方を理解しているかを確認する問題です。doctest は docstring 内に書かれた対話形式の実行例（>>> で始まる部分）を実際に実行し、結果が一致するかをテストする仕組みです。doctest.testmod() を実行すると、そのモジュール内にある docstring を解析し、書かれている実行例をテストとして実行します。今回のコードでは docstring に >>> print(max_value([10, 20, 30])) と書かれており、結果として 30 が表示されるかが検証されます。そのため空欄①に入るのは doctest.testmod() です。"
+    "question": "以下の実装は、docstring中にある対話実行例が、書かれている通りに動作するか検証するものである。空欄①に入る記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": "def max_value(values):\n    \"\"\"数値のリストから最大値を取得する\n\n    >>> print(max_value([10, 20, 30]))\n    30\n    \"\"\"\n    return max(values)\n\nimport doctest\ndoctest.①()",
+    "executionResult": null,
+    "options": [
+      "assert",
+      "assertTrue",
+      "test",
+      "testmod"
+    ],
+    "correctIndex": 3,
+    "explanation": "この問題は doctest モジュールの使い方を理解しているかを確認する問題です。doctest は docstring 内に書かれた対話形式の実行例（>>> で始まる部分）を実際に実行し、結果が一致するかをテストする仕組みです。doctest.testmod() を実行すると、そのモジュール内にある docstring を解析し、書かれている実行例をテストとして実行します。今回のコードでは docstring に >>> print(max_value([10, 20, 30])) と書かれており、結果として 30 が表示されるかが検証されます。そのため空欄①に入るのは doctest.testmod() です。"
   },
   {
-  "question": "loggingモジュールのメッセージの優先度を低い順に並べたものを選択してください（1つ選択）。",
-  "codeSample": null,
-  "executionResult": null,
-  "options": [
-    "INFO, DEBUG, WARNING, ERROR, CRITICAL",
-    "INFO, WARNING, DEBUG, ERROR, CRITICAL",
-    "DEBUG, INFO, WARNING, ERROR, CRITICAL",
-    "DEBUG, WARNING, ERROR, CRITICAL, INFO"
-  ],
-  "correctIndex": 2,
-  "explanation": "この問題は Python の logging モジュールにおけるログレベルの優先順位を理解しているかを確認する問題です。ログレベルは重要度の低い順に DEBUG、INFO、WARNING、ERROR、CRITICAL となっています。DEBUG は開発時の詳細な情報、INFO は通常の動作に関する情報、WARNING は注意が必要な状態、ERROR は処理の失敗、CRITICAL は重大なエラーを表します。したがって低い順に並べると DEBUG → INFO → WARNING → ERROR → CRITICAL となるため、正解は C です。"
+    "question": "loggingモジュールのメッセージの優先度を低い順に並べたものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "INFO, DEBUG, WARNING, ERROR, CRITICAL",
+      "INFO, WARNING, DEBUG, ERROR, CRITICAL",
+      "DEBUG, INFO, WARNING, ERROR, CRITICAL",
+      "DEBUG, WARNING, ERROR, CRITICAL, INFO"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題は Python の logging モジュールにおけるログレベルの優先順位を理解しているかを確認する問題です。ログレベルは重要度の低い順に DEBUG、INFO、WARNING、ERROR、CRITICAL となっています。DEBUG は開発時の詳細な情報、INFO は通常の動作に関する情報、WARNING は注意が必要な状態、ERROR は処理の失敗、CRITICAL は重大なエラーを表します。したがって低い順に並べると DEBUG → INFO → WARNING → ERROR → CRITICAL となるため、正解は C です。"
   },
   {
     "question": "sample-env という仮想環境を作成するコマンドとして正しいものを選択してください。",
@@ -754,42 +754,42 @@
     "explanation": "Python標準の仮想環境は venv モジュールで作成します。"
   },
   {
-  "question": "pip の説明として正しいものを選択してください（1つ選択）。",
-  "codeSample": null,
-  "executionResult": null,
-  "options": [
-    "pip には、サブコマンド merge で複数のパッケージを同時にインストールできる",
-    "pip で、パッケージ名の後ろに = とバージョン名をつけると、そのバージョンのパッケージをインストールできる",
-    "python -m pip show <パッケージ名> で、そのパッケージの情報を表示する",
-    "python -m pip upgrade <パッケージ名> で、該当パッケージを最新バージョンにアップグレードできる"
-  ],
-  "correctIndex": 2,
-  "explanation": "この問題は pip コマンドの基本的な使い方を理解しているかを確認する問題です。パッケージの情報を表示するには pip show コマンドを使用します。python -m pip show <パッケージ名> と実行すると、そのパッケージの名前、バージョン、インストール場所などの情報を確認できます。なお pip には merge というサブコマンドは存在しません。また特定バージョンを指定してインストールする場合は package==1.0 のように == を使います。さらにパッケージをアップグレードする場合は python -m pip install --upgrade <パッケージ名> または pip install -U <パッケージ名> を使用します。そのため正しい説明は C です。"
+    "question": "pip の説明として正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pip には、サブコマンド merge で複数のパッケージを同時にインストールできる",
+      "pip で、パッケージ名の後ろに = とバージョン名をつけると、そのバージョンのパッケージをインストールできる",
+      "python -m pip show <パッケージ名> で、そのパッケージの情報を表示する",
+      "python -m pip upgrade <パッケージ名> で、該当パッケージを最新バージョンにアップグレードできる"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題は pip コマンドの基本的な使い方を理解しているかを確認する問題です。パッケージの情報を表示するには pip show コマンドを使用します。python -m pip show <パッケージ名> と実行すると、そのパッケージの名前、バージョン、インストール場所などの情報を確認できます。なお pip には merge というサブコマンドは存在しません。また特定バージョンを指定してインストールする場合は package==1.0 のように == を使います。さらにパッケージをアップグレードする場合は python -m pip install --upgrade <パッケージ名> または pip install -U <パッケージ名> を使用します。そのため正しい説明は C です。"
   },
   {
-  "question": "以下を対話型環境で実行した結果として表示されるものを選択してください（1つ選択）。なお3行目で print まで入力した状態で [Tab] キーを押しています。",
-  "codeSample": ">>> print_number1 = 10\n>>> print_number2 = 20\n>>> print<Tab>",
-  "executionResult": null,
-  "options": [
-    "print( まで補完される",
-    "print(print_number まで補完される",
-    "以下の候補が表示される: print(  print_number1  print_number2",
-    "以下の候補が表示される: print_number1  print_number2"
-  ],
-  "correctIndex": 2,
-  "explanation": "この問題は対話型環境におけるTab補完の動作を理解しているかを確認する問題です。対話型環境で print と入力して Tab キーを押すと、その文字列で始まる名前の候補が表示されます。今回の環境では標準関数の print() と、すでに定義されている変数 print_number1 と print_number2 が存在します。そのため Tab 補完の候補として print(、print_number1、print_number2 が表示されます。したがって正解は C です。"
+    "question": "以下を対話型環境で実行した結果として表示されるものを選択してください（1つ選択）。なお3行目で print まで入力した状態で [Tab] キーを押しています。",
+    "codeSample": ">>> print_number1 = 10\n>>> print_number2 = 20\n>>> print<Tab>",
+    "executionResult": null,
+    "options": [
+      "print( まで補完される",
+      "print(print_number まで補完される",
+      "以下の候補が表示される: print(  print_number1  print_number2",
+      "以下の候補が表示される: print_number1  print_number2"
+    ],
+    "correctIndex": 2,
+    "explanation": "この問題は対話型環境におけるTab補完の動作を理解しているかを確認する問題です。対話型環境で print と入力して Tab キーを押すと、その文字列で始まる名前の候補が表示されます。今回の環境では標準関数の print() と、すでに定義されている変数 print_number1 と print_number2 が存在します。そのため Tab 補完の候補として print(、print_number1、print_number2 が表示されます。したがって正解は C です。"
   },
   {
-  "question": "以下の説明で誤っているものを選択してください（1つ選択）。",
-  "codeSample": null,
-  "executionResult": null,
-  "options": [
-    "変数とモジュール名の補完はインタープリタの起動時に自動で有効になっている",
-    "bpython は、コンパイラである",
-    "bpython は、タブ補完、オブジェクト検索、高度なヒストリ管理などの機能を持つ",
-    "IPython は、bpython と類似の拡張対話環境である"
-  ],
-  "correctIndex": 1,
-  "explanation": "この問題は Python の対話環境に関する知識を確認する問題です。bpython は Python の拡張された対話型インタープリタであり、コンパイラではありません。bpython にはタブ補完、オブジェクトの探索、履歴管理などの便利な機能が備わっています。また IPython も同様に Python の拡張対話環境として広く利用されています。したがって「bpython はコンパイラである」という説明は誤りであり、正解は B です。"
-}
+    "question": "以下の説明で誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "変数とモジュール名の補完はインタープリタの起動時に自動で有効になっている",
+      "bpython は、コンパイラである",
+      "bpython は、タブ補完、オブジェクト検索、高度なヒストリ管理などの機能を持つ",
+      "IPython は、bpython と類似の拡張対話環境である"
+    ],
+    "correctIndex": 1,
+    "explanation": "この問題は Python の対話環境に関する知識を確認する問題です。bpython は Python の拡張された対話型インタープリタであり、コンパイラではありません。bpython にはタブ補完、オブジェクトの探索、履歴管理などの便利な機能が備わっています。また IPython も同様に Python の拡張対話環境として広く利用されています。したがって「bpython はコンパイラである」という説明は誤りであり、正解は B です。"
+  }
 ]
