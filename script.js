@@ -211,7 +211,8 @@ function showSummary() {
 
   html += `
     <div style="text-align: center; margin-top: 20px;">
-        <button class="nav-btn" onclick="returnToTitle()">タイトルに戻る</button>
+        <button type="button" class="nav-btn" onclick="exportToCSV()" style="margin-right: 10px; background-color: #28a745;">CSV出力</button>
+        <button type="button" class="nav-btn" onclick="returnToTitle()">タイトルに戻る</button>
     </div>
   `;
 
@@ -283,6 +284,49 @@ document.getElementById("prev").onclick = () => {
     showQuestion();
   }
 };
+function exportToCSV() {
+  let csvContent = "\uFEFF"; // BOM for Excel UTF-8 compatibility
+  csvContent += "問題番号,問題文,解答状況,見直し\n";
+
+  questions.forEach((q, index) => {
+    const state = userAnswers[index];
+    let statusText = "未回答";
+    if (state.isSubmitted) {
+      if (state.selectedIndex === q.correctIndex) {
+        statusText = "正解";
+      } else {
+        statusText = "不正解";
+      }
+    }
+    
+    // Excelで開いても崩れないようにダブルクォートで囲む＆エスケープする
+    const escapeCsv = (str) => '"' + (str ? String(str).replace(/"/g, '""') : '') + '"';
+    
+    const row = [
+      index + 1,
+      escapeCsv(q.question),
+      statusText,
+      state.isMarkedReview ? "要見直し" : ""
+    ];
+    
+    csvContent += row.join(",") + "\n";
+  });
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  
+  const link = document.createElement("a");
+  link.href = url;
+  
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
+  link.setAttribute("download", `quiz_result_${dateStr}.csv`);
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 // Start Quiz Button
 document.getElementById('start-quiz-btn').onclick = () => {
   const select = document.getElementById('course-select');
