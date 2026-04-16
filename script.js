@@ -11,9 +11,10 @@ async function startQuiz(filename, title) {
   // Hide start screen
   document.getElementById("start-screen").style.display = "none";
 
-  // Show main container and footer
+  // Show main container, footer and info-bar
   document.querySelector(".main-container").style.display = "block";
   document.querySelector("footer").style.display = "flex";
+  document.querySelector(".info-bar").style.display = "flex";
 
   // Reset current question index
   currentQuestion = 0;
@@ -88,8 +89,7 @@ function showQuestion() {
   document.getElementById("review-later").checked = currentState.isMarkedReview;
 
   // Question Text
-  document.getElementById("question").textContent =
-    `問題${currentQuestion + 1}: ${q.question}`;
+  renderContent(document.getElementById("question"), `問題${currentQuestion + 1}: ${q.question}`);
 
   // Code Sample
   const codeSample = document.getElementById("code-sample");
@@ -117,7 +117,7 @@ function showQuestion() {
   q.options.forEach((opt, index) => {
     const btn = document.createElement("div");
     btn.classList.add("option");
-    btn.textContent = opt;
+    renderContent(btn, opt);
 
     // Restore selection state
     if (currentState.selectedIndex === index) {
@@ -163,13 +163,16 @@ function showQuestion() {
     resultDiv.textContent =
       currentState.selectedIndex === q.correctIndex ? "正解！" : "不正解";
     resultDiv.style.display = "block";
-    expDiv.textContent = q.explanation;
+    renderContent(expDiv, q.explanation);
     expDiv.style.display = "block";
   } else {
     // Hide results
     resultDiv.style.display = "none";
     expDiv.style.display = "none";
   }
+
+  // Render Math
+  renderMath(container);
 }
 
 function showSummary() {
@@ -201,7 +204,7 @@ function showSummary() {
     html += `
       <div class="summary-item ${isReview}" onclick="jumpToQuestion(${index})">
         <span class="summary-num">問${index + 1}</span>
-        <span class="summary-text">${shortText}</span>
+        <span class="summary-text">${parseMarkdown(shortText)}</span>
         <span class="summary-status">${statusHTML}</span>
       </div>
     `;
@@ -219,12 +222,16 @@ function showSummary() {
   container.innerHTML = html;
 
   document.querySelector("footer").style.display = "none"; // Hide nav buttons in summary
+
+  // Render Math
+  renderMath(container);
 }
 
 function returnToTitle() {
   document.getElementById("start-screen").style.display = "flex";
   document.querySelector(".main-container").style.display = "none";
   document.querySelector("footer").style.display = "none";
+  document.querySelector(".info-bar").style.display = "none";
   document.getElementById("main-title").textContent = "Python知識確認テスト";
 }
 
@@ -327,12 +334,38 @@ function exportToCSV() {
   document.body.removeChild(link);
 }
 
-// Start Quiz Button
-document.getElementById('start-quiz-btn').onclick = () => {
-  const select = document.getElementById('course-select');
-  const filename = select.value;
-  const title = select.options[select.selectedIndex].text;
-  startQuiz(filename, title);
-};
+// Start Quiz handled directly by onclick in HTML course cards
+function renderContent(element, text) {
+  if (!text) {
+    element.textContent = "";
+    return;
+  }
+  element.textContent = text;
+  element.innerHTML = parseMarkdown(element.innerHTML);
+}
+
+function parseMarkdown(html) {
+  if (!html) return "";
+  // 画像: ![alt](url) -> <img ...>
+  let result = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="question-image">');
+  // 簡易的な見出しサポート (行頭の ###)
+  result = result.replace(/^### (.*$)/gm, '<h3>$1</h3>');
+  return result;
+}
+
+function renderMath(element) {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(element, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true },
+      ],
+      throwOnError: false,
+    });
+  }
+}
+
 // Initialize
 // loadQuestions(); // Removed: Started by startQuiz from HTML

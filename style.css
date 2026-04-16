@@ -1,11 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #e0e0e0;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow: hidden; /* Prevent double scrollbars on the root */
 }
 
 header {
@@ -244,65 +246,201 @@ footer {
   white-space: pre-wrap;
 }
 
-/* Start Screen */
+/* Start Screen Modernization */
 .start-screen {
+  flex: 1; /* Take up remaining space */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  background: radial-gradient(circle at top right, #eff6ff 0%, #f8fafc 100%);
+  overflow-y: auto; /* Only this container scrolls */
+}
+
+.title-wrapper {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+#start-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+#start-title span {
+  display: block;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.category-icon-bg {
+  width: 48px;
+  height: 48px;
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 12px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #f4f4f4;
 }
 
-.start-screen h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+.category-header--data .category-icon-bg {
+  background: #fef3c7;
+  color: #d97706;
 }
 
-.selection-container {
+.category-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.header-text h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #1e293b;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.header-text p {
+  margin: 2px 0 0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  width: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+}
+
+.course-card--data:hover {
+  border-color: #f59e0b;
+}
+
+.course-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.card-header-flex {
+  display: flex;
   align-items: center;
-  gap: 15px;
-  width: 100%;
+  gap: 12px;
 }
 
-.course-select {
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  max-width: 300px;
-  background-color: #fff;
-  cursor: pointer;
+.card-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
-.start-btn {
-  background-color: #28a745;
+.card-logo--ps {
+  height: 14px; /* Even smaller for Prime Study logo */
+}
+
+.card-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.course-card:hover .card-label {
+  background: #3b82f6;
   color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    transform 0.1s;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.start-btn:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
+.course-card--data:hover .card-label {
+  background: #f59e0b;
 }
 
-.start-btn:active {
-  transform: translateY(0);
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base Adjustments */
+header {
+  background-color: white;
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#main-title {
+  color: #0f172a;
+  font-weight: 700;
 }
 
 /* 問題文：改行を反映（\n を改行として表示） */
@@ -334,4 +472,20 @@ footer {
   white-space: pre-wrap;
   font-size: 0.95rem;
   text-align: left;
+}
+
+/* Question Images */
+.question-image {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.option .question-image {
+  margin: 5px 0;
+  max-height: 200px; /* Options images can be smaller */
 }

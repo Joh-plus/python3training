@@ -6,14 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python3認定基礎試験対策</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Outfit:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 
 <body>
   <header>
-    <h1 id="main-title">Python3認定基礎試験対策</h1>
+    <h1 id="main-title">Python3_検定対策</h1>
   </header>
 
-  <div class="info-bar">
+  <div class="info-bar" style="display: none;">
     <div class="progress">
       <span id="current-question-num">1</span>問目 / 全<span id="total-questions">10</span>問
     </div>
@@ -22,27 +30,96 @@
     </div>
   </div>
   <div id="start-screen" class="start-screen">
-    <h1>Python3認定基礎試験対策 模擬問題集</h1>
-    <p>コースを選択してください</p>
-    <div class="selection-container">
-      <select id="course-select" class="course-select">
-        <!-- <option value="practice_strings.json">文字列に関する問題</option>
-        <option value="practice_list.json">リスト操作の問題</option>
-        <option value="practice_set.json">集合に関する問題</option>
-        <option value="practice_range.json">範囲に関する問題</option>
-        <option value="practice_arithmetic.json">算術演算子に関する問題</option>
-        <option value="practice_andornot_10.json">論理演算子に関する問題</option>
-        <option value="practice_value.json">ローカル変数とグローバル変数に関する問題</option> -->
-        <!-- <option value="questions.json">コース1 (基本)</option>
-        <option value="questions2.json">コース2 (応用)</option> -->
-        <option value="pastQuestions.json">過去問題</option>
-        <option value="python_exam_60_questions_complete.json">pyq （基本61問）</option>
-        <option value="pyq.json">pyq (実践40問)</option>
-        <option value="primeStudy_01.json">Prime Study (第1回)</option>
-        <option value="primeStudy_02.json">Prime Study (第2回)</option>
-        <option value="primeStudy_03.json">Prime Study (第3回)</option>
-      </select>
-      <button id="start-quiz-btn" class="start-btn">模擬問題を開始する</button>
+    <div class="title-wrapper">
+      <h1 id="start-title">Python 3 <span>検定対策 模擬問題集</span></h1>
+      <p class="subtitle">学習を開始するコースを選択してください</p>
+    </div>
+
+    <div class="dashboard-container">
+      <!-- エンジニア認定基礎試験 -->
+      <section class="category-section">
+        <div class="category-header">
+          <div class="category-icon-bg">
+            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="header-text">
+            <h2>Python 3 エンジニア認定基礎試験</h2>
+            <p>Pythonの基礎知識と文法をマスターする</p>
+          </div>
+        </div>
+        <div class="course-grid">
+          <button class="course-card" onclick="startQuiz('pastQuestions.json', '過去問題')">
+            <span class="card-label">Official</span>
+            <div class="card-header-flex">
+              <img src="images/oddysey.png" alt="Odyssey Logo" class="card-logo">
+              <h3>過去問題</h3>
+            </div>
+          </button>
+          <button class="course-card" onclick="startQuiz('python_exam_60_questions_complete.json', 'pyq （基本61問）')">
+            <span class="card-label">Training</span>
+            <div class="card-header-flex">
+              <img src="images/pyq_logo_color.svg" alt="PyQ Logo" class="card-logo">
+              <h3>PyQ （基本61問）</h3>
+            </div>
+          </button>
+          <button class="course-card" onclick="startQuiz('pyq.json', 'pyq (実践40問)')">
+            <span class="card-label">Advanced</span>
+            <div class="card-header-flex">
+              <img src="images/pyq_logo_color.svg" alt="PyQ Logo" class="card-logo">
+              <h3>PyQ (実践40問)</h3>
+            </div>
+          </button>
+          <button class="course-card" onclick="startQuiz('primeStudy_01.json', 'Prime Study (第1回)')">
+            <span class="card-label">External</span>
+            <div class="card-header-flex">
+              <img src="images/logo_ps.png" alt="Prime Study Logo" class="card-logo card-logo--ps">
+              <h3>Prime Study<br> 第1回</h3>
+            </div>
+          </button>
+          <button class="course-card" onclick="startQuiz('primeStudy_02.json', 'Prime Study (第2回)')">
+            <span class="card-label">External</span>
+            <div class="card-header-flex">
+              <img src="images/logo_ps.png" alt="Prime Study Logo" class="card-logo card-logo--ps">
+              <h3>Prime Study<br> 第2回</h3>
+            </div>
+          </button>
+          <button class="course-card" onclick="startQuiz('primeStudy_03.json', 'Prime Study (第3回)')">
+            <span class="card-label">External</span>
+            <div class="card-header-flex">
+              <img src="images/logo_ps.png" alt="Prime Study Logo" class="card-logo card-logo--ps">
+              <h3>Prime Study<br> 第3回</h3>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- データ分析基礎試験 -->
+      <section class="category-section">
+        <div class="category-header category-header--data">
+          <div class="category-icon-bg">
+            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+            </svg>
+          </div>
+          <div class="header-text">
+            <h2>Python 3 エンジニア認定データ分析試験</h2>
+            <p>データライブラリと分析の基礎を学ぶ</p>
+          </div>
+        </div>
+        <div class="course-grid">
+          <button class="course-card course-card--data"
+            onclick="startQuiz('data_analysis_mock_questions.json', '過去問題')">
+            <span class="card-label">Official</span>
+            <div class="card-header-flex">
+              <img src="images/oddysey.png" alt="Odyssey Logo" class="card-logo">
+              <h3>過去問題</h3>
+            </div>
+          </button>
+        </div>
+      </section>
     </div>
   </div>
 
