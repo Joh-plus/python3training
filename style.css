@@ -66,6 +66,27 @@ h2 {
   margin-top: 10px;
 }
 
+#code-sample.math-code {
+  background-color: transparent;
+  color: #0f172a;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 20px 0;
+}
+
+#code-sample.image-code {
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+}
+
+#code-sample.image-code img {
+  max-height: 350px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 .options-list {
   text-align: left;
 }
@@ -397,6 +418,10 @@ footer {
 
 .card-logo--ps {
   height: 14px; /* Even smaller for Prime Study logo */
+}
+
+.card-logo--dpro {
+  height: 42px; /* Slightly larger for DPro logo */
 }
 
 .card-label {

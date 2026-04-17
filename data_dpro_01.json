@@ -1,0 +1,522 @@
+    [
+        {
+            "question": "以下の箱ひげ図の説明として誤っているものを1つ選択せよ。",
+            "codeSample": "images/dpro01_q1.png",
+            "executionResult": null,
+            "options": [
+                "支払い請求額は土曜日がもっともばらついている",
+                "第一四分位数がもっとも大きいのは、金曜日である",
+                "支払い請求額が最大のユーザーは、土曜日の利用である",
+                "中央値は、日曜日がもっとも高い"
+            ],
+            "correctIndex": 1,
+            "explanation": "第1四分位数は箱の下端であり、最も大きいのは日曜日。要点：箱ひげ図の各要素の意味を理解する。"
+        },
+        {
+            "question": "以下のグラフをxで微分したときの値として正しいものを選べ。",
+            "codeSample": "【画像問題：定数関数】",
+            "executionResult": null,
+            "options": [
+                "x",
+                "発散",
+                "0",
+                "1"
+            ],
+            "correctIndex": 2,
+            "explanation": "定数関数を微分すると0になる。要点：定数の微分＝0。"
+        },
+        {
+            "question": "matplotlibで散布図を表示するメソッドとして正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "vilolinplot()",
+                "hist()",
+                "plot()",
+                "scatter()"
+            ],
+            "correctIndex": 3,
+            "explanation": "scatter()は散布図を描画するメソッド。要点：scatter＝散布図。"
+        },
+        {
+            "question": "回帰予測に関する説明として誤っているものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "単回帰は特徴量が1つ",
+                "重回帰は特徴量が複数",
+                "ロジスティック回帰はラベルそのものを予測する",
+                "RMSEは損失関数の一つ"
+            ],
+            "correctIndex": 2,
+            "explanation": "ロジスティック回帰は確率を予測する。要点：確率→分類。"
+        },
+        {
+            "question": "性別ごとの人数を棒グラフで表示するコードとして正しいものを選べ。",
+            "codeSample": "【画像問題：DataFrame】",
+            "executionResult": null,
+            "options": [
+                "df[\"性別\"].value_counts().plot.bar()",
+                "df[\"性別\"].plot.bar()",
+                "plt.bar(df[\"性別\"].value_counts())",
+                "df[\"性別\"].value_counts().bar()"
+            ],
+            "correctIndex": 0,
+            "explanation": "value_counts()で集計してからplot.bar()を使う。要点：集計→描画。"
+        },
+        {
+            "question": "2つのサブプロットにタイトルを付けるコードとして正しいものを選べ。",
+            "codeSample": "【コード問題】",
+            "executionResult": null,
+            "options": [
+                "axes[0].set_title(...)",
+                "axes[0].title(...)",
+                "axes.title(...)",
+                "axes.subtitle(...)"
+            ],
+            "correctIndex": 0,
+            "explanation": "タイトルはset_title()で設定する。要点：set_titleを使う。"
+        },
+        {
+            "question": "以下の行列の特徴として誤っているものを選べ。",
+            "codeSample": "$$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$",
+            "executionResult": null,
+            "options": [
+                "逆行列が存在する",
+                "単位行列である",
+                "非正方行列である",
+                "対角行列である"
+            ],
+            "correctIndex": 2,
+            "explanation": "単位行列は正方行列。要点：行と列が同じ。"
+        },
+        {
+            "question": "機械学習の処理手順として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "データ→可視化→アルゴリズム→加工→学習",
+                "データ→アルゴリズム→可視化→加工→学習",
+                "データ→加工→可視化→アルゴリズム→学習",
+                "データ→アルゴリズム→加工→可視化→学習"
+            ],
+            "correctIndex": 2,
+            "explanation": "前処理→可視化→モデル選択→学習の流れ。要点：順序を理解。"
+        },
+        {
+            "question": "DataFrameを内部結合するコードとして正しいものを選べ。",
+            "codeSample": "【画像問題】",
+            "executionResult": null,
+            "options": [
+                "pd.merge(A, B, how=\"left\", on=\"日付\")",
+                "pd.merge([A, B], how=\"inner\", on=\"日付\")",
+                "pd.join(A, B, how=\"inner\", on=\"日付\")",
+                "pd.merge(A, B, how=\"inner\", on=\"日付\")"
+            ],
+            "correctIndex": 3,
+            "explanation": "内部結合はmergeでhow=\"inner\"を使う。要点：merge+inner。"
+        },
+        {
+            "question": "以下のコードのXXXXの部分に当てはまるものとして正しいものを選べ",
+            "codeSample": "try:\n    with open('sample.txt', encoding='utf-8') as f:\n        txt = f.read()\n        f.close()\n        print(txt)\n\nXXXX FileNotFoundError as err:\n    print(\"ファイルが存在しないため、読み込めませんでした。\")\n    \nXXXX Exception as other:\n    print(\"ファイルが読み込めませんでした。\")",
+            "executionResult": null,
+            "options": [
+                "except",
+                "reject",
+                "exceptional",
+                "exception"
+            ],
+            "correctIndex": 0,
+            "explanation": "例外処理はexceptを使用する。要点：try-except。"
+        },
+        {
+            "question": "pickleモジュールの説明として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "オブジェクトをpklファイルとして保存するために使用するモジュールで、構築した予測モデルを保存する場合などに使用される",
+                "画像データを扱う場合のモジュールで、ファイルを読み込むことはできるが、オブジェクトを保存することはできない",
+                "Pythonオブジェクトをpickle化するには、pickle.save(オブジェクト名)と実行する",
+                "正規表現を扱うためのモジュールである"
+            ],
+            "correctIndex": 0,
+            "explanation": "pickleはPythonオブジェクトを保存・復元するためのモジュールで、学習済みモデルの保存などにも使われる。要点：pickle＝オブジェクト保存。"
+        },
+        {
+            "question": "Pythonのコーディング規約の名称として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "PIP8",
+                "PEP8",
+                "Coding8",
+                "Flake8"
+            ],
+            "correctIndex": 1,
+            "explanation": "Pythonの代表的なコーディング規約はPEP8である。要点：PEP8＝Pythonの書き方ルール。"
+        },
+        {
+            "question": "カテゴリカル型やオブジェクト型のデータが格納されたpandasデータフレームに対して、describeメソッドで算出できない統計量として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "最頻（もっとも多く出現するデータ）のレコード数",
+                "データ数",
+                "最大文字数",
+                "ユニーク数"
+            ],
+            "correctIndex": 2,
+            "explanation": "カテゴリデータに対するdescribe()では件数、ユニーク数、最頻値、その出現回数などは確認できるが、最大文字数は得られない。要点：describeの出力項目を区別する。"
+        },
+        {
+            "question": "以下の関数の x に関する微分として正しいものを選べ",
+            "codeSample": "$$\\log x$$",
+            "executionResult": null,
+            "options": [
+                "$$\\frac{1}{x}$$",
+                "$$1$$",
+                "$$e^x$$",
+                "$$x$$"
+            ],
+            "correctIndex": 0,
+            "explanation": "log x を x で微分すると 1/x になる。要点：logの微分＝1/x。"
+        },
+        {
+            "question": "Anacondaで特定のライブラリ(XXXX)のバージョンを更新する際に使用するコマンドとして正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "conda upgrade XXXX",
+                "conda install XXXX",
+                "conda update XXXX",
+                "conda build XXXX"
+            ],
+            "correctIndex": 2,
+            "explanation": "condaで既存パッケージを更新するときは conda update パッケージ名 を使う。要点：更新＝update。"
+        },
+        {
+            "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+            "codeSample": "import numpy as np\n\nnp.log(np.exp(np.eye(2)))",
+            "executionResult": null,
+            "options": [
+                "array([[1., 1.], [1., 1.]])",
+                "array([[2.71828183, 1. ], [1. , 2.71828183]])",
+                "array([[1., 0.], [0., 1.]])",
+                "array([[ 0., -inf], [-inf, 0.]])"
+            ],
+            "correctIndex": 2,
+            "explanation": "np.eye(2)は2×2の単位行列、np.expで対角成分はe、その他は1になる。その後np.logを取ると対角成分は1、その他は0になる。要点：log(exp(x))で元に戻る。"
+        },
+        {
+            "question": "pipを用いてXXXXというパッケージをアンインストールする場合に使用するコマンドとして正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "pip demount XXXX",
+                "pip uninstall XXXX",
+                "pip detach XXXX",
+                "pip remove XXXX"
+            ],
+            "correctIndex": 1,
+            "explanation": "pipでパッケージを削除するときは pip uninstall パッケージ名 を使う。要点：削除＝uninstall。"
+        },
+        {
+            "question": "特徴量の正規化について説明している文章のうち、間違っているものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "特徴量のオーダーが大きく異なる場合は正規化を実施する必要はない",
+                "scikit-learnには正規化を行うためのモジュールが存在する",
+                "特徴量の最大値が1、最小値が0となるように変換をする、最大最小正規化が存在する",
+                "データの分布が標準正規分布に従うように変換する、分散正規化が存在する"
+            ],
+            "correctIndex": 0,
+            "explanation": "特徴量の尺度が大きく異なる場合は、むしろ正規化や標準化が重要になる。要点：桁が違う特徴量には正規化が有効。"
+        },
+        {
+            "question": "以下のコードのXXXに当てはまるものとして正しいものを選べ。",
+            "codeSample": "#必要なモジュールのimport\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.datasets import load_boston\nfrom sklearn.model_selection import train_test_split\n\nboston = load_boston()\nx, y = boston.data, boston.target\n# 学習データとテストデータに分割\nXXX\n# 線形回帰をインスタンス化\nlr = LinearRegression()\nlr.fit(x_train, y_train)",
+            "executionResult": null,
+            "options": [
+                "x_train, x_test = train_test_split(x, y, test_size=0.3)",
+                "x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)",
+                "x_train, x_test, y_train, y_test = lr.predict(x)",
+                "x_train, x_test, y_train, y_test = train_test_split(x, test_size=0.3)"
+            ],
+            "correctIndex": 1,
+            "explanation": "train_test_splitで特徴量xと目的変数yを分けると、x_train, x_test, y_train, y_test の4つが返る。要点：分割結果は4つ。"
+        },
+        {
+            "question": "pandasデータフレームdfのDateカラムをdatetime型に変換するコードとして正しいものを選べ。",
+            "codeSample": "【画像問題：DataFrame】",
+            "executionResult": null,
+            "options": [
+                "df[\"Date\"] = pd.to_date(df[\"Date\"])",
+                "df[\"Date\"] = pd.to_datetime(df[\"Date\"])",
+                "df[\"Date\"] = pd.datetime(df[\"Date\"])",
+                "df[\"Date\"] = df[\"Date\"].astype(datetime)"
+            ],
+            "correctIndex": 1,
+            "explanation": "pandasで日付文字列をdatetime型に変換するときは pd.to_datetime() を使う。要点：日付変換＝to_datetime。"
+        },
+        {
+            "question": "以下のグラフは各ユーザーの支払い請求額をx軸、チップをy軸とした散布図である。この散布図の説明として正しいものを選べ。",
+            "codeSample": "【画像問題：散布図】",
+            "executionResult": null,
+            "options": [
+                "支払い請求額とチップには概ね正の相関がある",
+                "チップが10付近の所に1つデータがあるが、これは外れ値である",
+                "支払い請求額とチップには概ね負の相関がある",
+                "支払い請求額は30〜40が最も多いことがわかる"
+            ],
+            "correctIndex": 0,
+            "explanation": "散布図全体として右上がりの傾向があるため、概ね正の相関があると判断できる。要点：右上がり＝正の相関。"
+        },
+        {
+            "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+            "codeSample": "import numpy as np\n\nA = np.eye(4)\nfirst, second = np.vsplit(A, [3])\nsecond.T",
+            "executionResult": null,
+            "options": [
+                "array([[0.], [0.], [0.], [1.]])",
+                "array([[0., 0.], [0., 0.], [1., 0.], [0., 1.]])",
+                "array([[0., 0., 0., 1.]])",
+                "array([[0., 0., 1., 0.], [0., 0., 0., 1.]])"
+            ],
+            "correctIndex": 0,
+            "explanation": "np.eye(4)を行方向に3行目で分割するとsecondは最後の1行 [[0., 0., 0., 1.]]。これを転置すると4×1の列ベクトルになる。要点：vsplit後の形と転置を確認する。"
+        },
+        {
+            "question": "pandasのデータフレームの上から5行目までを表示させるメソッドとして、正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "show()",
+                "head()",
+                "tail()",
+                "view()"
+            ],
+            "correctIndex": 1,
+            "explanation": "head()は先頭から指定行数分を表示するメソッドで、引数を省略すると5行表示する。要点：先頭5行＝head。"
+        },
+        {
+            "question": "クラスタリング手法として適切でないものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "ウォード法",
+                "k-近傍法",
+                "k-means法",
+                "単純連結法"
+            ],
+            "correctIndex": 1,
+            "explanation": "k-近傍法は教師あり学習の分類手法であり、クラスタリングではない。要点：k-NNは分類。"
+        },
+        {
+            "question": "サポートベクターマシンについて説明している文章のうち正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "線形分離可能な問題にのみ適用できる",
+                "内部で欠損値を処理するアルゴリズムが実装されているため、欠損値はNULL値のままでよい",
+                "scikit-learnで使用する場合、カーネルはガウスカーネル以外にも指定することができる",
+                "マージンの距離を最小にするように最適化するアルゴリズムである"
+            ],
+            "correctIndex": 2,
+            "explanation": "SVMではlinearやrbfなど複数のカーネルを指定できる。要点：SVMはカーネルを切り替えられる。"
+        },
+        {
+            "question": "matplotlibについて説明している文章のうち、間違っているものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "plot()メソッドは線の太さを変更することができる",
+                "plot()メソッドではグラフの枠線の色を指定することができる",
+                "color引数では、文字列の他に、HTMLやCSS3で定義された色名を指定することができる",
+                "散布図で指定することができるマーカーの種類は30種以上ある"
+            ],
+            "correctIndex": 1,
+            "explanation": "plot()は線の描画に使うが、グラフ全体の枠線色の指定そのものを担当するわけではない。要点：plotの役割とfigure/axesの設定を区別する。"
+        },
+        {
+            "question": "pandasのcorr()メソッドでデフォルトで算出される相関係数の種類として、正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "ピアソンの相関係数",
+                "スピアマンの相関係数",
+                "ケンドールの順位相関係数",
+                "ピアソンの相関係数、スピアマンの順位相関係数、ケンドールの順位相関係数が全て算出される"
+            ],
+            "correctIndex": 0,
+            "explanation": "corr()はデフォルトではピアソンの相関係数を計算する。要点：corr()の初期設定＝pearson。"
+        },
+        {
+            "question": "Jupyter Notebookについて説明している文章のうち、正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "単一のコードを実行できることもあり、後から見直した時のために、セルとセルの間には適度に、コメントを残すべきである",
+                "使っていないノートブックは自動でシャットダウンされるので、いくつでもノートブックを開くことは問題ない",
+                "単一行でセルを実行できることもあり、セル内で関数を作成することは良くない",
+                "ノートブックが複数に別れていると面倒なので、ノートブックは長くても1つに納める方が良い"
+            ],
+            "correctIndex": 0,
+            "explanation": "Notebookはあとから見返すことが多いため、Markdownセルやコメントで説明を残すのが望ましい。要点：Notebookは読み返しやすく整理する。"
+        },
+        {
+            "question": "棒グラフが出力されるコードとして正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "\nfig, ax = plt.subplots()\nx = [1,2,3]\ny = [10, 20, 30]\nax.bar(x, y)\nplt.show()\n",
+                "\nfig, ax = plt.subplots()\nx = [1,2,3]\ny = [10, 20, 30]\nax.scatter(x, y)\nplt.show()\n",
+                "\nfig, ax = plt.subplots()\nx = [1,2,3]\ny = [10, 20, 30]\nax.plot(x, y)\nplt.show()\n",
+                "\nfig, ax = plt.subplots()\nx = [1,2,3]\ny = [10, 20, 30]\nax.boxplot(x, y)\nplt.show()\n"
+            ],
+            "correctIndex": 0,
+            "explanation": "棒グラフはax.bar(x, y)で描画する。scatterは散布図、plotは折れ線、boxplotは箱ひげ図。要点：bar＝棒グラフ。"
+        },
+        {
+            "question": "以下のようなDatetimeIndexを出力するコードとして正しいものを選べ。",
+            "codeSample": "DatetimeIndex(['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04',\n               '2020-01-05', '2020-01-06', '2020-01-07', '2020-01-08',\n               '2020-01-09', '2020-01-10', '2020-01-11', '2020-01-12',\n               '2020-01-13', '2020-01-14', '2020-01-15', '2020-01-16',\n               '2020-01-17', '2020-01-18', '2020-01-19', '2020-01-20',\n               '2020-01-21', '2020-01-22', '2020-01-23', '2020-01-24',\n               '2020-01-25', '2020-01-26', '2020-01-27', '2020-01-28',\n               '2020-01-29', '2020-01-30', '2020-01-31'],\n              dtype='datetime64[ns]', freq='D')",
+            "executionResult": null,
+            "options": [
+                "pd.date_range([\"2020-01-01\", \"2020-1-31\"])",
+                "pd.date(start=\"2020-01-01\", end=\"2020-1-31\")",
+                "pd.range(start=\"2020-01-01\", end=\"2020-1-31\")",
+                "pd.date_range(start=\"2020-01-01\", end=\"2020-1-31\")"
+            ],
+            "correctIndex": 3,
+            "explanation": "連続した日付を作るには pd.date_range(start=..., end=...) を使う。要点：日付範囲生成＝date_range。"
+        },
+        {
+            "question": "以下のような２つの集合がある。\nA = {1,2,3,4},B = {3,4,5,6} \nのとき、A∪Bとして正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "{}(空集合)",
+                "8",
+                "{1,2,3,4,5,6}",
+                "{3,4}"
+            ],
+            "correctIndex": 2,
+            "explanation": "和集合は両方の集合の要素を重複なくまとめたもの。要点：∪は全部集める。"
+        },
+        {
+            "question": "以下の文章のうちグリッドサーチの説明として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "各パラメーターにおいて指定した分布から無作為に探索値を抽出するので、分布の仮定が間違っていると最適なチューニング結果にならない",
+                "どのパラメーターを探索するかはアルゴリズムが自動で選んでくれる",
+                "指定したパラメーターの全ての組み合わせを試す手法。組み合わせの総数分モデルの学習を行うので、探索が終わるのに時間がかかる",
+                "パラメーター探索の仮定で、ベイズ推論を行なっているため計算に時間がかかる"
+            ],
+            "correctIndex": 2,
+            "explanation": "グリッドサーチは候補パラメータの全組み合わせを試すので、候補が増えるほど時間がかかる。要点：総当たり探索。"
+        },
+        {
+            "question": "線形回帰について説明している文章のうち正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "L1正則化やL2正則化を用いることで過学習を抑えることができる",
+                "分類する予測モデルを構築する際に使用するアルゴリズムである",
+                "特徴量が5個以上あるデータには用いることができない",
+                "過学習することがないので、検証データを用意する必要はない"
+            ],
+            "correctIndex": 0,
+            "explanation": "線形回帰ではL1やL2正則化を用いて過学習を抑えることがある。要点：正則化で過学習対策。"
+        },
+        {
+            "question": "以下の関数 f(x, y) の x に関する偏微分として正しいものを選べ",
+            "codeSample": "$$f(x, y) = x^2 y^2$$",
+            "executionResult": null,
+            "options": [
+                "$$2xy^2$$",
+                "$$2x^2y$$",
+                "$$y^2$$",
+                "$$4xy$$"
+            ],
+            "correctIndex": 0,
+            "explanation": "xで偏微分するので y^2 は定数として扱う。x^2 を微分すると 2x になるため、結果は 2xy^2。要点：偏微分では他の変数は定数扱い。"
+        },
+        {
+            "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+            "codeSample": "import numpy as np\n\nA = np.array([[1, 1],[1, 1]])\nB = np.array([1, 1])\nnp.dot(A, B)",
+            "executionResult": null,
+            "options": [
+                "array([2, 2])",
+                "array([[2, 2]])",
+                "array([[1, 1], [1, 1]])",
+                "実行不可（エラーが出る）"
+            ],
+            "correctIndex": 0,
+            "explanation": "各行とベクトルBの内積を取るので、1+1=2 が2回並び array([2, 2]) になる。要点：dotは内積・行列積。"
+        },
+        {
+            "question": "matplotlibのグラフ描画に関する説明のうち、間違っているものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "グラフの軸ラベルの文字列を回転させることはできる",
+                "1つのグラフオブジェクト内では、1つのフォントしか指定できない",
+                "日本語の文字列にも対応しているフォントがデフォルトでは指定されていない",
+                "縦軸が左右にある2軸グラフを描画することはできる"
+            ],
+            "correctIndex": 1,
+            "explanation": "matplotlibでは要素ごとに別のフォントを指定できるため、1つのグラフ内で1種類しか使えないわけではない。要点：フォント指定は複数可能。"
+        },
+        {
+            "question": "A = (1,2,3), B = (4,5,6) の2つの座標がある。座標AB間のマンハッタン距離として正しいものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "3",
+                "27",
+                "9",
+                "√27"
+            ],
+            "correctIndex": 2,
+            "explanation": "マンハッタン距離は各要素の差の絶対値の和なので、|1-4|+|2-5|+|3-6|=3+3+3=9。要点：絶対値の和。"
+        },
+        {
+            "question": "以下の出力を得るために実行するべきコードを選べ。",
+            "codeSample": "import pandas as pd\n\ndf = pd.DataFrame({\"国名\":[\"日本\",\"アメリカ\",\"中国\",\"イタリア\",\"フランス\", \"ロシア\", \"ブラジル\", \"イギリス\"], \n                   \"面積\":[380000, 9834000, 959700, 301300, 643800, 17100000, 8516000, 242500]})\n\n【画像問題：並び替え結果】",
+            "executionResult": null,
+            "options": [
+                "df[\"面積\"].sort_values(ascending=False)",
+                "df.sort_values(\"面積\", ascending=False)",
+                "df[\"面積\"].sort_values()",
+                "df.sort_values(\"面積\")"
+            ],
+            "correctIndex": 3,
+            "explanation": "画像の結果は面積の昇順に並んだデータフレーム全体なので、df.sort_values(\"面積\") が正しい。要点：DataFrame全体を列で昇順ソート。"
+        },
+        {
+            "question": "勾配ブースティングの手法として正しくないものを選べ。",
+            "codeSample": null,
+            "executionResult": null,
+            "options": [
+                "LightGBM",
+                "ニューラルネットワーク",
+                "Catboost",
+                "Xgboost"
+            ],
+            "correctIndex": 1,
+            "explanation": "ニューラルネットワークは勾配ブースティングとは別系統の手法である。要点：LightGBM・CatBoost・XGBoostは勾配ブースティング。"
+        },
+        {
+            "question": "以下のpandasデータフレームdfに対して pd.get_dummies(df.loc[:,\"ランク\"], prefix=\"ランク\") を実行した場合の出力として正しいものを選べ。",
+            "codeSample": "【画像問題：DataFrameと選択肢画像】",
+            "executionResult": null,
+            "options": [
+                "①",
+                "②",
+                "③",
+                "④"
+            ],
+            "correctIndex": 0,
+            "explanation": "get_dummies()はカテゴリ値ごとに列を作り、該当する行だけ1、それ以外を0にする。prefix=\"ランク\" が列名の先頭に付く。要点：One-hot化で列が増える。"
+        }
+    ]
