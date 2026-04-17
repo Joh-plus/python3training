@@ -94,32 +94,43 @@ function showQuestion() {
   // Code Sample
   const codeSample = document.getElementById("code-sample");
   if (q.codeSample) {
-    const trimmedCode = q.codeSample.trim();
-    // Check if it's a math block
-    if (trimmedCode.startsWith("$$") || trimmedCode.startsWith("$")) {
-      codeSample.classList.add("math-code");
-      codeSample.classList.remove("image-code");
-      codeSample.textContent = q.codeSample;
-      codeSample.style.display = "block";
-    } 
-    // Check if it's an image path (direct URL/path ending in extension)
-    else if (trimmedCode.match(/^(?!<img).*\.(png|jpg|jpeg|gif|svg|webp)$/i)) {
-      codeSample.classList.add("image-code");
-      codeSample.classList.remove("math-code");
-      codeSample.innerHTML = `<img src="${trimmedCode}" alt="image" class="question-image">`;
-      codeSample.style.display = "block";
-    }
-    // Check if it contains Markdown image tag
-    else if (trimmedCode.match(/!\[.*?\]\(.*?\)/i)) {
-      codeSample.classList.add("image-code");
-      codeSample.classList.remove("math-code");
-      codeSample.innerHTML = parseMarkdown(trimmedCode);
-      codeSample.style.display = "block";
-    }
-    else {
-      codeSample.classList.remove("math-code");
-      codeSample.classList.remove("image-code");
-      codeSample.textContent = q.codeSample;
+    const contents = Array.isArray(q.codeSample) ? q.codeSample : [q.codeSample];
+    let isMath = false;
+    let isImage = false;
+    let html = "";
+    let rawText = "";
+
+    contents.forEach((item, idx) => {
+      const trimmed = String(item).trim();
+      if (trimmed.startsWith("$$") || trimmed.startsWith("$")) {
+        isMath = true;
+        html += trimmed;
+        rawText += trimmed;
+      } else if (trimmed.match(/^(?!<img).*\.(png|jpg|jpeg|gif|svg|webp)$/i)) {
+        isImage = true;
+        html += `<img src="${trimmed}" alt="image" class="question-image">`;
+      } else if (trimmed.match(/!\[.*?\]\(.*?\)/i)) {
+        isImage = true;
+        html += parseMarkdown(trimmed);
+      } else {
+        // Plain text or code - escape HTML and add to both
+        const escaped = trimmed.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        html += `<code>${escaped}</code>`;
+        rawText += (idx > 0 ? "\n" : "") + trimmed;
+      }
+    });
+
+    // Reset classes
+    codeSample.classList.remove("math-code", "image-code");
+    if (isMath) codeSample.classList.add("math-code");
+    if (isImage) codeSample.classList.add("image-code");
+
+    if (isImage || isMath) {
+      codeSample.innerHTML = html;
+      // If it's mixed with text, make sure it's readable
+      if (isImage) codeSample.style.display = "flex";
+    } else {
+      codeSample.innerHTML = `<code>${html}</code>`; // Ensure code look even for single strings
       codeSample.style.display = "block";
     }
   } else {
@@ -366,7 +377,8 @@ function renderContent(element, text) {
     element.textContent = "";
     return;
   }
-  element.textContent = text;
+  const str = String(text).trim();
+  element.textContent = str;
   element.innerHTML = parseMarkdown(element.innerHTML);
 }
 
@@ -376,8 +388,8 @@ function parseMarkdown(html) {
   let result = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="question-image">');
   
   // 2. 裸の画像パス (拡張子のみの行) -> <img ...>
-  // 他の文字が含まれない単一行のパスを変換
-  result = result.replace(/^(?!<img)([^<>\s]+\.(png|jpg|jpeg|gif|svg|webp))$/gim, '<img src="$1" alt="image" class="question-image">');
+  // 前後の空白を許容しつつ、単一行のパスを変換
+  result = result.replace(/^\s*(?!<img)([^<>\s]+\.(png|jpg|jpeg|gif|svg|webp))\s*$/gim, '<img src="$1" alt="image" class="question-image">');
   
   // 3. 簡易的な見出しサポート (行頭の ###)
   result = result.replace(/^### (.*$)/gm, '<h3>$1</h3>');

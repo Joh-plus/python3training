@@ -1,6 +1,6 @@
     [
         {
-            "question": "以下の箱ひげ図の説明として誤っているものを1つ選択せよ。",
+            "question": "以下のグラフは、木曜日から日曜日のユーザーの支払い請求額に関する分布を示した箱ひげ図である。この箱ひげ図の説明として正しくないものを選べ。",
             "codeSample": "images/dpro01_q1.png",
             "executionResult": null,
             "options": [
@@ -13,8 +13,8 @@
             "explanation": "第1四分位数は箱の下端であり、最も大きいのは日曜日。要点：箱ひげ図の各要素の意味を理解する。"
         },
         {
-            "question": "以下のグラフをxで微分したときの値として正しいものを選べ。",
-            "codeSample": "【画像問題：定数関数】",
+            "question": "以下のグラフのxに関して微分した際の値として正しいものを選べ。グラフのCは任意定数を意味する。",
+            "codeSample": "images/dpro01_q2.png",
             "executionResult": null,
             "options": [
                 "x",
@@ -52,27 +52,27 @@
             "explanation": "ロジスティック回帰は確率を予測する。要点：確率→分類。"
         },
         {
-            "question": "性別ごとの人数を棒グラフで表示するコードとして正しいものを選べ。",
-            "codeSample": "【画像問題：DataFrame】",
+            "question": "以下のような、ユーザーごとのサービス利用状況が格納されたデータフレームdfがある。性別ごとの人数を棒グラフで表示するためのコードとして正しいものを選べ。",
+            "codeSample": "images/dpro01_q5.png",
             "executionResult": null,
             "options": [
-                "df[\"性別\"].value_counts().plot.bar()",
-                "df[\"性別\"].plot.bar()",
-                "plt.bar(df[\"性別\"].value_counts())",
-                "df[\"性別\"].value_counts().bar()"
+                "import matplotlib.pyplot as plt \n\ndf[\"性別\"].value_counts().plot.bar()\nplt.show()",
+                "import matplotlib.pyplot as plt \n\ndf[\"性別\"].plot.bar()\nplt.show()",
+                "import matplotlib.pyplot as plt \n\nplt.bar(df[\"性別\"].value_counts())\nplt.show()",
+                "import matplotlib.pyplot as plt \n\ndf[\"性別\"].value_counts().bar()\nplt.show()"
             ],
             "correctIndex": 0,
             "explanation": "value_counts()で集計してからplot.bar()を使う。要点：集計→描画。"
         },
         {
-            "question": "2つのサブプロットにタイトルを付けるコードとして正しいものを選べ。",
-            "codeSample": "【コード問題】",
+            "question": "Matplotlibを用いて、１つの描画オブジェクト中に表示された2つのグラフに対して、タイトルを指定するコードとして正しいものを選べ。",
+            "codeSample": null,
             "executionResult": null,
             "options": [
-                "axes[0].set_title(...)",
-                "axes[0].title(...)",
-                "axes.title(...)",
-                "axes.subtitle(...)"
+                "import matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(ncols=2)\n\naxes[0].set_title(\"graph left\")\naxes[1].set_title(\"graph right\")\nfig.suptitle(\"fig title\")\nplt.show()",
+                "import matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(ncols=2)\n\naxes[0].title(\"graph left\")\naxes[1].title(\"graph right\")\nfig.title(\"fig title\")\nplt.show()",
+                "import matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(ncols=2)\n\naxes.title([\"graph left\", \"graph right\"])\nfig.title(\"fig title\")\nplt.show()",
+                "import matplotlib.pyplot as plt\n\nfig, axes = plt.subplots(ncols=2)\n\naxes.subtitle([\"graph left\", \"graph right\"])\nfig.title(\"fig title\")\nplt.show()"
             ],
             "correctIndex": 0,
             "explanation": "タイトルはset_title()で設定する。要点：set_titleを使う。"
@@ -91,7 +91,7 @@
             "explanation": "単位行列は正方行列。要点：行と列が同じ。"
         },
         {
-            "question": "機械学習の処理手順として正しいものを選べ。",
+            "question": "機械学習を用いたデータ分析において、データを入手してからモデルの学習を実施するまでの処理手順として、正しいものを選べ。",
             "codeSample": null,
             "executionResult": null,
             "options": [
@@ -104,8 +104,11 @@
             "explanation": "前処理→可視化→モデル選択→学習の流れ。要点：順序を理解。"
         },
         {
-            "question": "DataFrameを内部結合するコードとして正しいものを選べ。",
-            "codeSample": "【画像問題】",
+            "question": "以下のような、pandasデータフレームAとpandasデータフレームBがある。この２つのデータフレームの日付が一致する部分のみを列方向に結合したデータフレームを作成するコードとして正しいものを選べ。",
+            "codeSample": [
+                "images/dpro01_q9a.png",
+                "images/dpro01_q9b.png"
+            ],
             "executionResult": null,
             "options": [
                 "pd.merge(A, B, how=\"left\", on=\"日付\")",
@@ -247,8 +250,8 @@
             "explanation": "train_test_splitで特徴量xと目的変数yを分けると、x_train, x_test, y_train, y_test の4つが返る。要点：分割結果は4つ。"
         },
         {
-            "question": "pandasデータフレームdfのDateカラムをdatetime型に変換するコードとして正しいものを選べ。",
-            "codeSample": "【画像問題：DataFrame】",
+            "question": "以下のpandasデータフレームdfのDateカラムはオブジェクト型である。このDateカラムをdatetime型に変換するコードとして正しいものを以下の中から選べ。",
+            "codeSample": "images/dpro01_q20.png",
             "executionResult": null,
             "options": [
                 "df[\"Date\"] = pd.to_date(df[\"Date\"])",
@@ -261,7 +264,7 @@
         },
         {
             "question": "以下のグラフは各ユーザーの支払い請求額をx軸、チップをy軸とした散布図である。この散布図の説明として正しいものを選べ。",
-            "codeSample": "【画像問題：散布図】",
+            "codeSample": "images/dpro01_q21.png",
             "executionResult": null,
             "options": [
                 "支払い請求額とチップには概ね正の相関がある",
@@ -481,8 +484,11 @@
             "explanation": "マンハッタン距離は各要素の差の絶対値の和なので、|1-4|+|2-5|+|3-6|=3+3+3=9。要点：絶対値の和。"
         },
         {
-            "question": "以下の出力を得るために実行するべきコードを選べ。",
-            "codeSample": "import pandas as pd\n\ndf = pd.DataFrame({\"国名\":[\"日本\",\"アメリカ\",\"中国\",\"イタリア\",\"フランス\", \"ロシア\", \"ブラジル\", \"イギリス\"], \n                   \"面積\":[380000, 9834000, 959700, 301300, 643800, 17100000, 8516000, 242500]})\n\n【画像問題：並び替え結果】",
+            "question": "下記コードを実行した後に、以下の写真の出力を得るために実行するべきコードを選べ。",
+            "codeSample": [
+                "import pandas as pd\n\ndf = pd.DataFrame({\"国名\":[\"日本\",\"アメリカ\",\"中国\",\"イタリア\",\"フランス\", \"ロシア\", \"ブラジル\", \"イギリス\"], \n                   \"面積\":[380000, 9834000, 959700, 301300, 643800, 17100000, 8516000, 242500]})",
+                "images/dpro01_q38.png"
+            ],
             "executionResult": null,
             "options": [
                 "df[\"面積\"].sort_values(ascending=False)",
@@ -508,13 +514,13 @@
         },
         {
             "question": "以下のpandasデータフレームdfに対して pd.get_dummies(df.loc[:,\"ランク\"], prefix=\"ランク\") を実行した場合の出力として正しいものを選べ。",
-            "codeSample": "【画像問題：DataFrameと選択肢画像】",
+            "codeSample": "images/dpro01_q40.png",
             "executionResult": null,
             "options": [
-                "①",
-                "②",
-                "③",
-                "④"
+                "images/dpro01_q40_a1.png",
+                "images/dpro01_q40_a2.png",
+                "images/dpro01_q40_a3.png",
+                "images/dpro01_q40_a4.png"
             ],
             "correctIndex": 0,
             "explanation": "get_dummies()はカテゴリ値ごとに列を作り、該当する行だけ1、それ以外を0にする。prefix=\"ランク\" が列名の先頭に付く。要点：One-hot化で列が増える。"

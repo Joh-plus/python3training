@@ -78,6 +78,11 @@ h2 {
   background-color: transparent;
   padding: 0;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 #code-sample.image-code img {
@@ -85,6 +90,20 @@ h2 {
   width: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#code-sample.image-code code {
+  background-color: #1b1a1a;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .options-list {
@@ -100,6 +119,17 @@ h2 {
   border-bottom: 1px solid #ccc; /* Separator lines */
   cursor: pointer;
   transition: background-color 0.2s;
+  min-height: 48px;
+}
+
+.option img {
+  display: block;
+  max-height: 180px;
+  max-width: calc(100% - 40px);
+  height: auto;
+  border-radius: 8px;
+  margin: 5px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .option:hover {
