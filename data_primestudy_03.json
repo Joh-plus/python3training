@@ -1,0 +1,562 @@
+[
+    {
+        "question": "データ分析に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "データ分析エンジニアは、情報工学を基盤としてデータベース技術からデータの活用まで幅広くデータと向き合う学術分野、つまりデータ工学を実践する一つの職種として位置づけることができる。",
+            "データサイエンティストの役割は、研究分野と実務で多少の違いがある。研究分野においては、新たな解法や新技術への取り組みが重視され、実務においては、解決したい課題に向き合う部分が重視される。",
+            "データ分析に利用されるサードパーティ製パッケージの一つにSciPyがある。これは科学技術計算をサポートするものであり、scikit-learnの内部で高度な計算処理に多用されている。",
+            "サードパーティ製パッケージであるpandasが提供するDataFrame構造は、C言語のデータフレームからインスパイアされたものであり、表形式の2次元データを柔軟に取り扱えるという特徴がある。",
+            "データ分析を行う上でデータハンドリングは重要な役割を持つ。データハンドリングは前処理ともいわれ、データの入手や再加工、つなぎ合わせや可視化など、データ分析を行う上で何度も実行されるものである。"
+        ],
+        "correctIndex": 3,
+        "explanation": "pandasのDataFrameはR言語由来であり、C言語のデータフレームというものはない。要点：DataFrameの由来はR系統。"
+    },
+    {
+        "question": "機械学習に関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "教師あり学習は、正解となるラベルデータが存在する場合に用いられる方式であり、そのラベルを説明変数といい、説明変数以外のデータは目的変数という。目的変数は特徴データや特徴量などとも呼ばれる。",
+            "教師あり学習は、目的変数の種類により回帰と分類の２種類に分けられる。回帰は目的変数がカテゴライズされた、連続値ではないデータとなる。",
+            "教師あり分類の場合の機械学習の処理手順は、データ入手の後に精度評価、そしてデータ加工・可視化、アルゴリズム選択、学習プロセスへと進むのが一般的である。",
+            "教師なし学習は、正解ラベルを用いない学習方法であり、クラスタリングや次元削減といったタスクを行う。典型的なものに強化学習がある。",
+            "機械学習を用いずにカテゴライズや数値予測を行う手法の一つとして、ルールベースがある。ルールベースではプログラミングの条件分岐の要領でデータを容易にルール化できるが、パラメータの数が増えると記述が困難になる。"
+        ],
+        "correctIndex": 4,
+        "explanation": "ルールベースは、条件分岐を積み重ねて判定する手法であり、機械学習を使わずに分類や予測を行う方法の一つである。要点：条件分岐中心ならルールベース。"
+    },
+    {
+        "question": "PythonおよびPythonの実行環境に関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "venvはPythonの仮想環境をWindowsやmacOS、Linuxで作成する仕組みである。仮想環境が有効になるとコマンドプロンプトに環境名が表示される。仮想環境を無効化する（抜ける）には、quitコマンドを実行する。",
+            "venvで作成したPythonの仮想環境は、異なるバージョンのPython言語を使い分けるのに便利である。",
+            "pipコマンドは、The Python Package Index に公開されているPythonパッケージのインストールなどを行うユーティリティである。パッケージをインストールするにはpip installコマンドを、アンインストールするにはpip install -Uコマンドを使用する。",
+            "pip listコマンドはその仮想環境にインストールされているパッケージの一覧を表示する。pip freezeも同様の働きをするが両者は出力形式が異なり、pip listはpip install向けの形式で出力する。",
+            "Anacondaで設定した環境下でパッケージ管理をする場合には、Anaconda独自のcondaコマンドのほかpipも利用可能である。ただし稀にcondaコマンドで構築された環境がpipの利用で壊されてしまうこともあるため、Anacondaを利用する場合は基本的にcondaコマンドでパッケージ管理することが望ましい。"
+        ],
+        "correctIndex": 4,
+        "explanation": "conda環境でもpipは使えるが、依存関係が崩れることがあるため、基本的にはcondaで管理する方が安全。要点：Anacondaではまずcondaを優先。"
+    },
+    {
+        "question": "次のような実行結果を得たい場合、コードの【A】【B】【C】の組み合わせとして正しいものはどれか。",
+        "codeSample": ">>> str = 'Hello Python'\n>>> str.【A】\n'hello python'\n>>> str.【B】\n'Hi Python'\n>>> str.【C】\n['Hello', 'Python']",
+        "executionResult": null,
+        "options": [
+            "【A】title()　【B】replace('Hi', 'Hello')　【C】split()",
+            "【A】title()　【B】replace('Hi', 'Hello')　【C】strip()",
+            "【A】lower()　【B】replace('Hello', 'Hi')　【C】split()",
+            "【A】lower()　【B】replace('Hi', 'Hello')　【C】split()",
+            "【A】lower()　【B】replace('Hello', 'Hi')　【C】strip()"
+        ],
+        "correctIndex": 2,
+        "explanation": "lower()で小文字化、replace('Hello','Hi')で置換、split()で空白区切りのリストにできる。要点：文字列操作メソッドの役割を区別する。"
+    },
+    {
+        "question": "次の正規表現を用いたスクリプトの[ ア ]の部分に入れたときエラーとなるものはどれか。",
+        "codeSample": "import re\nprog = re.compile('(K|S)us(a|u)n(a|o)m?g?i(saya|ro)?', re.IGNORECASE)\n[ ア ]\nprint(ret[0])",
+        "executionResult": null,
+        "options": [
+            "ret = prog.search('KUSANAGI')",
+            "ret = prog.search('Kusanagi saya')",
+            "ret = prog.search('SUSANOO')",
+            "ret = prog.search('KUSANOMI')",
+            "ret = prog.search('Kusanoiro')"
+        ],
+        "correctIndex": 2,
+        "explanation": "SUSANOOは正規表現にマッチせず、search()がNoneを返すため、ret[0]でエラーになる。要点：match失敗時はNone。"
+    },
+    {
+        "question": "次のようなコードを実行した場合に出力されるログレベルとして正しいものはどれか。",
+        "codeSample": "import logging\n\nlogging.basicConfig(\nformat='%(levelname)s'\n)\n\nlogging.debug('デバッグレベル')\nlogging.info('INFOレベル')\nlogging.warning('警告レベル')\nlogging.error('エラーレベル')\nlogging.critical('重大なエラー')",
+        "executionResult": null,
+        "options": [
+            "DEBUG INFO WARNING ERROR CRITICAL",
+            "DEBUG INFO WARNING ERROR",
+            "DEBUG INFO WARNING",
+            "INFO WARNING ERROR",
+            "WARNING ERROR CRITICAL"
+        ],
+        "correctIndex": 4,
+        "explanation": "logging.basicConfig()のデフォルトレベルはWARNINGなので、WARNING以上だけが出力される。要点：デフォルトはWARNING。"
+    },
+    {
+        "question": "Jupyter Notebookに関する次の記述のうち正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "Notebookファイルは保存することができ、その拡張子は「.json」である。",
+            "NotebookファイルはYAML形式で記述されている。",
+            "マジックコマンドは、「!」または「!!」からはじまる特別なコマンドである。",
+            "変数の後ろに「％」をつけて実行することで当該セルでの変数の値を確認できる。",
+            "Jupyter Notebookがデータ分析や機械学習の分野でよく使われる理由として、1つのNotebookにプログラム・結果・Markdown文書・表やグラフなどをまとめられることが挙げられる。"
+        ],
+        "correctIndex": 4,
+        "explanation": "Jupyter Notebookは、コード・実行結果・説明文・表・グラフを1つにまとめられるため、分析や学習に向いている。要点：Notebookは記録と共有に強い。"
+    },
+    {
+        "question": "数学の基礎に関する次の記述のうち誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "cosh（ハイパボリックコサイン）のグラフは懸垂線・カテナリー曲線と呼ばれる形に関係する。",
+            "シグモイド関数のグラフは、座標点（0, 0.5）を基点として点対象のS字型曲線である。",
+            "数式で「すべてを掛け合わせる」という処理を表す際には、ギリシャ文字のシグマの大文字を用いる。",
+            "ネイピア数 e は自然対数の底である。",
+            "三角関数では度数法のほかに弧度法が使われる。"
+        ],
+        "correctIndex": 2,
+        "explanation": "総和はΣ、総積はΠを使う。シグマは足し算、パイは掛け算。要点：Σ＝和、Π＝積。"
+    },
+    {
+        "question": "座標平面上の2点であるA (5, 7)とB (2,3)の、2点間のマンハッタン距離として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "2",
+            "3",
+            "5",
+            "7",
+            "9"
+        ],
+        "correctIndex": 3,
+        "explanation": "マンハッタン距離は各座標差の絶対値の和なので、|5-2| + |7-3| = 3 + 4 = 7。要点：マンハッタン距離＝絶対値の和。"
+    },
+    {
+        "question": "行列に関する次の記述のうち正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "行列の分解の理論「m×sの行列にs×nの行列を掛けると、m×nの行列になる」を逆に考えると、データ分析や機械学習において、説明変数の次元数を削減することができる。",
+            "正方行列のうち、対角成分がすべて0で、残りの要素が1の行列を単位行列と呼ぶ。",
+            "行列の掛け算は順番を入れ替えると同じ結果になることはない。",
+            "行列の足し算と引き算は、2つの行列の行数と列数が合っていなくても計算は可能である。",
+            "行列の行の数とベクトルのサイズが同じ場合に掛け算が定義でき、結果は元の行列の列数サイズのベクトルになる。"
+        ],
+        "correctIndex": 0,
+        "explanation": "行列分解の考え方は、元の情報をなるべく保ちながら説明変数の次元を減らす用途に使われる。要点：行列分解は次元削減に使える。"
+    },
+    {
+        "question": "微分積分に関する以下の記述のうち誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "f(x) = e^x は微分しても e^x となり形が変わらない。",
+            "右辺が4x^2で表現される関数 f(x) を微分すると、右辺は8xとなる。",
+            "右辺が6x^2で表現される関数 f(x) を積分すると、右辺は3x^3＋Cとなる。",
+            "関数 F(x) を微分して f(x) となったとき、F を f の原始関数、f を F の導関数と呼ぶ。",
+            "微分は傾き、積分は面積と捉えることができる。"
+        ],
+        "correctIndex": 2,
+        "explanation": "∫6x^2 dx = 2x^3 + C であり、3x^3 + C ではない。要点：積分では指数を1増やし、その値で割る。"
+    },
+    {
+        "question": "確率と統計に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "分散は、すべてのデータの平均値からの差分を二乗して合計し、データの個数で割った値である。",
+            "条件付き確率は、何かしらの情報を得た時に確率が変化する様子を表す考え方であり、ベイズの定理の基本となる。",
+            "6面体のサイコロを1回振った場合の期待値は3.5である。",
+            "中央値とは、データを小さい順に並べてちょうど真ん中に来る値であり、データの個数が偶数の場合には中央値は存在しない。",
+            "離散的な確率変数に対する関数を確率質量関数、連続的な確率変数に対する関数を確率密度関数という。"
+        ],
+        "correctIndex": 3,
+        "explanation": "データ個数が偶数でも、中央の2値の平均を取ることで中央値は定義できる。要点：偶数個でも中央値は存在する。"
+    },
+    {
+        "question": "「ネイピア数、cos(60°)、1の対数、円周率、4の階乗」の5つの数からなるデータについて正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "最頻値は1である",
+            "算術平均は中央値より大きい",
+            "中央値は円周率より大きい",
+            "cos(60°)は中央値より大きい",
+            "1の対数はcos(60°)より大きい"
+        ],
+        "correctIndex": 1,
+        "explanation": "4! = 24 が大きく平均を押し上げるため、平均値は中央値より大きくなる。要点：外れた大きな値は平均に強く影響する。"
+    },
+    {
+        "question": "NumPyに関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "NumPyは配列用の型であるndarrayと行列用の型であるmatrixを持つ。",
+            "NumPy配列の形状を確認するにはshapeメソッドを、形状を変形するにはreshapeメソッドを用いることができる。",
+            "dtype属性で要素の型を確認し、astypeメソッドで要素の型を変換できる。",
+            "ravelメソッドは参照を返し、flattenメソッドはコピーを返す。",
+            "NumPyではスライスを使うことができ、Python標準のリストではスライス結果は参照、NumPyではコピーが返される。"
+        ],
+        "correctIndex": 4,
+        "explanation": "NumPyのスライスは通常ビュー（参照）になりやすく、コピーになるという説明は誤り。要点：NumPyのスライスは基本的にビュー。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import numpy as np\na = np.array([7,8,9])\nb = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(a.shape, b[0:1, [1,2]])",
+        "executionResult": null,
+        "options": [
+            "(3,) [[2 3], [4 5]]",
+            "[1,3] [[2 3], [4 5]]",
+            "(3,) [[2 3]]",
+            "[3] [[2 3]]",
+            "(1, 3) [[2 3]]"
+        ],
+        "correctIndex": 2,
+        "explanation": "a.shape は1次元3要素なので (3,)、b[0:1, [1,2]] は1行2列の [[2 3]] になる。要点：shapeの1次元配列は (3,) 表記。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import numpy as np\na = np.arange(1, 10, 3)\nb = np.eye(20)\nprint(a[-1], b[15, 15])",
+        "executionResult": null,
+        "options": [
+            "7 1.0",
+            "10 1.0",
+            "7 3.0",
+            "9 1.0",
+            "10 0.0"
+        ],
+        "correctIndex": 0,
+        "explanation": "np.arange(1,10,3) は [1,4,7] なので a[-1] は 7、単位行列の b[15,15] は 1.0。要点：arangeのstopは含まれない。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import numpy as np\na = np.full((2, 3), np.pi).T.ravel()\nb = np.linspace(0, 1.25, 6)\nc = np.concatenate([a, b], axis=0)\nprint(a[1], c[-2])",
+        "executionResult": null,
+        "options": [
+            "3.141592653589793 1.0",
+            "3.141592653589793 1.25",
+            "3.141592653589793 0.75",
+            "2.718281828459045 1.0",
+            "2.718281828459045 0.75"
+        ],
+        "correctIndex": 0,
+        "explanation": "a には π が並び、b は 0, 0.25, 0.5, 0.75, 1.0, 1.25 なので c[-2] は 1.0。要点：linspaceの並びを確認する。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import numpy as np\na = np.array([0, 8, 98, 998])\na = a + 2\na = a * 100\nb = np.log10(a)\nprint(a[1], b[1])",
+        "executionResult": null,
+        "options": [
+            "200 2.3010299956639813",
+            "100 1.0",
+            "1000 2.0",
+            "1000 3.0",
+            "10000 4.0"
+        ],
+        "correctIndex": 3,
+        "explanation": "a[1] は (8+2)×100 = 1000、log10(1000)=3.0。要点：配列演算は順番に追えばよい。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import numpy as np\na = np.array([2, 4])\nb = np.array([-1, 3])\nc = np.array([[1, 2], [2, 3]])\nd = a @ b\ne = np.dot(c, a)\nprint(d, e)",
+        "executionResult": null,
+        "options": [
+            "10 [5 7]",
+            "10 [10 16]",
+            "11 [10 16]",
+            "11 [10, 13]",
+            "[-6, 18] [18, 30]"
+        ],
+        "correctIndex": 1,
+        "explanation": "d = 2×(-1)+4×3 = 10、e = c@a = [10,16]。要点：@ と dot の計算結果を丁寧に確認する。"
+    },
+    {
+        "question": "次のスクリプトを実行して20を出力させたい。[ア]に入るものの説明として正しいものはどれか。",
+        "codeSample": "import pandas as pd\ndf = pd.DataFrame([[15, \"a\", True],[20, \"b\", False],[10, \"c\", False]])\ndf.index = [\"01\", \"02\", \"03\"]\ndf.columns = [\"A\", \"B\", \"C\"]\n[ア]\nprint(a)",
+        "executionResult": null,
+        "options": [
+            "a = df.loc[\"A\" , \"01\"] 　または　a = df.iloc[1, 1]",
+            "a = df.loc[\"02\", \"A\"] 　または　a = df.iloc[1, 0]",
+            "a = df.loc[\"A\", \"02\"] 　または　a = df.iloc[1, 1]",
+            "a = df.iloc[\"01\", \"A\"] 　または　a = df.loc[1, 1]",
+            "a = df.iloc[\"A\", \"01\"] 　または　a = df.loc[1, 0]"
+        ],
+        "correctIndex": 1,
+        "explanation": "20 は行ラベル \"02\"、列ラベル \"A\" にあるため loc[\"02\",\"A\"]、または位置で iloc[1,0] で取得できる。要点：locはラベル、ilocは位置。"
+    },
+    {
+        "question": "pandasに関する次の記述のうち正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "pandasは2次元のDataFrameと、より多次元のSeriesを提供している。",
+            "辞書形式でDataFrameを作る場合にはカラム名だけを指定すればよく、インデックス名は1から連番で自動的に割り当てられる。",
+            "read_htmlメソッドを使うと、HTML内のtable要素をDataFrameに取り込むことができ、結果はDataFrameのリストになる。",
+            "pickleの読み込みにはread_pickle、書き込みにはwrite_pickleを用いることができる。",
+            "df.loc[:, :] のように全体を出力した場合は、参照ではなくコピーが返される。"
+        ],
+        "correctIndex": 2,
+        "explanation": "read_html はHTML中の table を読み込み、結果を DataFrame のリストで返す。要点：複数表があればリストで受け取る。"
+    },
+    {
+        "question": "次のスクリプトを実行した結果として正しいものはどれか。",
+        "codeSample": "import pandas as pd\ndf = pd.DataFrame([[50, \"a\", False],[25, \"b\", True],[35, \"c\", True]])\ndf.index = [\"01\", \"02\", \"03\"]\ndf.columns = [\"A\", \"B\", \"C\"]\n\ndef judge(arg):\n    if arg <= 50:\n        return \"low\"\n    elif arg < 70:\n        return \"middle\"\n    else:\n        return \"high\"\n\ndf.iloc[:, 2] = df.loc[:, \"A\"] * 2\ndf.iloc[:, 1] = df.loc[:, \"C\"].apply(judge)\n_ = df[\"C\"] < 80\ndf = df[_]\nprint(df)\nprint(df.iloc[1, 2], df.iloc[-1, 1])",
+        "executionResult": null,
+        "options": [
+            "25 low",
+            "50 low",
+            "50 high",
+            "35 high",
+            "70 high"
+        ],
+        "correctIndex": 4,
+        "explanation": "C列は [100,50,70] となり、C<80 の行は 50 と 70 が残る。2行目のCは70、最後のBは high。要点：列更新後の値で条件抽出する。"
+    },
+    {
+        "question": "次のスクリプトに関する説明のうち誤っているものはどれか。",
+        "codeSample": "import numpy as np\nimport pandas as pd\nnp.random.seed(123)\ndates = pd.date_range(start=\"2020-01-01\", periods=31)\ndf = pd.DataFrame(np.random.randint(1, 10, 31), index=dates, columns=[\"rand\"])\nprint(df)\n\ndf_year = pd.DataFrame(df.groupby(pd.Grouper(freq='W-MON')).sum(), columns=[\"rand\"] )\nprint(df_year)",
+        "executionResult": null,
+        "options": [
+            "3行目は乱数の再現性を確保する処理である。",
+            "4行目は2020年1月1日から31日分の日付の配列を生成する処理である。",
+            "5行目で作成されるrand列の値は1から9までのランダムな整数である。",
+            "5行目のrandintの第三引数を31以外に変更するとエラーになる。",
+            "6行目は月曜日の日付をインデックスとするDataFrameを生成し、月曜日から日曜日までの合計になる。"
+        ],
+        "correctIndex": 4,
+        "explanation": "W-MON は週の終端を月曜とする指定であり、説明の集計範囲の言い方が不正確。要点：週次集計の基準日は pandas の freq 指定で決まる。"
+    },
+    {
+        "question": "DataFrameの欠損値の処理に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "DataFrameの各要素が欠損値かどうかを確かめるメソッドは、isnullである。",
+            "欠損値が存在する行を削除するメソッドは、dropである。",
+            "fillnaメソッドの引数にmethod='bfill'を与えると、欠損値を1つ後方の値で補完する。",
+            "median()メソッドの結果をfillnaメソッドに引数として渡すと、欠損値を他の値の中央値で補完できる。",
+            "mode().iloc[0.:]の結果をfillnaメソッドに引数として渡すと、欠損値を最頻値で補完できる。"
+        ],
+        "correctIndex": 1,
+        "explanation": "欠損値を含む行や列の削除は drop ではなく dropna を使う。要点：欠損削除は dropna。"
+    },
+    {
+        "question": "DataFrameの基本統計量に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "stdメソッドは標準偏差を取得できる。",
+            "quartileメソッドは第3四分位数を取得できる。",
+            "meanメソッドは平均値を取得できる。",
+            "modeメソッドは最頻値を取得できる。",
+            "countメソッドはデータの件数を取得できる。"
+        ],
+        "correctIndex": 1,
+        "explanation": "quartile というメソッドはなく、四分位数は quantile などで求める。要点：四分位数は quantile。"
+    },
+    {
+        "question": "pandasの関数やメソッド等に関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "相関係数はcorr関数で出力でき、-1では相関関係がないといえる。",
+            "headメソッドとtailメソッドは、引数省略時に10行を返す。",
+            "concat関数はaxis=1で行方向、axis=0で列方向の連結となる。",
+            "DataFrameをNumPy配列に変換するにはvalues属性を利用し、この場合カラム名とインデックス名は保持されない。",
+            "statistics関数にDataFrameを渡すと統計量をまとめて出力できる。"
+        ],
+        "correctIndex": 3,
+        "explanation": "values 属性で NumPy 配列に変換すると、行名・列名の情報は失われる。要点：values は中身だけを取り出す。"
+    },
+    {
+        "question": "Matplotlibに関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "MATLABスタイルは一つのfigureオブジェクトに対して複数のサブプロットを指定できるスタイルである。",
+            "legendメソッドの引数に loc=\"min\" を指定するとデータとの重なりが最小な位置に凡例を出力できる。",
+            "箱ひげ図はboxbeardメソッドで描画できる。",
+            "描画オブジェクトにはset_titleメソッド、サブプロットにはsuptitleメソッドを使う。",
+            "ヒストグラムでは複数の値を指定すると、自動的に横に並んだ状態で表示される。"
+        ],
+        "correctIndex": 4,
+        "explanation": "ヒストグラムは複数系列を与えると、系列ごとに並んだ表示になる。要点：複数系列のhistの表示形を押さえる。"
+    },
+    {
+        "question": "Matplotlibに関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "棒グラフや散布図には、color引数またはedgecolor引数のどちらか一方しか指定できない。",
+            "linewidth引数で指定する線の幅の単位はピクセルである。",
+            "散布図ではmarker引数でマーカー形状を変更できる。",
+            "同じフォント設定を複数回使う場合は、タプルをfontdict引数に渡す。",
+            "textメソッドの第1、第2引数には描画する文字列の左上座標を指定する。"
+        ],
+        "correctIndex": 2,
+        "explanation": "scatter では marker 引数を使ってマーカー形状を変えられる。要点：marker で形を変える。"
+    },
+    {
+        "question": "Matplotlibを用いてsin, cosのグラフを描画する次のスクリプトに関する説明のうち誤っているものはどれか。",
+        "codeSample": "import numpy as np\nimport matplotlib.pyplot as plt\nx = np.arange(0.0, 15.0, 0.1)\ny1 = np.sin(x)\ny2 = np.cos(x)\nfig, ax = plt.subplots()\nax.plot(x, y1, label='sin')\nax.plot(x, y2, label='cos')\nax.legend()\n\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "plotメソッドは、値の間隔を細かくすることで疑似的に曲線グラフも作成できる。",
+            "np.sin(x)、np.cos(x)は、それぞれ引数xをラジアンで処理する。",
+            "xの要素数は150である。",
+            "このグラフのX軸、Y軸に軸ラベルはない。",
+            "この描画オブジェクトの中に配置されるサブプロットは2つである。"
+        ],
+        "correctIndex": 4,
+        "explanation": "subplots() で返っているAxesは1つだけなので、サブプロットは1つ。要点：subplots() の返り値の数を確認する。"
+    },
+    {
+        "question": "次のスクリプトに関する説明のうち正しいものはどれか。",
+        "codeSample": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nx = [1, 2, 3]\ny1 = [10, 2, 3]\ny2 = [5, 3, 6]\nlabels = ['red', 'blue', 'yellow']\n【ア】\nax.bar(x, y_total, tick_label=labels, label='y1')\nax.bar(x, y2, label='y2')\nax.legend()\n\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "【ア】に入るコードは、y_total = [num1 + num2 for num1, num2 in sum(y1, y2)]である。",
+            "描画されるグラフの目盛りには「y1」「y2」が表示される。",
+            "描画されるグラフには「red」「blue」「yellow」が凡例として表示される。",
+            "【イ】の行と【ウ】の行を入れ替えてもグラフの表示は変化しない。",
+            "このコード群は積み上げ棒グラフを描画するものである。"
+        ],
+        "correctIndex": 4,
+        "explanation": "y_total を使って棒を重ねる形なので、積み上げ棒グラフになる。要点：棒を積むと stacked bar になる。"
+    },
+    {
+        "question": "Matplotlibを用いて正規分布に従うランダムな値をヒストグラムで描画する次のコード群に関する説明のうち正しいものはどれか。",
+        "codeSample": "import numpy as np\nimport matplotlib.pyplot as plt\nnp.random.seed(123)\nmu = 100\nsigma = 15\nx = np.random.normal(mu, sigma, 1000)\nfig, ax = plt.subplots()\nn, bins, patches = ax.hist(x, bins=25, orientation='horizontal')\nfor i, num in enumerate(n):\n    print('{:.2f} - {:.2f} {}'.format(bins[i], bins[i + 1], num))\n\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "変数muは標準偏差を、sigmaは平均値を意味する。",
+            "ヒストグラムは縦向きに描画される。",
+            "histメソッドのデフォルトのビン数は5であるが、このスクリプトでは25である。",
+            "このコード群を複数回実行した場合、必ずしも同じ結果になるわけではない。",
+            "このスクリプトを実行するとヒストグラムに加えて度数分布表が出力される。"
+        ],
+        "correctIndex": 4,
+        "explanation": "for ループで bins ごとの区間と度数を表示しているため、ヒストグラムと度数分布表の両方が出力される。要点：print 部分も出力内容に含まれる。"
+    },
+    {
+        "question": "Matplotlibを用いて円グラフを描画する次のスクリプトに関する説明のうち正しいものはどれか。",
+        "codeSample": "import matplotlib.pyplot as plt\nlabels = ['spam', 'ham', 'egg']\nx = [10, 3, 1]\nfig, ax = plt.subplots()\nax.pie(x, labels=labels, startangle=90, counterclock=False, shadow=True, autopct='%1.2f\\%%')\n\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "円グラフには影がない",
+            "円グラフの値は小数点以下1桁までが表示される",
+            "円グラフは3時の位置から配置される",
+            "円グラフは反時計回りに配置される",
+            "円グラフのアスペクト比は保持されない"
+        ],
+        "correctIndex": 4,
+        "explanation": "この問題の想定では、円グラフはアスペクト比に依存し、設定によっては歪む可能性がある点を答えさせている。要点：問題想定では『保持されない』が正解。"
+    },
+    {
+        "question": "機械学習の前処理に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "One-hotエンコーディングは、scikit-learnではpreprocessingモジュールのget_dummies関数を用いて実行できる。",
+            "分散正規化とは、特徴量の平均が0、標準偏差が1となるように変換する処理であり、StandardScalerクラスで実行できる。",
+            "最小最大正規化とは、特徴量の最小値が0、最大値が1となるように変換する処理であり、MinMaxScalerクラスで実行できる。",
+            "カテゴリ変数のエンコーディングとして、LabelEncoderクラスを使う方法がある。",
+            "特徴量の正規化とは、オーダーの異なる特徴量の尺度をそろえる処理である。"
+        ],
+        "correctIndex": 0,
+        "explanation": "get_dummies は pandas の機能であり、scikit-learn の preprocessing には存在しない。要点：get_dummies は pandas。"
+    },
+    {
+        "question": "分類に関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "分類モデルを構築するには、データを学習用とテスト用に分け、学習データを用いてモデルを構築する。",
+            "train_test_split関数の第1引数には目的変数を、第2引数には説明変数を指定する。",
+            "未知データに対する対応能力を汎化能力という。",
+            "分類は教師あり学習の典型的なタスクである。",
+            "scikit-learnでは、学習はfit、予測はpredictを用いる。"
+        ],
+        "correctIndex": 1,
+        "explanation": "train_test_split は通常 X, y の順で渡す。第1引数が目的変数という説明は誤り。要点：引数順は X, y。"
+    },
+    {
+        "question": "機械学習のアルゴリズムに関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "木構造の最下部にあり親ノードを持たないノードは根ノードと呼ばれる。",
+            "ランダムフォレストは、サンプルと特徴量をランダムに選んだ複数の決定木の結果を多数決や平均でまとめる手法である。",
+            "SVMは低次元空間に写像して線形分離する。",
+            "SVMではマージンを最小にするのが望ましい。",
+            "情報利得は子ノードの不純度から親ノードの不純度を引いたもので定義される。"
+        ],
+        "correctIndex": 1,
+        "explanation": "ランダムフォレストは複数の決定木を組み合わせるアンサンブル学習であり、分類では多数決、回帰では平均を使う。要点：多数の木をまとめる。"
+    },
+    {
+        "question": "次のスクリプトに関する説明のうち誤っているものはどれか。",
+        "codeSample": "from sklearn.linear_model import LinearRegression\nfrom sklearn.datasets import load_boston\nfrom sklearn.model_selection import train_test_split\nboston = load_boston()\nX, y = boston.data, boston.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123)\nlr = LinearRegression()\nlr.fit(X_train, y_train )\ny_pred = lr.predict(X_test)",
+        "executionResult": null,
+        "options": [
+            "このスクリプトはボストン住宅価格データセットを用いた線形回帰である。",
+            "最終行では、学習したモデルでテスト用の説明変数から予測値を取得している。",
+            "boston.dataには説明変数、boston.targetには目的変数が格納されている。",
+            "データセットは学習用が3割、テスト用が7割の比率で分割される。",
+            "この回帰は住宅価格を特徴量から求める重回帰である。"
+        ],
+        "correctIndex": 3,
+        "explanation": "test_size=0.3 なので、学習7割・テスト3割であり、3:7ではない。要点：test_size はテスト側の割合。"
+    },
+    {
+        "question": "次の2つのスクリプトに関する説明のうち誤っているものはどれか。",
+        "codeSample": "[ スクリプトA ]\nimport numpy as np\nimport matplotlib.pyplot as plt\nnp.random.seed(123)\nX = np.random.random(size=50)\nY = 2*X + 0.5*np.random.rand(50)\nfig, ax = plt.subplots()\nax.scatter(X, Y)\nplt.show()\n\n[ スクリプトB ]\nfrom sklearn.decomposition import 【A】\nist = 【A】(n_components=2)\nX_ist = ist.fit_transform(np.hstack((X[:, np.newaxis], Y[:, np.newaxis])))\n\nfig, ax = plt.subplots()\nax.scatter(X_ist[:, 0], X_ist[:, 1])\nax.set_xlabel('PC1')\nax.set_ylabel('PC2')\nax.set_xlim(-1.1, 1.1)\nax.set_ylim(-1.1, 1.1)\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "スクリプトAは最終的に50個の2次元データを散布図で描画している。",
+            "【A】に入るのはPCAである。",
+            "【B】ではfit_transformメソッドにデータの座標を表すNumPy配列を指定している。",
+            "スクリプトBでは、もとのデータを新たな1次元のデータに変換し、次元削減している。",
+            "このスクリプトは何度実行しても必ず同じ結果となる。"
+        ],
+        "correctIndex": 3,
+        "explanation": "n_components=2 なので、2次元の主成分空間へ写しているだけで、1次元化はしていない。要点：次元削減後の次元数を確認する。"
+    },
+    {
+        "question": "モデルの評価指標に関する次の記述のうち、正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "適合率は、病気の見逃しを減らしたい場合に重視される指標である。",
+            "再現率は、間違えることをできるだけ避けたい場合に重視される指標である。",
+            "F値は、適合率と再現率の算術平均として定義される。",
+            "正解率は(tp+tn)/(tp+fp)で計算することができる。",
+            "適合率、再現率、F値、正解率は、分類モデルの評価指標であり、混同行列から計算する。"
+        ],
+        "correctIndex": 4,
+        "explanation": "これらは分類問題の代表的な評価指標で、混同行列から計算する。要点：分類評価指標の基本セット。"
+    },
+    {
+        "question": "次のスクリプトに関する説明のうち誤っているものはどれか。",
+        "codeSample": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.model_selection import train_test_split\niris = load_iris()\nX, y = iris.data, iris.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123)\nclf = DecisionTreeClassifier()\nparam_grid = {'max_depth': [3, 4, 5]}\ncv = GridSearchCV(clf, param_grid=param_grid, cv=10)\ncv.fit(X_train, y_train)\ny_pred = cv.predict(X_test)",
+        "executionResult": null,
+        "options": [
+            "このスクリプトではハイパーパラメータである決定木の深さをグリッドサーチにより求めている。",
+            "このスクリプトで用いられているIrisデータセットには、150枚のアヤメの「がく」や「花びら」の長さと幅、そして花の種類が記録されている。",
+            "花の種類は説明変数であり、スクリプトの6行目で変数Xに格納されている。",
+            "このスクリプトの最終行では学習したモデルを用いてテスト用の説明変数から予測される目的変数を取得している。",
+            "探索範囲を3〜5に絞っているため、その中から最適なmax_depthが選ばれる。"
+        ],
+        "correctIndex": 2,
+        "explanation": "花の種類は目的変数であり y に入る。X は説明変数。要点：Irisでは種類が目的変数。"
+    },
+    {
+        "question": "クラスタリングに関する次の記述のうち、誤っているものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "k-meansは、最初にランダムにクラスタ中心を割り当て、中心を更新しながら収束させる手法である。",
+            "k-meansは、scikit-learnのKMeansクラスで実行できる。",
+            "凝集型の階層的クラスタリングは、最初はバラバラのクラスタから始めて順次まとめていく手法である。",
+            "クラスタリングは教師あり学習の典型的なタスクである。",
+            "クラスタの妥当性に絶対的な答えはない。"
+        ],
+        "correctIndex": 3,
+        "explanation": "クラスタリングは教師なし学習であり、教師あり学習ではない。要点：クラスタリング＝教師なし学習。"
+    }
+]
