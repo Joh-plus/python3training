@@ -1,0 +1,392 @@
+[
+    {
+        "question": "Python の logging モジュールにおけるログレベルの優先度（低→高）の順として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "INFO → DEBUG → WARNING → ERROR → CRITICAL",
+            "DEBUG → INFO → WARNING → ERROR → CRITICAL",
+            "WARNING → INFO → DEBUG → ERROR → CRITICAL",
+            "DEBUG → WARNING → INFO → ERROR → CRITICAL"
+        ],
+        "correctIndex": 1,
+        "explanation": "loggingのレベルはDEBUG→INFO→WARNING→ERROR→CRITICALの順で重要度が上がる。DEBUGが最も詳細で、CRITICALが最も重大なエラーである。要点：ログレベルの順序を正確に覚える。"
+    },
+    {
+        "question": "NumPy の arange() 関数の説明として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "ランダムな値を生成する関数である",
+            "指定した範囲の連続した数値配列を生成する関数である",
+            "配列を並び替える関数である",
+            "配列の平均値を求める関数である"
+        ],
+        "correctIndex": 1,
+        "explanation": "arange()は開始から終了まで一定間隔で数値を並べた配列を作る関数である。例：np.arange(0,5)→[0,1,2,3,4]。要点：連続した数値配列を作る関数。"
+    },
+    {
+        "question": "次元削減の目的として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "データ数を増やすため",
+            "モデルの精度を必ず100%にするため",
+            "特徴量を減らし、計算効率や可視化を改善するため",
+            "データをランダムに並び替えるため"
+        ],
+        "correctIndex": 2,
+        "explanation": "次元削減は特徴量を減らして計算を軽くし、可視化しやすくするために行う。PCAなどが代表例。要点：特徴量削減による効率化。"
+    },
+    {
+        "question": "一般的な機械学習の処理手順として最も適切なものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "学習 → データ収集 → 評価 → モデル選択",
+            "データ収集 → 前処理 → 学習 → 評価",
+            "評価 → 学習 → 前処理 → データ収集",
+            "学習 → 評価 → データ収集 → 前処理"
+        ],
+        "correctIndex": 1,
+        "explanation": "機械学習はデータ収集→前処理→学習→評価の順で進める。前処理が非常に重要である。要点：順序を固定で覚える。"
+    },
+    {
+        "question": "Python のコーディング規約として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "PEP7",
+            "PEP8",
+            "PEP20",
+            "PEP100"
+        ],
+        "correctIndex": 1,
+        "explanation": "PEP8はPythonの公式コーディング規約で、インデントや命名規則などを定めている。要点：PEP8＝コーディング規約。"
+    },
+    {
+        "question": "Python の内包表記として正しい構文はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "[x*2 where x in range(5)]",
+            "[x*2 for x in range(5)]",
+            "[for x in range(5): x*2]",
+            "[x*2 loop x in range(5)]"
+        ],
+        "correctIndex": 1,
+        "explanation": "内包表記は[式 for 変数 in iterable]の形で書く。要点：for inの形を覚える。"
+    },
+    {
+        "question": "Python の pickle モジュールの役割として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "グラフを描画するためのライブラリ",
+            "データを可視化するためのライブラリ",
+            "オブジェクトをバイト列として保存・復元するためのライブラリ",
+            "行列計算を行うためのライブラリ"
+        ],
+        "correctIndex": 2,
+        "explanation": "pickleはPythonオブジェクトをシリアライズ（保存）し、後で復元できるようにする。要点：保存と復元。"
+    },
+    {
+        "question": "行列計算において通常定義されない演算はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "加算",
+            "減算",
+            "乗算",
+            "除算"
+        ],
+        "correctIndex": 3,
+        "explanation": "行列には加減乗は定義されているが、一般的な意味での割り算は定義されない。要点：行列に割り算はない。"
+    },
+    {
+        "question": "微分を表す記号として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "∫",
+            "d/dx",
+            "Σ",
+            "√"
+        ],
+        "correctIndex": 1,
+        "explanation": "d/dxは微分、∫は積分、Σは総和を表す。要点：記号の区別。"
+    },
+    {
+        "question": "Matplotlibで折れ線グラフを描画する関数はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "scatter()",
+            "plot()",
+            "hist()",
+            "boxplot()"
+        ],
+        "correctIndex": 1,
+        "explanation": "plot()は折れ線グラフを描画する関数。scatterは散布図。要点：plot＝折れ線。"
+    },
+    {
+        "question": "NumPy のユニバーサル関数（ufunc）の特徴として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "配列全体に対して一括で高速に演算を行う関数である",
+            "ファイルを読み込むための関数である",
+            "クラスを定義するための関数である",
+            "グラフ描画専用の関数である"
+        ],
+        "correctIndex": 0,
+        "explanation": "ufuncは配列に対して要素ごとに高速な演算を行う関数。要点：配列全体に一括処理。"
+    },
+    {
+        "question": "Python（NumPy）において行列積を表す演算子はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "&",
+            "@",
+            "#",
+            "%"
+        ],
+        "correctIndex": 1,
+        "explanation": "@は行列積を表す演算子。要点：@＝行列掛け算。"
+    },
+    {
+        "question": "OneHotEncoder の説明として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "数値をランダムに変換する手法",
+            "カテゴリ変数を数値1つにまとめる手法",
+            "カテゴリごとに列を増やして表現する手法",
+            "データを削除する手法"
+        ],
+        "correctIndex": 2,
+        "explanation": "OneHotEncoderはカテゴリごとに列を増やし、該当箇所を1、それ以外を0で表す。要点：列が増える。"
+    },
+    {
+        "question": "適合率（Precision）と再現率（Recall）の関係として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "常に同じ値になる",
+            "互いに無関係である",
+            "一方を上げるともう一方が下がる傾向がある",
+            "両方とも必ず1になる"
+        ],
+        "correctIndex": 2,
+        "explanation": "PrecisionとRecallはトレードオフの関係にある。要点：両立しにくい。"
+    },
+    {
+        "question": "AUC（Area Under Curve）について正しい説明はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "値が0に近いほど良いモデルである",
+            "値が1に近いほど良いモデルである",
+            "値は常に0か1のみをとる",
+            "値が大きいほど誤差が大きい"
+        ],
+        "correctIndex": 1,
+        "explanation": "AUCは1に近いほど分類性能が高い。要点：AUCは高いほど良い。"
+    },
+    {
+        "question": "教師なし学習の手法はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "回帰分析",
+            "分類",
+            "クラスタリング",
+            "線形回帰"
+        ],
+        "correctIndex": 2,
+        "explanation": "クラスタリングは教師なし学習の代表例。要点：ラベルなしで分類。"
+    },
+    {
+        "question": "pandas の scatter_matrix() の説明として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "1つの変数の分布を表示する",
+            "複数の変数の散布図行列を表示する",
+            "ヒストグラムを描画する",
+            "相関係数を数値で出力する"
+        ],
+        "correctIndex": 1,
+        "explanation": "scatter_matrixは複数変数の散布図を行列形式で表示する。要点：関係を可視化。"
+    },
+    {
+        "question": "pandas の corr() 関数の役割はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "データを並び替える",
+            "相関係数を算出する",
+            "欠損値を補完する",
+            "グラフを描画する"
+        ],
+        "correctIndex": 1,
+        "explanation": "corr()は相関係数を求める関数。要点：変数間の関係の強さ。"
+    },
+    {
+        "question": "集合 A={1,2,3}、B={3,4,5} のとき、和集合 A∪B はどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "{3}",
+            "{1,2,3}",
+            "{3,4,5}",
+            "{1,2,3,4,5}"
+        ],
+        "correctIndex": 3,
+        "explanation": "和集合は両方の要素を重複なくまとめた集合。要点：全部集める。"
+    },
+    {
+        "question": "サイコロ（1〜6）の期待値として正しいものはどれか。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "2.5",
+            "3",
+            "3.5",
+            "4"
+        ],
+        "correctIndex": 2,
+        "explanation": "(1+2+3+4+5+6)/6=3.5。要点：平均値。"
+    },
+    {
+        "question": "以下のコードを実行したとき、表示される結果について正しいものを1つ選択せよ。",
+        "codeSample": "import matplotlib.pyplot as plt\n\nx = [10, 3, 1]\nfig, ax = plt.subplots()\nax.pie(x)\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "時計の12時の位置から要素が配置される",
+            "要素が半時計回りに配置される",
+            "ラベルが表示される",
+            "要素の値が表示される"
+        ],
+        "correctIndex": 1,
+        "explanation": "matplotlibのpie()はデフォルトで要素を反時計回り（counterclockwise=True）に配置する。また、ラベルや値は指定しない限り表示されない。要点：pieはデフォルトで反時計回り。"
+    },
+    {
+        "question": "以下のコードを実行したとき、【A】に入る内容として誤っているものを1つ選択せよ。",
+        "codeSample": "import matplotlib.pyplot as plt\n\n【A】\n\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "fig, ax = plt.subplots()",
+            "fig, ax = plt.subplots(2,2)",
+            "fig, ax = plt.subplots(3)",
+            "fig, ax = plt.subplots(ncols=3, 1)"
+        ],
+        "correctIndex": 3,
+        "explanation": "subplots()の引数は位置引数で(nrows, ncols)の順で指定するか、キーワード引数で指定する必要がある。\"plt.subplots(ncols=3, 1)\"は位置引数とキーワード引数の順序が不正であり構文エラーとなる。正しくは\"plt.subplots(1, 3)\"または\"plt.subplots(ncols=3, nrows=1)\"とする。要点：引数の順序と指定方法に注意。"
+    },
+    {
+        "question": "subplots関数の戻り値として正しいものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "描画オブジェクトとサブプロット",
+            "ラベル",
+            "描画オブジェクトのみ",
+            "サブプロットのみ"
+        ],
+        "correctIndex": 0,
+        "explanation": "subplots()はfigure（描画オブジェクト）とaxes（サブプロット）を返す。要点：戻り値は2つセット。"
+    },
+    {
+        "question": "散布図行列の説明として誤っているものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "corr関数を使用する",
+            "scatter_matrix関数を使用する",
+            "対角線上にヒストグラムが表示される",
+            "散布図が表示される"
+        ],
+        "correctIndex": 0,
+        "explanation": "散布図行列はscatter_matrix()で作成する。corr()は相関係数を計算する関数。要点：描画か計算かの違い。"
+    },
+    {
+        "question": "pandasのDataFrameで欠損値はどのように表示されるか、正しいものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "null",
+            "NaN",
+            "0(ゼロ)",
+            "\" \"（空文字）"
+        ],
+        "correctIndex": 1,
+        "explanation": "pandasの欠損値はNumPyのnan（Not a Number）で表現される。要点：NaNを覚える。"
+    },
+    {
+        "question": "AUCの説明として正しいものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "AUCは主に回帰モデルの精度指標である",
+            "AUCの横軸はF値である",
+            "AUCの値が1.0に近づくほどモデルの判別性能が高い",
+            "対角線に近いほど性能が高い"
+        ],
+        "correctIndex": 2,
+        "explanation": "AUCはROC曲線の下面積であり、1に近いほど分類性能が高い。要点：AUCは高いほど良い。"
+    },
+    {
+        "question": "混同行列の説明として誤っているものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "混同行列はモデル性能評価に使う",
+            "適合率は予測が正とした中で実際に正の割合",
+            "F値は適合率と再現率の算術平均である",
+            "適合率と再現率はトレードオフ関係にある"
+        ],
+        "correctIndex": 2,
+        "explanation": "F値は算術平均ではなく調和平均である。要点：F値＝調和平均。"
+    },
+    {
+        "question": "決定木の説明として正しいものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "クラスタリングは教師なし学習の代表的なタスクである",
+            "教師なし学習のアルゴリズムの一つにk-meansがある",
+            "主成分分析などの次元圧縮も、教師なし学習のカテゴリに含まれる",
+            "教師なし学習モデルの性能は、学習データの正解率で評価する"
+        ],
+        "correctIndex": 2,
+        "explanation": "決定木はノード（分岐）とエッジ（条件）で構成されるシンプルなモデル。要点：構造が視覚的。"
+    },
+    {
+        "question": "教師なし学習の説明として誤っているものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "クラスタリングは教師なし学習の代表的なタスクである",
+            "教師なし学習のアルゴリズムの一つにk-meansがある",
+            "主成分分析などの次元圧縮も、教師なし学習のカテゴリに含まれる",
+            "教師なし学習モデルの性能は、学習データの正解率で評価する"
+        ],
+        "correctIndex": 3,
+        "explanation": "教師なし学習は正解ラベルが存在しないため、正解率では評価しない。要点：ラベルなし。"
+    },
+    {
+        "question": "PandasのDataFrameオブジェクトを直列化し、データ構造を保ったままシリアライズしたデータ形式として最も適切なものを1つ選択せよ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "CSV形式",
+            "JSON形式",
+            "pickle形式",
+            "XML形式"
+        ],
+        "correctIndex": 2,
+        "explanation": "pickle形式はPythonオブジェクトをそのまま保存できるため、DataFrameの構造を保てる。要点：構造ごと保存。"
+    }
+]
