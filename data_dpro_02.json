@@ -1,0 +1,525 @@
+[
+    {
+        "question": "pipでインストールしたパッケージ一覧をテキストファイル(package_list.txt)に保存する際のコマンドとして、正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "pip list output package_list.txt",
+            "pip list < package_list.txt",
+            "pip output > package_list.txt",
+            "pip freeze > package_list.txt"
+        ],
+        "correctIndex": 3,
+        "explanation": "インストールされたパッケージを要件形式で出力します。結果をオプションでファイルに出力することが出来ます。"
+    },
+    {
+        "question": "scikit-learnのmetricsモジュールのclassification_report関数で出力されないものとして正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "再現率",
+            "F値",
+            "AUC",
+            "適合率"
+        ],
+        "correctIndex": 2,
+        "explanation": "以下出力される値です\n\n```\nprecision\t適合率\nrecall\t再現率\nf1-score\tF値\nsupport\tテストデータの件数\naccuracy\t正解率\nmacro avg\tマクロ平均\nweighted avg\t重み付き平均\n```"
+    },
+    {
+        "question": "機械学習を用いたデータ分析について説明している文章のうち、正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "特徴量の選択は、適当に決めても精度に大きな影響はないため、特徴量エンジニアリングに時間を割くべきではない",
+            "モデルの良し悪しを決めるための評価指標を適切に選ばなくても機械学習アルゴリズムで使っていれば問題ない",
+            "モデルの学習を実施したあとは、適切な検証データ、適切な指標を用いてモデルの精度の良し悪しを判断する必要がある",
+            "モデルの学習を実施さえすれば、十分な精度が保証されており、すぐに予測モデルを運用することができる"
+        ],
+        "correctIndex": 2,
+        "explanation": "機械学習モデルの学習後、モデルの性能を評価するためには適切な検証データセットと適切な評価指標を用いる必要があります。\nこれにより、モデルがどの程度実際のデータに対して予測を行えるかを判断します。"
+    },
+    {
+        "question": "以下のようなデータフレームdfがある。このデータフレームから、A列とB列の値が3000のデータフレームを抽出するコードとして正しいものを選べ。",
+        "codeSample": "import pandas as pd\n\ndf = pd.DataFrame({\"A\":[10,200,3000,40000],\n                   \"B\":[1000,2000,3000,4000]})",
+        "executionResult": null,
+        "options": [
+            "df[([\"A\"]==3000)&([\"B\"]==3000)]",
+            "df[(df[\"A\"]==3000)or(df[\"B\"]==3000)]",
+            "df[df[\"A\", \"B\"]==3000]",
+            "df[(df[\"A\"]==3000)&(df[\"B\"]==3000)]"
+        ],
+        "correctIndex": 3,
+        "explanation": "データフレームからデータを抽出する問題です。大きな流れはデータフレームからデータを抽出して再度データフレームに入れます。後、演算子に注意しましょう。"
+    },
+    {
+        "question": "以下のような、ユーザーごとのサービス利用状況が格納されたデータフレームdfがある。\n横軸に利用回数、縦軸に利用料金の散布図を描画するためのコードとして正しいものを選べ\nIMAGE_PLACEHOLDER_Q5",
+        "codeSample": "images/dpro02_q5.png",
+        "executionResult": null,
+        "options": [
+            "import matplotlib.pyplot as plt\n\nplt.scatter(df[\"利用回数\"],df[\"利用料金\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nplt.scatter(df[\"利用料金\"],df[\"利用回数\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nplt.plot(df[\"利用回数\"],df[\"利用料金\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\ndf[\"利用回数\"].scatter(df[\"利用料金\"])\nplt.show()"
+        ],
+        "correctIndex": 0,
+        "explanation": "第一引数にx軸, 第二引数にy軸にあたるものをセットします。"
+    },
+    {
+        "question": "以下のコードを実行した際に出力されるグラフとして正しいものを選べ",
+        "codeSample": "import matplotlib.pyplot as plt\nimport math\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\ny_list2 = list(map(lambda x: x**3+x**2, x_list))\ny_list3 = list(map(lambda x: (math.e)**x, x_list))\n\nplt.plot(x_list, y_list, label=\"x**2\")\nplt.plot(x_list, y_list2, label=\"x**3+x**2\")\nplt.plot(x_list, y_list3, label=\"exp(x)\")\nplt.legend()\nplt.show()",
+        "executionResult": null,
+        "options": [
+            "images/dpro02_q6_a1.png",
+            "images/dpro02_q6_a2.png",
+            "images/dpro02_q6_a3.png",
+            "images/dpro02_q6_a4.png"
+        ],
+        "correctIndex": 0,
+        "explanation": "コードからグラフをイメージ出来るかの問題です。注目したいのは label パラメータと legend メソッドを使っている所です。yの値を3つ用意しており、これらを全てplotメソッドのlabelパラメータを使っています。legend メソッドはこのlabelパラメータで定義したデータを表示させます。legendでラベルが3つ出ているグラフが正解です。"
+    },
+    {
+        "question": "以下のコードを実行すると、写真のようなグラフが描画される\n\nグラフの線の色を赤色に変更したい場合のコードとして、正しいものを選べ",
+        "codeSample": [
+            "import matplotlib.pyplot as plt\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.plot(x_list, y_list)\nplt.show()",
+            "images/dpro02_q7.png"
+        ],
+        "executionResult": null,
+        "options": [
+            "import matplotlib.pyplot as plt\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.plot(x_list, y_list, color = \"red\")\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.plot(x_list, y_list)\nplt.show(color = \"red\")",
+            "import matplotlib.pyplot as plt\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.plot(x_list, y_list, ls=\"--\")\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.plot(x_list, y_list, style=\"red\")\nplt.show()"
+        ],
+        "correctIndex": 0,
+        "explanation": "matplotlibのパラメータの問題です。グラフの線を赤くする場合はplotメソッドのcolorパラメータを使い、red（赤）を指定します。"
+    },
+    {
+        "question": "ある変数xの標準偏差が1、ある変数yの標準偏差が2、この2つのxとyの共分散が2であるとき、この2変数のピアソンの相関係数として正しいものを選べ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "0.5",
+            "2",
+            "0.25",
+            "1"
+        ],
+        "correctIndex": 0,
+        "explanation": "ピアソンの相関係数は、2つの変数の線形関係の強さを測定する指標です。\nこの値は共分散を変数の標準偏差の積で割ることで求めることができます。\n\n相関係数は `-1` から`1`の範囲の値を取り`1`は完全な正の線形関係を、`-1`は完全な負の線形関係を、`0`は全くの無関係を示します。\nこの場合、相関係数が `1` なので、変数 `x` と `y` は完全に正の線形関係にあると言えます\n\n$$\nr\n= \\frac{s_{xy}}{s_x s_y}\n= \\frac{\n    \\frac{1}{n}\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})\n}{\n    \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}(x_i - \\bar{x})^2}\n    \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}(y_i - \\bar{y})^2}\n}\n$$"
+    },
+    {
+        "question": "回帰予測に関する以下の説明のうち、間違っているものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "ロジスティック回帰で予測している値は、目的変数であるラベルそのものである",
+            "使用する特徴量が2つ以上の回帰を重回帰と呼ぶ",
+            "使用する特徴量の数が１つの場合の回帰を単回帰と呼ぶ",
+            "回帰に用いる損失関数にRMSE（最小2乗誤差）がある"
+        ],
+        "correctIndex": 0,
+        "explanation": "ロジスティック回帰は分類問題に用いられる手法で、予測しているのは`目的変数（ラベル）の確率`です。\n具体的には、ある入力に対して特定のクラスに属する確率を予測します。\n出力は0から1の間の値で、これを特定の閾値（通常は0.5）を基準にしてクラスを分類します。"
+    },
+    {
+        "question": "以下のようなデータがある。このようなデータ型をなんと呼ぶか、正しいものを選べ\n{\"数学\": 95, \"国語\": 65, \"英語\": 75}",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "タプル",
+            "リスト",
+            "辞書（ディクショナリ）",
+            "真偽値（ブーリアン）"
+        ],
+        "correctIndex": 2,
+        "explanation": ""
+    },
+    {
+        "question": "R言語について説明している以下の文章のうち、正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "R言語はグラフ描画をするためのパッケージが存在しない",
+            "Rで機械学習モデルを構築する場合、scikit-learnのR用パッケージをインストールしなければならない",
+            "DeepLearningのフレーワークにはR用のパッケージは存在しない",
+            "RにはC++を使うためのパッケージが存在し、高速化をする際によく用いられる"
+        ],
+        "correctIndex": 3,
+        "explanation": "「RにはC++を使うためのパッケージが存在し、高速化をする際によく用いられる」例としてdplyrというパッケージが存在しています。plyr の派生パッケージでデータフレームの処理を高速に行います。"
+    },
+    {
+        "question": "機械学習モデルについて説明している以下の文章のうち間違っているものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "機械学習モデルでは、何かを分類するタスクしか解くことができない",
+            "データが大量に存在する場合にモデルを構築する際は、学習データ、検証データ、テストデータの3つに分割するのが理想である",
+            "異なる検証データで結果を比較するために、交差検証を実施することもある",
+            "ラベルではなく数値そのものを予測する問題を回帰問題という"
+        ],
+        "correctIndex": 0,
+        "explanation": "主に数値の予測や分類問題のタスクを解くことができます。"
+    },
+    {
+        "question": "以下の文章のうちグリッドサーチの説明として正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "パラメーター探索の仮定で、ベイズ推論を行なっているため計算に時間がかかる",
+            "各パラメーターにおいて指定した分布から無作為に探索値を抽出するので、分布の仮定が間違っていると最適なチューニング結果にならない",
+            "指定したパラメーターの全ての組み合わせを試す手法。組み合わせの総数分モデルの学習を行うので、探索が終わるのに時間がかかる",
+            "どのパラメーターを探索するかはアルゴリズムが自動で選んでくれる"
+        ],
+        "correctIndex": 2,
+        "explanation": "得られた予測結果から最も精度の高いパラメータを求めます。\n正解の選択肢にもあるようにパラメータの全ての組み合わせを試すため精度の高いパラメータをもとめるのに時間が多くかかる場合があります。"
+    },
+    {
+        "question": "以下のコードは、欠損値をカラムごとの平均値で埋めるために書かれたコードである。以下のコードのXXXの部分に記述されるコードとして正しいものを選べ\n※dfは欠損を含むデータが格納されているpandasデータフレームである, versionは0.20以上",
+        "codeSample": "from sklearn.impute import SimpleImputer\n\nXXX\nimp.fit(df)\nimp.transform(df)",
+        "executionResult": null,
+        "options": [
+            "imp = SimpleImputer(strategy=\"median\")",
+            "imp = SimpleImputer(strategy=\"median\", axis=0)",
+            "imp = SimpleImputer(strategy=\"mean\", axis=1)",
+            "imp = SimpleImputer(strategy=\"mean\")"
+        ],
+        "correctIndex": 3,
+        "explanation": "strategyで欠損値を何で埋めるか設定できます。\n古いバージョンでは`sklearn.preprocessing.Imputer`が使われていましたが0.20以降はSimpleImputerに置き換わっています。"
+    },
+    {
+        "question": "数値データが格納されたpandasデータフレームに対して、describeメソッドを用いて算出することができない統計量として正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "外れ値",
+            "データ件数",
+            "平均値",
+            "最大値"
+        ],
+        "correctIndex": 0,
+        "explanation": "describeメソッドは各列ごとに平均、標準偏差、最大値、最小値、最頻値などの要約統計量を取得できます。データの概要を知る時に便利です。外れ値は算出出来ません。"
+    },
+    {
+        "question": "特徴量の次元削減について説明している以下の文章のうち、正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "scikit-learnで実装されている主成分分析を使用する際、次元数をいくつまで削減するかを指定することはできない",
+            "なるべくデータの情報を落とさずに、少ない特徴量でデータを表現するために用いられる",
+            "次元削減の手法には非線形変換を行う手法のみ存在する",
+            "数学的には、内部で積分計算を行なっている"
+        ],
+        "correctIndex": 1,
+        "explanation": "主成分分析(PCA：Principal Component Analysis)の問題です。これによって次元削減を行います。目的はデータの要約をすることです。つまりデータの重要な部分だけを残して、重要ではない部分を削るということをします。"
+    },
+    {
+        "question": "以下の不定積分の答えとして正しいものを選べ。Cは積分定数とする。\n\n$$\n\\int \\frac{1}{x}\\, dx\n$$",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "$$\n\\frac{1}{x} + c\n$$",
+            "$$\ne^{x} + c\n$$",
+            "$$\n\\frac{1}{x^2} + c\n$$",
+            "$$\n\\log x + c\n$$"
+        ],
+        "correctIndex": 3,
+        "explanation": "分数の積分問題です。これは反対を考えると対数を微分すると真数を分母とした分数になることを知っていれば解けます。\n対数の見方は次のイメージです。\n$2^3 = 8$：2の3乗は8になる。2を底、8を真数、3を指数と呼びます。\n$\\log_{2} 8 = 3$：2の3乗は8になる。2を底、8を真数、3を対数と呼びます。"
+    },
+    {
+        "question": "決定木の不純度の指標として使用される「ジニ不純度」の説明している以下の文章のXXXとYYYに当てはまる組みとして正しいものを選べ\n\nある2つのカテゴリー(ラベル0とラベル1)を持つ特徴量を分割する場合のジニ不純度は、ラベル0なのにラベル1と割り振られる確率とラベル1なのにラベル0と割り振られる確率のXXXを考える必要がある。クラス0である確率をP(0)、クラス1である確率をP(1)とすると、求めるジニ不純度は1-(P(0)YYY+P(1)YYY) となる",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "XXX = 積, YYY = 2",
+            "XXX = 和, YYY = 2",
+            "XXX = 和, YYY = 1/2",
+            "XXX = 積, YYY = 1/2"
+        ],
+        "correctIndex": 1,
+        "explanation": "ジニ不純度を求める考え方は説明文の通りです。適切な単語については公式の観点で説明をします。ジニ不純度を求める公式は下記のようになります。\n$$\nI(t)\n= 1 - \\sum_{i=1}^{K} P^{2}(C_i \\mid t)\n= 1 - \\sum_{i=1}^{K} \\left( \\frac{N_{t,i}}{N_{t,\\text{all}}} \\right)^{2}\n$$\n\n「ラベル0なのにラベル1と割り振られる確率とラベル1なのにラベル0と割り振られる確率」とはつまり間違える確率です。発生する確率の反対が間違える確率ですので１から発生する確率を減算しています。2乗は式変換すると発生するものとなります。"
+    },
+    {
+        "question": "以下の関数のxに関する微分として正しいものを選べ\n\n$$\n\\log x\n$$",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "1",
+            "$$\ne^{x}\n$$",
+            "$$\nx\n$$",
+            "$$\n\\frac{1}{x}\n$$"
+        ],
+        "correctIndex": 3,
+        "explanation": "対数の微分問題です。これは反対を考えると分数を積分すると分母を真数とした対数になることを知っていれば解けます。\n対数の見方は次のイメージです。\n$2^3 = 8$：2の3乗は8になる。2を底、8を真数、3を指数と呼びます。\n$\\log_{2} 8 = 3$：2の3乗は8になる。2を底、8を真数、3を対数と呼びます。"
+    },
+    {
+        "question": "以下のような２つの集合がある\nA = {1,2,3,4}, B = {3,4,5,6}\nA∪Bとして正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "{3,4}",
+            "8",
+            "{ }(空集合)",
+            "{1,2,3,4,5,6}"
+        ],
+        "correctIndex": 3,
+        "explanation": "∪の記号は和集合と呼ばれるものです。両方とも含むものを返します。重複は含みません。"
+    },
+    {
+        "question": "Pythonについて説明している以下の文章のうち間違っているものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "Pythonはオブジェクト指向のプログラミング言語である",
+            "Pythonで変数を使用する際には、必ず変数の型を最初に定義する必要がある",
+            "Pythonの予約語の数は他のプログラミング言語と比較して少ない",
+            "機械学習ライブラリにscikit-learnがある"
+        ],
+        "correctIndex": 1,
+        "explanation": "変数に格納するオブジェクトの型定義をしなくても変数の定義が可能なので、必ず変数の型を最初に定義する必要があるとは言えません。\n\n最新のPython3.10では、変数を定義する際には型の定義をする型の絞り込み機能が追加されました。\nこれによりライブラリの追加などをせず、変数定義の際に型の指定ができるようになりました。"
+    },
+    {
+        "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+        "codeSample": "import numpy as np\n\nA = np.linspace(0, 2, 5)\nB = np.diff(A)*2\nB == np.ones(4)",
+        "executionResult": null,
+        "options": [
+            "FALSE",
+            "True",
+            "array([ 1, 1, 1, 1])",
+            "array([ True, True, True, True])"
+        ],
+        "correctIndex": 3,
+        "explanation": "正しい選択肢は「`array([True, True, True, True])`」です。\n`np.linspace(0, 2, 5)` は0から2までの範囲を等間隔で5つの数値に分け、結果は `[0.0, 0.5, 1.0, 1.5, 2.0]` です。\n`np.diff(A)` は隣接する要素間の差を計算し、結果として `[0.5, 0.5, 0.5, 0.5]` が得られます。\nこれを2倍すると `[1.0, 1.0, 1.0, 1.0]` となり、`B` はこれを格納します。\n次に、`B == np.ones(4)` は `B` と同じ形の配列を生成し、それぞれの要素を比較して `[True, True, True, True]` を返します。\nNumPy配列同士の比較では、要素単位の判定結果が配列として得られる点に注意してください。"
+    },
+    {
+        "question": "以下のグラフは各ユーザーの支払い請求額をx軸、チップをy軸とした散布図である。この散布図の説明として正しいものを選べ",
+        "codeSample": "images/dpro02_q23.png",
+        "executionResult": null,
+        "options": [
+            "支払い請求額とチップには概ね負の相関がある",
+            "チップが10付近の所に１つデータがあるが、これは外れ値である",
+            "支払い請求額とチップには概ね正の相関がある",
+            "支払い請求額は30~40が最も多いことがわかる"
+        ],
+        "correctIndex": 2,
+        "explanation": "データ分析の知識を問われてる問題です。相関という言葉は、2つのデータについて片方の変化がもう片方に影響を与える関係がある場合に相関がある、という言い方をします。この場合、片方が上がれば片方も上がるので正の相関がある、という言い方が出来ます。"
+    },
+    {
+        "question": "以下の行列の掛け算の答えとして正しいものを選べ\n\n$$\n\\begin{aligned}\n(2\\ \\ 2) \\quad & \\begin{pmatrix} 2 \\\\ 2 \\end{pmatrix}\n\\end{aligned}\n$$",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "算出不可能（掛け算はできない）",
+            "$$\n\\begin{pmatrix}\n4 \\\\\n4\n\\end{pmatrix}\n$$",
+            "$$\n\\begin{pmatrix}\n4 & 4 \\\\\n4 & 4\n\\end{pmatrix}\n$$",
+            "$$\n(8)\n$$"
+        ],
+        "correctIndex": 3,
+        "explanation": "行列積の問題です。$(2\\ \\ 2)\\begin{pmatrix}2 \\\\ 2\\end{pmatrix}$ は 1 行 2 列と 2 行 1 列の行列積です。便宜上前者を A 行列、後者を B 行列とし、結果を C 行列と呼びます。\n\n初めに A：$(2\\ \\ 2)$ と B：$\\begin{pmatrix}2 \\\\ 2\\end{pmatrix}$ を行列積をするとどうなるかを確認しましょう。\n\n行列積の方法は A の 1 行目と B の 1 列目を始めに積和計算し、$(2 * 2) + (2 * 2) = 8$ で C 行列の 1 行 1 列目が求まります。\n\nA には 2 行目がなく、B にも 2 列目が無いので行列計算は終わりとなり、C は 1 行 1 列の行列で中身は 8 となります。\n\n他の解法としては 1 行 2 列と 2 行 1 列の行列積なので、外側のサイズから 1 行 1 列の出力になると推察も可能です。\n\n例えば下記の画像のようなイメージです。"
+    },
+    {
+        "question": "Matplotlibの記述について正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "デフォルトで日本語フォントに対応しているため、日本語を表示させるための設定をする必要はない",
+            "今でも定期的にバージョンのアップデートなどがされており、世界中のデータ分析者に使われている",
+            "開発者は日本人である",
+            "2次元プロットは対応しているが、3次元プロットは対応していない"
+        ],
+        "correctIndex": 1,
+        "explanation": "Matplotlibはグラフを描画するライブラリーです。\n「デフォルトで日本語フォントに対応しているため、日本語を表示させるための設定をする必要はない」デフォルトは日本語ではありません。日本語設定をする必要があります。\n「開発者は日本人である」違います。John D. Hunter, Michael Droettboom などと言われています。\n「2次元プロットは対応しているが、3次元プロットは対応していない」3次元で描画が可能です。"
+    },
+    {
+        "question": "matplotlibのhist()メソッドの返り値として取得できる情報として正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "(各ビンの度数、各ビンの範囲, 最頻値)の3つの返り値を持つ",
+            "(各ビンの度数、各ビンの範囲)の2つの返り値を持つ",
+            "各ビンの範囲と各ビンの度数が格納されているディクショナリとして１つの返り値を持つ",
+            "(各ビンの度数、各ビンの範囲、パッチオブジェクトが格納されている配列)の3つの返り値を持つ"
+        ],
+        "correctIndex": 1,
+        "explanation": "各ビンの度数、各ビンの範囲、パッチオブジェクトが格納されている配列を返します。\n\nヒストグラムの戻り値 - matplotlib ドキュメント"
+    },
+    {
+        "question": "以下のような、ユーザーごとのサービス利用状況が格納されたデータフレームdfがある。\n利用回数の箱ひげ図を描画するコードとして正しいものを選べ",
+        "codeSample": "images/dpro02_q27.png",
+        "executionResult": null,
+        "options": [
+            "import matplotlib.pyplot as plt\n\nplt.boxplot(df[\"利用回数\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nplt.hist(df[\"利用回数\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nplt.violinplot(df[\"利用回数\"])\nplt.show()",
+            "import matplotlib.pyplot as plt\n\ndf[\"利用回数\"].boxplot()\nplt.show()"
+        ],
+        "correctIndex": 0,
+        "explanation": "matplotlibのboxplotメソッドで箱ひげ図を作成できます。\nhistはヒストグラム, violinplotはヴァイオリンプロットを作成します。"
+    },
+    {
+        "question": "Jupyter Notebookで用いられるマジックコマンドについて説明している以下の文章のうち、間違っているものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "\\%timeitはセルに書かれた一行のプログラムに対して実行時間を、複数回施行して計測するコマンドである",
+            "\\%lsmagicはマジックコマンドの一覧を表示するコマンドである",
+            "\\%%timeitは１つのセルに対して実行時間を、複数回施行して計測するコマンドである",
+            "\\%matplotlib tk はコードセル直下にグラフを出力するためのコマンドである"
+        ],
+        "correctIndex": 3,
+        "explanation": "マジックコマンド（Magic Commands）とは、IPythonのカーネルから提供される仕組みのことです。選択肢の内容はマジックコマンドについて説明しているものではありません。"
+    },
+    {
+        "question": "正規分布に従う乱数を生成するNumPyのメソッドとして、正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "np.random.randn()",
+            "np.random.uniform()",
+            "np.random.rand()",
+            "np.random.random()"
+        ],
+        "correctIndex": 0,
+        "explanation": "randam.randnメソッドで正規分布に従う乱数を取得できます。引数がない場合は単一の値を返します。また負の値はセットすることはできません。"
+    },
+    {
+        "question": "以下のような、日付ごとの利用状況が格納されたデータフレームdfがある。\n日付をインデックスではなく、新たなカラムとして作成するためのコードとして正しいものを選べ",
+        "codeSample": "images/dpro02_q30.png",
+        "executionResult": null,
+        "options": [
+            "df.reset_index()",
+            "df.resetindex()",
+            "df[\"日付\"].set_index()",
+            "df[\"日付\"].reset_index()"
+        ],
+        "correctIndex": 0,
+        "explanation": "現在のインデックスを新たなカラム（列）にするには reset_index() を使います。これを使うとインデックスは連番になります。"
+    },
+    {
+        "question": "matplotlibのpieメソッドを用いて円グラフのある要素だけずらして表示する場合に指定する引数として正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "startangle",
+            "radius",
+            "explode",
+            "counterclock"
+        ],
+        "correctIndex": 2,
+        "explanation": "explode引数にどのくらいの比率で切り出すかを示したリストを渡すことでグラフの表示を変更できます。\n\n```\n1\nax.pie(rate, explode=[0.4, 0, 0, 0, 0, 0])\n```"
+    },
+    {
+        "question": "以下のような日付ごとの利用回数と利用料金が格納されたpandasデータフレームdfがある。このデータフレームdfの利用回数の「最大値」を出力するコードとして正しいものを選べ",
+        "codeSample": "images/dpro02_q32.png",
+        "executionResult": null,
+        "options": [
+            "df[\"利用回数\"].count()",
+            "df[\"利用回数\"].median()",
+            "df[\"利用回数\"].max()",
+            "df[\"利用回数\"].mode()"
+        ],
+        "correctIndex": 2,
+        "explanation": "pandasのDataFrameにはmax関数が使えます。max 関数はデフォルトで列の最大値を取得します。列を指定すればその列だけの最大値を取得可能です。\n例えば下記の画像のようなことが可能です。"
+    },
+    {
+        "question": "pandasのデータフレームの上から5行目までを表示させるメソッドとして、正しいものを選べ。",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "head()",
+            "tail()",
+            "view()",
+            "show()"
+        ],
+        "correctIndex": 0,
+        "explanation": "pandas のデータフレームの上から5行目までを表示させるメソッドは head() メソッドです。ちなみに末尾5行目を表示させるのは tail() メソッドです。"
+    },
+    {
+        "question": "以下の行列の掛け算の答えとして正しいものを選べ\n\n$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}^{5}\n$$",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "$$\n\\begin{pmatrix}\n5 & 0 \\\\\n0 & 5\n\\end{pmatrix}\n$$",
+            "算出不可能（掛け算はできない）",
+            "$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$",
+            "$$\n\\begin{pmatrix}\n1 & 1 \\\\\n1 & 1\n\\end{pmatrix}\n$$"
+        ],
+        "correctIndex": 2,
+        "explanation": "行列積の問題です。$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}^{5}$ は $\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$ 同士を 5 回行列積をするという意味です。便宜上 A 行列と B 行列を行列積し、結果を C 行列と呼びます。\n\n初めに A：$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$ と B：$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$ を行列積するとどうなるかを確認しましょう。\n\n行列積の方法は A の 1 行目と B の 1 列目を始めに積和計算し、$(1 * 1) + (0 * 0) = 1$ で C 行列の 1 行 1 列目が求まります。\n\n次に、A の 1 行目と B の 2 列目を計算し、$(1 * 0) + (0 * 1) = 0$ で C 行列の 1 行 2 列目が求まります。\n\nA の 2 行目と B の 1 列目を計算し、$(0 * 1) + (1 * 0) = 0$ で C 行列の 2 行 1 列目が求まります。\n\nA の 2 行目と B の 2 列目を計算し、$(0 * 0) + (1 * 1) = 1$ で C 行列の 2 行 2 列目が求まります。\n\nつまり、$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$ 同士を何回行列の掛け算をしても同じ結果になります。"
+    },
+    {
+        "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+        "codeSample": "import numpy as np\n\nA = np.array([[0, 1, 2, 3, 4]])\nB = np.full((1, 5), 1)\nA[A>=B]",
+        "executionResult": null,
+        "options": [
+            "array([[1, 2, 3, 4]])",
+            "array([[False, True, True, True, True]])",
+            "array([False, True, True, True, True])",
+            "array([1, 2, 3, 4])"
+        ],
+        "correctIndex": 3,
+        "explanation": "numpyの問題です。特にここでは条件を満たす要素の取得をしています。A>=Bの条件を満たすものは正解の選択肢になります。"
+    },
+    {
+        "question": "Matplotlibを用いて、１つの描画オブジェクト中に2つのグラフを表示するコードとして正しいものを選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(2)\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nax, fig  = plt.subplots()\nplt.show()",
+            "import matplotlib.pyplot as plt\n\nplt.plot()\nplt.show()"
+        ],
+        "correctIndex": 0,
+        "explanation": "subplots()メソッドの使い方の問題です。引数に整数を用いることでグラフの数を制御出来ます。問題文は2つと言っているのでsubplots()の引数に2を入れているものが正解です。"
+    },
+    {
+        "question": "以下のコードのXXXに当てはまるものとして正しいものを選べ",
+        "codeSample": "#必要なモジュールのimport\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.datasets import load_boston\nfrom sklearn.model_selection import train_test_split\n\nboston = load_boston()\nx, y = boston.data, boston.target\n# 学習データとテストデータに分割\nXXX\n# 線形回帰をインスタンス化\nlr = LinearRegression()\nlr.fit(x_train, y_train)",
+        "executionResult": null,
+        "options": [
+            "x_train, x_test, y_train, y_test = lr.predict(x)",
+            "x_train, x_test = train_test_split(x, y, test_size=0.3)",
+            "x_train, x_test, y_train, y_test = train_test_split(x, test_size=0.3)",
+            "x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)"
+        ],
+        "correctIndex": 3,
+        "explanation": "`学習データとテストデータに分割`ということから`train_test_split`メソッドを使う選択肢が正しいとわかります。"
+    },
+    {
+        "question": "以下のような日付、日経平均株価の始値、終値が格納されたpandasデータフレームdfがある。このデータフレームを始値の降順に並び替えるコードとして正しいものを選べ",
+        "codeSample": "images/dpro02_q38.png",
+        "executionResult": null,
+        "options": [
+            "df.sort(\"始値\")",
+            "df.sort_values(\"始値\")",
+            "df.sort_values(\"始値\", ascending=False)",
+            "df.sort(\"始値\", ascending=False)"
+        ],
+        "correctIndex": 2,
+        "explanation": "sort_valuesを使用することで特定の要素を基準としてデータフレームをソートすることができます。\n今回は第一引数にカラム名の`始値`を渡し、第二引数に`ascending=False`を渡すことで降順にしています。\n例えば下記の画像のようなことが可能です。"
+    },
+    {
+        "question": "三角関数でないものを以下の選択肢から選べ",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "tanx",
+            "sinx",
+            "sinhx",
+            "cosx"
+        ],
+        "correctIndex": 2,
+        "explanation": "sinhxは三角関数ではなく、「双曲線正弦関数（hyperbolic sine）」です。\nこれは三角関数とは異なり、双曲線関数の一つであり、双曲線的な性質を持つ関数です。"
+    },
+    {
+        "question": "以下の行列の掛け算の答えとして正しいものを選べ\n\n$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 \\\\\n0\n\\end{pmatrix}\n$$",
+        "codeSample": null,
+        "executionResult": null,
+        "options": [
+            "$$\n(1\\ \\ 0)\n$$",
+            "算出不可能（掛け算はできない）",
+            "$$\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$",
+            "$$\n\\begin{pmatrix}\n1 \\\\\n0\n\\end{pmatrix}\n$$"
+        ],
+        "correctIndex": 3,
+        "explanation": "行列積の問題です。$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$ は 2 行 2 列と 2 行 1 列の行列積です。便宜上前者を A 行列、後者を B 行列とし、結果を C 行列と呼びます。\n\n初めに A：$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$ と B：$\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$ を行列積をするとどうなるかを確認しましょう。\n\n行列積の方法は A の 1 行目と B の 1 列目を始めに積和計算し、$(1 * 1) + (0 * 0) = 1$ で C 行列の 1 行 1 列目が求まります。\n\n次に、A の 2 行目と B の 1 列目を計算し、$(0 * 1) + (1 * 0) = 0$ で C 行列の 2 行 1 列目が求まります。\n\n他の解法としては 2 行 2 列と 2 行 1 列の行列積なので、外側のサイズから 2 行 1 列の出力になると推察も可能です。\n\n例えば下記の画像のようなことが可能です。"
+    }
+]

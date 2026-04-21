@@ -1,0 +1,531 @@
+[
+  {
+    "question": "以下のグラフは、木曜日から日曜日のユーザーの支払い請求額に関する分布を示した箱ひげ図である。この箱ひげ図の説明として正しくないものを選べ。",
+    "codeSample": "images/dpro03_q1.png",
+    "executionResult": null,
+    "options": [
+      "中央値は、日曜日がもっとも高い",
+      "支払い請求額は土曜日がもっともばらついている",
+      "支払い請求額が最大のユーザーは、土曜日の利用である",
+      "第一四分位数がもっとも大きいのは、金曜日である"
+    ],
+    "correctIndex": 3,
+    "explanation": "第1四分位数は箱の下端であり、最も大きいのは日曜日である。要点：箱ひげ図では箱の位置やひげの長さから分布の特徴を読む。"
+  },
+  {
+    "question": "以下の行列の掛け算の答えとして正しいものを選べ。",
+    "codeSample": "$$\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}\\qquad\\begin{pmatrix}0 & 1\\end{pmatrix}$$",
+    "executionResult": null,
+    "options": [
+      "$$\\begin{pmatrix}0 & 1 \\\\ 0 & 0\\end{pmatrix}$$",
+      "$$\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$$",
+      "算出不可能（掛け算はできない）",
+      "$$\\begin{pmatrix}1 & 0\\end{pmatrix}$$"
+    ],
+    "correctIndex": 0,
+    "explanation": "2行1列と1行2列の行列積なので、結果は2行2列になる。計算すると $$\\begin{pmatrix}0 & 1 \\\\ 0 & 0\\end{pmatrix}$$ になる。要点：行列積の結果のサイズは「左の行数 × 右の列数」。"
+  },
+  {
+    "question": "pandasデータフレームdfをNumPy配列に変換する処理として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "df.values",
+      "np.convert(df)",
+      "np.ndarray(df)",
+      "df.array"
+    ],
+    "correctIndex": 0,
+    "explanation": "pandasデータフレームをNumPy配列として取り出す代表的な方法は values である。要点：DataFrame → NumPy配列への変換方法を押さえる。"
+  },
+  {
+    "question": "AUCはROC曲線から算出されるが、具体的にはROC曲線の何を算出したものか。以下の中から正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "ROC曲線の横軸の最大値",
+      "ROC曲線の面積",
+      "ROC曲線の勾配（微分）",
+      "ROC曲線の縦軸の最大値"
+    ],
+    "correctIndex": 1,
+    "explanation": "AUCは Area Under the Curve の略で、ROC曲線の下の面積を表す。要点：AUC＝ROC曲線下面積。"
+  },
+  {
+    "question": "行列Aのサイズが(n,m)、行列Bのサイズが(m,n)のとき、この2つの行列の積ABのサイズとして正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "(m,n)",
+      "(n,n)",
+      "(n,m)",
+      "(m,m)"
+    ],
+    "correctIndex": 1,
+    "explanation": "ABが定義できるのはAの列数とBの行数が一致するときで、結果のサイズは左の行数 n と右の列数 n を使って (n,n) になる。要点：結果サイズは外側を見る。"
+  },
+  {
+    "question": "以下のような、ユーザーごとのサービス利用状況が格納されたデータフレームdfがある。性別ごとの人数を棒グラフで表示するためのコードとして正しいものを選べ。",
+    "codeSample": "images/dpro03_q6.png",
+    "executionResult": null,
+    "options": [
+      "import matplotlib.pyplot as plt \n\ndf[\"性別\"].value_counts().plot.bar()\nplt.show()",
+      "import matplotlib.pyplot as plt \n\ndf[\"性別\"].plot.bar()\nplt.show()",
+      "import matplotlib.pyplot as plt \n\nplt.bar(df[\"性別\"].value_counts())\nplt.show()",
+      "import matplotlib.pyplot as plt \n\ndf[\"性別\"].value_counts().bar()\nplt.show()"
+    ],
+    "correctIndex": 0,
+    "explanation": "value_counts()で人数を集計してから plot.bar() で棒グラフにする。要点：カテゴリ列はまず集計してから描画する。"
+  },
+  {
+    "question": "以下のコードを実行した後に、np.hstack((a,b))を実行した場合の出力と同じにするにはどれを実行すれば良いか。正しいものを選べ。",
+    "codeSample": "import numpy as np\n\na = np.array([[0,1,10],[0,1,10]])\nb = np.array([[100],[100]])",
+    "executionResult": null,
+    "options": [
+      "np.concatenate([a,b],axis=1)",
+      "np.vtack([a,b])",
+      "np.concatenate([a,b],axis=0)",
+      "np.append(a,b)"
+    ],
+    "correctIndex": 0,
+    "explanation": "hstackは列方向（横方向）に結合する。concatenateで同じことをするなら axis=1 を指定する。要点：横結合＝axis=1。"
+  },
+  {
+    "question": "以下のようなpandasデータフレームdfがある。日付カラムをこのデータフレームのインデックスにする場合のコードとして正しいものを選べ。",
+    "codeSample": "images/dpro03_q8.png",
+    "executionResult": null,
+    "options": [
+      "df.set_index(\"日付\")",
+      "df[\"日付\"].set_index()",
+      "df.reset_index(\"日付\")",
+      "df.index(\"日付\")"
+    ],
+    "correctIndex": 0,
+    "explanation": "特定の列をインデックスにするには set_index() を使う。要点：列→インデックスの変更は set_index。"
+  },
+  {
+    "question": "以下のコードを実行した際の出力として正しいものを選べ。",
+    "codeSample": "A = [1]*10\nA",
+    "executionResult": null,
+    "options": [
+      "[[1],[1],[1],[1],[1],[1],[1],[1],[1],[1]]",
+      "[10]",
+      "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",
+      "[[10],[10],[10],[10],[10],[10],[10],[10],[10],[10]]"
+    ],
+    "correctIndex": 2,
+    "explanation": "リストに対する * は要素を指定回数だけ繰り返す。したがって 1 が10個並んだリストになる。要点：リスト * 整数＝繰り返し。"
+  },
+  {
+    "question": "以下のような、pandasデータフレームAとpandasデータフレームBがある。この2つのデータフレームの日付が一致する部分のみを列方向に結合したデータフレームを作成するコードとして正しいものを選べ。",
+    "codeSample": [
+      "images/dpro03_q10a.png",
+      "images/dpro03_q10b.png"
+    ],
+    "executionResult": null,
+    "options": [
+      "pd.merge(A, B, how=\"inner\", on=\"日付\")",
+      "pd.merge(A, B, how=\"left\", on=\"日付\")",
+      "pd.merge([A, B], how=\"inner\", on=\"日付\")",
+      "pd.join(A, B, how=\"inner\", on=\"日付\")"
+    ],
+    "correctIndex": 0,
+    "explanation": "一致する行だけを残して列方向に結合するので、merge の inner join を使う。要点：共通部分だけなら how=\"inner\"。"
+  },
+  {
+    "question": "以下のような日付、日経平均株価の始値、終値が格納されたpandasデータフレームdfがある。このデータフレームにその日の株価の増減値（終値-始値）に応じて、ランクを付与するコードの実装として正しいものを選べ。",
+    "codeSample": "images/dpro03_q11.png",
+    "executionResult": null,
+    "options": [
+      "def add_rank(value):\n    if value >= 1000:\n        return \"High\"\n    elif 0 <= value < 1000:\n        return \"Normal\"\n    else:\n        return \"Low\"\n\ndf[\"増減値\"] = df[\"終値\"] - df[\"始値\"]\ndf[\"ランク\"] = df[\"増減値\"].apply(add_rank)",
+      "def add_rank(value):\n    if value >= 1000:\n        return \"High\"\n    elif 0 <= value < 1000:\n        return \"Normal\"\n    else:\n        return \"Low\"\n\ndf[\"増減値\"] = df[\"終値\"] - df[\"始値\"]\ndf[\"ランク\"] = df.add_rank(df[\"増減値\"])",
+      "def add_rank(value):\n    if value >= 1000:\n        return \"High\"\n    elif 0 <= value < 1000:\n        return \"Normal\"\n    else:\n        return \"Low\"\n\ndf[\"ランク\"] = df.apply(add_rank(df[\"終値\"] - df[\"始値\"]))",
+      "def add_rank(value):\n    if value >= 1000:\n        return \"High\"\n    elif 0 <= value < 1000:\n        return \"Normal\"\n    else:\n        return \"Low\"\n\ndf[\"ランク\"] = df.apply().add_rank(df[\"終値\"] - df[\"始値\"])"
+    ],
+    "correctIndex": 0,
+    "explanation": "列ごとの値に関数を適用したいので apply(add_rank) を使う。まず増減値を計算し、その列に対して判定関数を適用する。要点：Seriesの各要素への関数適用は apply。"
+  },
+  {
+    "question": "Jupyter Notebookについて説明している以下の文章のうち、正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "セル上で、シェルコマンドを実行する際には'!'を行頭に入力する",
+      "セル上で、シェルコマンドを実行する際には'''を行頭に入力する",
+      "セル上で、シェルコマンドを実行する際には'%'を行頭に入力する",
+      "セル上で、シェルコマンドを実行する際には'#'を行頭に入力する"
+    ],
+    "correctIndex": 0,
+    "explanation": "Jupyter Notebookでシェルコマンドを実行するときは、行頭に ! を付ける。要点：! はシェル実行。"
+  },
+  {
+    "question": "線形回帰の損失関数に対して、Ridge回帰とLasso回帰が追加している正則化項の組み合わせとして正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "（Ridge回帰, Lasso回帰）= （L1正則化項, L2正則化項）",
+      "（Ridge回帰, Lasso回帰）= （L3正則化項, L1正則化項）",
+      "（Ridge回帰, Lasso回帰）= （L2正則化項, L1正則化項）",
+      "（Ridge回帰, Lasso回帰）= （L1正則化項, L3正則化項）"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ridge回帰はL2正則化、Lasso回帰はL1正則化を加える。要点：Ridge=L2、Lasso=L1。"
+  },
+  {
+    "question": "以下のコードを実行した際の出力として正しいものを選べ。",
+    "codeSample": "import numpy as np\n\na = np.array([[0,1,10],[0,1,10]])\nb = a.copy()\na2 = a.reshape(3,2)\nb*a2",
+    "executionResult": null,
+    "options": [
+      "array([[ 20, 100], [ 20, 100]])",
+      "np.array([0,1,10, 0,1,10])",
+      "エラーになり、計算は実行できない",
+      "array([[ 0, 1, 10], [ 0, 10, 100], [ 0, 11, 110]])"
+    ],
+    "correctIndex": 2,
+    "explanation": "b は (2,3)、a2 は (3,2) なので、そのままでは要素ごとの積ができない。ブロードキャスト条件も満たさないためエラーになる。要点：配列演算では形状の一致が大切。"
+  },
+  {
+    "question": "以下のコードを実行した際に描画されるグラフとして正しいものを選べ。",
+    "codeSample": "import matplotlib.pyplot as plt \n\nx_list = [i for i in range(10)]\ny_list = list(map(lambda x: x**2, x_list))\nplt.bar(x_list, y_list)\nplt.show()",
+    "executionResult": null,
+    "options": [
+      "images/dpro03_q15_a1.png",
+      "images/dpro03_q15_a2.png",
+      "images/dpro03_q15_a3.png",
+      "images/dpro03_q15_a4.png"
+    ],
+    "correctIndex": 0,
+    "explanation": "bar() は棒グラフを描く。棒グラフは棒と棒の間に隙間があるのが特徴である。要点：bar＝棒グラフ、hist＝ヒストグラム。"
+  },
+  {
+    "question": "scikit-learnのGridSearchCVクラスには、もっとも精度が良い時のハイパーパラメーターの値を取得するための属性がある。その属性として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "best_estimator_",
+      "best_index_",
+      "best_params_",
+      "cv_results_"
+    ],
+    "correctIndex": 2,
+    "explanation": "最良のハイパーパラメータの組を取得する属性は best_params_ である。要点：GridSearchCVで最適パラメータを見るなら best_params_。"
+  },
+  {
+    "question": "以下の1月のデータが格納されたデータフレームAと2月のデータが格納されたデータフレームBを行方向にデータフレームを結合するコードとして、正しいものを選べ（AとBのカラム名は全て同じものとする）。",
+    "codeSample": [
+      "images/dpro03_q17a.png",
+      "images/dpro03_q17b.png"
+    ],
+    "executionResult": null,
+    "options": [
+      "pd.concat([A, B], axis=1)",
+      "pd.merge([A, B], axis=0)",
+      "pd.concat([A, B], axis=0)",
+      "pd.join([A, B], axis=0)"
+    ],
+    "correctIndex": 2,
+    "explanation": "行方向に結合するので concat を使い、axis=0 を指定する。要点：縦に足す＝concat(axis=0)。"
+  },
+  {
+    "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+    "codeSample": "import numpy as np\n\nA = np.eye(4)\nfirst, second = np.vsplit(A, [3])\nsecond.T",
+    "executionResult": null,
+    "options": [
+      "array([[0.], [0.], [0.], [1.]])",
+      "array([[0., 0.], [0., 0.], [1., 0.], [0., 1.]])",
+      "array([[0., 0., 0., 1.]])",
+      "array([[0., 0., 1., 0.], [0., 0., 0., 1.]])"
+    ],
+    "correctIndex": 0,
+    "explanation": "vsplitで3行目までと残りに分けると、second は [[0., 0., 0., 1.]] になる。これを転置すると 4×1 の列ベクトルになる。要点：分割後の形と転置後の形を確認する。"
+  },
+  {
+    "question": "matplotlibのhist()メソッドの返り値として取得できる情報として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "(各ビンの度数、各ビンの範囲)の2つの返り値を持つ",
+      "(各ビンの度数、各ビンの範囲、パッチオブジェクトが格納されている配列)の3つの返り値を持つ",
+      "(各ビンの度数、各ビンの範囲, 最頻値)の3つの返り値を持つ",
+      "各ビンの範囲と各ビンの度数が格納されているディクショナリとして1つの返り値を持つ"
+    ],
+    "correctIndex": 1,
+    "explanation": "hist() は各ビンの度数、各ビンの境界、パッチオブジェクトを返す。要点：histの返り値は3つ。"
+  },
+  {
+    "question": "テストデータを用いてパラメーターチューニングをしてはいけない理由として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "学習データとテストデータでは特徴量が異なるから",
+      "実際には手に入り得ないデータであり、未来の情報をみてモデルの精度を恣意的に向上させていることになるから",
+      "テストデータは学習データよりもデータ数が多いので、チューニングに時間がかかるから",
+      "テストデータは学習データとデータの分布が異なるから"
+    ],
+    "correctIndex": 1,
+    "explanation": "テストデータは最終評価のために残しておくべきで、チューニングに使うと未来の情報を先に見たことになってしまう。要点：テストデータは最後の評価専用。"
+  },
+  {
+    "question": "以下のような日付ごとの利用回数と利用料金が格納されたpandasデータフレームdfがある。このデータフレームdfの利用回数の「最頻値」を出力するコードとして正しいものを選べ。",
+    "codeSample": "images/dpro03_q21.png",
+    "executionResult": null,
+    "options": [
+      "df[\"利用回数\"].mode()",
+      "df[\"利用回数\"].mean()",
+      "df[\"利用回数\"].count()",
+      "df[\"利用回数\"].median()"
+    ],
+    "correctIndex": 0,
+    "explanation": "最頻値はもっとも多く現れる値で、pandasでは mode() を使って求める。要点：最頻値＝mode。"
+  },
+  {
+    "question": "pip freeze コマンドの説明として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "実行中のpipコマンドを強制終了するコマンド",
+      "現在のpipのバージョンを出力するコマンド",
+      "pipのバージョンを最新にする",
+      "インストールされているパッケージの一覧を出力する"
+    ],
+    "correctIndex": 3,
+    "explanation": "pip freeze は現在インストールされているパッケージの一覧を、要件ファイルの形で出力する。要点：pip freeze＝パッケージ一覧出力。"
+  },
+  {
+    "question": "A = (1,2,3), B = (4,5,6) の2つの座標がある。座標AB間のマンハッタン距離として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "√27",
+      "27",
+      "9",
+      "3"
+    ],
+    "correctIndex": 2,
+    "explanation": "マンハッタン距離は差の絶対値の和で、|1-4|+|2-5|+|3-6|=3+3+3=9 である。要点：マンハッタン距離＝絶対値の和。"
+  },
+  {
+    "question": "matplotlibについて説明している以下の文章のうち、間違っているものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "plot()メソッドではグラフの枠線の色を指定することができる",
+      "plot()メソッドは線の太さを変更することができる",
+      "color引数では、文字列の他に、HTMLやCSS3で定義された色名を指定することができる",
+      "散布図で指定することができるマーカーの種類は30種以上ある"
+    ],
+    "correctIndex": 0,
+    "explanation": "plot() は線を描画するためのメソッドで、グラフ全体の枠線色を指定する役割ではない。要点：plotの役割と図全体の設定を区別する。"
+  },
+  {
+    "question": "特徴量の次元削減について説明している以下の文章のうち、正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "scikit-learnで実装されている主成分分析を使用する際、次元数をいくつまで削減するかを指定することはできない",
+      "数学的には、内部で積分計算を行なっている",
+      "次元削減の手法には非線形変換を行う手法のみ存在する",
+      "なるべくデータの情報を落とさずに、少ない特徴量でデータを表現するために用いられる"
+    ],
+    "correctIndex": 3,
+    "explanation": "次元削減は、情報をなるべく保ちながら特徴量を減らしてデータを簡潔に表すために用いられる。要点：次元削減＝情報を保ちつつ圧縮。"
+  },
+  {
+    "question": "写真のようなデータフレームdfがある。以下のコードと出力が一致しないコードとして正しいものを選べ。",
+    "codeSample": [
+      "df[df[\"面積\"]>380000]",
+      "images/dpro03_q26.png"
+    ],
+    "executionResult": null,
+    "options": [
+      "df.面積 > 380000",
+      "df[df.iloc[:,1]>380000]",
+      "df[df.loc[:,\"面積\"]>380000]",
+      "df.query(\"面積>380000\")"
+    ],
+    "correctIndex": 0,
+    "explanation": "df.面積 > 380000 は真偽値のSeriesを返すだけで、元のDataFrameを抽出した結果にはならない。要点：抽出したいなら df[条件] の形が必要。"
+  },
+  {
+    "question": "以下のコードを実行した場合の出力として、正しいものを選べ。",
+    "codeSample": "import numpy as np\n\nA = np.array([[1, 3, 5]])\nB = np.array([[6, 8, 10]])\nC = np.concatenate([A, B], axis=0)\nD = np.diff(C, axis=0)\nnp.sum(D)",
+    "executionResult": null,
+    "options": [
+      "15",
+      "9",
+      "8",
+      "33"
+    ],
+    "correctIndex": 0,
+    "explanation": "縦方向に連結すると [[1,3,5],[6,8,10]] になる。行方向の差は [[5,5,5]] なので、合計は 15 になる。要点：diffで隣り合う差を取り、sumで合計する。"
+  },
+  {
+    "question": "確率密度関数と確率の関係として正しいものを以下の中から選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "確率は確率密度関数の勾配である。",
+      "確率は確率密度関数の最大値である。",
+      "確率は確率密度関数の幅の広さである。",
+      "確率は確率密度関数の面積である。"
+    ],
+    "correctIndex": 3,
+    "explanation": "確率密度関数では、ある区間の確率はその区間で囲まれた面積で表される。要点：確率＝面積。"
+  },
+  {
+    "question": "以下の行列の掛け算の答えとして正しいものを選べ。",
+    "codeSample": "$$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}\\qquad\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$$",
+    "executionResult": null,
+    "options": [
+      "$$\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$$",
+      "算出不可能（掛け算はできない）",
+      "$$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$$",
+      "$$\\begin{pmatrix}1 & 0\\end{pmatrix}$$"
+    ],
+    "correctIndex": 0,
+    "explanation": "単位行列をベクトルに掛けても値は変わらないので、結果は $$\\begin{pmatrix}1 \\\\ 0\\end{pmatrix}$$ になる。要点：単位行列は掛けても元の値を保つ。"
+  },
+  {
+    "question": "1×2×3×4×5と同じ意味を表す数式として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "$$\\sum_{i=1}^{5} i$$",
+      "$${}^{5}C_{1}$$",
+      "$$\\lim_{n \\to \\infty} i^5$$",
+      "$$\\prod_{i=1}^{5} i$$"
+    ],
+    "correctIndex": 3,
+    "explanation": "連続する数の積は総乗記号 $$\\prod$$ で表す。要点：足し算は $$\\sum$$、掛け算は $$\\prod$$。"
+  },
+  {
+    "question": "以下のような、ユーザーごとのサービス利用状況が格納されたデータフレームdfがある。カラムごとの欠損値の割合を円グラフとして可視化するコードとして正しいものを選べ。",
+    "codeSample": "images/dpro03_q31.png",
+    "executionResult": null,
+    "options": [
+      "import matplotlib.pyplot as plt \n\nplt.pie(df.isnull().sum()/len(df), labels=df.columns, autopct=\"%1.1f%%\")\nplt.show()",
+      "import matplotlib.pyplot as plt \n\nplt.pie(df.isnull().sum(), labels=df.columns, autopct=\"%1.1f%%\")\nplt.show()",
+      "import matplotlib.pyplot as plt \n\nplt.pie(df.isnull()/len(df), labels=df.columns, autopct=\"%1.1f%%\")\nplt.show()",
+      "import matplotlib.pyplot as plt \n\nplt.pie(df.isnull().count()/len(df), labels=df.columns, autopct=\"%1.1f%%\")\nplt.show()"
+    ],
+    "correctIndex": 0,
+    "explanation": "欠損値の割合は、各列の欠損数 df.isnull().sum() を行数 len(df) で割って求める。要点：割合＝個数÷全体。"
+  },
+  {
+    "question": "データサイエンティストの役割について説明している以下の文章のうち、正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "データ分析さえできればよく、顧客の立場になり、その分析結果をどう使えるかまでを考えて分析する必要はない",
+      "業務中に自分でPCを修理する場合もあるので、コンピューターの内部構造や動作原理などを知っておく必要がある",
+      "Pythonで実装できるモデルを扱うことが多く、R言語を知っておく必要はない",
+      "技術の進歩が速い分野なので、論文などを読んで最新技術をキャッチアップする必要がある"
+    ],
+    "correctIndex": 3,
+    "explanation": "データサイエンス分野は進歩が速いため、論文や新技術の継続的な学習が重要である。要点：最新情報のキャッチアップが大切。"
+  },
+  {
+    "question": "scikit-learnのサポートベクターマシンのハイパーパラメーターのCについて説明している以下の文章のうち正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "Cの値が小さいほど、マージンは大きくなる",
+      "特徴量の数が大きいほど、Cの値も大きくする必要がある",
+      "Cの値が大きいほど、マージンは大きくなる",
+      "C=Trueにすると、非線形の分類問題も境界線を求めることができるようになる"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cが小さいほど誤分類をある程度許し、そのぶんマージンを広く取りやすくなる。要点：Cが小さい→マージン大きめ。"
+  },
+  {
+    "question": "機械学習モデルについて説明している以下の文章のうち間違っているものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "データが大量に存在する場合にモデルを構築する際は、学習データ、検証データ、テストデータの3つに分割するのが理想である",
+      "異なる検証データで結果を比較するために、交差検証を実施することもある",
+      "ラベルではなく数値そのものを予測する問題を回帰問題という",
+      "機械学習モデルでは、何かを分類するタスクしか解くことができない"
+    ],
+    "correctIndex": 3,
+    "explanation": "機械学習には分類だけでなく、回帰やクラスタリングなど多くのタスクがある。要点：機械学習＝分類だけではない。"
+  },
+  {
+    "question": "Matplotlibを用いて、1つの描画オブジェクト中に2つのグラフを表示するコードとして正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(2)\nplt.show()",
+      "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nplt.show()",
+      "import matplotlib.pyplot as plt\n\nax, fig = plt.subplots()\nplt.show()",
+      "import matplotlib.pyplot as plt\n\nplt.plot()\nplt.show()"
+    ],
+    "correctIndex": 0,
+    "explanation": "subplots(2) とすると2つのAxesが用意され、1つの描画オブジェクト中に2つのグラフを置ける。要点：複数グラフは subplots。"
+  },
+  {
+    "question": "以下の文章のうちグリッドサーチの説明として正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "各パラメーターにおいて指定した分布から無作為に探索値を抽出するので、分布の仮定が間違っていると最適なチューニング結果にならない",
+      "どのパラメーターを探索するかはアルゴリズムが自動で選んでくれる",
+      "指定したパラメーターの全ての組み合わせを試す手法。組み合わせの総数分モデルの学習を行うので、探索が終わるのに時間がかかる",
+      "パラメーター探索の仮定で、ベイズ推論を行なっているため計算に時間がかかる"
+    ],
+    "correctIndex": 2,
+    "explanation": "グリッドサーチは候補値の全組み合わせを総当たりで試す方法である。要点：全組み合わせを試すので時間がかかりやすい。"
+  },
+  {
+    "question": "平均5、標準偏差10の正規分布に従う乱数を1,000個生成したデータがある。この1,000個のデータのヒストグラムとして正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "images/dpro03_q37_a1.png",
+      "images/dpro03_q37_a2.png",
+      "images/dpro03_q37_a3.png",
+      "images/dpro03_q37_a4.png"
+    ],
+    "correctIndex": 2,
+    "explanation": "ヒストグラムでは、棒の間に隙間がなく、平均5付近を中心に左右へ広がる山形になるものが正しい。要点：正規分布のヒストグラムは中心付近が高くなる。"
+  },
+  {
+    "question": "以下のscikit-learnの説明のうち正しいものを選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "Deep Learningを行うことができない（ディープニューラルネットワークのモデルを構築することができない）",
+      "学習データとテストデータに分割するためのメソッドがなく、多くの場合、自分で分割するための関数を用意しなければならない",
+      "pandasのデータフレームを扱うことができず、モデル作成の際は必ずNumPyを用いなければならない",
+      "GPUで動かすためのサポートがない"
+    ],
+    "correctIndex": 3,
+    "explanation": "scikit-learn は GPU を前提としたライブラリではなく、基本的にはCPUで動かす。要点：GPUサポートは標準ではない。"
+  },
+  {
+    "question": "以下の関数 f(x, y) の x に関する偏微分として正しいものを選べ。",
+    "codeSample": "$$f(x,y)=x^2y^2$$",
+    "executionResult": null,
+    "options": [
+      "$$2xy^2$$",
+      "$$4xy$$",
+      "$$2x^2y$$",
+      "$$y^2$$"
+    ],
+    "correctIndex": 0,
+    "explanation": "xで偏微分するとき、y^2 は定数として扱う。x^2 を微分すると 2x なので、結果は $$2xy^2$$ になる。要点：偏微分では他方の変数は定数扱い。"
+  },
+  {
+    "question": "機械学習アルゴリズムにおける、ハイパーパラメーターの説明として正しいものを以下の中から選べ。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "学習時にアルゴリズムで決定されず、モデル構築者が指定する必要があるパラメーター",
+      "モデルの評価指標に使用されるパラメーター",
+      "モデルの損失関数に使用されるパラメーター",
+      "学習時に機械学習アルゴリズムにより最適化される値"
+    ],
+    "correctIndex": 0,
+    "explanation": "ハイパーパラメーターは、木の深さや正則化の強さのように、学習前に人が設定する値である。要点：モデルが自動で学習する値ではない。"
+  }
+]

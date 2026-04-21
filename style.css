@@ -112,7 +112,7 @@ h2 {
 
 .option {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Aligns indicator with the first line of text */
   margin: 10px 0;
   padding: 12px;
   background-color: transparent; /* Changed from white box to transparent/line style as per screenshot? Screenshot has lines. Let's make it look like lines. */
@@ -147,6 +147,30 @@ h2 {
   border-radius: 50%;
   background-color: #fff;
   flex-shrink: 0;
+  margin-top: 4px; /* Align with first line of text */
+}
+
+.option-content {
+  flex: 1;
+  width: 100%;
+}
+
+.option-code {
+  background-color: #1b1a1a;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 5px 0;
+  display: block;
+}
+
+.option-content .katex-display {
+  margin: 12px 0 4px 0;
+  text-align: center;
 }
 
 .option.selected {

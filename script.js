@@ -128,7 +128,7 @@ function showQuestion() {
     if (isImage || isMath) {
       codeSample.innerHTML = html;
       // If it's mixed with text, make sure it's readable
-      if (isImage) codeSample.style.display = "flex";
+      codeSample.style.display = isImage ? "flex" : "block";
     } else {
       codeSample.innerHTML = `<code>${html}</code>`; // Ensure code look even for single strings
       codeSample.style.display = "block";
@@ -152,9 +152,25 @@ function showQuestion() {
   const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
   q.options.forEach((opt, index) => {
+    // Standardize newlines (handle double-escaped \\n from some JSON sources)
+    const sanitizedOpt = String(opt).replace(/\\n/g, "\n");
+
     const btn = document.createElement("div");
     btn.classList.add("option");
-    renderContent(btn, opt);
+
+    // Wrap content in a div to support multi-line layout with flex-start
+    const content = document.createElement("div");
+    content.classList.add("option-content");
+
+    // Detect if this looks like a code block (apply dark styling only if it has multiple lines)
+    const looksLikeCode = sanitizedOpt.includes("\n");
+    
+    if (looksLikeCode && !sanitizedOpt.includes("$$")) {
+      content.classList.add("option-code");
+    }
+
+    renderContent(content, sanitizedOpt);
+    btn.appendChild(content);
 
     // Restore selection state
     if (currentState.selectedIndex === index) {
