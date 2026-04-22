@@ -1,0 +1,884 @@
+[
+  {
+    "question": "データ分析で使われるプログラミング言語やツールの説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "Pythonはデータ分析以外にWebシステムの構築、特にフロントエンドでよく使われる。一方で、Pythonだけで低レイヤー処理を行うことは苦手である",
+      "R言語はオープンソースのプログラミング言語であり、Pythonよりも特化した統計分野のツールを使えることがある",
+      "Microsoft Excelの利点はGUIでの操作が可能なことと、日々繰り返し発生するデータ取り込みをプログラミングなしで実現可能なことである",
+      "Javaなどの汎用プログラミング言語はソフトウェア開発が得意な一方、データ分析ができない"
+    ],
+    "correctIndex": 1,
+    "explanation": "正しい説明です。\nR言語はデータ分析や機械学習に特化したプログラミング言語で、統計分野に関するライブラリーが充実しています。統計の分野については、Pythonよりも特化したツールが使えることがあります。"
+  },
+  {
+    "question": "データサイエンティストとデータ分析エンジニアに関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "データ分析エンジニアが最低限持つべき技術のひとつに「機械学習のアルゴリズムについての深い知識」があり、新たな解法や新技術への取り組みが強く求められる",
+      "機械学習においてはアルゴリズムの選定が業務の8割とも9割とも言われている",
+      "実務では、解決したい課題に向き合う役割はビジネス事業者が担い、データサイエンティストはモデルやアルゴリズムの構築に専念することが強く求められる",
+      "データ分析エンジニアが持つべき技術には、サーバサイド・データ基盤など、インフラレイヤーの技術も含まれる"
+    ],
+    "correctIndex": 3,
+    "explanation": "データ分析エンジニアが持つべき技術には、サーバサイド・データ基盤など、インフラレイヤーの技術も含まれる\n\n正しい説明です。\nデータ分析エンジニアはデータ工学を実践する1つの職種として位置付けられており、環境構築やサーバサイド、データ基盤を取り扱う技術も求められます。"
+  },
+  {
+    "question": "Pythonの仮想環境に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "venvで作成した1つの仮想環境内に、同じパッケージの複数のバージョンをインストールすることはできない",
+      "Anacondaで仮想環境を作ってcondaコマンドを使うと、pipでインストールされるものと同じバージョンのパッケージをインストールできる",
+      "venvで作成した仮想環境を他の人と共有するには、仮想環境のディレクトリーをコピー&ペーストで共有する",
+      "venvやpipコマンドは主に複数人の作業でパッケージのバージョンを統一するために使うものであり、1人で開発を行う場合は不要である"
+    ],
+    "correctIndex": 0,
+    "explanation": "venvで作成したPythonの仮想環境では、1つの環境には1つのバージョンしかインストールできません。たとえば、pandasのバージョン1.5.4と2.1.4を同じ環境にインストールすることはできません。\n\n同じパッケージの複数のバージョンを切り替えて使いたいときは、複数の仮想環境を作成して使い分けることで対応します。"
+  },
+  {
+    "question": "pipコマンドの説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pip install -U numpy でNumPyをアンインストールする",
+      "pip install numpy==1.22.4 pandasで、NumPyの1.22.4とpandasをインストールする",
+      "pip install -r requirements.txt で使うファイルは、pip list > requirements.txt で作成する",
+      "pipコマンドを使ってパッケージをアンインストールすると、依存関係にある他のパッケージも自動的になくなる"
+    ],
+    "correctIndex": 1,
+    "explanation": "このコマンドでは、NumPyの1.22.4とpandasを同時にインストールしています。このように pip installコマンドでは、 パッケージのバージョン指定 や 複数パッケージの同時インストール が可能です。"
+  },
+  {
+    "question": "次のうち、「作成したプログラムがコーディング規約に反していないか」「未使用の変数やモジュールがないか」をチェックできるツールを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pycodestyle",
+      "Flake8",
+      "pycodeflake",
+      "pepflake8"
+    ],
+    "correctIndex": 1,
+    "explanation": "正解であるBのFlake8を使うと、以下の点をチェックできます。\n\nコーディングスタイルのチェック\nPythonの標準コーディング規約であるPEP 8に違反していないか\n論理的なチェック\n未使用変数やモジュールがないか、構文エラーがないか等"
+  },
+  {
+    "question": "次のようなコードがあるとき、「期待する結果」のように出力する記述として【1】に当てはまるものを選択してください。",
+    "codeSample": "names = ['   AAA   aaa', ' BBB bbb   ', 'CCC ccc']\nprint( 【1】 )",
+    "executionResult": "['AAAaaa', 'BBBbbb', 'CCCccc']",
+    "options": [
+      "[x.replace(' ', '') for x in names]",
+      "{x.replace(' ', '') for x in names}",
+      "[x.strip() for x in names]",
+      "{x.strip() for x in names}"
+    ],
+    "correctIndex": 0,
+    "explanation": "[x.replace(' ', '') for x in names]\n\nこの問題では、Pythonの基本構文のうち**文字列操作と内包表記** について確認しています。\n\n今回のコードでは、下記の結果を期待しています。これは、元のリスト names の各要素からすべての空白文字を削除し、新しいリストを作ればよいです。"
+  },
+  {
+    "question": "Pythonの標準ライブラリに関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "loggingモジュールで出力できるログレベルのうち、重要度が最も高いのは ERRORである",
+      "文字列を日時に変換するには、datetimeモジュールのdatetime.strptimeメソッドを使う",
+      "pickleモジュールの save 関数を使ってPythonのオブジェクトを直列化すると、ファイルなどで読み書き可能になる",
+      "reモジュールの search メソッドを使うと、正規表現にマッチしたかどうかをTrue/Falseで得られる"
+    ],
+    "correctIndex": 1,
+    "explanation": "文字列を日時に変換するには、datetimeモジュールのstrptimeメソッドを使う\n\nこの問題では、**Pythonの標準ライブラリの基本的な使い方** について確認しています。"
+  },
+  {
+    "question": "JupyterLabに関する説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "JupyterLabでは%や%%で始まるマジックコマンドがある。たとえば1行のコードの実行時間を計測するには、%timeitコマンドを使えばよい",
+      "JupyterLabはPythonの標準ライブラリに含まれているため、Pythonをインストールするとすぐに使える",
+      "拡張子が.ipynbのファイルはJSON形式で記述されており、GitHubなどのリポジトリサービスではこの拡張子のファイルを表示できる",
+      "JupyterLabではプログラム以外に、実行結果やドキュメントも1つのNotebookにまとめられる"
+    ],
+    "correctIndex": 1,
+    "explanation": "JupyterLabはPythonの標準ライブラリに含まれているため、Pythonをインストールするとすぐに使える\n\nこの問題では、**JupyterLabの特徴や使い方**について確認しています。\n\n**JupyterLab** とは、コードをインタラクティブ（対話的）に実行できるツールです。**試行錯誤を繰り返すようなプログラミング** に向いており、コードだけではなく、その実行結果や画像、テキストなどを一緒に管理できます。そのため、データサイエンスの分野で特によく使われています。  \n同じようなツールにJupyter Notebookがありますが、JupyterLabの方が新しく、より使いやすく構成されています。"
+  },
+  {
+    "question": "次のような2つの集合があるとき、X ∪ Y が表す集合として正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_formula/set.jpg",
+    "executionResult": null,
+    "options": [
+      "{1, 2, 3, 9}",
+      "{1, 3}",
+      "{2, 9}",
+      "{2}"
+    ],
+    "correctIndex": 0,
+    "explanation": "{1, 2, 3, 9}\n\nこの問題では、**集合の演算で使われる記号** について確認しています。\n\n問題文のX ∪ Y（XまたはY）は、XとYの **和集合**（集合Xと集合Yのすべての要素を含む集合）です。  \nそのため、「XとYのどちらか、または両方に含まれる要素」を含む集合になります。"
+  },
+  {
+    "question": "次の数式の意味として、正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_formula/large_pi.jpg",
+    "executionResult": null,
+    "options": [
+      "x0からxnまでの要素をすべて掛ける",
+      "x0からxn-1までの要素をすべて掛ける",
+      "x0からxnまでの要素の2乗をすべて足す",
+      "x0からxn-1までの要素の2乗をすべて足す"
+    ],
+    "correctIndex": 0,
+    "explanation": "x0からxnまでの要素をすべて掛ける\n\nこの問題では、**掛け算の繰り返しを意味する数学記号 Πの見方** について確認しています。\n\nΠ（大文字のパイ）は **すべての要素を掛け合わせる処理** を表すときに使う記号です。  \nΠ の下の数字は「どこから掛けるか」、上の数字は「どこまで掛けるか」という **掛ける範囲** を指しています。"
+  },
+  {
+    "question": "数学のいろいろな関数の説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "タンジェントはtanθ = sinθ / cosθ で定義され、日本語では正接ともいう",
+      "指数関数の底が1より大きいとき、関数の入力値xが大きくなると、関数の値も大きくなる",
+      "自然対数とは底がネイピア数の対数のことであり、数式ではlnと書いたり、logeのeを省略してlogと書くこともある",
+      "対数関数を利用した関数にはシグモイド関数があり、深層学習の基本的な技術であるニューラルネットワークでよく使われる"
+    ],
+    "correctIndex": 3,
+    "explanation": "対数関数を利用した関数にはシグモイド関数があり、深層学習の基本的な技術であるニューラルネットワークでよく使われる\n\nこの問題では、**数学の基本的な関数（三角関数・指数関数・対数関数）とその性質** について確認しています。"
+  },
+  {
+    "question": "ベクトルや行列の操作の説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "スカラーとベクトルは掛け算ができる",
+      "正方行列を転置した結果も正方行列である",
+      "行列同士の掛け算（行列積）では、順序を入れ替えても常に同じ結果になる",
+      "次元数が異なる場合、ベクトル同士の足し算はできない"
+    ],
+    "correctIndex": 2,
+    "explanation": "行列同士の掛け算（行列積）では、順序を入れ替えても常に同じ結果になる\n\nこの問題では、**スカラー、ベクトル、行列を使った演算** について、**演算可能な条件や演算後の形状** を正しく把握しているか確認しています。\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/s_v_m.jpg"
+  },
+  {
+    "question": "ベクトルや行列の操作の説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "ベクトルの内積はスカラーになる",
+      "Aが2×3行列、Bが3×2行列のとき、ABは3×3行列になる",
+      "行列とベクトルの掛け算ができるとき、その結果はベクトルになる",
+      "ベクトルにスカラーを掛けた結果はベクトルである"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aが2×3行列、Bが3×2行列のとき、ABは3×3行列になる\n\nこの問題では、**スカラー、ベクトル、行列を使った演算** について、**演算後の形状** を正しく把握しているかを確認しています。\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/s_v_m.jpg"
+  },
+  {
+    "question": "下記の行列A、B、ベクトルxがあるとき、計算できないものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3.jpg",
+    "executionResult": null,
+    "options": [
+      "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3_choice_a.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3_choice_b.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3_choice_c.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3_choice_d.jpg"
+    ],
+    "correctIndex": 0,
+    "explanation": "https://images.pyq.jp/repo/prod/exam_data_math_linear/q3_choice_a.jpg\n\nこの問題では、**ベクトルや行列を使った掛け算** について、**演算可能な条件** を正しく把握しているか確認しています。\n\n行列に、ベクトルや行列を掛けられるのは、以下の時です。"
+  },
+  {
+    "question": "次のような2つのベクトル（位置ベクトル）があるとき、誤っているものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_linear/q4.jpg",
+    "executionResult": null,
+    "options": [
+      "原点からxの終点までのユークリッド距離は、次の式で計算する\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/q4_choice_a.jpg",
+      "原点からxの終点までのマンハッタン距離は、次の式で計算する\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/q4_choice_b.jpg",
+      "xとyの内積は、次の式で計算する\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/q4_choice_c.jpg",
+      "ベクトルの内積は、次のようにドットを使って表現する\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/q4_choice_d.jpg"
+    ],
+    "correctIndex": 1,
+    "explanation": "原点からxの終点までのマンハッタン距離は、次の式で計算する\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_linear/q4_choice_b.jpg\n\nこの問題では、**ノルムや内積** について、正しく把握しているか確認しています。"
+  },
+  {
+    "question": "下記の式を微分した結果として、正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1.jpg",
+    "executionResult": null,
+    "options": [
+      "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1_choice_a.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1_choice_b.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1_choice_c.jpg",
+      "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1_choice_d.jpg"
+    ],
+    "correctIndex": 1,
+    "explanation": "https://images.pyq.jp/repo/prod/exam_data_math_calculus/q1_choice_b.jpg\n\nこの問題では、**簡単な関数の微分の方法** について確認しています。\n\nまずは、多項式の関数の微分についておさらいしましょう。  \nnは整数、Cはなんらかの定数としたとき、次のような多項式の関数があったとします。"
+  },
+  {
+    "question": "微分と積分に関する説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "積分は下記の記号を使って表現できる\n\nhttps://images.pyq.jp/repo/prod/exam_data_math_calculus/q2_choice_a.jpg",
+      "定積分と不定積分の違いは、積分の範囲が決まっているかどうかである",
+      "定積分を計算することで、関数が増加しているか減少しているかがわかる",
+      "ネイピア数のx乗（ex）をxで微分した結果も、ネイピア数のx乗である"
+    ],
+    "correctIndex": 2,
+    "explanation": "積分定数を計算することで、関数の増加や減少の傾きがわかる\n\nこの問題では、**微分や積分の性質や記法**について確認しています。"
+  },
+  {
+    "question": "下記のような10個のデータがあります。総和は2です。このデータの説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": "-2, -2, -1, 0, 0, 1, 1, 1, 2, 2",
+    "executionResult": null,
+    "options": [
+      "最頻値は1である",
+      "中央値は0である",
+      "平均値（算術平均）は0.2である",
+      "分散は0より大きい値になる"
+    ],
+    "correctIndex": 1,
+    "explanation": "中央値は0である\n\nこの問題では、**データ分析でよく使われる代表値**について確認しています。\n\n今回の問題では、次の10個のデータについて代表値を尋ねています。"
+  },
+  {
+    "question": "データ間の関係性を見る指標の説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "共分散は必ず非負の値になる",
+      "相関係数は必ず-1から1の間になる",
+      "xが増えるとyが減る傾向にある時、xとyの相関係数は負の値になる",
+      "スピアマンの順位相関係数は、データの順番だけに注目して計算する"
+    ],
+    "correctIndex": 0,
+    "explanation": "共分散は必ず非負の値になる\n\nこの問題では、**データ同士の関係性を測る指標**について確認しています。"
+  },
+  {
+    "question": "以下のような6面体のサイコロの目の確率変数と確率分布があるとき、誤っているものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_math_stat/q3.jpg",
+    "executionResult": null,
+    "options": [
+      "この確率分布は、連続一様分布である",
+      "期待値は3.5になる",
+      "偶数が出る確率は、1/2である",
+      "サイコロを1回ふったときに「偶数が出た」という情報を知らされたとき、その情報量は1ビットである"
+    ],
+    "correctIndex": 0,
+    "explanation": "この確率分布は、連続一様分布である\n\nこの問題では、**確率や確率分布の基本**について確認しています。\n\n今回の問題の題材は6面体のサイコロで、「すべての目が同じ確率（1/6）で出ること」が特徴です。"
+  },
+  {
+    "question": "次のデータがあるとき、a[:, 1]の結果として正しいものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([[1, 2, 3], [4, 5, 6]])",
+    "executionResult": null,
+    "options": [
+      "array([4, 5, 6])",
+      "array([2, 5])",
+      "array([[4], [5], [6]])",
+      "array([[2], [5]])"
+    ],
+    "correctIndex": 1,
+    "explanation": "array([2, 5])\n\nこの問題では、**インデックスやスライスを使ったNumPy配列（ndarrayオブジェクト）へのアクセス方法** について確認しています。\n\n与えられた a は2行3列のNumPy配列で、次のような中身になっています。"
+  },
+  {
+    "question": "次のコードがあるとき、「期待する結果」のような結果になるコードとして【１】に当てはまるものを選択してください（1つ選択）。",
+    "codeSample": [
+      "import numpy as np\na = np.array([[1, 2, 3], [4, 5, 6]])\n【１】"
+    ],
+    "executionResult": "array([[  1,   2,   3],\n       [100, 100, 100]])",
+    "options": [
+      "a[1, 1:] = 100",
+      "a[:, 1:] = 100",
+      "a[:, 1] = 100",
+      "a[1, :] = 100"
+    ],
+    "correctIndex": 3,
+    "explanation": "a[1, :] = 100\n\nこの問題では、**NumPy配列の要素を更新する方法** について確認しています。\n\n与えられたaは2行3列のNumPy配列で、次のような中身になっています。"
+  },
+  {
+    "question": "次のようなデータがあるとき、NumPy配列を操作するコードと実行結果の組み合わせとして、誤っているものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nb = np.array([10, 11, 12])",
+    "executionResult": null,
+    "options": [
+      "a.flatten().shapeは、(9,)になる",
+      "b[np.newaxis, :].shapeは、(1, 3)になる",
+      "np.vstack([a, b]).shapeは、(3, 4)になる",
+      "a.T.shapeは、(3, 3)になる"
+    ],
+    "correctIndex": 2,
+    "explanation": "np.vstack([a, b]).shapeは、(3, 4) になる\n\nこの問題では、**NumPy配列を操作する基本的な関数の使い方** と、**配列の形状の変化** について確認しています。\n\n今回与えられたaとbは、次のようなNumPy配列になっています。"
+  },
+  {
+    "question": "次のコードの実行結果として、正しいものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([0, 1])\na_1 = a[:]\na_2 = a.copy()\na[0] = 100\n\nprint(a_1[0], a_2[0])",
+    "executionResult": null,
+    "options": [
+      "0 0",
+      "0 100",
+      "100 0",
+      "100 100"
+    ],
+    "correctIndex": 2,
+    "explanation": "100 0\n\nこの問題では、**NumPy配列のコピーと参照の違い** を把握しているか確認しています。\n\nまずは、与えられたコードを見てみましょう。下記のコードでは、問題文のコードにコメントを追加しています。"
+  },
+  {
+    "question": "次のような1次元配列を生成するコードとして、正しいものを選択してください（1つ選択）。  \nなお、事前にimport numpy as npを実行しているものとします。",
+    "codeSample": "array([ 1,  4,  7, 10])",
+    "executionResult": null,
+    "options": [
+      "np.arange(1, 10, 3)",
+      "np.arange(1, 11, 3)",
+      "np.linspace(1, 10, 3)",
+      "np.linspace(1, 11, 3)"
+    ],
+    "correctIndex": 1,
+    "explanation": "np.arange(1, 11, 3)\n\nこの問題では、**NumPy配列を生成する関数の使い方** について確認しています。\n\n今回生成したいのは、次の1次元配列です。 **「1から10までの数字で、3の間隔で増える」** 点が特徴です。"
+  },
+  {
+    "question": "1以上10未満の整数の一様乱数が格納された、3行3列のNumPy配列aを生成したいです。下記のコード内の【１】に当てはまる記述として、正しいものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\nrng = np.random.default_rng()\n【１】",
+    "executionResult": null,
+    "options": [
+      "a = rng.normal(1, 10, size=(3, 3))",
+      "a = rng.random((1, 10, 3))",
+      "a = rng.uniform(1, 10, size=(3, 3))",
+      "a = rng.integers(1, 10, size=(3, 3))"
+    ],
+    "correctIndex": 3,
+    "explanation": "a = rng.integers(1, 10, size=(3, 3))\n\nこの問題では、**乱数を生成するNumPyの関数の使い方** について確認しています。\n\nまずは、与えられたコードを見てみましょう。下記のコードでは、問題文のコードにコメントを追加しています。"
+  },
+  {
+    "question": "次のような3x3行列を生成するコードとして、正しいものを選択してください（1つ選択）。  \nなお、事前にimport numpy as npを実行しているものとします。",
+    "codeSample": "array([[1., 0., 0.],\n       [0., 1., 0.],\n       [0., 0., 1.]])",
+    "executionResult": null,
+    "options": [
+      "np.ones((3, 3))",
+      "np.ones(3)",
+      "np.eye(3)",
+      "np.full(3, 1)"
+    ],
+    "correctIndex": 2,
+    "explanation": "np.eye(3)\n\nこの問題では、**NumPyの関数を使った行列の作り方**について確認しています。\n\n今回作りたいのは、次のような3x3行列です。対角成分がすべて1で、それ以外がすべて0の正方行列（行数と列数が同じ行列）なので、この行列は**単位行列**です。"
+  },
+  {
+    "question": "ユニバーサルファンクションの説明として、正しいものを選択してください（1つ選択）。  \nなお、選択肢内のnpはimport numpy as npでインポートしたNumPyモジュールを指します。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "通常のPythonだと1行で書けるコードでも、ユニバーサルファンクションを使うと2重ループなどが必要となり冗長になる。その一方で、処理速度が速くなるというメリットがある",
+      "ユニバーサルファンクションは、配列内の要素を一括で計算する",
+      "ユニバーサルファンクションが使えるのは1次元配列だけで、2次元配列には使えない",
+      "ユニバーサルファンクションとは、np.関数名()で呼び出せるすべての関数のことである"
+    ],
+    "correctIndex": 1,
+    "explanation": "ユニバーサルファンクションは配列内の要素を一括で計算する\n\nこの問題では、**NumPyのユニバーサルファンクションの概念** について正しく理解しているか確認しています。\n\nユニバーサルファンクションとは、**NumPy配列の各要素に対して一括で演算を行う関数**のことです。  \nたとえば、配列内のすべての要素について絶対値を計算するnp.abs()や、すべての要素の自然対数を計算するnp.log()が当てはまります。"
+  },
+  {
+    "question": "次のようなデータがあるとき、ブロードキャストになる操作として誤っているものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([0, 1, 2])\nb = np.array([[0, 1, 2], [3, 4, 5]])",
+    "executionResult": null,
+    "options": [
+      "a - 10",
+      "b * a",
+      "np.diff(a)",
+      "b - a"
+    ],
+    "correctIndex": 2,
+    "explanation": "np.diff(a)\n\nこの問題では、**NumPyのブロードキャスト機能**について正しく理解しているか確認しています。  \nブロードキャストとは、**形状の異なるデータ同士の演算を可能にする機能**のことです。形状の異なるデータを、形状が揃ったデータとして要素ごとに演算します。\n\n今回の問題では、下記のように「サイズ3の1次元配列a」と、「2x3の2次元配列b」が与えられています。"
+  },
+  {
+    "question": "次のようなデータがあるとき、コードと結果の組み合わせとして正しいものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([0, 1, 2])\nb = np.array([[0, 1, 2], [3, 4, 5]])\nc = np.array([[0, 1] , [2, 3], [4, 5]])",
+    "executionResult": null,
+    "options": [
+      "np.dot(b, a)はエラーになる",
+      "np.dot(b, c)とc @ bは同じ結果になる",
+      "b @ cは2×2行列になる",
+      "b @ bは3×3行列になる"
+    ],
+    "correctIndex": 2,
+    "explanation": "b @ cは2x2行列になる\n\nこの問題では、**NumPyの行列積の計算方法と、その結果の形状**について正しく理解しているか確認しています。\n\n今回の問題では、次のように「サイズが3の1次元配列a」「2×3の2次元配列b」「3×2の2次元配列c」が用意されています。"
+  },
+  {
+    "question": "次のようなデータがあるとき、コードと実行結果の組み合わせとして正しいものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\n\na = np.array([[-2, -1, 0], [1, 2, 3]])",
+    "executionResult": null,
+    "options": [
+      "np.count_nonzero(a > -1) で、-1より大きい要素のうち、0ではない要素の個数を数える",
+      "np.any(a > -1) で、-1より大きい要素が存在するか判定する",
+      "np.all(a > -1)で、-1より大きい要素をすべて抽出する",
+      "np.sum(a > -1)で、-1より大きい要素の合計を計算する"
+    ],
+    "correctIndex": 1,
+    "explanation": "np.any(a > -1) で、-1より大きい要素が存在するか判定する\n\nこの問題では、**NumPy配列で比較演算子を使った時の挙動や、判定に関する関数**について確認しています。\n\n今回の問題では、次のような2×3のNumPy配列aが与えられています。"
+  },
+  {
+    "question": "次のようなDataFramedfを作成するコードとして、正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_summary/q1.jpg",
+    "executionResult": null,
+    "options": [
+      "df = pd.DataFrame([[1, 2], [3, 4]], [[\"a\", \"b\"], [\"A\", \"B\"]])",
+      "df = pd.DataFrame([[1, 3], [2, 4]], index=[\"a\", \"b\"], columns=[\"A\", \"B\"])",
+      "df = pd.DataFrame({\"A\": [1, 3], \"B\": [2, 4]})\ndf.index = [\"a\", \"b\"]",
+      "df = pd.DataFrame({\"a\": [1, 2], \"b\": [3, 4]})\ndf.columns = [\"A\", \"B\"]"
+    ],
+    "correctIndex": 2,
+    "explanation": "\ndf = pd.DataFrame({\"A\": [1, 3], \"B\": [2, 4]})\ndf.index = [\"a\", \"b\"]\n\n\nこの問題では、**DataFrameの生成方法やインデックス・カラムの設定**について確認しています。\n\n今回作りたいのは、下記のDataFrameです。"
+  },
+  {
+    "question": "次のようなDataFrame df があるときに、5が格納されている要素を参照する方法として正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_summary/q2.jpg",
+    "executionResult": null,
+    "options": [
+      "df.loc[\"B\", 1]",
+      "df.iloc[\"B\", 1]",
+      "df.loc[1, \"B\"]",
+      "df.iloc[1, \"B\"]"
+    ],
+    "correctIndex": 2,
+    "explanation": "df.loc[1, \"B\"]\n\nこの問題では、 **DataFrameから要素を抽出する方法** について確認しています。\n\n今回は、次のようなDataFramedfが与えられています。"
+  },
+  {
+    "question": "pandasのファイル入出力機能の説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "CSVファイルとExcelファイルの読み込みではファイル拡張子の違いを意識する必要はなく、pd.read()でどちらも読み込める",
+      "df.to_pickle()を使うと、DataFrameを直列化してpickleファイルとして保存できる",
+      "pd.read_table()を使うと、HTMLファイルのtable要素を読み込める",
+      "pd.to_csv(df, ファイルパス)で、CSVファイルの保存ができる"
+    ],
+    "correctIndex": 1,
+    "explanation": "df.to_pickle()を使うと、DataFrameを直列化してpickleファイルとして保存できる\n\nこの問題では、**pandasのファイル入出力機能**について確認しています。"
+  },
+  {
+    "question": "次のDataFramedfがあるとき、コードと実行結果の組み合わせとして正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_preprocess/q1.jpg",
+    "executionResult": null,
+    "options": [
+      "df[[\"日付\"]]と書くと、カラム日付だけを抽出したSeriesを取得できる",
+      "df[[\"日付\", \"売上\"]]と書くと、カラム日付とカラム売上だけを抽出したDataFrameを取得できる",
+      "df.loc[df.loc[:, \"売上\"] >= 250, :]と書くと、「売上が250以上の行」だけを抽出したSeriesを取得できる",
+      "df.query(\"売上 >= 200\" and \"来店者数 <= 150\")と書くと、「売上が200以上かつ来店者数が150以下の行」だけを抽出したDataFrameを取得できる"
+    ],
+    "correctIndex": 1,
+    "explanation": "df[[\"日付\", \"売上\"]]と書くと、カラム日付とカラム売上だけを抽出したDataFrameを取得できる\n\nこの問題では、**特定の行や列を抽出する方法** について、正しく理解しているか確認しています。"
+  },
+  {
+    "question": "DataFrame df 内の各カラムの要素の型を確認する方法として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "df.dtypes()",
+      "df.dtypes",
+      "pd.dtype(df)",
+      "df.dtype"
+    ],
+    "correctIndex": 1,
+    "explanation": "B. df.dtypes\n\nこの問題では、**pandasにおけるデータ型の確認方法** について確認しています。\n\nDataFrameの各カラムの要素のデータ型を確認するには **dtypes属性** を使います。  \nたとえば、次のようなDataFrameについて考えてみましょう。"
+  },
+  {
+    "question": "次のDataFramedfがあるとき、DataFrameの操作や変換処理として正しいものを選択してください（1つ選択）。  \nなお、選択肢内のnpはimport numpy as npでインポートしたNumPyモジュールを指します。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_preprocess/q3.jpg",
+    "executionResult": null,
+    "options": [
+      "売上/人 というカラムを作成し、売上を来店者数で割った値を挿入するには、df[\"売上/人\"] = df.loc[:, \"売上\"] / df.loc[:, \"来店者数\"]と書く",
+      "インデックスに日付カラムの値を設定するには、df.index = \"日付\"と書く",
+      "売上の要素をfloat型に変換するには、df.loc[:, \"売上\"].type(np.float32)と書く",
+      "dfをNumPyの配列として取得するには、df.values()と書く"
+    ],
+    "correctIndex": 0,
+    "explanation": "売上/人 というカラムを作成し、売上を来店者数で割った値を挿入するには、df[\"売上/人\"] = df.loc[:, \"売上\"] / df.loc[:, \"来店者数\"] と書く\n\nこの問題では、**DataFrameに対する基本的な操作や変換処理**について確認しています。"
+  },
+  {
+    "question": "次のDataFramedfを売上が大きい順に並べ替え、末尾5行を表示したいです。  \nコードとして、正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_preprocess/q4.jpg",
+    "executionResult": null,
+    "options": [
+      "df.sort_values(by=\"売上\", ascending=True).end()",
+      "df.sort_values(by=\"売上\", ascending=False).end()",
+      "df.sort_values(by=\"売上\", ascending=True).tail()",
+      "df.sort_values(by=\"売上\", ascending=False).tail()"
+    ],
+    "correctIndex": 3,
+    "explanation": "df.sort_values(by=\"売上\", ascending=False).tail()\n\nこの問題では、**DataFrameにおける並べ替えや、データの概要を見る方法**について確認しています。\n\n今回の問題でやりたいことは「並び替え」と「末尾5行の表示」の2つです。"
+  },
+  {
+    "question": "2022年1月1日から2022年12月31日までの、365日分の日付データを作るコードとして、正しいものを選択してください（1つ選択）。  \nなおimport pandas as pdが既に実行されているものとします。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pd.date_range(start=\"2022-01-01\", end=\"2023-01-01\")",
+      "pd.date_range((\"2022-01-01\", \"2023-01-01\"))",
+      "pd.date_range(start=\"2022-01-01\", periods=365)",
+      "pd.date_range(\"2022-01-01\", 365)"
+    ],
+    "correctIndex": 2,
+    "explanation": "pd.date_range(start=\"2022-01-01\", periods=365)\n\nこの問題では、**特定の期間の日付データを生成する方法** について確認しています。\n\npandasで特定の期間の日付データを生成するには、 pd.date_range()を使います。次のような指定が可能です。"
+  },
+  {
+    "question": "次のDataFramedfがあるとき、列乱数値の月ごとの平均値を計算するコードとして正しいものを選択してください（1つ選択）。",
+    "codeSample": "https://images.pyq.jp/repo/prod/exam_data_pandas_time/q2.jpg",
+    "executionResult": null,
+    "options": [
+      "df.groupby(pd.Grouper(\"M\")).mean()",
+      "df.groupby(freq=\"M\").mean()",
+      "df.loc[:, \"乱数値\"].resample(pd.Grouper(freq=\"M\")).mean()",
+      "df.loc[:, \"乱数値\"].resample(\"M\").mean()"
+    ],
+    "correctIndex": 3,
+    "explanation": "df.loc[:, \"乱数値\"].resample(\"M\").mean()\n\nこの問題では、**特定の期間ごとにデータを集計する方法** について確認しています。\n\n月ごとの集計では、大きく分けて **groupby()を使う方法** と **resample()を使う方法** があります。  \ngroupby()を使う方法では、次のようにpd.Grouper()と組み合わせて使用します。"
+  },
+  {
+    "question": "次のデータがあるとき、欠損値に関する説明として誤っているものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\nimport pandas as pd\n\ndf = pd.DataFrame({\"A\": [np.nan, \"Apple\", \"\", \"nan\", \"nan\"],\n                   \"B\": [0, 1, np.nan, 100, \"nan\"]})",
+    "executionResult": null,
+    "options": [
+      "欠損値を含む行を削除するには、df.drop()を使う",
+      "欠損値を100で置換するには、df.fillna(100)と書く",
+      "各要素が欠損値かどうかの判定には、df.isnull()を使う",
+      "このDataFrame内に、欠損値の要素は2個ある"
+    ],
+    "correctIndex": 0,
+    "explanation": "欠損値を含む行を削除するには、 df.drop() を使う\n\nこの問題では、**pandasの欠損値に対する操作や判定方法** について確認しています。"
+  },
+  {
+    "question": "2つのDataFrame（df1とdf2）があります。これらを列方向に連結するコードとして、正しいものを選択してください（1つ選択）。  \nなおimport pandas as pdが既に実行されているものとします。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pd.concat(df_1, df_2, axis=0)",
+      "pd.concat([df_1, df_2], axis=0)",
+      "pd.concat(df_1, df_2, axis=1)",
+      "pd.concat([df_1, df_2], axis=1)"
+    ],
+    "correctIndex": 3,
+    "explanation": "pd.concat([df_1, df_2], axis=1)\n\nこの問題では、**複数のDataFrameを連結する方法** について確認しています。\n\nDataFrameを縦または横に連結するには、pd.concat()を使います。引数axisには、縦方向の連結なら0、横方向の連結なら1を指定します。"
+  },
+  {
+    "question": "データの傾向を見るpandasの機能の説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "df.summary()で、データ個数や平均値、最小値、最大値、四分位数などの統計量をまとめて確認できる",
+      "df.loc[:, \"身長\"].average()で、身長カラムの平均値を確認できる",
+      "df.corr()を使うと、カラム間の相関係数が表示される",
+      "df.scatter_matrix()を使うと、各カラムのヒストグラムとカラム間の散布図のグラフが表示される"
+    ],
+    "correctIndex": 2,
+    "explanation": "df.corr()を使うと、カラム間の相関係数が表示される\n\nこの問題では、**データの傾向を見るためのpandasの機能**について確認しています。\n\nここでは、下記のダミーデータを使って各選択肢の挙動について解説します。"
+  },
+  {
+    "question": "Matplotlibを使ったグラフ描画の説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "Matplotlibのオブジェクト指向インタフェースでは、サブプロット内にある描画オブジェクトに対してグラフを追加する",
+      "Matplotlibのpyplotインタフェースでは、描画オブジェクトが持つ各種関数を実行してグラフを描画する",
+      "サブプロットのsavefigメソッドを使うと、作成したグラフをpngやsvgなどのファイル形式で保存できる",
+      "オブジェクト指向インタフェースで複数のグラフを並べて表示するには、複数のサブプロットを使う"
+    ],
+    "correctIndex": 3,
+    "explanation": "オブジェクト指向インタフェースで複数のグラフをまとめて表示するには、複数のサブプロットを使う\n\nこの問題では、**Matplotlibのインタフェースの特徴や、描画オブジェクトとサブプロットの関係** について確認しています。"
+  },
+  {
+    "question": "Matplotlibのサブプロットの説明として、正しいものを選択してください（1つ選択）。  \nなお、事前にimport matplotlib.pyplot as pltが実行されているものとします。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "plt.subplots(2)とすると、2つのサブプロットが2行1列で配置される",
+      "plt.subplots((2, 3))とすると、6つのサブプロットが2行3列で配置される",
+      "plt.subplots(shape=(2, 3))とすると、6つのサブプロットが2行3列で配置される",
+      "plt.subplots()とすると、サブプロットは生成されず描画オブジェクトだけが生成される"
+    ],
+    "correctIndex": 0,
+    "explanation": "plt.subplots(2)とすると、2つのサブプロットが2行1列で配置される\n\nこの問題では、**サブプロットの作り方** について正しく理解しているか確認しています。\n\nMatplotlibのオブジェクト指向インタフェースでは、plt.subplots() を使って描画オブジェクトとサブプロットを生成します。  \n次のように記述すると、描画オブジェクトと1つのサブプロットが生成されます。"
+  },
+  {
+    "question": "次のコードで描画されるグラフの説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\n\nx = [1, 2, 3]\ny1 = [1, 0, 3]\ny2 = [0, 1, 2]\nax.plot(x, y1, label=\"A\")\nax.plot(x, y2, label=\"B\")\nax.legend(loc=\"lower right\")\nfig.suptitle(\"sample\")\n\nplt.show()",
+    "executionResult": null,
+    "options": [
+      "折れ線グラフが描画されたサブプロットが2つ表示される",
+      "サブプロットのタイトルが設定されている",
+      "軸ラベルは表示されない",
+      "サブプロット外側の右下に凡例が表示される"
+    ],
+    "correctIndex": 2,
+    "explanation": "軸ラベルは表示されない\n\nこの問題では、**Matplotlibでグラフを描画する基本** について確認しています。\n\n今回は、以下のコードが与えられています。ここでは各行の処理がわかるように、コメントを追加しています。"
+  },
+  {
+    "question": "次のような描画オブジェクトとサブプロット、データがあるとき、棒グラフを描くコードの説明として正しいものを選択してください（1つ選択）。",
+    "codeSample": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nx = [1, 2, 3]\ny1 = [10, 5, 15]\ny2 = [3, 2, 3]\nlabels = [\"A\", \"B\", \"C\"]",
+    "executionResult": null,
+    "options": [
+      "ax.bar(x, y1, labels)で、X軸の目盛り（項目）のラベルを指定して描画できる",
+      "ax.barh(x, y1)で、横向きの棒グラフを描画できる",
+      "ax.bar(x, (y1, y2))で、1つのサブプロット内に2種類の棒グラフを横に並べて描画できる",
+      "ax.bar(x, (y1, y2), stacked=True) で、積み上げ棒グラフを描画できる"
+    ],
+    "correctIndex": 1,
+    "explanation": "ax.barh(x, y1)で、横向きの棒グラフを描画できる\n\nこの問題では、**Matplotlibを使って棒グラフを描く方法** について確認しています。"
+  },
+  {
+    "question": "次のようなグラフを描画したいとき、コードの【1】に当てはまる記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": [
+      "https://images.pyq.jp/repo/prod/exam_data_matplotlib_plot/q2.jpg",
+      "import numpy as np\nimport matplotlib.pyplot as plt\n\n# xとyのデータを100個ずつ生成\nrng = np.random.default_rng(123)\nx = rng.random(100)\ny = rng.random(100)\n\nfig, ax = plt.subplots()\n【1】\nplt.show()"
+    ],
+    "executionResult": null,
+    "options": [
+      "ax.boxplot((x, y))",
+      "ax.scatter(x, y)",
+      "ax.distribute((x, y))",
+      "ax.spread(x, y)"
+    ],
+    "correctIndex": 1,
+    "explanation": "ax.scatter(x, y)\n\nこの問題では、**Matplotlibを使って散布図を描く方法** について確認しています。\n\n**散布図** とは、2つの変数を持つデータを点で表したグラフのことで、変数間の関係性を見たいときによく使われます。たとえば、「身長と体重の関係」や「学習時間とテストの点数の関係」を見たいようなケースで有用です。  \nMatplotlibで散布図を描画するには、次のようにax.scatter()を使います。"
+  },
+  {
+    "question": "次のコードの説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# 正規分布に従うデータを500個用意\nrng = np.random.default_rng(123)\nx = rng.normal(50, 10, 500)\n\nfig, ax = plt.subplots()\nn, bins, _ = ax.hist(x, bins=25)\nplt.show()",
+    "executionResult": null,
+    "options": [
+      "縦向きのヒストグラムが描画される",
+      "ビンの幅が25のヒストグラムが描画される",
+      "変数nには、各ビンに含まれるデータの個数が格納されている",
+      "変数binsには、ビンの境界値が格納されている"
+    ],
+    "correctIndex": 1,
+    "explanation": "ビンの幅が25のヒストグラムが描画される\n\nこの問題では、**Matplotlibでヒストグラムを描画する方法** について確認しています。\n\n今回は、以下のコードが与えられています。ここでは、各行の処理がわかるようにコメントを追加しています。"
+  },
+  {
+    "question": "次のようなグラフを描画したいとき、コードの【1】に当てはまる記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": [
+      "https://images.pyq.jp/repo/prod/exam_data_matplotlib_plot/q4.jpg",
+      "labels = [\"A\", \"B\", \"C\"]\nx =  [20, 10, 3]\n\nfig, ax = plt.subplots()\n【1】\nplt.show()"
+    ],
+    "executionResult": null,
+    "options": [
+      "ax.pie(x, labels=labels, startangle=0)",
+      "ax.pie(x, labels=labels, startangle=90)",
+      "ax.pie(x, labels=labels, startangle=0, counterclock=False)",
+      "ax.pie(x, labels=labels, startangle=90, counterclock=False)"
+    ],
+    "correctIndex": 3,
+    "explanation": "ax.pie(x, labels=labels, startangle=90, counterclock=False)\n\nこの問題では、**Matplotlibで円グラフを描画する方法** について確認しています。\n\n今回の問題で描画したいのは、下記の円グラフです。"
+  },
+  {
+    "question": "Matplotlibにおける色指定などのスタイルの説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "スタイルの設定は描画オブジェクト単位で行うため、同じオブジェクトの異なるサブプロットで別々のスタイルを適用することはできない",
+      "フォントの種類（serif、san-serifなど）は1つのサブプロット内では1種類しか使えないが、追加パッケージをインストールすることでタイトルやラベルに異なるフォントを指定可能になる",
+      "グラフに表示する線、背景、枠線などの色指定では、透明度も指定可能である",
+      "plotメソッドのwidth引数で折れ線グラフの線の太さを、style引数で線の種類（破線、点線など）を指定可能である"
+    ],
+    "correctIndex": 2,
+    "explanation": "グラフに表示する線、背景、枠線などの色指定では、透明度も指定可能である\n\nこの問題では、**Matplotlibにおけるスタイル設定の基本** について確認しています。"
+  },
+  {
+    "question": "Matplotlibにおける色指定などのスタイルの説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "matplotlib.style.use関数を使うと、グラフの表示スタイル全体（線の色、太さ、背景色など）にあらかじめ用意されている設定を適用できる",
+      "サブプロットの set_xlabelメソッドなどで、fontdict引数を使って\"ggplot\"や\"classic\"などの文字列を指定すると、あらかじめ用意されているフォントの設定（文字の色、太さ、サイズなど）を適用できる",
+      "サブプロットの set_xlabelメソッドなどで、fontdict引数を使ってフォントスタイルを指定した場合、個別の引数（size引数など）で指定したスタイルは無効になる",
+      "matplotlib.style.styles で、利用できるスタイル名の一覧を取得できる"
+    ],
+    "correctIndex": 0,
+    "explanation": "matplotlib.style.use関数を使うと、グラフの表示スタイル全体（線の色、太さ、背景色など）にあらかじめ用意されている設定を適用できる\n\nこの問題では、**Matplotlibのスタイル設定に関する便利な機能** について確認しています。"
+  },
+  {
+    "question": "次のようにテキストを含めて描画したいとき、コードの【1】に当てはまる記述として正しいものを選択してください（1つ選択）。",
+    "codeSample": [
+      "https://images.pyq.jp/repo/prod/exam_data_matplotlib_style/q3.jpg",
+      "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots()\nx = [1, 2, 3]\ny = [3, 0, 5]\n【1】\nplt.show()"
+    ],
+    "executionResult": null,
+    "options": [
+      "ax.plot(x, y, label='sample data 1')",
+      "ax.plot(x, y, label='sample data 1', loc='lower right')",
+      "ax.plot(x, y)\nax.text(2.5, 1, 'sample data 1')",
+      "ax.plot(x, y)\nax.add_text(2.5, 1, 'sample data 1')"
+    ],
+    "correctIndex": 2,
+    "explanation": "\nax.plot(x, y)\nax.text(2.5, 1, 'sample data 1')\n\n\nこの問題では、**Matplotlibでサブプロットにテキストを描画する方法** について確認しています。\n\nMatplotlibでサブプロットにテキストを追加するには、サブプロットのtext()メソッドを使います。"
+  },
+  {
+    "question": "pandasの可視化機能の説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "DataFrameのplot.bar()でstacked=Trueを指定すると、積み上げ棒グラフを描画できる",
+      "DataFrameのplot.boxplot()を使うと、箱ひげ図を描画できる",
+      "数値が格納された2列のDataFrameがある場合、df.plot()で2つのサブプロットが2行で描画される",
+      "pandasのグラフ描画機能は内部的にMatplotlibを使用している。そのため、pandasを使えばMatplotlibを直接使わなくても、Matplotlibでできる細かい表現の調整がすべて可能である"
+    ],
+    "correctIndex": 0,
+    "explanation": "DataFrameのplot.bar()でstacked=Trueを指定すると、積み上げ棒グラフを描画できる\n\nこの問題では、**pandasが持つ可視化機能**、特に**Matplotlibの使い方との違い** について確認しています。"
+  },
+  {
+    "question": "DataFrame内に欠損値が存在するとき、欠損値の処理として誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "pandasのDataFrameのdropnaメソッドを使って、欠損値が存在する行や列を削除する",
+      "pandasのDataFrameのfillnaメソッドを使って、欠損値を0で補完する",
+      "scikit-learnのSimpleImputerクラスを使って、欠損値を平均値で補完する",
+      "scikit-learnのLabelEncoderクラスを使って、欠損値を0などの数値に変換する"
+    ],
+    "correctIndex": 3,
+    "explanation": "scikit-learnのLabelEncoderクラスを使って、欠損値を0などの数値に変換する\n\nこの問題では、**pandasやscikit-learnを使った欠損値の対応**について確認しています。\n\nここでは、下記の架空のデータを使って各選択肢について解説します。このデータでは、**2行目と3行目のデータに欠損値**が含まれています。"
+  },
+  {
+    "question": "カテゴリ変数の前処理の説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "K種類の値が入力された列をOne-hotエンコーディングすると、K+1個の列に展開される",
+      "カテゴリ変数のエンコーディング（ラベルエンコーディング）では、a→0、b→1、c→2のようにカテゴリ変数が整数に変換される",
+      "One-hotエンコーディングは、ダミー変数化とも呼ばれる",
+      "One-hotエンコーディングを行うには、pandasではget_dummies関数を、scikit-learnではOneHotEncoderクラスを使う"
+    ],
+    "correctIndex": 0,
+    "explanation": "K種類の値が入力された列をOne-hotエンコーディングすると、K+1個の列に展開される\n\nこの問題では、**機械学習で必要なカテゴリ変数の前処理**について把握しているか確認しています。\n\n**カテゴリ変数**とは、数値ではなくカテゴリを表す変数のことです。たとえば、天気（晴れ/曇/雨）や顧客のタイプ（新規顧客/リピーター）などがカテゴリ変数になります。"
+  },
+  {
+    "question": "特徴量の正規化に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "サポートベクタマシンなど一部の学習アルゴリズムでは、特徴量Aが2桁の数値（数十のオーダ）、別の特徴量Bが8桁の数値（数千万のオーダ）でスケールに差がある場合、何も前処理を行わないと特徴量Bがモデルに与える影響が小さくなる傾向がある",
+      "分散正規化とは、特徴量の平均が0、標準偏差が1となるように特徴量を変換する処理のことで、標準化やz変換とも呼ばれる",
+      "最小最大正規化では、特徴量の最小値が0、最大値が1をとるようにデータの分布を正規分布に変換する",
+      "scikit-learnのStandardScalerクラスやMinMaxScalerクラスは、インスタンス生成時にデータを渡すことで正規化を実行する"
+    ],
+    "correctIndex": 1,
+    "explanation": "分散正規化とは、特徴量の平均が0、標準偏差が1となるように特徴量を変換する処理のことで、標準化やz変換とも呼ばれる\n\nこの問題では、**機械学習の前処理で行う特徴量の正規化**について、**目的や手法**を正しく理解しているか確認しています。"
+  },
+  {
+    "question": "機械学習のデータセットの分割に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "データセットを学習用とテスト用の2つに分け、テストデータセットに対する予測をしてモデルの精度を検証することを、交差検証と呼ぶ",
+      "汎化能力とは既知のデータに対する対応能力のことであり、学習に使ったデータセットで予測を行うことで評価する",
+      "scikit-learnのtrain_test_split関数はpandasのDataFrameに対応していないため、NumPy配列に変換してから使用する",
+      "train_test_split関数の第1引数には説明変数を表すデータを、第2引数には目的変数を表すデータを指定する"
+    ],
+    "correctIndex": 3,
+    "explanation": "train_test_split関数の第1引数には説明変数を表すデータを、第2引数には目的変数を表すデータを指定する\n\nこの問題では、**機械学習モデルで使うデータセットの分割** について確認しています。"
+  },
+  {
+    "question": "サポートベクタマシンを使った分類に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "サポートベクタマシンでは、線形分離できないデータを次元削減することにより分類を行う",
+      "サポートベクタマシンでは、クラス間のサポートベクタのマージンが最小になるように分類の仕方を決める",
+      "scikit-learnのSVCクラスをインスタンス化する際、パラメータCに小さい値を設定するほど、マージンが狭く設定される",
+      "サポートベクタマシンは、分類だけではなく回帰や外れ値検出にも使えるアルゴリズムである"
+    ],
+    "correctIndex": 3,
+    "explanation": "サポートベクタマシンは、分類だけではなく回帰や外れ値検出にも使えるアルゴリズムである\n\nこの問題では、**サポートベクタマシンの特徴や使い方** について確認しています。"
+  },
+  {
+    "question": "決定木やランダムフォレストを使った分類に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "ランダムフォレストでは同じサンプルと特徴量を使った複数の決定木を構築し、予測時にいずれかの木をランダムに選択して使用する",
+      "複数の学習器を用いた学習方法のことをブートストラップ学習と呼び、該当する手法にはランダムフォレストなどがある",
+      "scikit-learnでは決定木もランダムフォレストも、「インスタンスを生成してfitメソッドで学習し、predictメソッドで予測する」という流れは同じである",
+      "scikit-learnで決定木のインスタンスのpredictメソッドを使って予測を行うと、各サンプルが各クラスに所属する確率を取得できる"
+    ],
+    "correctIndex": 2,
+    "explanation": "scikit-learnでは決定木もランダムフォレストも、「インスタンスを生成してfitメソッドで学習し、predictメソッドで予測する」という流れは同じである\n\nこの問題では、**決定木とランダムフォレストの特徴や、scikit-learnでの使い方** について確認しています。"
+  },
+  {
+    "question": "回帰に関する説明として、誤っているものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "回帰は教師あり学習の一種であり、目的変数が連続値になるようなタスクで使われる",
+      "「土壌の種類、気象条件、栽培方法などのデータから、農作物の収穫量を予測する」のは、回帰のタスクになる",
+      "目的変数が1変数の線形回帰のことを単回帰、2変数以上の場合は重回帰と呼ぶ",
+      "線形回帰では目的変数が説明変数の1次式で表現され、scikit-learnではLinearRegressionクラスを使う"
+    ],
+    "correctIndex": 2,
+    "explanation": "目的変数が1変数の線形回帰のことを単回帰、2変数以上の場合は重回帰と呼ぶ\n\nこの問題では、教師あり学習のひとつである**回帰** について確認しています。"
+  },
+  {
+    "question": "次元削減に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "主成分分析は、データのばらつきを最大に保ちながら（高次元のデータに対して分散が大きくなる方向を探して）、元の次元と同じかそれよりも低次元にデータを変換する手法である",
+      "説明変数に使うデータを次元削減してから教師あり学習にかけると、データの理解が容易になる。その一方で、学習時の計算コストが高くなるというデメリットがある",
+      "次元削減は教師なし学習の一種であり、特徴量が1個でデータ数が10万個を超えるような大規模データで効果的である",
+      "scikit-learnで、6つの特徴量からなるデータを主成分分析によって新たな4つの特徴量に変換するには、PCAクラスのインスタンス生成時にn_components=2と指定する"
+    ],
+    "correctIndex": 0,
+    "explanation": "主成分分析は、データのばらつきを最大に保ちながら（高次元のデータに対して分散が大きくなる方向を探して）、元の次元と同じかそれよりも低次元にデータを変換する手法である\n\nこの問題では、**次元削減の目的や方法** について確認しています。"
+  },
+  {
+    "question": "「製品の検査データから、欠陥があるかどうか診断する」という分類タスクについて考えます。  \n「欠陥がある」を正例とした場合、評価指標の説明として正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "適合率が高いほど、欠陥であるデータを見逃さずに検出した割合が高いことを示す",
+      "F値は適合率と再現率の加重平均であり、両方の指標がバランス良い値になることを目指す時に重視する",
+      "適合率・再現率・F値・正解率は、混同行列に含まれる数値からすべて計算できる",
+      "再現率が低いほど、「欠陥である」と予測したケースに占める「本当は欠陥ではないケース」の割合が高く、ノイズが多い状態を示している"
+    ],
+    "correctIndex": 2,
+    "explanation": "適合率・再現率・F値・正解率は、混同行列に含まれる数値からすべて計算できる\n\nこの問題では、**機械学習の分類タスクで使う評価指標** について確認しています。\n\n機械学習の分類タスクでは、**適合率**・**再現率**・**F値**・**正解率**などの指標が使われます。  \nこれらは、**混同行列** と呼ばれる下記の表の値を使って計算できます。"
+  },
+  {
+    "question": "交差検証に関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "グリッドサーチと交差検証を組み合わせる方法では、ハイパーパラメータの各候補に対して、テストデータセットを使用してモデルの評価を繰り返し行う",
+      "分類タスクで使う層化k分割交差検証では、特定の目的変数（クラスラベル）だけを抽出したデータの学習をk回繰り返す",
+      "cross_val_score関数の引数scoreingに\"precision\"を指定すると、適合率を評価指標にして交差検証を行う",
+      "交差検証では、特徴量の一部を選択する処理を繰り返し、モデルの構築と評価を複数回行う"
+    ],
+    "correctIndex": 2,
+    "explanation": "cross_val_score関数の引数scoreingに\"precision\"を指定すると、適合率を評価指標にして交差検証を行う\n\nこの問題では、**交差検証の基本** について確認しています。"
+  },
+  {
+    "question": "分類モデルの予測確率の確かさを測る指標として、説明が正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "AUCの値が0.5に近づくほど、モデルが正例と負例を区別する能力がないことを意味する",
+      "scikit-learnのroc_curve関数を使うと、ROC曲線を描画したグラフが表示される",
+      "ROC曲線は横軸に真陰性率、縦軸に真陽性率をプロットする",
+      "ROC曲線が(0, 0)と(1, 1)を結ぶ対角線に近いほど、モデルの精度が良い"
+    ],
+    "correctIndex": 0,
+    "explanation": "AUCの値が0.5に近づくほど、モデルが正例と負例を区別する能力がないことを意味する\n\nこの問題では、**分類モデルの評価指標であるAUCやROC曲線** について確認しています。\n\n**ROC曲線** とは、横軸に偽陽性率、縦軸に真陽性率をプロットした下記のようなグラフのことです。**AUC**は、ROC曲線の下側の面積を計算した指標です。"
+  },
+  {
+    "question": "機械学習のハイパーパラメータの最適化の説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "ハイパーパラメータの最適化を行うことで、予測に寄与しない特徴量が除外され、よりシンプルで精度が高いモデルを構築できる",
+      "グリッドサーチでは、事前にハイパーパラメータの候補を指定する必要がある",
+      "決定木でグリッドサーチを行う時は、DecisionTreeClassifierクラスのインスタンス生成時に引数param_gridを指定する",
+      "グリッドサーチで得られた最適なモデルは、最後に実行されたモデルを取得することで確認できる"
+    ],
+    "correctIndex": 1,
+    "explanation": "グリッドサーチでは、ユーザがハイパーパラメータの候補を指定する必要がある\n\nこの問題では、**ハイパーパラメータの最適化の基本や手法** について確認しています。"
+  },
+  {
+    "question": "クラスタリングに関する説明として、正しいものを選択してください（1つ選択）。",
+    "codeSample": null,
+    "executionResult": null,
+    "options": [
+      "クラスタリングは教師なし学習のひとつであり、得られたクラスタの妥当性については担当者やデータ分析エンジニアが都度判断する必要がある",
+      "「スポーツジムの利用履歴から、会員を半年後に解約するグループと解約しないグループに分ける」タスクは、クラスタリングに相当する",
+      "k-meansを使ったクラスタリングの結果は、デンドログラムで可視化することで結果を解釈しやすくなる",
+      "分割型の階層的クラスタリングでは、最初に小さなクラスタに分割する。徐々にデータをまとめていき、最終的に1つのクラスタにまとめられるまで処理を繰り返す"
+    ],
+    "correctIndex": 0,
+    "explanation": "クラスタリングは教師なし学習のひとつであり、得られたクラスタの妥当性については担当者やデータ分析エンジニアが都度判断する必要がある\n\nこの問題では、**クラスタリングの種類や特徴** について確認しています。"
+  }
+]
