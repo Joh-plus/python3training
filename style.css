@@ -213,6 +213,16 @@ footer {
   background-color: #d0d0d0;
 }
 
+.btn-csv {
+  background-color: #217346 !important;
+  color: white !important;
+  border: 1px solid #1e623c !important;
+}
+
+.btn-csv:hover {
+  background-color: #1e623c !important;
+}
+
 .action-btn {
   font-weight: bold;
   color: #fff;

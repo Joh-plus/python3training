@@ -267,7 +267,7 @@ function showSummary() {
 
   html += `
     <div style="text-align: center; margin-top: 20px;">
-        <button type="button" class="nav-btn" onclick="exportToCSV()" style="margin-right: 10px; background-color: #28a745;">CSV出力</button>
+        <button type="button" class="nav-btn btn-csv" onclick="exportToCSV()" style="margin-right: 10px;">CSV出力</button>
         <button type="button" class="nav-btn" onclick="returnToTitle()">タイトルに戻る</button>
     </div>
   `;
