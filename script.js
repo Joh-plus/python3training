@@ -142,7 +142,7 @@ function showQuestion() {
   const executionResultDiv = document.getElementById("execution-result");
 
   if (q.executionResult) {
-    executionResultDiv.textContent = q.executionResult;
+    renderContent(executionResultDiv, q.executionResult);
     executionSection.style.display = "block";
   } else {
     executionSection.style.display = "none";

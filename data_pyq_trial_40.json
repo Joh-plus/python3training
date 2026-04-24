@@ -65,7 +65,7 @@
     "explanation": "「期待する結果」は、リストdataから \"python\"を含む要素だけを抽出した集合（ set ）です。そのため、{}を使 った セット内包表記 を使います。選択肢A は、セット内包表記ではなくリスト内包表記を使っているため誤りです。\n選択肢B は、選択肢A同様、リスト内包表記を使っているため誤りです。また、 x in \"python\" だと「\"python\"の中に⽂字列xを含むか」を判定することになるため、誤りです。\n選択肢C は、正しいコードです。\n選択肢D は、選択肢B同様、判定⽅法が間違っているため誤りです。"
   },
   {
-    "question": "Python の標準ライブラリに関する説明として、正しいものを選択してくだ\nさい（1つ選択）。",
+    "question": "Python の標準ライブラリに関する説明として、正しいものを選択してください（1つ選択）。",
     "codeSample": null,
     "executionResult": null,
     "options": [
@@ -92,13 +92,13 @@
   },
   {
     "question": "x0から xnをすべて掛け合わせる数式として、正しいものを選択してください（1つ選択）。",
-    "codeSample": "IMAGE_PLACEHOLDER_PYQ2_Q8_FORMULA",
+    "codeSample": null,
     "executionResult": null,
     "options": [
-      "IMAGE_PLACEHOLDER_PYQ2_Q8_OPT_A",
-      "IMAGE_PLACEHOLDER_PYQ2_Q8_OPT_B",
-      "IMAGE_PLACEHOLDER_PYQ2_Q8_OPT_C",
-      "IMAGE_PLACEHOLDER_PYQ2_Q8_OPT_D"
+      "$$x_0!$$",
+      "$$x_n!$$",
+      "$$\\prod_{i=0}^{n-1} x_i$$",
+      "$$\\prod_{i=0}^{n} x_i$$"
     ],
     "correctIndex": 3,
     "explanation": "「 x0から xnをすべて掛け合わせる」、つまり 総乗 の数式は、Π（パイ）を使って記述します。Πの下部分には最初の 要素の番号を、Πの上部分には最後の要素の番号を記述します。 よって、正解は 選択肢 D です。 \n\n選択肢 A は、階乗（!）の記号を使っているため誤りです。この選択肢は「 x0から 1 までの整数をすべて掛け合わせる」数式となります。 \n選択肢 B は、選択肢 A 同様、階乗の記号を使っているため誤りです。この選択肢は、「 xnから 1 までの整数をすべて掛け合わせる」数式となります。\n選択肢C は、Πの上部分（最後の要素の番号）が n-1になっているため、誤りです。この選択肢は、「x0からxn-1をすべて掛け合わせる」数式となります。\n選択肢D は、正しい数式です。"
@@ -137,7 +137,7 @@
       "不定積分には積分定数がつくが、定積分にはつかない",
       "微分係数を計算することで、関数が増加しているか減少しているかがわかる",
       "関数 F(x) を微分して f(x) になるとき、 F を f の原始関数、 f を F の導関数と呼ぶ",
-      "IMAGE_PLACEHOLDER_PYQ2_Q11_OPT_D_DIFFERENTIAL_SYMBOL"
+      "積分は下記の記号を使って表現できる\n\n$$\\frac{dy}{dx}$$"
     ],
     "correctIndex": 3,
     "explanation": "選択肢 A 、 B 、 C は、正しい説明です。 \n選択肢 D は、誤った説明です。選択肢の数式は、関数yのxに対する微分を意味する記号です。積分で使う記号 は、 ∫ （インテグラル）です。"
@@ -157,7 +157,7 @@
   },
   {
     "question": "以下のような 8 面体のサイコロの目の確率変数と確率分布があるとき、誤っているものを選択してください（1つ選択）。",
-    "codeSample": "IMAGE_PLACEHOLDER_PYQ2_Q13_DICE_DISTRIBUTION",
+    "codeSample": "images/pyq02_q13.png",
     "executionResult": null,
     "options": [
       "この確率分布は、離散一様分布である",
@@ -173,10 +173,10 @@
     "codeSample": "import numpy as np \n \na = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) \n \na[1, 1:] = 10",
     "executionResult": null,
     "options": [
-      "array([[10, 10, 10], \n [ 4, 5, 6], \n [ 7, 8, 9]])",
-      "array([[ 1, 2, 3], \n [ 4, 10, 10], \n [ 7, 8, 9]])",
-      "array([[10, 2, 3], \n [10, 5, 6], \n [10, 8, 9]])",
-      "array([[ 1, 2, 3], \n [ 4, 10, 6], \n [ 7, 10, 9]])"
+      "array([[10, 10, 10], \n       [ 4, 5, 6], \n       [ 7, 8, 9]])",
+      "array([[ 1, 2, 3], \n       [ 4, 10, 10], \n       [ 7, 8, 9]])",
+      "array([[10, 2, 3], \n       [10, 5, 6], \n       [10, 8, 9]])",
+      "array([[ 1, 2, 3], \n       [ 4, 10, 6], \n       [ 7, 10, 9]])"
     ],
     "correctIndex": 1,
     "explanation": "NumPy 配列では、下記の書き方でNumPy 配列の要素を更新できます。 \n\n#NumPy 配列の要素の更新 \n配列 [ 行の指定 , 列の指定 ] = 更新後の値 \n\nNumPy 配列はPython 標準のリスト同様、インデックス番号は0で始まります。また、:を使った指定範囲ができるた め、1:は「 2 番目以降のすべて」を意味します。 そのため、問題文のa[1, 1:] = 10 は、「 2 行目の、 2 列目以降に 10 を代入する」 という処理です。よって、正解は 選択肢B になります。\n\n選択肢A は、「1⾏⽬の、1列⽬以降に 10 を代⼊」した結果です。これは a[0, 0:] = 10 の結果なので、誤りだとわかります。\n\n選択肢B は、「2⾏⽬の、2列⽬以降に 10 を代⼊」した結果なので、正解です。\n\n選択肢C は、「1⾏⽬以降の、1列⽬に 10 を代⼊」した結果です。これは a[0:, 0] = 10 の結果なので、誤りだとわかります。\n\n選択肢D は、「2⾏⽬以降の、2列⽬に 10 を代⼊」した結果です。これは a[1:, 1] = 10 の結果なので、誤りだとわかります。"
@@ -208,8 +208,8 @@
     "explanation": "選択肢 A は、正しい説明です。np.vstack() はNumPy 配列を縦に積み上げる関数です。 np.vstack([a, b]) の実行結果は次のようになり、形状は (3, 3) になります。\n\n選択肢B は、誤った説明です。np.diff() は、NumPy配列内の隣接する要素間の差を計算する関数です。np.diff(a) の実⾏結果は次のようになるため、正しい形状は (2,) です。\n\n選択肢C は、誤った説明です。np.ravel() は、多次元配列を1次元配列に変換する関数です。np.ravel(b) の実⾏結果は次のようになるため、正しい形状は (6,) です。\n\n選択肢D は、誤った説明です。reshape() は、指定した形状にNumPy配列を変換するメソッドです。b.reshape((3, 1)) は、「NumPy配列 b を3⾏1列に変換する」処理を意味します。しかし、b は元々2⾏3列で要素が6個あるため、3⾏1列（要素数が3）には変換できません。そのため、b.reshape((3, 1))を実⾏すると ValueError が発⽣します。"
   },
   {
-    "question": "次のようなNumPy 配列を作成するコードとして、正しいものを選択して\nください（1つ選択）。\narray([[1., 1.], \n [1., 1.]])",
-    "codeSample": null,
+    "question": "次のようなNumPy 配列を作成するコードとして、正しいものを選択して\nください（1つ選択）。",
+    "codeSample": "\narray([[1., 1.], \n       [1., 1.]])",
     "executionResult": null,
     "options": [
       "np.ones(2)",
@@ -274,7 +274,7 @@
   },
   {
     "question": "次の DataFrame df について、 日付 が小さい順で並べ替えた後、日付カラムをインデックスに設定したいです。コードとして、正しいものを選択してください（1つ選択）。",
-    "codeSample": "IMAGE_PLACEHOLDER_PYQ2_Q22_DATAFRAME",
+    "codeSample": "images/pyq02_q22.png",
     "executionResult": null,
     "options": [
       "df = df.sort_values(by=' 日付 ', ascending=True) \ndf.index = ' 日付 '",
@@ -300,7 +300,7 @@
   },
   {
     "question": "次のデータがあるとき、欠損値に関する説明として正しいものを選択してください（1つ選択）。",
-    "codeSample": "import numpy as np \nimport pandas as pd \n \ndf = pd.DataFrame({\"A\": [0, \"Python\", \"nan\", \"nan\"], \n \"B\": [np.nan, \"\", np.nan, \"<nan>\"]})",
+    "codeSample": "import numpy as np \nimport pandas as pd \n \ndf = pd.DataFrame({\"A\": [0, \"Python\", \"nan\", \"nan\"], \n                   \"B\": [np.nan, \"\", np.nan, \"<nan>\"]})",
     "executionResult": null,
     "options": [
       "df.dropna() とすると、欠損値を含むカラムを削除できる",
@@ -381,10 +381,10 @@
     "codeSample": "import numpy as np \nimport matplotlib.pyplot as plt \n \nlabels = [\"A\", \"B\", \"C\"] \nx = [20, 10, 3] \n \nfig, ax = plt.subplots() \nax.pie(x, labels=labels, startangle=0) \nplt.show()",
     "executionResult": null,
     "options": [
-      "IMAGE_PLACEHOLDER_PYQ2_Q30_OPT_A",
-      "IMAGE_PLACEHOLDER_PYQ2_Q30_OPT_B",
-      "IMAGE_PLACEHOLDER_PYQ2_Q30_OPT_C",
-      "IMAGE_PLACEHOLDER_PYQ2_Q30_OPT_D"
+      "images/pyq02_q30_a1.png",
+      "images/pyq02_q30_a2.png",
+      "images/pyq02_q30_a3.png",
+      "images/pyq02_q30_a4.png"
     ],
     "correctIndex": 3,
     "explanation": "サブプロットの pie() は、 Matplotlib で円グラフを描画するためのメソッドです。 \n\n# 円グラフを描画する \nax.pie( データ , labels= ラベル , \n                startangle= 最初のラベルの開始位置 , \n                counterclock= 反時計回りか否か )\n\n 引数 startangle に指定する開始位置は、 「時計の 3 時の位置」を 0 度とした反時計周りの⾓度 を指定します。引数 counterclock には、要素を並べる順番を反時計回りにするか（ True ）、時計回りにするか（ False ）を指定します。デフォルトでは反時計回り（ True ）です。\n\n本問では ax.pie(x, labels=labels, startangle=0) としているため、実⾏結果は「時計の3時の位置から始まり、反時計回りに A 、 B 、C と並ぶ円グラフ」になります。よって、 選択肢D が正解だとわかります。\n\n選択肢A は、誤ったグラフです。開始位置が時計の0時で、ラベルが時計回りで並んでいます。\n選択肢B は、誤ったグラフです。開始位置が時計の0時になっています。\n選択肢C は、誤ったグラフです。開始位置は正しいですが、ラベルが時計回りで並んでいます。\n選択肢D は、正しいグラフです。"
@@ -403,12 +403,12 @@
     "explanation": "選択肢 A は、正しい説明です。\n選択肢 B は、誤った説明です。あらかじめ用意されている設定を適用する関数は、 matplotlib.style.use() です。\n選択肢 C は、誤った説明です。サブプロット内にテキストを設定するのは、サブプロットの text() メソッ ドです。\n選択肢 D は、誤った説明です。color 引数を使って整数で色を指定するときは、 0-255 ではなく 0-1 の範囲でRGBAの値を指定します。"
   },
   {
-    "question": "次のような DataFrame df があるとき、「期待する結果」のようなグラ\nフを描画するコードとして正しいものを選択してください（1つ選択）。\nDataFrame df:",
+    "question": "次のような DataFrame df があるとき、「期待する結果」のようなグラフを描画するコードとして正しいものを選択してください（1つ選択）。\nコード:",
     "codeSample": [
       "import pandas as pd\n\ndf = pd.DataFrame({\"Area 1\": [10, 20, 10], \"Area 2\": [5, 3, 5]}, index=[\"Book\", \"Food\", \"Stationery\"])",
-      "IMAGE_PLACEHOLDER_PYQ2_Q32_EXPECTED_GRAPH"
+      "images/pyq02_q32_cs.png"
     ],
-    "executionResult": null,
+    "executionResult": "images/pyq02_q32_result.png",
     "options": [
       "df.bar()",
       "df.plot.bar()",
