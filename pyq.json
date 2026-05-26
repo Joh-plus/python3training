@@ -109,8 +109,8 @@
     "options": [
       "A. int str",
       "B. float int str",
-      "C. int str",
-      "D. float int str"
+      "C. int \nstr",
+      "D. float \nint \nstr"
     ],
     "correctIndex": 2,
     "explanation": "4.1節のif⽂と4.2節のfor⽂に関する問題です。\n設問のように3つの⽂字列からなるリストをforで指定すると、3回繰り返されます。\nまた、各繰り返しでは、ifで⽂字数が3⽂字のときに、その⽂字を改⾏込みで出⼒しています。\n3⽂字の⽂字列は\"int\"と\"str\"なので、次のように出⼒されます（C）。\nint\nstr",
