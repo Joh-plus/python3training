@@ -522,11 +522,11 @@
     "codeSample": "",
     "executionResult": null,
     "options": [
-      "ERROR、CCRITICAL、WARNING、INFO、DEBUG",
-      "ERROR、CCRITICAL、WARNING、DEBUG、INFO",
-      "CRITICAL、EERROR、WARNING、DEBUG、INFO",
-      "CRITICAL、EERROR、WARNING、INFO、DEBUG",
-      "CRITICAL、WARNING、EERROR、INFO、DEBUG"
+      "ERROR、CRITICAL、WARNING、INFO、DEBUG",
+      "ERROR、CRITICAL、WARNING、DEBUG、INFO",
+      "CRITICAL、ERROR、WARNING、DEBUG、INFO",
+      "CRITICAL、ERROR、WARNING、INFO、DEBUG",
+      "CRITICAL、WARNING、ERROR、INFO、DEBUG"
     ],
     "correctIndex": 3,
     "explanation": "この問題では、Pythonのloggingモジュールで定義されているログレベルの優先度順を正しく理解しているかが問われています。\n\nloggingモジュールでは、ログメッセージに重要度（レベル）が設定されており、重大なものほど優先度が高く扱われます。標準で用意されている主なレベルは、CRITICAL、ERROR、WARNING、INFO、DEBUG の5つです。\n\nこの中で最も優先度が高いのは CRITICAL で、プログラムの継続が困難な重大な問題を表します。次に ERROR はエラーが発生した状態、WARNING は注意喚起、INFO は通常の動作情報、DEBUG は開発時の詳細な情報を表します。\n\nしたがって、優先度が高い順に並べると、CRITICAL → ERROR → WARNING → INFO → DEBUG となります。\n\n以上の理由から、正しい並びは「CRITICAL、ERROR、WARNING、INFO、DEBUG」です。\n\n【要点まとめ】\n・logging にはログレベル（優先度）が定義されている\n・CRITICAL が最も優先度が高い\n・DEBUG は最も詳細だが優先度は低い\n・ログ出力の制御はレベルによって行われる"
