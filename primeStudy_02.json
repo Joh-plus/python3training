@@ -500,7 +500,8 @@
       "【A】sample 【B】choice 【C】rand",
       "【A】sample 【B】random 【C】randrange"
     ],
-    "correctIndex": 2
+    "correctIndex": 2,
+    "explanation": "この問題は、randomモジュールに用意されている関数の役割を正しく区別できているかを確認する問題です。\n\n最初の行では、リストの中から要素を1つランダムに取り出しています。この処理に使うのは choice() です。\n\n次の行では、range(10) の中から重複なしで3つの値を取り出し、リストとして返しています。このような処理には sample() を使います。\n\n最後の行では、0以上5未満の整数を1つ返しています。この動作に該当するのは randrange() です。\n\nしたがって、\n【A】choice\n【B】sample\n【C】randrange\nの組み合わせが正解になります。\n\n【要点まとめ】\n・choice() はシーケンスから要素を1つ選ぶ\n・sample() は複数要素を重複なしでリストとして取得する\n・randrange(n) は 0 以上 n 未満の整数を返す"
   },
   {
     "question": "今日の日付を次の実行結果のように得たい場合、コードの1行目【A】と2行目の【B】に入る適切なものはどれか。",
