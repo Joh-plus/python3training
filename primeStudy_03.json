@@ -114,7 +114,7 @@
   {
     "question": "次のコードの出力結果として正しいものはどれか。",
     "codeSample": "fruits = ['apple', 'kiwi', 'plum']\nfor f in fruits[:]:\n    if len(f) < 5:\n        fruits.insert(0, f)\n        fruits.pop()\n\nprint(fruits, end=' ')",
-    "executionResult": "['plum', 'kiwi', 'apple']",
+    "executionResult": null,
     "options": [
       "['kiwi', 'apple', 'plum']",
       "['plum', 'kiwi', 'apple']",
