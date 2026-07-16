@@ -240,7 +240,7 @@
   {
     "question": "次のコードの実行結果として正しいものはどれか。",
     "codeSample": "a = [1,3,4,6,3,5]\n\na.insert(3, -1)\na.pop(4)\na.remove(3)\n\nprint(a)",
-    "executionResult": "[1, 4, -1, 6, 3, 5]",
+    "executionResult": null,
     "options": [
       "[1, 4, -1, 5]",
       "[1, 4, -1, 3, 5]",
