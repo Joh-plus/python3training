@@ -499,8 +499,8 @@
     "executionResult": null,
     "options": [
       "The temperature today is 25.7 degrees.",
-      "The temperature today is ____25.69 degrees.",
-      "The temperature today is ____25.7 degrees.",
+      "The temperature today is _____25.69 degrees.",
+      "The temperature today is ______25.7 degrees.",
       "The temperature today is 000025.7 degrees."
     ],
     "correctIndex": 2,
